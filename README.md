@@ -7,4 +7,4 @@ The Connecthings Mobile SDK permits to get the contents from the Adtag platform,
 For each tutorial, you will find a project named Starter which is the project to start with the tutorial and
 a project named "Complete" which is the result of the tutorial.
 
-You could find the full details of the tutorial on the [Connecthings developer website](http://www.connecthings.com/developers/).
+You can find the full details of the tutorial on the [Connecthings developer website](http://www.connecthings.com/developers/).
