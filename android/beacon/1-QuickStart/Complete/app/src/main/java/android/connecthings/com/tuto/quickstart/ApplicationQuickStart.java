@@ -12,14 +12,14 @@ import android.widget.TextView;
  */
 public class ApplicationQuickStart extends Application{
 
-    private static final String UUID = "B0462602-CBF5-4ABB-87DE-B05340DCCBC1";
+    private static final String UUID = "_YourUUID_";
 
 
 
     public void onCreate(){
         super.onCreate();
         AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.ITG)
-                .initUser("test56-2-2", "ZBy20YpUXuvhgaEQzhft").initCompany("organisationrang2ii");
+                .initUser("_YourLogin_", "_YourPasssword_").initCompany("_YourCompany_");
         //Initiate the adtagLogManager that manages the way log are sent to the platform
         AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);
         //If youe need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);

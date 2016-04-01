@@ -21,14 +21,14 @@ import android.text.TextUtils;
 public class ApplicationNotification extends Application implements BeaconNotification{
 
     private static final String TAG = "ApplicationNotification";
-    private static final String UUID = "B8DE8D59-EA9A-41E1-870F-9D8A4899E100";
+    private static final String UUID = "****_YourUUID_***";
     private static final int NOTIFICATION_BEACON_ID = 1;
     private NotificationManager mNotificationManager;
 
     public void onCreate(){
         super.onCreate();
         AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.DEMO)
-                .initUser("SDK_0", "ERv260C3lpbb7N2BuXhI").initCompany("00");
+                .initUser("**_YourLogin_**", "**_YourPASSWORD_**").initCompany("**_YourCompany_**");
         //Initiate the adtagLogManager that manages the way log are sent to the platform
                         AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);
         //If youe need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
