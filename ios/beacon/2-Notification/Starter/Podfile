@@ -1,0 +1,8 @@
+platform:ios, '7.0'
+
+pod "ATConnectionHttp",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATConnectionHttp.git", :tag => "2.3.7"
+pod "ATAnalytics",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATAnalytics.git", :tag => "2.3.7"
+pod "ATLocationBeacon",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATLocationBeacon.git", :tag => "2.3.7"
+ 
+xcodeproj 'Notification.xcodeproj'
+ 

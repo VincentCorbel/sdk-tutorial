@@ -1,0 +1,7 @@
+platform:ios, '7.0'
+pod 'ATQR', :git => "https://forge.adtag.eu/ConnecthingsSDK/ATQR.git", :tag => "2.3.3"
+pod 'ATSdkAdtagContent', :git => "https://forge.adtag.eu/ConnecthingsSDK/ATSdkAdtagContent.git", :tag => "2.3.3"
+pod "ATConnectionHttp",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATConnectionHttp.git", :tag => "2.3.3"
+pod "ATAnalytics",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATAnalytics.git", :tag => "2.3.3"
+
+xcodeproj 'QrScannerDemo.xcodeproj'

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">QrNfcSdkDemo</string>
+
+    <string name="btn_start_activity_fg_only">Activity Foreground only Interactions</string>
+    <string name="btn_start_activity_fg_bg">Activity Background and Foreground Interactions</string>
+
+    <string name="tv_activity_fg_explanation">This activity could interact with QR code and NFC tags only when it is on foreground</string>
+    <string name="tv_activity_bg_fg_explanation">This activity could interact with QR code and NFC tags when it is on foreground as on background.\nThis mean that you could flash a QR code or NFC tag, outside from the application, and even if the application is not running, this activity will start.\nYou have to be very carefull when taking control over Qr Code and NFC tag on background.\nWith a wrong setup, you could take control over Qr Code and NFC tags that do not belong to your company.\nTaking control in background over Qr Code and NFC tag that belongs to Connecthings or it partners is defined by the contract your company signed.\nCheck your contract before doing it.</string>
+
+    <string name="btn_launch_test">Start simple test to get Content</string>
+    <string name="btn_launch_default_qr">Flash QR with default Activity</string>
+    <string name="btn_launch_own_qr">Flash QR with your Activity</string>
+    <string name="btn_information">i</string>
+    <string name="btn_activate_nfc">Activate NFC</string>
+
+    <string name="txt_nfc">Or touch a NFC tag</string>
+
+    <string name="error_nfc_disable">NFC is disabled</string>
+    <string name="error_nfc_not_supported">Your phone does not support NFC</string>
+
+    <string name="dialog_loading_title">In progress</string>
+    <string name="dialog_loading_content">Downloading content from adtag.</string>
+
+    <string name="toast_error">The application can\'t connect to backend. Check your connectivity.</string>
+    <string name="toast_success">Your content is: %s</string>
+    <string name="toast_no_content">There is no content associate to this point</string>
+    <string name="toast_error_nfc">The tag can\'t be read. Please try again.</string>
+    <string name="toast_error_nfc_format_not_supported">The tag format is not supported.</string>
+    <string name="toast_error_permission_camera">To flash QR CODE the application needs to access to the camera.\nTry again to flash a QR CODE and accept the permission.</string>
+    <string name="txt_version">Version : %s\nDevelopped by Connecthings</string>
+    <string name="txt_content_empty">Content is empty</string>
+    <string name="txt_content_no">No content associate to this point</string>
+</resources>

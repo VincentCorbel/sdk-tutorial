@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="android.connecthings.app.qrNfcSdkDemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+
+    <uses-sdk	android:minSdkVersion="14" android:targetSdkVersion="23" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:name=".ApplicationSdkDemo" >
+
+        <activity
+            android:name=".ActivityWelcome"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+       <activity
+            android:name=".ActivityQrNfcFgOnly"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+     		>
+        </activity>
+
+        <activity
+            android:name=".ActivityQrNfcFgBg"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            >
+            <!-- permits to take control over url detected on NFC tags in foreground or background-->
+            <!-- WARNING be sure that Connecthings has authorized your application to take control of the NFC Tag before using this configuration-->
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="t.adtag.fr" />
+                <data android:pathPattern=".*" />
+            </intent-filter>
+            <!-- permits to take control over url open into browser or external qrCode application -->
+            <!-- WARNING be sure that Connecthings has authorized your application to take control of the NFC Tag before using this configuration-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="t.adtag.fr" />
+                <data android:pathPattern=".*" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ActivityInformation"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            >
+        </activity>
+
+        <activity
+            android:name="android.connecthings.app.qrNfcSdkDemo.ActivityContent"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            >
+        </activity>
+
+        <activity
+            android:name="android.connecthings.app.qrNfcSdkDemo.ActivityQrCodeScanner"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            >
+        </activity>
+
+    </application>
+
+</manifest>

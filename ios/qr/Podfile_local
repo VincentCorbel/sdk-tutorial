@@ -1,0 +1,7 @@
+platform:ios, '7.0'
+pod 'ATConnectionHttp', :path => '../../ios-libs/ATConnectionHttp'
+pod 'ATAnalytics', :path => '../../ios-libs/ATAnalytics'
+pod 'ATQR', :path => '../../ios-libs/ATQR'
+pod 'ATSdkAdtagContent', :path => '../../ios-libs/ATSdkAdtagContent'
+
+xcodeproj 'QrScannerDemo.xcodeproj'

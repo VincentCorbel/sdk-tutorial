@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:background="@drawable/bg">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:id="@+id/main_view"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_activity_title"
+                android:text="@string/btn_start_activity_fg_only"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:padding="8dip"
+                android:layout_marginBottom="12dip"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_activity_description"
+                android:text="@string/tv_activity_fg_explanation"
+                android:textColor="@color/white"
+                android:padding="8dip"
+                android:layout_marginBottom="12dip"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_launch_test"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:id="@+id/btn_launch_test"
+            android:background="@drawable/btn_bg"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_launch_default_qr"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:id="@+id/btn_launch_default_qr"
+            android:background="@drawable/btn_bg"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_launch_own_qr"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:id="@+id/btn_launch_own_qr"
+            android:background="@drawable/btn_bg"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_nfc"
+            android:text="@string/txt_nfc"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"
+      />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_activate_nfc"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:id="@+id/btn_activate_nfc"
+            android:background="@drawable/btn_bg"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ico_info"
+            android:id="@+id/btn_information"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
