@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QuickStart</string>
+    <string name="btn_more">Click to get more information</string>
+    <string name="tv_waiting_beacon_detection">Waiting for the beacon detection process</string>
+    <string name="tv_waiting_no_beacon">No nearby beacons</string>
+    <string name="tv_waiting_no_beacon_action">No nearby beacons ready for action</string>
+    <string name="tv_beacon_next_step">You can complete this page with all the informations contain in the AdtagPlatform and associate with your beacons.\n\nCongratulations! Next step is to learn how to generate the analytics log.</string>
+</resources>

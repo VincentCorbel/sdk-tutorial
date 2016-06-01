@@ -21,19 +21,18 @@ import android.text.TextUtils;
 public class ApplicationNotification extends Application implements BeaconNotification{
 
     private static final String TAG = "ApplicationNotification";
-    private static final String UUID = "****_YourUUID_***";
     private static final int NOTIFICATION_BEACON_ID = 1;
     private NotificationManager mNotificationManager;
 
     public void onCreate(){
         super.onCreate();
-        AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.DEMO)
-                .initUser("**_YourLogin_**", "**_YourPASSWORD_**").initCompany("**_YourCompany_**");
+        AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.PROD)
+                .initUser("User_cbeacon", "fSKbCEvCDCbYTDlk").initCompany("ccbeacondemo");
         //Initiate the adtagLogManager that manages the way log are sent to the platform
-                        AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);
+        AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);
         //If youe need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
         //Initiate the beaconManager with the UUID of your beacons company. our beaconManager manage only one beacon Region based on the uuid
-        AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, UUID);
+        AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, "B0462602-CBF5-4ABB-87DE-B05340DCCBC5");
         //Authorize the SDK to use the bluetooth
         beaconManager.saveBleAccessAuthorize(true);
         beaconManager.updateBeaconNotification(this);
@@ -50,8 +49,7 @@ public class ApplicationNotification extends Application implements BeaconNotifi
         }
         Intent notifyIntent = new Intent(Intent.ACTION_MAIN);
         notifyIntent.setClass(getApplicationContext(), MainActivity.class);
-        //If never you would like to transmit the beacon associate to the notification to your activity
-        notifyIntent.putExtra(MainActivity.BEACON_CONTENT, beaconContent);
+        notifyIntent.putExtra(MainActivity.FROM_NOTIFICATION, true);
 
         PendingIntent intent = PendingIntent.getActivity(this, 0,
                 notifyIntent,  PendingIntent.FLAG_UPDATE_CURRENT);

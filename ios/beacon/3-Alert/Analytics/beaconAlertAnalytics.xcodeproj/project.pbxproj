@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DB301D255BD9E5422DEA85D /* Pods_beaconAlertAnalyticsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAAB6BF7768828120D8B6C7 /* Pods_beaconAlertAnalyticsUITests.framework */; };
+		14358D461CAA7B9500C302DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D451CAA7B9500C302DE /* main.m */; };
+		14358D491CAA7B9500C302DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D481CAA7B9500C302DE /* AppDelegate.m */; };
+		14358D4C1CAA7B9500C302DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D4B1CAA7B9500C302DE /* ViewController.m */; };
+		14358D4F1CAA7B9500C302DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14358D4D1CAA7B9500C302DE /* Main.storyboard */; };
+		14358D511CAA7B9500C302DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14358D501CAA7B9500C302DE /* Assets.xcassets */; };
+		14358D541CAA7B9500C302DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14358D521CAA7B9500C302DE /* LaunchScreen.storyboard */; };
+		14358D5F1CAA7B9500C302DE /* beaconAlertCompleteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D5E1CAA7B9500C302DE /* beaconAlertCompleteTests.m */; };
+		14358D6A1CAA7B9500C302DE /* beaconAlertCompleteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D691CAA7B9500C302DE /* beaconAlertCompleteUITests.m */; };
+		14358D781CAA7C0900C302DE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358D771CAA7C0900C302DE /* libsqlite3.0.tbd */; };
+		1497E6DE1CB7D93100DEB68F /* AlertViewControllerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497E6DD1CB7D93100DEB68F /* AlertViewControllerAction.m */; };
+		90483306CA67D1FE1AC98DAE /* Pods_beaconAlertAnalyticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850F667241CEF6A1F6EF08B7 /* Pods_beaconAlertAnalyticsTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14358D5B1CAA7B9500C302DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14358D391CAA7B9500C302DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14358D401CAA7B9500C302DE;
+			remoteInfo = beaconAlertComplete;
+		};
+		14358D661CAA7B9500C302DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14358D391CAA7B9500C302DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14358D401CAA7B9500C302DE;
+			remoteInfo = beaconAlertComplete;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DFB3715932CEFD4744B26E7 /* Pods_beaconAlertAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14358D411CAA7B9500C302DE /* beaconAlertAnalytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beaconAlertAnalytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14358D451CAA7B9500C302DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14358D471CAA7B9500C302DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14358D481CAA7B9500C302DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14358D4A1CAA7B9500C302DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		14358D4B1CAA7B9500C302DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		14358D4E1CAA7B9500C302DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14358D501CAA7B9500C302DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14358D531CAA7B9500C302DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14358D551CAA7B9500C302DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14358D5A1CAA7B9500C302DE /* beaconAlertAnalytics.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = beaconAlertAnalytics.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14358D5E1CAA7B9500C302DE /* beaconAlertCompleteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beaconAlertCompleteTests.m; sourceTree = "<group>"; };
+		14358D601CAA7B9500C302DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14358D651CAA7B9500C302DE /* beaconAlertAnalytics.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = beaconAlertAnalytics.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14358D691CAA7B9500C302DE /* beaconAlertCompleteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beaconAlertCompleteUITests.m; sourceTree = "<group>"; };
+		14358D6B1CAA7B9500C302DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14358D771CAA7C0900C302DE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		1497E6DC1CB7D93100DEB68F /* AlertViewControllerAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewControllerAction.h; sourceTree = "<group>"; };
+		1497E6DD1CB7D93100DEB68F /* AlertViewControllerAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewControllerAction.m; sourceTree = "<group>"; };
+		1AFB43DC4CE9BB73503D902D /* Pods-beaconAlertAnalytics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertAnalytics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertAnalytics/Pods-beaconAlertAnalytics.debug.xcconfig"; sourceTree = "<group>"; };
+		2CAAB6BF7768828120D8B6C7 /* Pods_beaconAlertAnalyticsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertAnalyticsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F22A199DFAAEE585A4D080B /* Pods-beaconAlertAnalyticsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertAnalyticsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertAnalyticsUITests/Pods-beaconAlertAnalyticsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		368285D749766F27BE56BCCD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		676FAF697C53E3E8F1F5ED40 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		850F667241CEF6A1F6EF08B7 /* Pods_beaconAlertAnalyticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertAnalyticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD881F60C94B3D8EAE82AF57 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B8872797494F2ED8BE00BB20 /* Pods-beaconAlertAnalyticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertAnalyticsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertAnalyticsTests/Pods-beaconAlertAnalyticsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DAC8978A7B9C385285002FDC /* Pods-beaconAlertAnalyticsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertAnalyticsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertAnalyticsTests/Pods-beaconAlertAnalyticsTests.release.xcconfig"; sourceTree = "<group>"; };
+		DFED68C8D7A0A471F00CC08E /* Pods-beaconAlertAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertAnalytics.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertAnalytics/Pods-beaconAlertAnalytics.release.xcconfig"; sourceTree = "<group>"; };
+		FBBBF262C69A504DD366BE0E /* Pods-beaconAlertAnalyticsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertAnalyticsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertAnalyticsUITests/Pods-beaconAlertAnalyticsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14358D3E1CAA7B9500C302DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14358D781CAA7C0900C302DE /* libsqlite3.0.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14358D571CAA7B9500C302DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90483306CA67D1FE1AC98DAE /* Pods_beaconAlertAnalyticsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14358D621CAA7B9500C302DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DB301D255BD9E5422DEA85D /* Pods_beaconAlertAnalyticsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14358D381CAA7B9500C302DE = {
+			isa = PBXGroup;
+			children = (
+				14358D431CAA7B9500C302DE /* beaconAlertAnalytics */,
+				14358D5D1CAA7B9500C302DE /* beaconAlertAnalyticsTests */,
+				14358D681CAA7B9500C302DE /* beaconAlertAnalyticsUITests */,
+				14358D421CAA7B9500C302DE /* Products */,
+				92E1DA9C96ACA4906553F5A2 /* Pods */,
+				AF5376BF2DAC6809A3CDA30C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		14358D421CAA7B9500C302DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14358D411CAA7B9500C302DE /* beaconAlertAnalytics.app */,
+				14358D5A1CAA7B9500C302DE /* beaconAlertAnalytics.xctest */,
+				14358D651CAA7B9500C302DE /* beaconAlertAnalytics.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14358D431CAA7B9500C302DE /* beaconAlertAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				1497E6DC1CB7D93100DEB68F /* AlertViewControllerAction.h */,
+				1497E6DD1CB7D93100DEB68F /* AlertViewControllerAction.m */,
+				14358D471CAA7B9500C302DE /* AppDelegate.h */,
+				14358D481CAA7B9500C302DE /* AppDelegate.m */,
+				14358D4A1CAA7B9500C302DE /* ViewController.h */,
+				14358D4B1CAA7B9500C302DE /* ViewController.m */,
+				14358D4D1CAA7B9500C302DE /* Main.storyboard */,
+				14358D501CAA7B9500C302DE /* Assets.xcassets */,
+				14358D521CAA7B9500C302DE /* LaunchScreen.storyboard */,
+				14358D551CAA7B9500C302DE /* Info.plist */,
+				14358D441CAA7B9500C302DE /* Supporting Files */,
+			);
+			path = beaconAlertAnalytics;
+			sourceTree = "<group>";
+		};
+		14358D441CAA7B9500C302DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14358D451CAA7B9500C302DE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14358D5D1CAA7B9500C302DE /* beaconAlertAnalyticsTests */ = {
+			isa = PBXGroup;
+			children = (
+				14358D5E1CAA7B9500C302DE /* beaconAlertCompleteTests.m */,
+				14358D601CAA7B9500C302DE /* Info.plist */,
+			);
+			path = beaconAlertAnalyticsTests;
+			sourceTree = "<group>";
+		};
+		14358D681CAA7B9500C302DE /* beaconAlertAnalyticsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				14358D691CAA7B9500C302DE /* beaconAlertCompleteUITests.m */,
+				14358D6B1CAA7B9500C302DE /* Info.plist */,
+			);
+			path = beaconAlertAnalyticsUITests;
+			sourceTree = "<group>";
+		};
+		92E1DA9C96ACA4906553F5A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD881F60C94B3D8EAE82AF57 /* Pods.debug.xcconfig */,
+				368285D749766F27BE56BCCD /* Pods.release.xcconfig */,
+				1AFB43DC4CE9BB73503D902D /* Pods-beaconAlertAnalytics.debug.xcconfig */,
+				DFED68C8D7A0A471F00CC08E /* Pods-beaconAlertAnalytics.release.xcconfig */,
+				B8872797494F2ED8BE00BB20 /* Pods-beaconAlertAnalyticsTests.debug.xcconfig */,
+				DAC8978A7B9C385285002FDC /* Pods-beaconAlertAnalyticsTests.release.xcconfig */,
+				FBBBF262C69A504DD366BE0E /* Pods-beaconAlertAnalyticsUITests.debug.xcconfig */,
+				2F22A199DFAAEE585A4D080B /* Pods-beaconAlertAnalyticsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF5376BF2DAC6809A3CDA30C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14358D771CAA7C0900C302DE /* libsqlite3.0.tbd */,
+				676FAF697C53E3E8F1F5ED40 /* libPods.a */,
+				0DFB3715932CEFD4744B26E7 /* Pods_beaconAlertAnalytics.framework */,
+				850F667241CEF6A1F6EF08B7 /* Pods_beaconAlertAnalyticsTests.framework */,
+				2CAAB6BF7768828120D8B6C7 /* Pods_beaconAlertAnalyticsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14358D401CAA7B9500C302DE /* beaconAlertAnalytics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14358D6E1CAA7B9500C302DE /* Build configuration list for PBXNativeTarget "beaconAlertAnalytics" */;
+			buildPhases = (
+				14358D3D1CAA7B9500C302DE /* Sources */,
+				14358D3E1CAA7B9500C302DE /* Frameworks */,
+				14358D3F1CAA7B9500C302DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = beaconAlertAnalytics;
+			productName = beaconAlertComplete;
+			productReference = 14358D411CAA7B9500C302DE /* beaconAlertAnalytics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14358D591CAA7B9500C302DE /* beaconAlertAnalyticsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14358D711CAA7B9500C302DE /* Build configuration list for PBXNativeTarget "beaconAlertAnalyticsTests" */;
+			buildPhases = (
+				14358D561CAA7B9500C302DE /* Sources */,
+				14358D571CAA7B9500C302DE /* Frameworks */,
+				14358D581CAA7B9500C302DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14358D5C1CAA7B9500C302DE /* PBXTargetDependency */,
+			);
+			name = beaconAlertAnalyticsTests;
+			productName = beaconAlertCompleteTests;
+			productReference = 14358D5A1CAA7B9500C302DE /* beaconAlertAnalytics.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14358D641CAA7B9500C302DE /* beaconAlertAnalyticsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14358D741CAA7B9500C302DE /* Build configuration list for PBXNativeTarget "beaconAlertAnalyticsUITests" */;
+			buildPhases = (
+				14358D611CAA7B9500C302DE /* Sources */,
+				14358D621CAA7B9500C302DE /* Frameworks */,
+				14358D631CAA7B9500C302DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14358D671CAA7B9500C302DE /* PBXTargetDependency */,
+			);
+			name = beaconAlertAnalyticsUITests;
+			productName = beaconAlertCompleteUITests;
+			productReference = 14358D651CAA7B9500C302DE /* beaconAlertAnalytics.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14358D391CAA7B9500C302DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "sarra srairi";
+				TargetAttributes = {
+					14358D401CAA7B9500C302DE = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					14358D591CAA7B9500C302DE = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 14358D401CAA7B9500C302DE;
+					};
+					14358D641CAA7B9500C302DE = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 14358D401CAA7B9500C302DE;
+					};
+				};
+			};
+			buildConfigurationList = 14358D3C1CAA7B9500C302DE /* Build configuration list for PBXProject "beaconAlertAnalytics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14358D381CAA7B9500C302DE;
+			productRefGroup = 14358D421CAA7B9500C302DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14358D401CAA7B9500C302DE /* beaconAlertAnalytics */,
+				14358D591CAA7B9500C302DE /* beaconAlertAnalyticsTests */,
+				14358D641CAA7B9500C302DE /* beaconAlertAnalyticsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14358D3F1CAA7B9500C302DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14358D541CAA7B9500C302DE /* LaunchScreen.storyboard in Resources */,
+				14358D511CAA7B9500C302DE /* Assets.xcassets in Resources */,
+				14358D4F1CAA7B9500C302DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14358D581CAA7B9500C302DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14358D631CAA7B9500C302DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14358D3D1CAA7B9500C302DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14358D4C1CAA7B9500C302DE /* ViewController.m in Sources */,
+				14358D491CAA7B9500C302DE /* AppDelegate.m in Sources */,
+				14358D461CAA7B9500C302DE /* main.m in Sources */,
+				1497E6DE1CB7D93100DEB68F /* AlertViewControllerAction.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14358D561CAA7B9500C302DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14358D5F1CAA7B9500C302DE /* beaconAlertCompleteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14358D611CAA7B9500C302DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14358D6A1CAA7B9500C302DE /* beaconAlertCompleteUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14358D5C1CAA7B9500C302DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14358D401CAA7B9500C302DE /* beaconAlertAnalytics */;
+			targetProxy = 14358D5B1CAA7B9500C302DE /* PBXContainerItemProxy */;
+		};
+		14358D671CAA7B9500C302DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14358D401CAA7B9500C302DE /* beaconAlertAnalytics */;
+			targetProxy = 14358D661CAA7B9500C302DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14358D4D1CAA7B9500C302DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14358D4E1CAA7B9500C302DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14358D521CAA7B9500C302DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14358D531CAA7B9500C302DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14358D6C1CAA7B9500C302DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14358D6D1CAA7B9500C302DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14358D6F1CAA7B9500C302DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AFB43DC4CE9BB73503D902D /* Pods-beaconAlertAnalytics.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/beaconAlertAnalytics/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertComplete;
+				PRODUCT_NAME = beaconAlertAnalytics;
+			};
+			name = Debug;
+		};
+		14358D701CAA7B9500C302DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFED68C8D7A0A471F00CC08E /* Pods-beaconAlertAnalytics.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/beaconAlertAnalytics/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertComplete;
+				PRODUCT_NAME = beaconAlertAnalytics;
+			};
+			name = Release;
+		};
+		14358D721CAA7B9500C302DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8872797494F2ED8BE00BB20 /* Pods-beaconAlertAnalyticsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = beaconAlertCompleteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertCompleteTests;
+				PRODUCT_NAME = beaconAlertAnalytics;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beaconAlertAnalytics.app/beaconAlertAnalytics";
+			};
+			name = Debug;
+		};
+		14358D731CAA7B9500C302DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAC8978A7B9C385285002FDC /* Pods-beaconAlertAnalyticsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = beaconAlertCompleteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertCompleteTests;
+				PRODUCT_NAME = beaconAlertAnalytics;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beaconAlertAnalytics.app/beaconAlertAnalytics";
+			};
+			name = Release;
+		};
+		14358D751CAA7B9500C302DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBBBF262C69A504DD366BE0E /* Pods-beaconAlertAnalyticsUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = beaconAlertCompleteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertCompleteUITests;
+				PRODUCT_NAME = beaconAlertAnalytics;
+				TEST_TARGET_NAME = beaconAlertComplete;
+			};
+			name = Debug;
+		};
+		14358D761CAA7B9500C302DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F22A199DFAAEE585A4D080B /* Pods-beaconAlertAnalyticsUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = beaconAlertCompleteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertCompleteUITests;
+				PRODUCT_NAME = beaconAlertAnalytics;
+				TEST_TARGET_NAME = beaconAlertComplete;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14358D3C1CAA7B9500C302DE /* Build configuration list for PBXProject "beaconAlertAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14358D6C1CAA7B9500C302DE /* Debug */,
+				14358D6D1CAA7B9500C302DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14358D6E1CAA7B9500C302DE /* Build configuration list for PBXNativeTarget "beaconAlertAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14358D6F1CAA7B9500C302DE /* Debug */,
+				14358D701CAA7B9500C302DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14358D711CAA7B9500C302DE /* Build configuration list for PBXNativeTarget "beaconAlertAnalyticsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14358D721CAA7B9500C302DE /* Debug */,
+				14358D731CAA7B9500C302DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14358D741CAA7B9500C302DE /* Build configuration list for PBXNativeTarget "beaconAlertAnalyticsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14358D751CAA7B9500C302DE /* Debug */,
+				14358D761CAA7B9500C302DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14358D391CAA7B9500C302DE /* Project object */;
+}

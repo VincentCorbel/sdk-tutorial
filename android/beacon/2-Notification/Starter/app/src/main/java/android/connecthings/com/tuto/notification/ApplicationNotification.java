@@ -18,25 +18,24 @@ import android.text.TextUtils;
 
 /**
  */
-public class ApplicationNotification extends Application{
+public class ApplicationNotification extends Application implements BeaconNotification {
 
     private static final String TAG = "ApplicationNotification";
-    private static final String UUID = "YourBeaconUUID";
-    private static final int NOTIFICATION_BEACON_ID = 1;
+
     private NotificationManager mNotificationManager;
 
     public void onCreate(){
         super.onCreate();
-        AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.ITG/DEMO/PRE_PROD/PROD)
-                .initUser("yourLogin", "yourPassword").initCompany("yourCompany");
+       AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.**PLATFORM**)
+                .initUser("**USER**", "**PSW**").initCompany("**COMPANY**");
         //Initiate the adtagLogManager that manages the way log are sent to the platform
         AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);
         //If youe need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
         //Initiate the beaconManager with the UUID of your beacons company. our beaconManager manage only one beacon Region based on the uuid
-        AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, UUID);
+        AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, "**UUID**");
         //Authorize the SDK to use the bluetooth
         beaconManager.saveBleAccessAuthorize(true);
-
+        beaconManager.updateBeaconNotification(this);
     }
 
 

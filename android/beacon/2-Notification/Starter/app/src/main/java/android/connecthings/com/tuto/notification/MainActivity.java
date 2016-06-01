@@ -12,6 +12,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     public static String BEACON_CONTENT = "com.connecthings.beaconContent";
+    public static String FROM_NOTIFICATION = "com.connecthings.fromNotification";
 
     private BeaconContent beaconContent = null;
 
@@ -19,11 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(getIntent().getExtras() != null){
-            beaconContent = getIntent().getExtras().getParcelable(BEACON_CONTENT);
-            if(beaconContent != null) {
-                ((TextView) findViewById(R.id.beacon_content)).setText(getString(R.string.beacon_content, beaconContent.getNotificationTitle()));
-            }
+        if(getIntent().getExtras() != null && getIntent().getExtras().getBoolean(FROM_NOTIFICATION, false)){
+            ((TextView) findViewById(R.id.beacon_content)).setText(getString(R.string.beacon_content));
         }
     }
 

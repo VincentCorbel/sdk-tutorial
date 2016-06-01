@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Notification</string>
     <string name="beacon_content_empty">Put the application in background, and activate your beacon.\n\nIf your beacon is emitting, stop your beacon, and wait 30 seconds before activating it again.</string>
-    <string name="beacon_content">Notification title: %s,\n\nCongratulations! You've just generated your first beacon notification!\nNext step is to learn now how to update a content in the Adtag platform!</string>
+    <string name="beacon_content">Congratulations! You\'ve just generated your first beacon notification! Next step is to learn how to generate annalytic log.</string>
 </resources>

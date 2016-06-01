@@ -9,21 +9,27 @@ import android.connecthings.util.adtag.beacon.parser.AppleBeacon;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.altbeacon.beacon.Region;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements BeaconRange{
 
     private TextView tvBeaconNumber;
+    private List<BeaconContent> previousBeaconContents;
+    private BeaconArrayAdapter beaconArrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tvBeaconNumber = (TextView) findViewById(R.id.tv_beacon_number);
+        beaconArrayAdapter = new BeaconArrayAdapter(this);
+        ((ListView) findViewById(R.id.list_beacons)).setAdapter(beaconArrayAdapter);
     }
 
     protected void onResume(){
@@ -44,5 +50,10 @@ public class MainActivity extends AppCompatActivity implements BeaconRange{
         if(beaconContents.size() > 0 && beaconContents.size() == beacons.size()){
             findViewById(R.id.tv_beacon_next_step).setVisibility(View.VISIBLE);
         }
+        //update the beaconList when beaconContents update
+        if(previousBeaconContents == null || previousBeaconContents.size() != beaconContents.size() || !beaconContents.containsAll(previousBeaconContents)){
+            beaconArrayAdapter.setList(beaconContents);
+        }
+        previousBeaconContents = beaconContents;
     }
 }

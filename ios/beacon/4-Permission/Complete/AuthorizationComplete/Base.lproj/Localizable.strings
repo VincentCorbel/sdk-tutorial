@@ -1,0 +1,4 @@
+"adtag.warning.ble.status.text" ="Please activate bluetooth";
+"adtag.notsupported.ble.status.text" ="The bluetooth is not supported on your phone";
+"adtag.warning.Location.status.text" ="Please authorize the application to access to your location";
+"adtag.ready" ="It's ready for beacon detection";
