@@ -27,14 +27,12 @@ public class ApplicationNotification extends Application implements BeaconNotifi
     public void onCreate(){
         super.onCreate();
         AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.PROD)
-                .initUser("*****", "*****").initCompany("*****");
+                .initUser("_LOGIN_", "_PASSWORD_").initCompany("_COMPANY_");
         //Initiate the adtagLogManager that manages the way log are sent to the platform
         AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);
         //If youe need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
         //Initiate the beaconManager with the UUID of your beacons company. our beaconManager manage only one beacon Region based on the uuid
-        AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, "*****");
-        //Authorize the SDK to use the bluetooth
-        beaconManager.saveBleAccessAuthorize(true);
+        AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, "_UUID_");
         beaconManager.updateBeaconNotification(this);
     }
 

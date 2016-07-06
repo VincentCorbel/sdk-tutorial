@@ -7,18 +7,25 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="android.connecthings.com.tuto.notification.MainActivity">
-
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        class="android.connecthings.com.tuto.notification.LocationPermisionFragment"></fragment>
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/beacon_content_empty"
-        android:id="@+id/beacon_content"/>
-</LinearLayout>
+        android:id="@+id/tv_location_permission"
+        android:visibility="gone"
+        android:gravity="center"
+        android:text="@string/tv_error_location_permission_definitive" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_location"
+        android:layout_margin="22dip"
+        android:visibility="gone"
+        android:gravity="center"
+        android:text="@string/btn_location_permission"/>
+
+
+
+</LinearLayout>
