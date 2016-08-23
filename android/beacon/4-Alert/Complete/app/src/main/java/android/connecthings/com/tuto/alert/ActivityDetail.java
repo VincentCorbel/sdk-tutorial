@@ -1,6 +1,7 @@
 package android.connecthings.com.tuto.alert;
 
 import android.connecthings.adtag.model.sdk.BeaconContent;
+import android.connecthings.util.adtag.beacon.AdtagBeaconManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -22,8 +23,8 @@ public class ActivityDetail extends AppCompatActivity {
     }
 
     private void initView(){
-        ((TextView) findViewById(R.id.tv_beacon_title)).setText(currentBeaconContent.getAlertTitle());
-        ((TextView) findViewById(R.id.tv_beacon_description)).setText(currentBeaconContent.getAlertDescription());
+        ((TextView) findViewById(R.id.tv_beacon_title)).setText(currentBeaconContent.getAlertTitle()+"");
+        ((TextView) findViewById(R.id.tv_beacon_description)).setText(currentBeaconContent.getAlertDescription()+"");
         //You could find all the others field from the beacon using
         //currentBeaconContent.getValue("Category","Field");
     }

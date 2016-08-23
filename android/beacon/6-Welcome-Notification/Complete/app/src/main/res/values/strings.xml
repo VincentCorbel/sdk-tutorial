@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Notification</string>
+    <string name="beacon_content_empty">Put the application in background, and activate your beacon.\n\nIf your beacon is emitting, stop your beacon, and wait 30 seconds before activating it again.</string>
+    <string name="beacon_notification">You open this page from a classic beacon notification.</string>
+    <string name="beacon_notification_default">Congratulations! You create your first default notification!</string>
+    <string name="beacon_welcome_on_title">A great default notification</string>
+    <string name="beacon_welcome_on_description">Welcome to the Connecthings\' SDK.</string>
+    <string name="beacon_welcome_off_title">No network</string>
+    <string name="beacon_welcome_off_description">Is there any free WIFI around you to connect?</string>
+</resources>

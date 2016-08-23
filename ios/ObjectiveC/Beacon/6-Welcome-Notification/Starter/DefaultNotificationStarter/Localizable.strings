@@ -1,0 +1,5 @@
+"beacon_content_empty" = "Put the application in background, and activate your beacon. If your beacon is emitting, stop your beacon, and wait 30 seconds before activating it again." ;
+
+"beacon_content" = "Notification title: %@! That's a classical notification. Have you seen a Welcome Notification before?" ;
+
+"beacon_welcome_notification" = "Congratulations! You generate your first beacon welcome notification" ;

@@ -22,8 +22,8 @@ public class ActivityDetail extends AppCompatActivity {
     }
 
     private void initView(){
-        ((TextView) findViewById(R.id.tv_beacon_title)).setText(currentBeaconContent.getAlertTitle());
-        ((TextView) findViewById(R.id.tv_beacon_description)).setText(currentBeaconContent.getAlertDescription());
+        ((TextView) findViewById(R.id.tv_beacon_title)).setText(currentBeaconContent.getAlertTitle()+"");
+        ((TextView) findViewById(R.id.tv_beacon_description)).setText(currentBeaconContent.getAlertDescription()+"");
         //You could find all the others field from the beacon using
         //currentBeaconContent.getValue("Category","Field");
     }

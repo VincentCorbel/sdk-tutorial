@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.altbeacon.beacon.Region;
+import com.connecthings.altbeacon.beacon.Region;
 
 import java.util.ArrayList;
 import java.util.List;

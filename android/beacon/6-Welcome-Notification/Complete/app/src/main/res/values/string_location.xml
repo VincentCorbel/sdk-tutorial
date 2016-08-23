@@ -1,0 +1,5 @@
+<resources>
+    <string name="tv_error_location_permission">The application needs to access to your location to detect the beacons.</string>
+    <string name="tv_error_location_permission_definitive">The application needs to access to your location to detect the beacons.\nPlease give the authorization from the application settings.</string>
+    <string name="btn_location_permission">Ok, I give the application the location permisison.</string>
+</resources>

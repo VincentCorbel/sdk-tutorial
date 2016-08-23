@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.altbeacon.beacon.Region;
+import com.connecthings.altbeacon.beacon.Region;
 
 import java.util.List;
 

@@ -10,6 +10,12 @@
     android:orientation="vertical"
     tools:context="android.connecthings.com.tuto.quickstart.MainActivity">
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="locationFragment"
+        class="android.connecthings.com.tuto.quickstart.LocationPermisionFragment"></fragment>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
