@@ -25,6 +25,7 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
     private BeaconContent currentBeaconContent;
 
     private AdtagBeaconManager adtagBeaconManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,11 +33,7 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
         tvBeaconAlert = (TextView) findViewById(R.id.tv_beacon_alert);
         btnMore = (Button) findViewById(R.id.btn_more);
         btnMore.setOnClickListener(this);
-
         adtagBeaconManager = AdtagBeaconManager.getInstance();
-        adtagBeaconManager.registerBeaconAlertListener(this);
-
-
     }
 
     protected void onResume(){

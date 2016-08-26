@@ -4,7 +4,6 @@ import android.connecthings.adtag.adtagEnum.FEED_STATUS;
 import android.connecthings.adtag.model.sdk.BeaconAlertStrategyParameter;
 import android.connecthings.adtag.model.sdk.BeaconContent;
 
-import android.connecthings.com.tuto.alert.firstWay.TimeAlertStrategy;
 import android.connecthings.util.BLE_STATUS;
 import android.connecthings.util.adtag.beacon.AdtagBeaconManager;
 
