@@ -198,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14D224571CA18A4D004C579C /* Build configuration list for PBXNativeTarget "QuickComplete" */;
 			buildPhases = (
+				702A40438D98D94ED1C5EC20 /* 📦 Check Pods Manifest.lock */,
 				14D224261CA18A4C004C579C /* Sources */,
 				14D224271CA18A4C004C579C /* Frameworks */,
 				14D224281CA18A4C004C579C /* Resources */,
+				8F99128D0F2E1664A008C598 /* 📦 Embed Pods Frameworks */,
+				84760FC7DE6EA704ECBDC428 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,6 +356,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickCompleteUITests/Pods-QuickCompleteUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		702A40438D98D94ED1C5EC20 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84760FC7DE6EA704ECBDC428 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickComplete/Pods-QuickComplete-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		85A684FDA8D623EC0EDD85A4 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,6 +414,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickCompleteTests/Pods-QuickCompleteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F99128D0F2E1664A008C598 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickComplete/Pods-QuickComplete-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F221C30E9ACBC50A2FCF8647 /* 📦 Check Pods Manifest.lock */ = {

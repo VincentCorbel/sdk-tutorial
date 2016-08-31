@@ -25,12 +25,15 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
         // init the adtag platforme with the
         // ** user Login : Login delivred by the Connecthings staff
         // ** user Password : Password delivred by the Connecthings staff
-        // ** user Compagny : ....
+        // ** user Compagny :
         // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
         
-        initAdtagInstanceWithUrlType(ATUrlTypeItg ,userLogin: "*****" ,userPassword: "*****" ,userCompany: "*****" ,beaconUuid: "*****");
+        initAdtagInstanceWithUrlType(ATUrlTypeProd ,userLogin: "User_cbeacon" ,userPassword: "fSKbCEvCDCbYTDlk" ,userCompany: "demoasr" ,beaconUuid: "B0462602-CBF5-4ABB-87DE-B05340DCCBC4");
+    
         
+        let alertTimeFilter  = AlertTimerStrategySecondWay(maxTime: 60000, DelayAfterDetectingBeaconToCreateAlert: 60000)
         
+        self.addAlertStrategy(alertTimeFilter)  
         return true
     }
     

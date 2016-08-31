@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "AlertViewControllerAction.h"
-#import "FirstWayAlertTimerStrategy.h"
+
 @interface ViewController () {
  
     ATBeaconContent *currentAlertBeaconContent;
@@ -26,11 +26,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    //register the protocol for did range beacon
-    FirstWayAlertTimerStrategy *alertTimeFilter = [[FirstWayAlertTimerStrategy alloc]initWithMaxTime:60*1 DelayAfterDetectingBeaconToCreateAlert:30000];
-    [[ATBeaconManager sharedInstance] addAlertStrategy:alertTimeFilter];
     [[ATBeaconManager sharedInstance] registerBeaconAlertDelgate:self];
- 
 }
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];

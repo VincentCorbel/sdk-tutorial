@@ -9,13 +9,13 @@
 #import <ATConnectionHttp/ATConnectionHttp.h>
 #import <Foundation/Foundation.h>
 
-@interface SecondWayAlertTimerStrategy : ATBeaconAlertStrategy {
-    double timeToCreateAlert;
+@interface AlertTimerStrategySecondWay : ATBeaconAlertStrategy {
+    double delayBeforeCreatingAlert;
 }
-@property double timeToCreateAlert;;
+@property double delayBeforeCreatingAlert;
 
 // time in milliseconde
 - (id)initWithMaxTime:(int)_maxTimeBeforeReset
-DelayAfterDetectingBeaconToCreateAlert:(int)_timeToCreateAlert ;
+delayBeforeCreatingAlert:(int)_delayBeforeCreatingAlert ;
 
 @end

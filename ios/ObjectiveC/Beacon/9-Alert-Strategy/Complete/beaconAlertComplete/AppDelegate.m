@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AlertTimerStrategyFirstWay.h"
+#import "AlertTimerStrategySecondWay.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +28,14 @@
     // ** user Compagny : ....
     // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
     //
-    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"****" userPassword:@"****" userCompany:@"****" beaconUuid:@"********-****-****-****-************"];
+  [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"User_cbeacon" userPassword:@"fSKbCEvCDCbYTDlk" userCompany:@"demoasr" beaconUuid:@"B0462602-CBF5-4ABB-87DE-B05340DCCBC4"];
+    
+    
+    //register the protocol for did range beacon
+    
+    AlertTimerStrategySecondWay *alertTimeFilter = [[AlertTimerStrategySecondWay alloc]initWithMaxTime:60000 delayBeforeCreatingAlert:60000];
+    
+    [self addAlertStrategy:alertTimeFilter];
     return YES;
 }
 

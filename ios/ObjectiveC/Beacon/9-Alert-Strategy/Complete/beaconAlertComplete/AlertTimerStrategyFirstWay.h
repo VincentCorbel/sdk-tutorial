@@ -9,19 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <ATLocationBeacon/ATLocationBeacon.h>
 #import <ATConnectionHttp/ATConnectionHttp.h>
-@interface FirstWayAlertTimerStrategy : NSObject <ATBeaconAlertStrategyDelegate>{
+@interface AlertTimerStrategyFirstWay : NSObject <ATBeaconAlertStrategyDelegate>{
     
-    int maxTimeBeforeReset;
+    double maxTimeBeforeReset;
     
-    double timeToCreateAlert;
+    double delayBeforeCreatingAlert;
 }
 
-@property int maxTimeBeforeReset;
+@property double maxTimeBeforeReset;
 
-@property double timeToCreateAlert;
+@property double delayBeforeCreatingAlert;
 
 // time in milliseconde 
 - (id)initWithMaxTime:(int)_maxTimeBeforeReset
-DelayAfterDetectingBeaconToCreateAlert:(int)_timeToCreateAlert;
+delayBeforeCreatingAlert:(int)_delayBeforeCreatingAlert;
 
 @end

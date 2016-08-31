@@ -14,6 +14,9 @@
 		14BC5D381D6729BC00021DA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BC5D361D6729BC00021DA2 /* LaunchScreen.storyboard */; };
 		14BC5D431D6729BC00021DA2 /* WelcomeNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC5D421D6729BC00021DA2 /* WelcomeNotificationTests.swift */; };
 		14BC5D4E1D6729BC00021DA2 /* WelcomeNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC5D4D1D6729BC00021DA2 /* WelcomeNotificationUITests.swift */; };
+		821DA891DDB9D639B565865D /* Pods_WelcomeNotificationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CA25D6A28068806A2F18BD /* Pods_WelcomeNotificationUITests.framework */; };
+		8E9B9BC862DD7536E8C260C5 /* Pods_WelcomeNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536C8BCAA311F13DC70BE3B6 /* Pods_WelcomeNotification.framework */; };
+		D70FE37095CE3B735B28F291 /* Pods_WelcomeNotificationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A5C16D9FD87DB7965CEED4 /* Pods_WelcomeNotificationTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02CA25D6A28068806A2F18BD /* Pods_WelcomeNotificationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WelcomeNotificationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09B37BB1BCE8352F4C616145 /* Pods-WelcomeNotificationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotificationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotificationTests/Pods-WelcomeNotificationTests.release.xcconfig"; sourceTree = "<group>"; };
 		14BC5D2A1D6729BC00021DA2 /* WelcomeNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WelcomeNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC5D2D1D6729BC00021DA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14BC5D2F1D6729BC00021DA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +52,12 @@
 		14BC5D491D6729BC00021DA2 /* WelcomeNotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WelcomeNotificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC5D4D1D6729BC00021DA2 /* WelcomeNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNotificationUITests.swift; sourceTree = "<group>"; };
 		14BC5D4F1D6729BC00021DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		536C8BCAA311F13DC70BE3B6 /* Pods_WelcomeNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WelcomeNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A5C16D9FD87DB7965CEED4 /* Pods_WelcomeNotificationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WelcomeNotificationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F7AAF3129EDE5E9B72AA6C /* Pods-WelcomeNotificationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotificationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotificationUITests/Pods-WelcomeNotificationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A318B74402F3B67CA9992EDE /* Pods-WelcomeNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.release.xcconfig"; sourceTree = "<group>"; };
+		AE1277B82B3C47BC2347731E /* Pods-WelcomeNotificationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotificationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotificationUITests/Pods-WelcomeNotificationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4ADD015726A57DEC2D0294B /* Pods-WelcomeNotificationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotificationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotificationTests/Pods-WelcomeNotificationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD8EB48434D8455EF501BACF /* Pods-WelcomeNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9B9BC862DD7536E8C260C5 /* Pods_WelcomeNotification.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70FE37095CE3B735B28F291 /* Pods_WelcomeNotificationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				821DA891DDB9D639B565865D /* Pods_WelcomeNotificationUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +145,9 @@
 		EDC54F7AA3027626E3A7561B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				536C8BCAA311F13DC70BE3B6 /* Pods_WelcomeNotification.framework */,
+				81A5C16D9FD87DB7965CEED4 /* Pods_WelcomeNotificationTests.framework */,
+				02CA25D6A28068806A2F18BD /* Pods_WelcomeNotificationUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,6 +157,10 @@
 			children = (
 				CD8EB48434D8455EF501BACF /* Pods-WelcomeNotification.debug.xcconfig */,
 				A318B74402F3B67CA9992EDE /* Pods-WelcomeNotification.release.xcconfig */,
+				C4ADD015726A57DEC2D0294B /* Pods-WelcomeNotificationTests.debug.xcconfig */,
+				09B37BB1BCE8352F4C616145 /* Pods-WelcomeNotificationTests.release.xcconfig */,
+				AE1277B82B3C47BC2347731E /* Pods-WelcomeNotificationUITests.debug.xcconfig */,
+				83F7AAF3129EDE5E9B72AA6C /* Pods-WelcomeNotificationUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -172,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14BC5D551D6729BC00021DA2 /* Build configuration list for PBXNativeTarget "WelcomeNotificationTests" */;
 			buildPhases = (
+				9A7AE0FEC29D652090956793 /* 📦 Check Pods Manifest.lock */,
 				14BC5D3A1D6729BC00021DA2 /* Sources */,
 				14BC5D3B1D6729BC00021DA2 /* Frameworks */,
 				14BC5D3C1D6729BC00021DA2 /* Resources */,
+				C63D7D3B1A6F7AC35EB97E24 /* 📦 Embed Pods Frameworks */,
+				5DEE70D271BF59EAC4187CE1 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14BC5D581D6729BC00021DA2 /* Build configuration list for PBXNativeTarget "WelcomeNotificationUITests" */;
 			buildPhases = (
+				573EED03C06A50425FD56A86 /* 📦 Check Pods Manifest.lock */,
 				14BC5D451D6729BC00021DA2 /* Sources */,
 				14BC5D461D6729BC00021DA2 /* Frameworks */,
 				14BC5D471D6729BC00021DA2 /* Resources */,
+				0D9B3CC52388D4FA67FD40B3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,6 +300,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D9B3CC52388D4FA67FD40B3 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WelcomeNotificationUITests/Pods-WelcomeNotificationUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		361B899AA414956B8209387A /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -288,6 +328,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		573EED03C06A50425FD56A86 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5DEE70D271BF59EAC4187CE1 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WelcomeNotificationTests/Pods-WelcomeNotificationTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7E2EB9FBF64EA970CE349DB9 /* 📦 Copy Pods Resources */ = {
@@ -305,6 +375,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9A7AE0FEC29D652090956793 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		A03F42E8BFF79E2FE28CC5C0 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +403,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C63D7D3B1A6F7AC35EB97E24 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WelcomeNotificationTests/Pods-WelcomeNotificationTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -494,6 +594,7 @@
 		};
 		14BC5D561D6729BC00021DA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4ADD015726A57DEC2D0294B /* Pods-WelcomeNotificationTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WelcomeNotificationTests/Info.plist;
@@ -506,6 +607,7 @@
 		};
 		14BC5D571D6729BC00021DA2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09B37BB1BCE8352F4C616145 /* Pods-WelcomeNotificationTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WelcomeNotificationTests/Info.plist;
@@ -518,6 +620,7 @@
 		};
 		14BC5D591D6729BC00021DA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE1277B82B3C47BC2347731E /* Pods-WelcomeNotificationUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WelcomeNotificationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -529,6 +632,7 @@
 		};
 		14BC5D5A1D6729BC00021DA2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83F7AAF3129EDE5E9B72AA6C /* Pods-WelcomeNotificationUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WelcomeNotificationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

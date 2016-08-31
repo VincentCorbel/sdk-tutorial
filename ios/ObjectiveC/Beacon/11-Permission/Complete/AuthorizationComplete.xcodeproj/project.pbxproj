@@ -17,6 +17,9 @@
 		14E45A6F1CA1B02500639B81 /* AuthorizationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E45A6E1CA1B02500639B81 /* AuthorizationUITests.m */; };
 		14E45A7D1CA1B21C00639B81 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E45A7C1CA1B21C00639B81 /* libsqlite3.0.tbd */; };
 		14E45A801CA1B30900639B81 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14E45A821CA1B30900639B81 /* Localizable.strings */; };
+		1C9CEA69D206640018687125 /* Pods_AuthorizationCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552A2647B720599CBF38F3AA /* Pods_AuthorizationCompleteUITests.framework */; };
+		618A593BF67C664C44BBF0A8 /* Pods_AuthorizationCompleteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7559407D6262DE077013AC /* Pods_AuthorizationCompleteTests.framework */; };
+		E7DC062AD431441ED91FA847 /* Pods_AuthorizationComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4456A5361747B1181BE05 /* Pods_AuthorizationComplete.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +60,16 @@
 		14E45A701CA1B02500639B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14E45A7C1CA1B21C00639B81 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		14E45A811CA1B30900639B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2326421C6C768212B438A943 /* Pods-AuthorizationCompleteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationCompleteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationCompleteUITests/Pods-AuthorizationCompleteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3CBB9AF175201DA3DEF371F0 /* Pods-AuthorizationCompleteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationCompleteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationCompleteUITests/Pods-AuthorizationCompleteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		552A2647B720599CBF38F3AA /* Pods_AuthorizationCompleteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorizationCompleteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6714241BB0EB75649F6ECEE0 /* Pods-AuthorizationCompleteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationCompleteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationCompleteTests/Pods-AuthorizationCompleteTests.release.xcconfig"; sourceTree = "<group>"; };
+		7BC4456A5361747B1181BE05 /* Pods_AuthorizationComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorizationComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9951CB5F555754AE81A61AD7 /* Pods-AuthorizationComplete.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationComplete.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationComplete/Pods-AuthorizationComplete.debug.xcconfig"; sourceTree = "<group>"; };
 		ABB0AC692B2930FEC38A1A00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF32813CAE07437D9DEC0A79 /* Pods-AuthorizationCompleteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationCompleteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationCompleteTests/Pods-AuthorizationCompleteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D824843CEECF91B4682F6B8A /* Pods-AuthorizationComplete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationComplete.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationComplete/Pods-AuthorizationComplete.release.xcconfig"; sourceTree = "<group>"; };
+		DE7559407D6262DE077013AC /* Pods_AuthorizationCompleteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorizationCompleteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14E45A7D1CA1B21C00639B81 /* libsqlite3.0.tbd in Frameworks */,
+				E7DC062AD431441ED91FA847 /* Pods_AuthorizationComplete.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618A593BF67C664C44BBF0A8 /* Pods_AuthorizationCompleteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9CEA69D206640018687125 /* Pods_AuthorizationCompleteUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +171,9 @@
 			children = (
 				14E45A7C1CA1B21C00639B81 /* libsqlite3.0.tbd */,
 				ABB0AC692B2930FEC38A1A00 /* libPods.a */,
+				7BC4456A5361747B1181BE05 /* Pods_AuthorizationComplete.framework */,
+				DE7559407D6262DE077013AC /* Pods_AuthorizationCompleteTests.framework */,
+				552A2647B720599CBF38F3AA /* Pods_AuthorizationCompleteUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,6 +183,12 @@
 			children = (
 				110ABBBF96B940D964F0685E /* Pods.debug.xcconfig */,
 				064C6464D11766B5FCA7F1DD /* Pods.release.xcconfig */,
+				9951CB5F555754AE81A61AD7 /* Pods-AuthorizationComplete.debug.xcconfig */,
+				D824843CEECF91B4682F6B8A /* Pods-AuthorizationComplete.release.xcconfig */,
+				CF32813CAE07437D9DEC0A79 /* Pods-AuthorizationCompleteTests.debug.xcconfig */,
+				6714241BB0EB75649F6ECEE0 /* Pods-AuthorizationCompleteTests.release.xcconfig */,
+				2326421C6C768212B438A943 /* Pods-AuthorizationCompleteUITests.debug.xcconfig */,
+				3CBB9AF175201DA3DEF371F0 /* Pods-AuthorizationCompleteUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -176,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14E45A731CA1B02500639B81 /* Build configuration list for PBXNativeTarget "AuthorizationComplete" */;
 			buildPhases = (
+				AE0D12A3D5376952106CB289 /* 📦 Check Pods Manifest.lock */,
 				14E45A421CA1B02500639B81 /* Sources */,
 				14E45A431CA1B02500639B81 /* Frameworks */,
 				14E45A441CA1B02500639B81 /* Resources */,
+				89827BDB9EDD808C70E04490 /* 📦 Embed Pods Frameworks */,
+				BB059C53465DB8F270E7ACA7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14E45A761CA1B02500639B81 /* Build configuration list for PBXNativeTarget "AuthorizationCompleteTests" */;
 			buildPhases = (
+				A7F18C69D416849B989134D9 /* 📦 Check Pods Manifest.lock */,
 				14E45A5B1CA1B02500639B81 /* Sources */,
 				14E45A5C1CA1B02500639B81 /* Frameworks */,
 				14E45A5D1CA1B02500639B81 /* Resources */,
+				CDB9315B113D45ED0949F40A /* 📦 Embed Pods Frameworks */,
+				A20E66DB4FE14949D540C865 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -211,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14E45A791CA1B02500639B81 /* Build configuration list for PBXNativeTarget "AuthorizationCompleteUITests" */;
 			buildPhases = (
+				2F85DDCE3CA9E5B56B35B7EE /* 📦 Check Pods Manifest.lock */,
 				14E45A661CA1B02500639B81 /* Sources */,
 				14E45A671CA1B02500639B81 /* Frameworks */,
 				14E45A681CA1B02500639B81 /* Resources */,
+				E11865D234EBA2B25487176C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,6 +326,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F85DDCE3CA9E5B56B35B7EE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		89827BDB9EDD808C70E04490 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AuthorizationComplete/Pods-AuthorizationComplete-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A20E66DB4FE14949D540C865 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AuthorizationCompleteTests/Pods-AuthorizationCompleteTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7F18C69D416849B989134D9 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE0D12A3D5376952106CB289 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BB059C53465DB8F270E7ACA7 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AuthorizationComplete/Pods-AuthorizationComplete-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDB9315B113D45ED0949F40A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AuthorizationCompleteTests/Pods-AuthorizationCompleteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E11865D234EBA2B25487176C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AuthorizationCompleteUITests/Pods-AuthorizationCompleteUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		14E45A421CA1B02500639B81 /* Sources */ = {
@@ -449,7 +604,7 @@
 		};
 		14E45A741CA1B02500639B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 110ABBBF96B940D964F0685E /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 9951CB5F555754AE81A61AD7 /* Pods-AuthorizationComplete.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/AuthorizationComplete/Info.plist";
@@ -461,7 +616,7 @@
 		};
 		14E45A751CA1B02500639B81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 064C6464D11766B5FCA7F1DD /* Pods.release.xcconfig */;
+			baseConfigurationReference = D824843CEECF91B4682F6B8A /* Pods-AuthorizationComplete.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/AuthorizationComplete/Info.plist";
@@ -473,6 +628,7 @@
 		};
 		14E45A771CA1B02500639B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF32813CAE07437D9DEC0A79 /* Pods-AuthorizationCompleteTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AuthorizationTests/Info.plist;
@@ -485,6 +641,7 @@
 		};
 		14E45A781CA1B02500639B81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6714241BB0EB75649F6ECEE0 /* Pods-AuthorizationCompleteTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AuthorizationTests/Info.plist;
@@ -497,6 +654,7 @@
 		};
 		14E45A7A1CA1B02500639B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2326421C6C768212B438A943 /* Pods-AuthorizationCompleteUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AuthorizationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -509,6 +667,7 @@
 		};
 		14E45A7B1CA1B02500639B81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CBB9AF175201DA3DEF371F0 /* Pods-AuthorizationCompleteUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AuthorizationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
