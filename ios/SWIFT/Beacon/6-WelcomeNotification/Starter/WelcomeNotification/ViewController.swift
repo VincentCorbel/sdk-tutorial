@@ -25,10 +25,7 @@ class ViewController: UIViewController {
     }
     
     func remoteNotificationReceived(notification: NSNotification) {
-        if (notification.userInfo!["beaconContent"]  == nil){
-            
-          
- 
+        if (notification.userInfo!["beaconContent"]  == nil){  
 
         }else {
             let beaconContent: ATBeaconContent = (notification.userInfo!["beaconContent"] as! ATBeaconContent)

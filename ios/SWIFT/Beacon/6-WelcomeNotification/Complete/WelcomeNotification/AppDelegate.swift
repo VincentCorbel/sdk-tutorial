@@ -95,6 +95,27 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    
+    
+    func createWelcomeNotification(beaconWelcomeNotification: ATBeaconWelcomeNotification) -> UILocalNotification {
+       
+        let localNotification:UILocalNotification = UILocalNotification()
+        
+        let kLocalNotificationMessage:String! = beaconWelcomeNotification.description
+        let kLocalNotificationAction:String! = beaconWelcomeNotification.title
+        
+        localNotification.alertBody = kLocalNotificationMessage
+        localNotification.alertAction = kLocalNotificationAction
+        
+        var infoDict = [NSObject : AnyObject]()
+        infoDict["isWelcomeNotification"] = Int(true)
+        localNotification.userInfo = infoDict
+        UIApplication.sharedApplication().presentLocalNotificationNow(localNotification)
+        return localNotification
+    }
+    
+    
+    
     func createNotification(_beaconContent: ATBeaconContent!) -> UILocalNotification! {
         
         let kLocalNotificationMessage:String! = _beaconContent.getNotificationDescription()

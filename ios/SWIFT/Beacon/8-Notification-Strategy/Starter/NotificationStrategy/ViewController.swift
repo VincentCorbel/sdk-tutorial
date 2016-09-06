@@ -24,9 +24,6 @@ class ViewController: UIViewController {
     }
     
     func remoteNotificationReceived(notification: NSNotification) {
-        let beaconContent: ATBeaconContent = (notification.userInfo!["beaconContent"] as! ATBeaconContent)
-        self.txtMessage.text = beaconContent.getNotificationTitle()
-        self.txtMessage.setNeedsDisplay()
     }
     
 }

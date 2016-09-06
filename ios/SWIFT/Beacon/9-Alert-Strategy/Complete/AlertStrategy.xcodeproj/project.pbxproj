@@ -18,6 +18,7 @@
 		147F0ADC1D74692D004243F2 /* AlertTimerStrategyFirstWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F0ADB1D74692D004243F2 /* AlertTimerStrategyFirstWay.swift */; };
 		147F0AE01D746958004243F2 /* TimeAlertStrategyParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F0ADF1D746958004243F2 /* TimeAlertStrategyParameter.swift */; };
 		5A36C5E9F1009F8ED9B696B1 /* Pods_AlertStrategyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27750040E5C817BCB57F3311 /* Pods_AlertStrategyUITests.framework */; };
+		E7218E51C0ECD6051D3EABAB /* Pods_AlertStrategy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466BF74F99A7F702A371EC17 /* Pods_AlertStrategy.framework */; };
 		EE33AB83D8F5C10973551722 /* Pods_AlertStrategyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4812826D1653470169C544 /* Pods_AlertStrategyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7218E51C0ECD6051D3EABAB /* Pods_AlertStrategy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

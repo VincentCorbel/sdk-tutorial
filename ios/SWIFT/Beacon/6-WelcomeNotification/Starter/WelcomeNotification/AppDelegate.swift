@@ -30,7 +30,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         
         initAdtagInstanceWithUrlType(ATUrlTypeItg ,userLogin: "*****" ,userPassword: "*****" ,userCompany: "*****" ,beaconUuid: "*****");
         
-   
+  
         
         
         
@@ -51,15 +51,8 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         
         if application.applicationState != UIApplicationState.Active {
             
-            let fromDefaultNotification: Bool = notification.userInfo != nil && CBool((notification.userInfo!["isWelcomeNotification"] as! Bool))
-            if fromDefaultNotification {
-     
-                let dict: [NSObject : AnyObject] = [
-                   "Congratulations! You generate your first beacon welcome notification" : "test"
-                ]
-                
-                NSNotificationCenter.defaultCenter().postNotificationName("LocalNotificationMessageReceivedNotification", object: nil, userInfo: dict)
-            }else {
+            
+        }else {
             let beaconContent: ATBeaconContent = ATBeaconManager.sharedInstance().getNotificationBeaconContent()
             let dict: [NSObject : AnyObject] = [
                 "beaconContent" : beaconContent]
@@ -89,6 +82,14 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
+    
+    func createWelcomeNotification(beaconWelcomeNotification: ATBeaconWelcomeNotification) -> UILocalNotification {
+ 
+    }
+    
+    
     
     func createNotification(_beaconContent: ATBeaconContent!) -> UILocalNotification! {
         

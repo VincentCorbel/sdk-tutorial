@@ -17,7 +17,7 @@ import ATLocationBeacon
 class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate {
     
     var window: UIWindow?
-    var maxFilterSpam: ATBeaconNotificationStrategySpamMaxFilter!
+    var beaconNotificationFilter:BeaconNotificationFilter!
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -32,9 +32,10 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         
         
         // Example of strategy notificaiton
-        maxFilterSpam = ATBeaconNotificationStrategySpamMaxFilter(notificationMaxNumber: 3, timeBtwNotification: 6000*2)
-        addNotificationStrategy(maxFilterSpam);
+        beaconNotificationFilter = BeaconNotificationFilter(timeBetweenNotification: 1 * 60 * 1000)
+        addNotificationStrategy(beaconNotificationFilter);
         
+     
         
         if  ((launchOptions?[UIApplicationLaunchOptionsLocationKey] as? NSDictionary) != nil) {
         }

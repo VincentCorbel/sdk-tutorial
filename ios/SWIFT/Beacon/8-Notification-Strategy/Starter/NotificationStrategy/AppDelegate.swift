@@ -17,7 +17,7 @@ import ATLocationBeacon
 class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate {
     
     var window: UIWindow?
-    var maxFilterSpam: ATBeaconNotificationStrategySpamMaxFilter!
+    var beaconNotificationFilter:BeaconNotificationFilter!
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -30,7 +30,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         
         initAdtagInstanceWithUrlType(ATUrlTypeItg ,userLogin: "*****" ,userPassword: "*****" ,userCompany: "*****" ,beaconUuid: "*****");
         
- 
+     
         
         if  ((launchOptions?[UIApplicationLaunchOptionsLocationKey] as? NSDictionary) != nil) {
         }
@@ -48,11 +48,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         
         if application.applicationState != UIApplicationState.Active {
-            let beaconContent: ATBeaconContent = ATBeaconManager.sharedInstance().getNotificationBeaconContent()
-            let dict: [NSObject : AnyObject] = [
-                "beaconContent" : beaconContent]
-            
-            NSNotificationCenter.defaultCenter().postNotificationName("LocalNotificationMessageReceivedNotification", object: nil, userInfo: dict)
         }
     }
     
@@ -78,16 +73,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     }
     
     func createNotification(_beaconContent: ATBeaconContent!) -> UILocalNotification! {
-        
-        let kLocalNotificationMessage:String! = _beaconContent.getNotificationDescription()
-        let kLocalNotificationAction:String! = _beaconContent.getAlertTitle()
         let localNotification:UILocalNotification = UILocalNotification()
-        localNotification.alertBody = kLocalNotificationMessage
-        localNotification.alertAction = kLocalNotificationAction
-        print("create notification from app delegate");
-        localNotification.soundName = UILocalNotificationDefaultSoundName
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        
         return localNotification;
     }
     

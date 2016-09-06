@@ -28,8 +28,7 @@ class AlertTimerStrategySecondWay : ATBeaconAlertStrategy {
     
     override func isConditionValid(_beaconParameter: ATBeaconAlertParameter!) -> Bool {
         let strategyParameter: TimeAlertStrategyParameter = (_beaconParameter  as! TimeAlertStrategyParameter)
-        print("time to show alert %d", strategyParameter.timeToShowAlert);
-        print("time tout court %d", CFAbsoluteTimeGetCurrent () );
+ 
         return strategyParameter.timeToShowAlert < CFAbsoluteTimeGetCurrent ()
     }
     
