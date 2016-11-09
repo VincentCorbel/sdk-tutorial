@@ -2,7 +2,7 @@
 //  NotificationStrategyTests.swift
 //  NotificationStrategyTests
 //
-//  Created by sarra srairi on 11/08/2016.
+//  Created by sarra srairi on 26/10/2016.
 //  Copyright © 2016 R&D connecthings. All rights reserved.
 //
 
@@ -28,7 +28,7 @@ class NotificationStrategyTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

@@ -17,43 +17,64 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
     var window: UIWindow?
     
     
-    
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        // HELP:
-        // init the adtag platforme with the
-        // ** user Login : Login delivred by the Connecthings staff
-        // ** user Password : Password delivred by the Connecthings staff
-        // ** user Compagny : ....
-        // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        initAdtagInstanceWithUrlType(ATUrlTypeItg ,userLogin: "*****" ,userPassword: "*****" ,userCompany: "*****" ,beaconUuid: "*****");
+        /* ** Required -- used to initialize and setup the SDK
+         *
+         *
+         *
+         * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
+         * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
+         *                  ATUrlTypeProd     = > Production Platform
+         *                  ATUrlTypeDemo     = > Demo Platform
+         *
+         * Key/Value are related to the selected Platform
+         * -- 2- user Login : Login delivred by the Connecthings staff
+         * -- 3- user Password : Password delivred by the Connecthings staff
+         * -- 4- user Compagny : Define the compagny name
+         * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
+         * --
+         *
+         * All other SDK methods must be called after this one, because they won't exist until you do.
+         */
+         initAdtagInstance(with:ATUrlTypePreprod ,userLogin: "*****LOGIN****" ,userPassword: "****PASSWORD****" ,userCompany: "****COMPAGNY****" ,beaconUuid: "****UUID****")
         
         return true
     }
     
-    override func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    override func applicationWillResignActive(_ application: UIApplication) {
+        
+        /* ** Required
+         * Add super.applicationWillResignActive to your  delegate method
+         * the super class will init the range beacon
+         * if a the super call isn't reachable the Beacon range won't be start
+         */
+        super.applicationWillResignActive(application)
     }
     
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
     
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
     
-    override func applicationDidBecomeActive(application: UIApplication) {
-        super.applicationDidBecomeActive(application)
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    override func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        /* ** Required
+         * Add super.applicationDidBecomeActive to your delegate method
+         * the super class will init the range beacon
+         * if a the super call isn't reachable the Beacon range won't be start
+         */
+        super.applicationDidBecomeActive(application);
+        
     }
-    
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
     
     
 }

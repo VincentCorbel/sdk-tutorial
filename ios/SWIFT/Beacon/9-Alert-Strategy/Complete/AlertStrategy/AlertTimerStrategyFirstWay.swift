@@ -28,26 +28,28 @@ class AlertTimerStrategyFirstWay : NSObject, ATBeaconAlertStrategyDelegate {
         return "timeAlertStrategy"
     }
     
-    func isConditionValid(_beaconParameter: ATBeaconAlertParameter!) -> Bool {
+    func isConditionValid(_ _beaconParameter: ATBeaconAlertParameter!) -> Bool {
         
         let strategyParameter: TimeAlertStrategyParameter = (_beaconParameter  as! TimeAlertStrategyParameter)
         return strategyParameter.timeToShowAlert < CFAbsoluteTimeGetCurrent ()
     }
     
     
-    func isReadyForAction(_beaconParameter: ATBeaconAlertParameter!) -> Bool {
+    func isReady(forAction _beaconParameter: ATBeaconAlertParameter!) -> Bool {
         return (_beaconParameter.actionStatus == ATBeaconActionStatusWaitingForAction && _beaconParameter.isConditionValid)
         
     }
     
     
-    func getBeaconAlertParameterClass() -> AnyObject! {
+    private func getBeaconAlertParameterClass() -> AnyObject! {
         
         let myObject: AnyObject = TimeAlertStrategyParameter()
         return  myObject
     }
     
-    func updateBeaconContent(_beaconContent: ATBeaconContent!){
+ 
+    
+    func update(_ _beaconContent: ATBeaconContent!){
         
         if (_beaconContent.beaconAlertParameter == nil ) {
             let stategy : TimeAlertStrategyParameter = self.getBeaconAlertParameterClass()  as! TimeAlertStrategyParameter
@@ -68,13 +70,14 @@ class AlertTimerStrategyFirstWay : NSObject, ATBeaconAlertStrategyDelegate {
             self.testToReseatActionIsDone(_beaconContent.beaconAlertParameter)
         }
         
-        _beaconContent.beaconAlertParameter.isReadyForAction =  self.isReadyForAction(_beaconContent.beaconAlertParameter);
+        _beaconContent.beaconAlertParameter.isReadyForAction =  self.isReady(forAction:_beaconContent.beaconAlertParameter);
         //Update each cycle -> means only a beacon that we don't see for more than maxTimeBeforeReset will be impact
         _beaconContent.beaconAlertParameter.maxTimeBeforeResetingIsActionDone =  Int (CFAbsoluteTimeGetCurrent() +  maxTimeBeforeReset)
         
     }
+
     
-    func testToReseatActionIsDone(strategyParameter: ATBeaconAlertParameter) {
+    func testToReseatActionIsDone(_ strategyParameter: ATBeaconAlertParameter) {
         
         if (!strategyParameter.isConditionValid) || (strategyParameter.maxTimeBeforeResetingIsActionDone < Int(CFAbsoluteTimeGetCurrent()) && strategyParameter.actionStatus  == ATBeaconActionStatusActionDone) {
             strategyParameter.actionStatus = ATBeaconActionStatusWaitingForAction

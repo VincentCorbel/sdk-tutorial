@@ -10,14 +10,15 @@ import ATConnectionHttp
 import ATAnalytics
 import ATLocationBeacon
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var txtMessage: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.remoteNotificationReceived), name: "LocalNotificationMessageReceivedNotification", object: nil)
+        // Do any additional setup after loading the view, typically from a nib
+        
+     NotificationCenter.default.addObserver(self, selector: #selector(self.remoteNotificationReceived), name: NSNotification.Name(rawValue: "LocalNotificationMessageReceivedNotification"), object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -28,5 +29,5 @@ class ViewController: UIViewController {
         self.txtMessage.text = beaconContent.getNotificationTitle()
         self.txtMessage.setNeedsDisplay()
     }
-
+    
 }

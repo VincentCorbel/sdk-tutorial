@@ -172,12 +172,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142B367E1D5C93330026B352 /* Build configuration list for PBXNativeTarget "DefaultNotificationStrategy" */;
 			buildPhases = (
-				E90D7507E2B2C14C011FD09F /* 📦 Check Pods Manifest.lock */,
 				142B36521D5C93330026B352 /* Sources */,
 				142B36531D5C93330026B352 /* Frameworks */,
 				142B36541D5C93330026B352 /* Resources */,
-				B78814DED54B364BE9B2E119 /* 📦 Embed Pods Frameworks */,
-				099702367E218E213816E108 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,12 +189,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142B36811D5C93330026B352 /* Build configuration list for PBXNativeTarget "DefaultNotificationStrategyTests" */;
 			buildPhases = (
-				FBE0008890E51A20BBB21E4A /* 📦 Check Pods Manifest.lock */,
 				142B36661D5C93330026B352 /* Sources */,
 				142B36671D5C93330026B352 /* Frameworks */,
 				142B36681D5C93330026B352 /* Resources */,
-				77A99BD20C0CF51DA906891D /* 📦 Embed Pods Frameworks */,
-				46FDAA4F7049B6F87CB37CE2 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,11 +207,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142B36841D5C93330026B352 /* Build configuration list for PBXNativeTarget "DefaultNotificationStrategyUITests" */;
 			buildPhases = (
-				4ACC3C8B8EE92CF24B94B52C /* 📦 Check Pods Manifest.lock */,
 				142B36711D5C93330026B352 /* Sources */,
 				142B36721D5C93330026B352 /* Frameworks */,
 				142B36731D5C93330026B352 /* Resources */,
-				0E0468D41D9B14B9DFAE73DC /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,18 +228,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "R&D connecthings";
 				TargetAttributes = {
 					142B36551D5C93330026B352 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3T67HE76NG;
+						LastSwiftMigration = 0800;
 					};
 					142B36691D5C93330026B352 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 142B36551D5C93330026B352;
 					};
 					142B36741D5C93330026B352 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 142B36551D5C93330026B352;
 					};
 				};
@@ -298,129 +294,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		099702367E218E213816E108 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DefaultNotificationStrategy/Pods-DefaultNotificationStrategy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0E0468D41D9B14B9DFAE73DC /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DefaultNotificationStrategyUITests/Pods-DefaultNotificationStrategyUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46FDAA4F7049B6F87CB37CE2 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DefaultNotificationStrategyTests/Pods-DefaultNotificationStrategyTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4ACC3C8B8EE92CF24B94B52C /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		77A99BD20C0CF51DA906891D /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DefaultNotificationStrategyTests/Pods-DefaultNotificationStrategyTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B78814DED54B364BE9B2E119 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DefaultNotificationStrategy/Pods-DefaultNotificationStrategy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E90D7507E2B2C14C011FD09F /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FBE0008890E51A20BBB21E4A /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		142B36521D5C93330026B352 /* Sources */ = {
@@ -497,8 +370,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -543,8 +418,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -563,6 +440,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -573,10 +451,12 @@
 			baseConfigurationReference = 61A87877DE657E8C87CAF0F0 /* Pods-DefaultNotificationStrategy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = DefaultNotificationStrategy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.DefaultNotificationStrategy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -585,10 +465,12 @@
 			baseConfigurationReference = 7B7C2FB830B59F2C99F59E39 /* Pods-DefaultNotificationStrategy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = DefaultNotificationStrategy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.DefaultNotificationStrategy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -601,6 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.DefaultNotificationStrategyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DefaultNotificationStrategy.app/DefaultNotificationStrategy";
 			};
 			name = Debug;
@@ -614,6 +497,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.DefaultNotificationStrategyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DefaultNotificationStrategy.app/DefaultNotificationStrategy";
 			};
 			name = Release;
@@ -626,6 +510,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.DefaultNotificationStrategyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DefaultNotificationStrategy;
 			};
 			name = Debug;
@@ -638,6 +523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.DefaultNotificationStrategyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DefaultNotificationStrategy;
 			};
 			name = Release;

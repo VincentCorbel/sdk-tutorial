@@ -172,12 +172,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142B36F41D5CA1090026B352 /* Build configuration list for PBXNativeTarget "AlertStrategy" */;
 			buildPhases = (
-				F79358978D34380D5A0E32E9 /* 📦 Check Pods Manifest.lock */,
 				142B36C81D5CA1090026B352 /* Sources */,
 				142B36C91D5CA1090026B352 /* Frameworks */,
 				142B36CA1D5CA1090026B352 /* Resources */,
-				8B1F28B9FEDB77C36CCDD233 /* 📦 Embed Pods Frameworks */,
-				FFE828F051D3C2AA93E790A3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,12 +189,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142B36F71D5CA1090026B352 /* Build configuration list for PBXNativeTarget "AlertStrategyTests" */;
 			buildPhases = (
-				6CF7F8D358FB2350458724F6 /* 📦 Check Pods Manifest.lock */,
 				142B36DC1D5CA1090026B352 /* Sources */,
 				142B36DD1D5CA1090026B352 /* Frameworks */,
 				142B36DE1D5CA1090026B352 /* Resources */,
-				7E7AF8C2E32457F4F3B14AB4 /* 📦 Embed Pods Frameworks */,
-				9C247E27EBD6273EDE190A34 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,11 +207,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142B36FA1D5CA1090026B352 /* Build configuration list for PBXNativeTarget "AlertStrategyUITests" */;
 			buildPhases = (
-				D2673B18723F456A3399338A /* 📦 Check Pods Manifest.lock */,
 				142B36E71D5CA1090026B352 /* Sources */,
 				142B36E81D5CA1090026B352 /* Frameworks */,
 				142B36E91D5CA1090026B352 /* Resources */,
-				408F1E5EC0937868ACA0FEFF /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,13 +233,17 @@
 				TargetAttributes = {
 					142B36CB1D5CA1090026B352 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3T67HE76NG;
+						LastSwiftMigration = 0800;
 					};
 					142B36DF1D5CA1090026B352 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 142B36CB1D5CA1090026B352;
 					};
 					142B36EA1D5CA1090026B352 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 142B36CB1D5CA1090026B352;
 					};
 				};
@@ -298,129 +294,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		408F1E5EC0937868ACA0FEFF /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlertStrategyUITests/Pods-AlertStrategyUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6CF7F8D358FB2350458724F6 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7E7AF8C2E32457F4F3B14AB4 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlertStrategyTests/Pods-AlertStrategyTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B1F28B9FEDB77C36CCDD233 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlertStrategy/Pods-AlertStrategy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9C247E27EBD6273EDE190A34 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlertStrategyTests/Pods-AlertStrategyTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D2673B18723F456A3399338A /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F79358978D34380D5A0E32E9 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FFE828F051D3C2AA93E790A3 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlertStrategy/Pods-AlertStrategy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		142B36C81D5CA1090026B352 /* Sources */ = {
@@ -573,10 +446,12 @@
 			baseConfigurationReference = D639A2DAAD6CA65014775601 /* Pods-AlertStrategy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = AlertStrategy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AlertStrategy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -585,10 +460,12 @@
 			baseConfigurationReference = 2D7B1D8EB9E090669C67319B /* Pods-AlertStrategy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = AlertStrategy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AlertStrategy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -601,6 +478,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AlertStrategyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlertStrategy.app/AlertStrategy";
 			};
 			name = Debug;
@@ -614,6 +492,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AlertStrategyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlertStrategy.app/AlertStrategy";
 			};
 			name = Release;
@@ -626,6 +505,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AlertStrategyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AlertStrategy;
 			};
 			name = Debug;
@@ -638,6 +518,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AlertStrategyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AlertStrategy;
 			};
 			name = Release;

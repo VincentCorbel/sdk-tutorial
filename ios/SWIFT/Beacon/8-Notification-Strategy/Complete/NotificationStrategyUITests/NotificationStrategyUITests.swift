@@ -2,7 +2,7 @@
 //  NotificationStrategyUITests.swift
 //  NotificationStrategyUITests
 //
-//  Created by sarra srairi on 11/08/2016.
+//  Created by sarra srairi on 26/10/2016.
 //  Copyright © 2016 R&D connecthings. All rights reserved.
 //
 

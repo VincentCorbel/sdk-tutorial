@@ -55,7 +55,13 @@
 		1484CE711D5B294600BFAD6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1484CE731D5B297900BFAD6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58A1D3933061B8949A4DF197 /* Pods_beaconRangeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconRangeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C2E750BCB242A858E7B695 /* Pods-beaconRangeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconRangeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconRangeTests/Pods-beaconRangeTests.release.xcconfig"; sourceTree = "<group>"; };
+		8DDC33914B4015DF960AFF12 /* Pods-beaconRangeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconRangeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconRangeUITests/Pods-beaconRangeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		98E43326FB77DC34A4F8F008 /* Pods-beaconRange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconRange.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconRange/Pods-beaconRange.release.xcconfig"; sourceTree = "<group>"; };
 		AE04247FCE858AD79DDE56A1 /* Pods_beaconRangeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconRangeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42BEB3CAB48EFA0859EE5A3 /* Pods-beaconRangeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconRangeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconRangeUITests/Pods-beaconRangeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D5C3E3821A62387AF5378D45 /* Pods-beaconRange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconRange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconRange/Pods-beaconRange.debug.xcconfig"; sourceTree = "<group>"; };
+		EA339806A3BA31F8122DB16A /* Pods-beaconRangeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconRangeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconRangeTests/Pods-beaconRangeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,12 @@
 		7AA6043D51FE4A73130D9133 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				D5C3E3821A62387AF5378D45 /* Pods-beaconRange.debug.xcconfig */,
+				98E43326FB77DC34A4F8F008 /* Pods-beaconRange.release.xcconfig */,
+				EA339806A3BA31F8122DB16A /* Pods-beaconRangeTests.debug.xcconfig */,
+				71C2E750BCB242A858E7B695 /* Pods-beaconRangeTests.release.xcconfig */,
+				8DDC33914B4015DF960AFF12 /* Pods-beaconRangeUITests.debug.xcconfig */,
+				D42BEB3CAB48EFA0859EE5A3 /* Pods-beaconRangeUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -164,12 +176,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1484CE5D1D5B239B00BFAD6E /* Build configuration list for PBXNativeTarget "beaconRange" */;
 			buildPhases = (
-				BCEBA96B8CA81DC57FF5F07B /* 📦 Check Pods Manifest.lock */,
 				1484CE311D5B239B00BFAD6E /* Sources */,
 				1484CE321D5B239B00BFAD6E /* Frameworks */,
 				1484CE331D5B239B00BFAD6E /* Resources */,
-				730863658789A463D3F0C60F /* 📦 Embed Pods Frameworks */,
-				F73BE54A249AEFCBBCD269A3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,12 +193,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1484CE601D5B239B00BFAD6E /* Build configuration list for PBXNativeTarget "beaconRangeTests" */;
 			buildPhases = (
-				2A5178DA01479E468A4ADE18 /* 📦 Check Pods Manifest.lock */,
 				1484CE451D5B239B00BFAD6E /* Sources */,
 				1484CE461D5B239B00BFAD6E /* Frameworks */,
 				1484CE471D5B239B00BFAD6E /* Resources */,
-				BF329C1B3AE2E7CA8D436C8E /* 📦 Embed Pods Frameworks */,
-				B04A4FE903663E692B179DD6 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,11 +211,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1484CE631D5B239B00BFAD6E /* Build configuration list for PBXNativeTarget "beaconRangeUITests" */;
 			buildPhases = (
-				F0439B3E351AE4940F2CE687 /* 📦 Check Pods Manifest.lock */,
 				1484CE501D5B239B00BFAD6E /* Sources */,
 				1484CE511D5B239B00BFAD6E /* Frameworks */,
 				1484CE521D5B239B00BFAD6E /* Resources */,
-				FA2076B1C8CFF2B881961F65 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,13 +237,17 @@
 				TargetAttributes = {
 					1484CE341D5B239B00BFAD6E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3T67HE76NG;
+						LastSwiftMigration = 0800;
 					};
 					1484CE481D5B239B00BFAD6E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1484CE341D5B239B00BFAD6E;
 					};
 					1484CE531D5B239B00BFAD6E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1484CE341D5B239B00BFAD6E;
 					};
 				};
@@ -291,129 +299,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2A5178DA01479E468A4ADE18 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		730863658789A463D3F0C60F /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconRange/Pods-beaconRange-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B04A4FE903663E692B179DD6 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconRangeTests/Pods-beaconRangeTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BCEBA96B8CA81DC57FF5F07B /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BF329C1B3AE2E7CA8D436C8E /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconRangeTests/Pods-beaconRangeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F0439B3E351AE4940F2CE687 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F73BE54A249AEFCBBCD269A3 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconRange/Pods-beaconRange-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA2076B1C8CFF2B881961F65 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconRangeUITests/Pods-beaconRangeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1484CE311D5B239B00BFAD6E /* Sources */ = {
@@ -572,68 +457,82 @@
 		};
 		1484CE5E1D5B239B00BFAD6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5C3E3821A62387AF5378D45 /* Pods-beaconRange.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = beaconRange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconRange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		1484CE5F1D5B239B00BFAD6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98E43326FB77DC34A4F8F008 /* Pods-beaconRange.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = beaconRange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconRange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		1484CE611D5B239B00BFAD6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA339806A3BA31F8122DB16A /* Pods-beaconRangeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = beaconRangeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconRangeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beaconRange.app/beaconRange";
 			};
 			name = Debug;
 		};
 		1484CE621D5B239B00BFAD6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71C2E750BCB242A858E7B695 /* Pods-beaconRangeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = beaconRangeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconRangeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beaconRange.app/beaconRange";
 			};
 			name = Release;
 		};
 		1484CE641D5B239B00BFAD6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DDC33914B4015DF960AFF12 /* Pods-beaconRangeUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = beaconRangeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconRangeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = beaconRange;
 			};
 			name = Debug;
 		};
 		1484CE651D5B239B00BFAD6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D42BEB3CAB48EFA0859EE5A3 /* Pods-beaconRangeUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = beaconRangeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconRangeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = beaconRange;
 			};
 			name = Release;

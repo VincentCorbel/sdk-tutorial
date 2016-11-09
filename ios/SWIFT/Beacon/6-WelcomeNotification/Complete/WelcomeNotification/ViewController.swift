@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.remoteNotificationReceived), name: "LocalNotificationMessageReceivedNotification", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.remoteNotificationReceived), name: NSNotification.Name(rawValue: "LocalNotificationMessageReceivedNotification"), object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,17 +24,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func remoteNotificationReceived(notification: NSNotification) {
-        if (notification.userInfo!["beaconContent"]  == nil){
+    func remoteNotificationReceived(_ notification: Notification) {
+        if ((notification as NSNotification).userInfo!["beaconContent"]  == nil){
             
-          
-          let  welcomeNotification: ATBeaconWelcomeNotification = (notification.userInfo!["beaconWelcomeNotification"] as! ATBeaconWelcomeNotification)
+            
+            let  welcomeNotification: ATBeaconWelcomeNotification = ((notification as NSNotification).userInfo!["beaconWelcomeNotification"] as! ATBeaconWelcomeNotification)
             
             self.labelNotification.text = "Congratulations! You generate your first beacon welcome notification"
             ATBeaconManager.sharedInstance().sendRedictLog(welcomeNotification, from: "notification")
-
+            
         }else {
-            let beaconContent: ATBeaconContent = (notification.userInfo!["beaconContent"] as! ATBeaconContent)
+            let beaconContent: ATBeaconContent = ((notification as NSNotification).userInfo!["beaconContent"] as! ATBeaconContent)
             self.txtMessage.text = beaconContent.getNotificationTitle()
             self.txtMessage.setNeedsDisplay()
         }

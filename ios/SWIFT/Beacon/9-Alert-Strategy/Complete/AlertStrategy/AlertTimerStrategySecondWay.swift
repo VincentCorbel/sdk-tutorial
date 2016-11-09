@@ -26,18 +26,13 @@ class AlertTimerStrategySecondWay : ATBeaconAlertStrategy {
     }
     
     
-    override func isConditionValid(_beaconParameter: ATBeaconAlertParameter!) -> Bool {
+    override func isConditionValid(_ _beaconParameter: ATBeaconAlertParameter!) -> Bool {
         let strategyParameter: TimeAlertStrategyParameter = (_beaconParameter  as! TimeAlertStrategyParameter)
  
         return strategyParameter.timeToShowAlert < CFAbsoluteTimeGetCurrent ()
     }
-    
-    
-    
-    override func updateBeaconContent(_beaconContent: ATBeaconContent!) {
-        super.updateBeaconContent(_beaconContent)
-        
-        
+ 
+    override func updateAlertParameter(_ _beaconContent: ATBeaconContent!) {
         let strategyParameter = _beaconContent.beaconAlertParameter as! TimeAlertStrategyParameter
         let currentTime: Double = CFAbsoluteTimeGetCurrent()
         
@@ -46,11 +41,13 @@ class AlertTimerStrategySecondWay : ATBeaconAlertStrategy {
             strategyParameter.timeToShowAlert = currentTime + delayBeforeCreatingAlert;
         }
         strategyParameter.lastDetectionTime = currentTime + 0 ;
+
         
     }
     
-    override func getBeaconAlertParameterClass() -> AnyObject! {
-        
-        return  TimeAlertStrategyParameter.self
+ 
+    override func getBeaconAlertParameterClass() -> Any! {
+       return  TimeAlertStrategyParameter.self
     }
+ 
 }

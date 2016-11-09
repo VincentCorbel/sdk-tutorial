@@ -17,7 +17,7 @@ class BeaconNotificationFilter: NSObject, ATBeaconNotificationStrategyDelegate {
     /**
      * The filter will be defined by 2 attributes : _maxNumberNotification and _timeBetweenNotification
      * @param _maxNumberNotification : is the the maximum number of notifications
-     * @param _field :the time between the next notifications stream in SECOND
+     * @param _field :the time between the next notifications stream in milliseconde
      */
     convenience init( timeBetweenNotification: Int) {
         self.init()
@@ -27,12 +27,12 @@ class BeaconNotificationFilter: NSObject, ATBeaconNotificationStrategyDelegate {
         
     }
     
-    func createNewNotification(newBeaconContent: ATBeaconContent, feedStatus: ATRangeFeedStatus) -> Bool {
+    func createNewNotification(_ newBeaconContent: ATBeaconContent, feedStatus: ATRangeFeedStatus) -> Bool {
         
         return  self.minNextTimeNotification < CFAbsoluteTimeGetCurrent()
     }
     
-    func deleteCurrentNotification(newBeaconContent: ATBeaconContent, feedStatus: ATRangeFeedStatus) -> Bool {
+    func deleteCurrentNotification(_ newBeaconContent: ATBeaconContent, feedStatus: ATRangeFeedStatus) -> Bool {
         return true
     }
     
@@ -42,26 +42,26 @@ class BeaconNotificationFilter: NSObject, ATBeaconNotificationStrategyDelegate {
     func onForeground() {
     }
     
-    func onStartMonitoringRegion(beaconContent: ATBeaconContent, feedStatus: ATRangeFeedStatus) {
+    func onStartMonitoringRegion(_ beaconContent: ATBeaconContent, feedStatus: ATRangeFeedStatus) {
     }
     
-    func onNotificationIsCreated(beconContent: ATBeaconContent, notificationStatus: Bool) {
+    func onNotificationIsCreated(_ beconContent: ATBeaconContent, notificationStatus: Bool) {
         if(notificationStatus){
             minNextTimeNotification = CACurrentMediaTime() + minTimeBetweenNotification;
         }
     }
     
-    func onNotificationIsDeleted(beconContent: ATBeaconContent, notificationStatus: Bool) {
+    func onNotificationIsDeleted(_ beconContent: ATBeaconContent, notificationStatus: Bool) {
     }
  
  
     // this permits you to save your last data when the app is killed
-    func save(dataStore: NSUserDefaults) {
-        dataStore.setDouble(minNextTimeNotification, forKey: "com.notification.minNextTimeNotification")
+    func save(_ dataStore: UserDefaults) {
+        dataStore.set(minNextTimeNotification, forKey: "com.notification.minNextTimeNotification")
     }
     // this permits to reload your data when app was killed
-    func load(dataStore: NSUserDefaults) {
-        minNextTimeNotification = dataStore.doubleForKey("com.notification.minNextTimeNotification")
+    func load(_ dataStore: UserDefaults) {
+        minNextTimeNotification = dataStore.double(forKey: "com.notification.minNextTimeNotification")
         
     }
 

@@ -27,7 +27,7 @@ class ViewController: UIViewController, ATBeaconAlertDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func createBeaconAlert(_beaconContent: ATBeaconContent!) -> Bool {
+    func createBeaconAlert(_ _beaconContent: ATBeaconContent!) -> Bool {
         if ("popup" == _beaconContent.getAction()) {
             // create a popup view
             actionTxt.text = "Well done! now you have created your alert action"
@@ -43,7 +43,7 @@ class ViewController: UIViewController, ATBeaconAlertDelegate {
         
     }
     
-    func removeBeaconAlert(_beaconContent: ATBeaconContent!, actionStatus _actionStatus: ATBeaconRemoveStatus) -> Bool {
+    func removeBeaconAlert(_ _beaconContent: ATBeaconContent!, actionStatus _actionStatus: ATBeaconRemoveStatus) -> Bool {
         actionTxt.text = "Well done! now you have removed your alert action"
         self.txtAlertMessage.text = "Remove beacon alert action"
         txtAlertMessage.setNeedsDisplay()
@@ -51,7 +51,7 @@ class ViewController: UIViewController, ATBeaconAlertDelegate {
         
     }
     
-    func onNetworkError(_feedStatus: ATRangeFeedStatus) {
+    func onNetworkError(_ _feedStatus: ATRangeFeedStatus) {
         
     }
     
