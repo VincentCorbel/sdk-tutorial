@@ -14,8 +14,8 @@ public class ApplicationSdkDemo extends Application {
 	public void onCreate(){
 		super.onCreate();
         //Initialize the connection to the adtag platform
-        AdtagInitializer.initInstance(this).initUrlType(UrlType.PROD)
-                .initUser("****","****").initCompany("****");
+        AdtagInitializer.initInstance(this).initUrlType(UrlType.ITG)
+                .initUser("User_cbeacon", "fSKbCEvCDCbYTDlk").initCompany("ccbeacondemo");
         //Initiate the adtagLogManager that manages the way log are sent to the platform
         AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
     }
