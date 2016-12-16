@@ -13,7 +13,7 @@ public class ApplicationRange extends Application{
 
     public void onCreate(){
         super.onCreate();
-        AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.PROD)
+        AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.__PLATFORM__)
                 .initUser("**LOGIN**", "**PASSWORD**").initCompany("**COMPANY**");
         //Initiate the adtagLogManager that manages the way log are sent to the platform
         AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);

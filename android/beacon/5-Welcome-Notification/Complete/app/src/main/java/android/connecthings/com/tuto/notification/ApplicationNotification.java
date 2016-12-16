@@ -28,13 +28,13 @@ public class ApplicationNotification extends Application implements BeaconNotifi
 
     public void onCreate(){
         super.onCreate();
-       AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.PROD)
-               .initUser("**LOGIN***", "**PASSWORD**").initCompany("**COMPANY**");
+        AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.**PLATFORM***)
+                .initUser("***LOGIN***", "***PWS***").initCompany("***COMPANY***");
         //Initiate the adtagLogManager that manages the way log are sent to the platform
         AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);
         //If youe need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
         //Initiate the beaconManager with the UUID of your beacons company. our beaconManager manage only one beacon Region based on the uuid
-        AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, "**UUID**");
+        AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, "***UUID***");
         beaconManager.registerBeaconNotificationListener(this);
 
         BeaconWelcomeNotification beaconDefaultNotificationOn = new BeaconWelcomeNotification(BeaconWelcomeNotification.TYPE.NETWORK_ON,
@@ -51,6 +51,10 @@ public class ApplicationNotification extends Application implements BeaconNotifi
     }
 
     public int createNotification(BeaconContent beaconContent) {
+        /**
+         * NOT Mandatory if you don't need to personalise the beacon notificaiton.
+         * The SDK comes with a default implementation of the BeaconNotification
+         */
         Log.d(TAG, "create notification");
         //example of notification code
         if(mNotificationManager==null){
@@ -76,6 +80,10 @@ public class ApplicationNotification extends Application implements BeaconNotifi
 
     @Override
     public int createWelcomeNotification(BeaconWelcomeNotification beaconDefaultNotification) {
+        /**
+         * NOT Mandatory if you don't need to personalise the welcome notificaiton.
+         * The SDK comes with a default implementation of the BeaconWelcomeNotificationListener
+         */
         if(mNotificationManager==null){
             mNotificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         }

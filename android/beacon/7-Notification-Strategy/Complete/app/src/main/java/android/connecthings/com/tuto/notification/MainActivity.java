@@ -1,12 +1,11 @@
 package android.connecthings.com.tuto.notification;
 
-import android.connecthings.adtag.analytics.model.AdtagLogData;
-import android.connecthings.adtag.model.sdk.BeaconContent;
-import android.connecthings.util.BLE_STATUS;
-import android.connecthings.util.adtag.beacon.AdtagBeaconManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.support.v7.app.AppCompatActivity;
+
+import com.connecthings.adtag.model.sdk.BeaconContent;
+import com.connecthings.util.BLE_STATUS;
+import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
 
 
 public class MainActivity extends AppCompatActivity {

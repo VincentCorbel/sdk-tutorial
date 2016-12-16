@@ -14,7 +14,7 @@ public class ApplicationAlert extends Application{
 
     public void onCreate(){
         super.onCreate();
-        AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.****).initUser("__LOGIN_", "__PASSWORD__").initCompany("__COMPANY__");
+        AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.__PLATFORM__).initUser("__LOGIN_", "__PASSWORD__").initCompany("__COMPANY__");
         //Initiate the adtagLogManager that manages the way log are sent to the platform
         AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);
         //If youe need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
