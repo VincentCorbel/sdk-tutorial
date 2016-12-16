@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:${project.versionGradleAndroid}"
+        classpath 'com.android.tools.build:gradle:2.2.0'
         classpath "net.researchgate:gradle-release:${project.versionGradleRelease}"
         classpath "com.github.dcendents:android-maven-gradle-plugin:${project.versionMavenAndroid}"
     }
