@@ -1,10 +1,10 @@
 package android.connecthings.com.tuto.alert;
 
-import android.connecthings.adtag.model.sdk.BeaconContent;
-import android.connecthings.util.adtag.beacon.AdtagBeaconManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.connecthings.adtag.model.sdk.BeaconContent;
 
 /**
  */

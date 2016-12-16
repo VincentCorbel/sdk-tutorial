@@ -1,14 +1,14 @@
 package android.connecthings.com.tuto.alert;
 
-import android.connecthings.adtag.adtagEnum.FEED_STATUS;
-import android.connecthings.adtag.model.sdk.BeaconAlertStrategyParameter;
-import android.connecthings.adtag.model.sdk.BeaconContent;
+import com.connecthings.adtag.adtagEnum.FEED_STATUS;
+import com.connecthings.adtag.model.sdk.BeaconAlertStrategyParameter;
+import com.connecthings.adtag.model.sdk.BeaconContent;
 
-import android.connecthings.util.BLE_STATUS;
-import android.connecthings.util.adtag.beacon.AdtagBeaconManager;
+import com.connecthings.util.BLE_STATUS;
+import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
+import com.connecthings.util.adtag.beacon.strategy.alert.Listener.BeaconAlertListener;
 
 
-import android.connecthings.util.adtag.beacon.strategy.Alert.Listener.BeaconAlertListener;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -2,16 +2,16 @@ package android.connecthings.app.qrNfcSdkDemo;
 
 
 import android.Manifest;
-import android.connecthings.adtag.adtagEnum.FEED_STATUS;
-import android.connecthings.adtag.model.sdk.AdtagContent;
-import android.connecthings.adtag.nfc.FragmentNfcAdtagContentAsker;
-import android.connecthings.adtag.nfc.NfcReceiver;
-import android.connecthings.adtag.sdk.AdtagContentReceiver;
-import android.connecthings.adtag.sdk.FragmentAdtagContentAsker;
+import com.connecthings.adtag.adtagEnum.FEED_STATUS;
+import com.connecthings.adtag.model.sdk.AdtagContent;
+import com.connecthings.adtag.nfc.FragmentNfcAdtagContentAsker;
+import com.connecthings.adtag.nfc.NfcReceiver;
+import com.connecthings.adtag.sdk.AdtagContentReceiver;
+import com.connecthings.adtag.sdk.FragmentAdtagContentAsker;
 import android.connecthings.app.qrNfcSdkDemo.dialog.ApplicationDialog;
-import android.connecthings.util.EasyIntent;
-import android.connecthings.util.Log;
-import android.connecthings.util.nfc.NfcStatus;
+import com.connecthings.util.EasyIntent;
+import com.connecthings.util.Log;
+import com.connecthings.util.nfc.NfcStatus;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;

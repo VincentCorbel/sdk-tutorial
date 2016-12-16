@@ -1,18 +1,17 @@
 package android.connecthings.com.tuto.quickstart;
 
-import android.connecthings.adtag.adtagEnum.FEED_STATUS;
-import android.connecthings.adtag.model.sdk.BeaconContent;
-import android.connecthings.util.BLE_STATUS;
-import android.connecthings.util.adtag.beacon.AdtagBeaconManager;
-import android.connecthings.util.adtag.beacon.model.BeaconRange;
-import android.connecthings.util.adtag.beacon.parser.AppleBeacon;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.connecthings.altbeacon.beacon.Region;
+import com.connecthings.adtag.adtagEnum.FEED_STATUS;
+import com.connecthings.adtag.model.sdk.BeaconContent;
+import com.connecthings.util.BLE_STATUS;
+import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
+import com.connecthings.util.adtag.beacon.model.BeaconRange;
+import com.connecthings.util.adtag.beacon.parser.AppleBeacon;
 
 import java.util.List;
 
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements BeaconRange{
     }
 
     @Override
-    public void didRangeBeaconsInRegion(List<AppleBeacon> beacons, List<BeaconContent> beaconContents, Region region, BeaconContent.INFORMATION_STATUS informationStatus, FEED_STATUS feedStatus) {
+    public void didRangeBeacons(List<AppleBeacon> beacons, List<BeaconContent> beaconContents, BeaconContent.INFORMATION_STATUS informationStatus, FEED_STATUS feedStatus) {
         tvBeaconNumber.setText(getString(R.string.tv_beacon_number, feedStatus, beacons.size(), beaconContents.size()));
         if(beaconContents.size() > 0 && beaconContents.size() == beacons.size()){
             findViewById(R.id.tv_beacon_next_step).setVisibility(View.VISIBLE);

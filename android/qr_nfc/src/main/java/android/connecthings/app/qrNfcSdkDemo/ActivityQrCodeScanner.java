@@ -1,7 +1,7 @@
 package android.connecthings.app.qrNfcSdkDemo;
 
 import android.app.Activity;
-import android.connecthings.adtag.sdk.FragmentAdtagContentAsker;
+import com.connecthings.adtag.sdk.FragmentAdtagContentAsker;
 import android.content.Intent;
 import android.os.Bundle;
 

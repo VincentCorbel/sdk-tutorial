@@ -1,12 +1,11 @@
 package android.connecthings.app.qrNfcSdkDemo;
 
 import android.app.Activity;
-import android.connecthings.util.ViewUtils;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import android.connecthings.app.qrNfcSdkDemo.R;
+import com.connecthings.util.ViewUtils;
 
 public class ActivityWelcome extends Activity implements View.OnClickListener{
 

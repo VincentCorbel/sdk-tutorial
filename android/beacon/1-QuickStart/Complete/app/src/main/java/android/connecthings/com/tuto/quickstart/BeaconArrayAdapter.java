@@ -1,7 +1,7 @@
 package android.connecthings.com.tuto.quickstart;
 
-import android.connecthings.adtag.model.sdk.BeaconContent;
-import android.connecthings.util.adapter.ArrayAdapter;
+import com.connecthings.adtag.model.sdk.BeaconContent;
+import com.connecthings.util.adapter.ArrayAdapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
