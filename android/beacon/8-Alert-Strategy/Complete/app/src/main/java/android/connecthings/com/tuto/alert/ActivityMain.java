@@ -1,11 +1,13 @@
 package android.connecthings.com.tuto.alert;
 
 import com.connecthings.adtag.adtagEnum.FEED_STATUS;
+import com.connecthings.adtag.analytics.model.AdtagLogData;
 import com.connecthings.adtag.model.sdk.BeaconAlertStrategyParameter;
 import com.connecthings.adtag.model.sdk.BeaconContent;
 
 import com.connecthings.util.BLE_STATUS;
 import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
+import com.connecthings.util.adtag.beacon.model.BeaconIntent;
 import com.connecthings.util.adtag.beacon.strategy.alert.Listener.BeaconAlertListener;
 
 
@@ -50,7 +52,7 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(this, ActivityDetail.class);
-        intent.putExtra(ActivityDetail.BEACON_CONTENT, currentBeaconContent);
+        BeaconIntent.configureAlertIntent(intent, currentBeaconContent, AdtagLogData.REDIRECT_TYPE.ALERT, "main");
         startActivity(intent);
     }
 

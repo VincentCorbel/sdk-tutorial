@@ -1,11 +1,13 @@
 package android.connecthings.com.tuto.alert;
 
 import com.connecthings.adtag.adtagEnum.FEED_STATUS;
+import com.connecthings.adtag.analytics.model.AdtagLogData;
 import com.connecthings.adtag.model.sdk.BeaconAlertStrategyParameter;
 import com.connecthings.adtag.model.sdk.BeaconContent;
 
 import com.connecthings.util.BLE_STATUS;
 import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
+import com.connecthings.util.adtag.beacon.model.BeaconIntent;
 import com.connecthings.util.adtag.beacon.strategy.alert.Listener.BeaconAlertListener;
 
 import android.content.Intent;
@@ -49,7 +51,7 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(this, ActivityDetail.class);
-        intent.putExtra(ActivityDetail.BEACON_CONTENT, currentBeaconContent);
+        BeaconIntent.configureAlertIntent(intent, currentBeaconContent, AdtagLogData.REDIRECT_TYPE.ALERT, "main");
         startActivity(intent);
     }
 
@@ -64,6 +66,7 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
             return true;
         }
         tvBeaconAlert.setText("No POPUP action for beacon");
+        btnMore.setVisibility(View.GONE);
         return false ;
 
     }
@@ -71,14 +74,14 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
     @Override
     public boolean removeBeaconAlert(BeaconContent beaconContent, BeaconAlertStrategyParameter.BeaconRemoveStatus beaconRemoveStatus) {
         tvBeaconAlert.setText("Remove beacon alert action");
-
-        btnMore.setVisibility(View.INVISIBLE);
+        btnMore.setVisibility(View.GONE);
         return true;
     }
 
     @Override
     public void onNetworkError(FEED_STATUS feed_status) {
         tvBeaconAlert.setText("Network connectivity problems");
+        btnMore.setVisibility(View.GONE);
 
     }
 }
