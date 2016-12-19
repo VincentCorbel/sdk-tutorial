@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:tag="locationFragment"
-        class="com.connecthings.util.adtag.beacon.permision.FragmentLocationPermission"></fragment>
+        class="com.connecthings.util.adtag.beacon.permission.location.FragmentLocationPermision"></fragment>
 
 
     <TextView
