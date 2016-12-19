@@ -17,5 +17,5 @@
         android:text="@string/beacon_content_empty"
         android:id="@+id/beacon_content"/>
 
-    
+
 </LinearLayout>
