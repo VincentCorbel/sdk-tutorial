@@ -1,12 +1,11 @@
 package android.connecthings.com.tuto.alert;
 
+import android.os.SystemClock;
+
 import com.connecthings.adtag.model.sdk.BeaconAlertStrategyParameter;
 import com.connecthings.adtag.model.sdk.BeaconContent;
-import com.connecthings.com.tuto.alert.TimeAlertStrategyParameter;
 import com.connecthings.util.Log;
 import com.connecthings.util.adtag.beacon.strategy.alert.Listener.BeaconAlertStrategyListener;
-
-import android.os.SystemClock;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
