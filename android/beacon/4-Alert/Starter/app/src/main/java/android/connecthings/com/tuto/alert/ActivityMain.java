@@ -50,7 +50,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(this, ActivityDetail.class);
-        intent.putExtra(ActivityDetail.BEACON_CONTENT, currentBeaconContent);
+        
         startActivity(intent);
     }
 
