@@ -53,6 +53,7 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(this, ActivityDetail.class);
+        //This permit to generate automatically logs when the user click
         BeaconIntent.configureAlertIntent(intent, currentBeaconContent, AdtagLogData.REDIRECT_TYPE.ALERT, "MAIN");
         startActivity(intent);
     }
