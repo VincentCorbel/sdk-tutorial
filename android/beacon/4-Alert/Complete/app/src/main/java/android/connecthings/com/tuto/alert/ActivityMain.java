@@ -45,14 +45,8 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
                 adtagBeaconManager.enableBluetooth();
             }
         }
-        adtagBeaconManager.registerBeaconAlertListener(this);
     }
-
-    protected void onPause(){
-        adtagBeaconManager.unRegisterBeaconAlertListener(this);
-        super.onPause();
-    }
-
+    
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(this, ActivityDetail.class);
