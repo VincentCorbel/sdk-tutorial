@@ -32,10 +32,7 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
         tvBeaconAlert = (TextView) findViewById(R.id.tv_beacon_alert);
         btnMore = (Button) findViewById(R.id.btn_more);
         btnMore.setOnClickListener(this);
-
         adtagBeaconManager = AdtagBeaconManager.getInstance();
-        adtagBeaconManager.registerBeaconAlertListener(this);
-
 
     }
 
@@ -48,6 +45,12 @@ public class ActivityMain extends AppCompatActivity implements BeaconAlertListen
                 adtagBeaconManager.enableBluetooth();
             }
         }
+        adtagBeaconManager.registerBeaconAlertListener(this);
+    }
+
+    protected void onPause(){
+        adtagBeaconManager.unRegisterBeaconAlertListener(this);
+        super.onPause();
     }
 
     @Override
