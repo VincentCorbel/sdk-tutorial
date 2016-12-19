@@ -5,12 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.connecthings.adtag.model.sdk.BeaconContent;
+import com.connecthings.util.adtag.beacon.model.BeaconIntent;
 
 /**
  */
 public class ActivityDetail extends AppCompatActivity {
-
-    public static final String BEACON_CONTENT = "com.connecthings.beaconContent";
 
     private BeaconContent currentBeaconContent;
 
@@ -18,7 +17,7 @@ public class ActivityDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        currentBeaconContent = getIntent().getParcelableExtra(BEACON_CONTENT);
+        currentBeaconContent = getIntent().getParcelableExtra(BeaconIntent.BEACON_CONTENT);
         initView();
     }
 
