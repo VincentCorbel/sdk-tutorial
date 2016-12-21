@@ -8,6 +8,9 @@ import com.connecthings.adtag.nfc.FragmentNfcAdtagContentAsker;
 import com.connecthings.adtag.nfc.NfcReceiver;
 import com.connecthings.adtag.sdk.AdtagContentReceiver;
 import com.connecthings.adtag.sdk.FragmentAdtagContentAsker;
+
+import android.app.Activity;
+import android.app.DialogFragment;
 import android.connecthings.app.qrNfcSdkDemo.dialog.ApplicationDialog;
 import com.connecthings.util.EasyIntent;
 import com.connecthings.util.Log;
@@ -18,8 +21,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -30,7 +31,7 @@ import android.connecthings.app.qrNfcSdkDemo.R;
 import java.lang.ref.WeakReference;
 
 
-public class ActivityQrNfcFgOnly extends FragmentActivity implements OnClickListener, AdtagContentReceiver, NfcReceiver{
+public class ActivityQrNfcFgOnly extends Activity implements OnClickListener, AdtagContentReceiver, NfcReceiver{
 	
 	private static final String TAG = "Home";
     private static final String FG_ADTAG_CONTENT = "fgFindAdtagContent";
@@ -50,11 +51,11 @@ public class ActivityQrNfcFgOnly extends FragmentActivity implements OnClickList
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_qr_nfc);
-        fgNfcAdtagContent = (FragmentAdtagContentAsker) getSupportFragmentManager().findFragmentByTag(FG_NFC_CONTENT);
+        fgNfcAdtagContent = (FragmentAdtagContentAsker) getFragmentManager().findFragmentByTag(FG_NFC_CONTENT);
         if(fgNfcAdtagContent == null){
             //Initialize a new FragmentAdtagContentAsker() if you don't need NFC
             fgNfcAdtagContent = FragmentNfcAdtagContentAsker.newInstance(false);
-            getSupportFragmentManager().beginTransaction().add(fgNfcAdtagContent, FG_NFC_CONTENT).commitAllowingStateLoss();
+            getFragmentManager().beginTransaction().add(fgNfcAdtagContent, FG_NFC_CONTENT).commitAllowingStateLoss();
         }
         findViewById(R.id.btn_launch_test).setOnClickListener(this);
         findViewById(R.id.btn_launch_default_qr).setOnClickListener(this);
@@ -96,7 +97,7 @@ public class ActivityQrNfcFgOnly extends FragmentActivity implements OnClickList
     public void onReceiveAdtagContent(FEED_STATUS feedStatus, AdtagContent adtagContent) {
         if (feedStatus == FEED_STATUS.IN_PROGRESS) {
             fragmentLoading = ApplicationDialog.newInstance(ApplicationDialog.Type.LOAD_IN_PROGRESS);
-            fragmentLoading.show(getSupportFragmentManager(), DIALOG_LOADING);
+            fragmentLoading.show(getFragmentManager(), DIALOG_LOADING);
         } else {
             handlerClosingFragment.sendEmptyMessage(0);
 
@@ -154,7 +155,7 @@ public class ActivityQrNfcFgOnly extends FragmentActivity implements OnClickList
             if(activity == null){
                 return;
             }
-            DialogFragment df = (DialogFragment)activity.getSupportFragmentManager().findFragmentByTag(DIALOG_LOADING);
+            DialogFragment df = (DialogFragment)activity.getFragmentManager().findFragmentByTag(DIALOG_LOADING);
             if(df!=null) {
                 df.dismiss();
             }
