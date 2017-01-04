@@ -10,14 +10,17 @@ import UIKit
 import ATAnalytics
 import ATLocationBeacon
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,ATRangeDelegate {
     
     @IBOutlet weak var txt_nbrBeacon: UILabel!
      var beaconManager: ATBeaconManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        
+        beaconManager = ATBeaconManager.sharedInstance()
+        beaconManager.registerAdtagRangeDelegate(self)
+ 
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +28,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus, region: CLRegion!) {
+        var feedStatusString: String
+        
  
+    } 
 }
 

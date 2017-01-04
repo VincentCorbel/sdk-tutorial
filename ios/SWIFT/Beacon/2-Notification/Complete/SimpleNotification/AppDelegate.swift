@@ -38,7 +38,10 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-         initAdtagInstance(with:ATUrlTypePreprod ,userLogin: "*****LOGIN****" ,userPassword: "****PASSWORD****" ,userCompany: "****COMPAGNY****" ,beaconUuid: "****UUID****")
+        let uuids = ["****UUID****"]
+        initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
+        
+     //   ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -63,35 +66,11 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     }
     
     /** Receive the local notification **/
-    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        
-        
-        if application.applicationState != UIApplicationState.active {
-            let beaconContent: ATBeaconContent = ATBeaconManager.sharedInstance().getNotificationBeaconContent()
-            let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : beaconContent]
-            let nc = NotificationCenter.default
-            nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
-                    object: nil,
-                    userInfo:dict)
-        }
+    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+          super.application(application, didReceive: notification)
+        ATBeaconManager.sharedInstance().didReceive(notification);
     }
-    
-    override func applicationWillResignActive(_ application: UIApplication) {
-        
-        /* ** Required
-         * Add super.applicationWillResignActive to your  delegate method
-         * the super class will init the range beacon
-         * if a the super call isn't reachable the Beacon range won't be start
-         */
-        super.applicationWillResignActive(application)
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-    
+ 
     override func applicationDidBecomeActive(_ application: UIApplication) {
         
         /* ** Required
@@ -115,10 +94,22 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         let localNotification:UILocalNotification = UILocalNotification()
         localNotification.alertBody = kLocalNotificationMessage
         localNotification.alertAction = kLocalNotificationAction
+ 
+        let infoDict = [ KEY_NOTIFICATION_CONTENT : _beaconContent.toJSONString() ]
+        localNotification.userInfo = infoDict
         print("create notification from app delegate");
         localNotification.soundName = UILocalNotificationDefaultSoundName
         UIApplication.shared.presentLocalNotificationNow(localNotification)
         
         return localNotification;
+    }
+    
+    
+    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
+ 
+    }
+    
+    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
+        
     }
 }

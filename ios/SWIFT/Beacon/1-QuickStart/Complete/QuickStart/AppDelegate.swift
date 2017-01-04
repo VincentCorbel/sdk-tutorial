@@ -17,7 +17,7 @@ import AVFoundation
  */
 @UIApplicationMain
 class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     
@@ -41,11 +41,12 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-             initAdtagInstance(with: Typedef-ENUM ,userLogin: "LOGIN" ,userPassword: "PASSWORD" ,userCompany: "COMPAGNY" ,beaconUuid: "UUID-VALUE");
-       
+        let uuids = ["****UUID****"]
+        initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
+        
         return true
     }
- 
+    
     override func applicationWillResignActive(_ application: UIApplication) {
         
         /* ** Required
@@ -55,16 +56,16 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          */
         super.applicationWillResignActive(application)
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
-
+    
     override func applicationDidBecomeActive(_ application: UIApplication) {
         
         /* ** Required
@@ -78,7 +79,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
 
