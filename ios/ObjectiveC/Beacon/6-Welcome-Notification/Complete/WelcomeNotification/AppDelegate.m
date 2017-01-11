@@ -37,20 +37,20 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    NSArray *uuids = @[@"**********UUID**********"];
-                       [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
+    NSArray *uuids = @[@"UUID"];
+    
+    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"USER" userPassword:@"PSWD" userCompany:@"COMPANY" beaconArrayUuids:uuids];
     
     // [self disableNotifications];
-    ATBeaconWelcomeNotification *welcomeNotificationOff = [[ATBeaconWelcomeNotification alloc] initTitle:@"Test Welcome notification" description:@"No network notif..." minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOff];
+    ATBeaconWelcomeNotification *welcomeNotificationOn = [[ATBeaconWelcomeNotification alloc] initTitle:@"Nice Welcome notification" description:@"Good news: You have got network" minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOn];
+    [self addWelcomeNotification:welcomeNotificationOn];
+    ATBeaconWelcomeNotification *welcomeNotificationOff = [[ATBeaconWelcomeNotification alloc] initTitle:@"Nice Welcome notification" description:@"No network? Lucky you are, a free wifi is available!" minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOff];
     [self addWelcomeNotification:welcomeNotificationOff];
     
+    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
     
+    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){}
     
-
-    
-    
-    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
-    }
     //To add the application to the notification center
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
@@ -59,8 +59,17 @@
 }
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    
     [super application:application didReceiveLocalNotification:notification];
+}
+
+-(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
+    NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
+}
+
+-(void)didReceiveWelcomeNotificationContentReceived:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
+    NSDictionary* dict = [NSDictionary dictionaryWithObject: _welcomeNotificationContent forKey:@"welcomeNotification"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconWelcomeNotification" object:nil userInfo:dict];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{
@@ -107,6 +116,7 @@
     }
     return nil;
 }
+
  
 
 @end

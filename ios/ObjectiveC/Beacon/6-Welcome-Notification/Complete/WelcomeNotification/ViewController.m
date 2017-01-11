@@ -21,14 +21,17 @@
     
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(remoteNotificationReceived:) name:@"BeaconNotification"
+                                               object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(remoteWelcomeNotificationReceived:) name:@"BeaconWelcomeNotification"
+                                               object:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     //self.txtMessage.text = messageString;
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,22 +41,16 @@
 
 //Method to retreive notification BeaconContent from the AppDelegate
 - (void)remoteNotificationReceived:(NSNotification *)notification{
-    
+    ATBeaconContent *beaconContent = [notification.userInfo objectForKey:@"beaconContent"];
+    self.txtMessage.text = [beaconContent getNotificationTitle];
+    [self.txtMessage setNeedsDisplay];
 }
 
--(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
-    if (_beaconContent) {
-        self.txtMessage.text = [_beaconContent getNotificationTitle];
-        [self.txtMessage setNeedsDisplay];
-    }
-}
-
--(void)didReceiveWelcomeNotificationContentReceived:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
-    
-    if (_welcomeNotificationContent) {
-        self.txtMessage.text = _welcomeNotificationContent.description;
-        [self.txtMessage setNeedsDisplay];
-    }
+//Method to retreive notification BeaconContent from the AppDelegate
+- (void)remoteWelcomeNotificationReceived:(NSNotification *)notification{
+    ATBeaconWelcomeNotification *welcomeNotification = [notification.userInfo objectForKey:@"welcomeNotification"];
+    self.txtMessage.text = [welcomeNotification title];
+    [self.txtMessage setNeedsDisplay];
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <ATLocationBeacon/ATLocationBeacon.h>
-@interface ViewController : UIViewController <ATBeaconReceiveNotificatonContentDelegate>
+@interface ViewController : UIViewController
 
 @property (nonatomic, assign) IBOutlet UILabel *txtMessage;
 

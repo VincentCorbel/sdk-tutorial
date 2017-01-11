@@ -37,13 +37,11 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    NSArray *uuids = @[@"**********UUID**********"];
-                       [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
+    NSArray *uuids = @[@"*****UUID*******"];
     
- 
+    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***UUID***" userPassword:@"***PSWD***" userCompany:@"***COMPANY***" beaconArrayUuids:uuids];
     
-    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
-    }
+    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){}
     //To add the application to the notification center
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
@@ -51,10 +49,11 @@
     return YES;
 }
 
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    
-    [super application:application didReceiveLocalNotification:notification];
+-(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
+    NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
 }
+
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     [super applicationDidBecomeActive:application];
