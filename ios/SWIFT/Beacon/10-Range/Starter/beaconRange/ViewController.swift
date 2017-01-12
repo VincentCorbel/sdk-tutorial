@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import ATAnalytics
+import ATLocationBeacon
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController,ATRangeDelegate {
+    
+    @IBOutlet weak var txt_nbrBeacon: UILabel!
+     var beaconManager: ATBeaconManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        beaconManager = ATBeaconManager.sharedInstance()
+        beaconManager.registerAdtagRangeDelegate(self)
+ 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus, region: CLRegion!) {
+        var feedStatusString: String
+        
+ 
+    } 
 }
 

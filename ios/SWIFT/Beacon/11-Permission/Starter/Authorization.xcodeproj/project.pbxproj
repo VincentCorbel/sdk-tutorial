@@ -15,6 +15,9 @@
 		1461F4501D5B831000A8E003 /* AuthorizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1461F44F1D5B831000A8E003 /* AuthorizationTests.swift */; };
 		1461F45B1D5B831000A8E003 /* AuthorizationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1461F45A1D5B831000A8E003 /* AuthorizationUITests.swift */; };
 		1461F46A1D5B868C00A8E003 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1461F46C1D5B868C00A8E003 /* localizable.strings */; };
+		55F606EACDD7D65761B1278D /* Pods_AuthorizationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE2C978F4592D0D32DAE353 /* Pods_AuthorizationTests.framework */; };
+		69E5046A7F0EE45C1A5E0215 /* Pods_AuthorizationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD1D425945680C8A5BEC2CA /* Pods_AuthorizationUITests.framework */; };
+		F33538C4A8543A193F3FBF8D /* Pods_Authorization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39B5ACF69BCFAB53E13D519 /* Pods_Authorization.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040E22E48C94AA0C44CCDF9C /* Pods-AuthorizationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationUITests/Pods-AuthorizationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		05DA043E840373CBDF0B2072 /* Pods-AuthorizationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationTests/Pods-AuthorizationTests.release.xcconfig"; sourceTree = "<group>"; };
+		0AD1D425945680C8A5BEC2CA /* Pods_AuthorizationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorizationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE28AA3E5B0F37DEAE182A4 /* Pods-Authorization.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authorization.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Authorization/Pods-Authorization.debug.xcconfig"; sourceTree = "<group>"; };
 		1461F4371D5B831000A8E003 /* Authorization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Authorization.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1461F43A1D5B831000A8E003 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,8 +57,11 @@
 		1461F45C1D5B831000A8E003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1461F46B1D5B868C00A8E003 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/localizable.strings; sourceTree = "<group>"; };
 		1461F46D1D5B87CE00A8E003 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localizable.strings; sourceTree = "<group>"; };
+		1DE2C978F4592D0D32DAE353 /* Pods_AuthorizationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorizationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F434FA909BF6CB564F363F6 /* Pods-Authorization.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authorization.release.xcconfig"; path = "Pods/Target Support Files/Pods-Authorization/Pods-Authorization.release.xcconfig"; sourceTree = "<group>"; };
+		BE318BE41590BA64FB78E9A0 /* Pods-AuthorizationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationTests/Pods-AuthorizationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C39B5ACF69BCFAB53E13D519 /* Pods_Authorization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Authorization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6C4C67338D5AE0BED1E8507 /* Pods-AuthorizationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuthorizationUITests/Pods-AuthorizationUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F33538C4A8543A193F3FBF8D /* Pods_Authorization.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F606EACDD7D65761B1278D /* Pods_AuthorizationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E5046A7F0EE45C1A5E0215 /* Pods_AuthorizationUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				C39B5ACF69BCFAB53E13D519 /* Pods_Authorization.framework */,
+				1DE2C978F4592D0D32DAE353 /* Pods_AuthorizationTests.framework */,
+				0AD1D425945680C8A5BEC2CA /* Pods_AuthorizationUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,6 +161,10 @@
 			children = (
 				0CE28AA3E5B0F37DEAE182A4 /* Pods-Authorization.debug.xcconfig */,
 				4F434FA909BF6CB564F363F6 /* Pods-Authorization.release.xcconfig */,
+				BE318BE41590BA64FB78E9A0 /* Pods-AuthorizationTests.debug.xcconfig */,
+				05DA043E840373CBDF0B2072 /* Pods-AuthorizationTests.release.xcconfig */,
+				040E22E48C94AA0C44CCDF9C /* Pods-AuthorizationUITests.debug.xcconfig */,
+				E6C4C67338D5AE0BED1E8507 /* Pods-AuthorizationUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -158,12 +176,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1461F45F1D5B831000A8E003 /* Build configuration list for PBXNativeTarget "Authorization" */;
 			buildPhases = (
-				644F80D6D756770D597AF474 /* 📦 Check Pods Manifest.lock */,
 				1461F4331D5B831000A8E003 /* Sources */,
 				1461F4341D5B831000A8E003 /* Frameworks */,
 				1461F4351D5B831000A8E003 /* Resources */,
-				512E4D1C5E02FC33C8A38072 /* 📦 Embed Pods Frameworks */,
-				F83CFFB87D83FDC0007CC3C3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,13 +237,17 @@
 				TargetAttributes = {
 					1461F4361D5B831000A8E003 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3T67HE76NG;
+						LastSwiftMigration = 0800;
 					};
 					1461F44A1D5B831000A8E003 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1461F4361D5B831000A8E003;
 					};
 					1461F4551D5B831000A8E003 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 1461F4361D5B831000A8E003;
 					};
 				};
@@ -280,54 +299,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		512E4D1C5E02FC33C8A38072 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Authorization/Pods-Authorization-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		644F80D6D756770D597AF474 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F83CFFB87D83FDC0007CC3C3 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Authorization/Pods-Authorization-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1461F4331D5B831000A8E003 /* Sources */ = {
@@ -489,10 +460,12 @@
 			baseConfigurationReference = 0CE28AA3E5B0F37DEAE182A4 /* Pods-Authorization.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = Authorization/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.Authorization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -501,55 +474,65 @@
 			baseConfigurationReference = 4F434FA909BF6CB564F363F6 /* Pods-Authorization.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = Authorization/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.Authorization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		1461F4631D5B831000A8E003 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE318BE41590BA64FB78E9A0 /* Pods-AuthorizationTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AuthorizationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AuthorizationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Authorization.app/Authorization";
 			};
 			name = Debug;
 		};
 		1461F4641D5B831000A8E003 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05DA043E840373CBDF0B2072 /* Pods-AuthorizationTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AuthorizationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AuthorizationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Authorization.app/Authorization";
 			};
 			name = Release;
 		};
 		1461F4661D5B831000A8E003 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 040E22E48C94AA0C44CCDF9C /* Pods-AuthorizationUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AuthorizationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AuthorizationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Authorization;
 			};
 			name = Debug;
 		};
 		1461F4671D5B831000A8E003 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C4C67338D5AE0BED1E8507 /* Pods-AuthorizationUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AuthorizationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.AuthorizationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Authorization;
 			};
 			name = Release;

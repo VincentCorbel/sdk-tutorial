@@ -28,9 +28,14 @@
     // ** user Compagny : ....
     // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
     //
-   [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"****" userPassword:@"****" userCompany:@"****" beaconUuid:@"********-****-****-****-************"];
- 
+    NSArray *uuids = @[@"**** UUID ****"];
+    
+    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"USER" userPassword:@"PSW" userCompany:@"COMPANY" beaconArrayUuids:uuids];
     return YES;
+}
+
+- (void) applicationDidBecomeActive:(UIApplication *)application{
+    [super applicationDidBecomeActive:application];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

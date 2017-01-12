@@ -27,10 +27,9 @@ class ViewController: UIViewController,ATRangeDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
- func didRangeBeacons(beacons: [AnyObject], beaconContents: [AnyObject], informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus, region: CLRegion!) {
+    
+    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus, region: CLRegion!) {
         var feedStatusString: String
-        
         
         switch feedStatus {
         case ATRangeFeedStatusInProgress:
@@ -41,15 +40,12 @@ class ViewController: UIViewController,ATRangeDelegate {
             feedStatusString = "NETWORK_ERROR"
         case ATRangeFeedStatusBackendSuccess:
             feedStatusString = "BACKEND_SUCCESS"
-            default:
-             feedStatusString = ""
+        default:
+            feedStatusString = ""
         }
-     
         
-        self.txt_nbrBeacon.text = String(format: NSLocalizedString("beaconDetected", comment: ""), feedStatusString, beacons.count, beaconContents.count)
-
-    
-    }
-
+        self.txt_nbrBeacon.text = String(format: NSLocalizedString("beaconDetected", comment: ""), feedStatusString, _beacons.count, beaconContents.count)
+ 
+    } 
 }
 

@@ -187,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142268C81D588CC800942528 /* Build configuration list for PBXNativeTarget "BeaconRange" */;
 			buildPhases = (
+				72A5D1A231F9B191F21E24C0 /* 📦 Check Pods Manifest.lock */,
 				142268971D588CC700942528 /* Sources */,
 				142268981D588CC700942528 /* Frameworks */,
 				142268991D588CC700942528 /* Resources */,
+				AADF69A5FEABAC3C1FCE5CF4 /* 📦 Embed Pods Frameworks */,
+				AE69C8A0012DAF5625A6EBBD /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,6 +327,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconRangeTests/Pods-BeaconRangeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72A5D1A231F9B191F21E24C0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AADF69A5FEABAC3C1FCE5CF4 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconRange/Pods-BeaconRange-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE69C8A0012DAF5625A6EBBD /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconRange/Pods-BeaconRange-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8A2267D5B88B81E42364CD1 /* 📦 Copy Pods Resources */ = {

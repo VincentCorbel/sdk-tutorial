@@ -11,86 +11,106 @@ import UIKit
 import ATConnectionHttp
 import ATAnalytics
 import ATLocationBeacon
+import UserNotifications
 
 
 @UIApplicationMain
 class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate {
-
+    
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        // HELP:
-        // init the adtag platforme with the
-        // ** user Login : Login delivred by the Connecthings staff
-        // ** user Password : Password delivred by the Connecthings staff
-        // ** user Compagny : ....
-        // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        initAdtagInstanceWithUrlType(ATUrlTypeItg ,userLogin: "*****" ,userPassword: "*****" ,userCompany: "*****" ,beaconUuid: "*****");
+        /* ** Required -- used to initialize and setup the SDK
+         *
+         *
+         *
+         * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
+         * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
+         *                  ATUrlTypeProd     = > Production Platform
+         *                  ATUrlTypeDemo     = > Demo Platform
+         *
+         * Key/Value are related to the selected Platform
+         * -- 2- user Login : Login delivred by the Connecthings staff
+         * -- 3- user Password : Password delivred by the Connecthings staff
+         * -- 4- user Compagny : Define the compagny name
+         * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
+         * --
+         *
+         * All other SDK methods must be called after this one, because they won't exist until you do.
+         */
+        let uuids = ["****UUID****"]
+        initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
         
-        if  ((launchOptions?[UIApplicationLaunchOptionsLocationKey] as? NSDictionary) != nil) {
+     //   ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
+        
+        /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
+         / -- Registering Notification Settings **/
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+                // Enable or disable features based on authorization.
+            }
+            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(setting)
+            UIApplication.shared.registerForRemoteNotifications()
+        } else {
+            if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
+                let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+                notificationCategory.identifier = "INVITE_CATEGORY"
+                //registerting for the notification.
+                UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
+            }
         }
         
-        if(UIApplication.instancesRespondToSelector(#selector(UIApplication.registerUserNotificationSettings(_:)))){
-            let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
-            notificationCategory.identifier = "INVITE_CATEGORY"
-            //registerting for the notification.
-            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes:[ .Sound, .Alert,
-                .Badge], categories: nil));
-        }
         return true
     }
-
-    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+    
+    /** Receive the local notification **/
+    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+          super.application(application, didReceive: notification)
+        ATBeaconManager.sharedInstance().didReceive(notification);
+    }
+ 
+    override func applicationDidBecomeActive(_ application: UIApplication) {
         
-        if application.applicationState != UIApplicationState.Active {
-            let beaconContent: ATBeaconContent = ATBeaconManager.sharedInstance().getNotificationBeaconContent()
-            let dict: [NSObject : AnyObject] = [
-                "beaconContent" : beaconContent
-            ]
-            
-            NSNotificationCenter.defaultCenter().postNotificationName("LocalNotificationMessageReceivedNotification", object: nil, userInfo: dict)
-
-            
-        }
-    }
-
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
-    override func applicationDidBecomeActive(application: UIApplication) {
-        super.applicationDidBecomeActive(application)
+        /* ** Required
+         * Add super.applicationDidBecomeActive to your delegate method
+         * the super class will init the range beacon
+         * if a the super call isn't reachable the Beacon range won't be start
+         */
+        super.applicationDidBecomeActive(application);
     }
     
-    override func applicationWillResignActive (application: UIApplication){
-        super.applicationWillResignActive(application)
+    func applicationWillTerminate(_ application: UIApplication) {
     }
-
+    
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-    func createNotification(_beaconContent: ATBeaconContent!) -> UILocalNotification! {
+    
+    func createNotification(_ _beaconContent: ATBeaconContent!) -> UILocalNotification! {
         
         let kLocalNotificationMessage:String! = _beaconContent.getNotificationDescription()
         let kLocalNotificationAction:String! = _beaconContent.getAlertTitle()
         let localNotification:UILocalNotification = UILocalNotification()
         localNotification.alertBody = kLocalNotificationMessage
         localNotification.alertAction = kLocalNotificationAction
+        
+        //  Converted with Swiftify v1.0.6198 - https://objectivec2swift.com/
+        let infoDict = [ KEY_NOTIFICATION_CONTENT : _beaconContent.toJSONString() ]
+        localNotification.userInfo = infoDict
         print("create notification from app delegate");
         localNotification.soundName = UILocalNotificationDefaultSoundName
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
- 
+        UIApplication.shared.presentLocalNotificationNow(localNotification)
+        
         return localNotification;
     }
-
+    
+    
+    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
+ 
+    }
+    
+    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
+        
+    }
 }
-

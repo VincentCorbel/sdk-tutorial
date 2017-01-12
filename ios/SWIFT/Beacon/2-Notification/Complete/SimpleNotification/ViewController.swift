@@ -9,24 +9,29 @@ import UIKit
 import ATConnectionHttp
 import ATAnalytics
 import ATLocationBeacon
-class ViewController: UIViewController {
-
+class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate {
+    
     @IBOutlet weak var txtMessage: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.remoteNotificationReceived), name: "LocalNotificationMessageReceivedNotification", object: nil)
-    }
-
+        
+        ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
+        // Do any additional setup after loading the view, typically from a nib
+ 
+     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-    func remoteNotificationReceived(notification: NSNotification) {
-        let beaconContent: ATBeaconContent = (notification.userInfo!["beaconContent"] as! ATBeaconContent)
-        self.txtMessage.text = beaconContent.getNotificationTitle()
+    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
+        self.txtMessage.text = _beaconContent.getNotificationTitle()
         self.txtMessage.setNeedsDisplay()
     }
-
+    
+    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
+        
+    }
 }

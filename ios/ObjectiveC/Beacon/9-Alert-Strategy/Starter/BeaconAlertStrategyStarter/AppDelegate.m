@@ -1,12 +1,13 @@
 //
 //  AppDelegate.m
-//  BeaconAlertStrategyStarter
+//  beaconAlertStart
 //
-//  Created by sarra srairi on 19/08/2016.
-//  Copyright © 2016 R&D connecthings. All rights reserved.
+//  Created by sarra srairi on 29/03/2016.
+//  Copyright © 2016 sarra srairi. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "AlertTimerStrategyFirstWay.h"
 
 @interface AppDelegate ()
 
@@ -16,15 +17,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    // HELP:
-    // init the adtag platforme with the
-    // ** user Login : Login delivred by the Connecthings staff
-    // ** user Password : Password delivred by the Connecthings staff
-    // ** user Compagny : ....
-    // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
-    //
-    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"****" userPassword:@"****" userCompany:@"****" beaconUuid:@"********-****-****-****-************"];
+ 
+
+    /* ** Required -- used to initialize and setup the SDK
+     *
+     *
+     *
+     * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
+     * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
+     *                  ATUrlTypeProd     = > Production Platform
+     *                  ATUrlTypeDemo     = > Demo Platform
+     *
+     * Key/Value are related to the selected Platform
+     * -- 2- user Login : Login delivred by the Connecthings staff
+     * -- 3- user Password : Password delivred by the Connecthings staff
+     * -- 4- user Compagny : Define the compagny name
+     * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
+     * --
+     *
+     * All other SDK methods must be called after this one, because they won't exist until you do.
+     */
+    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PASSWORD__" userCompany:@"__COMPANY__" beaconUuid:@"__UUID___"];
+    //register the protocol for did range beacon
     return YES;
 }
 
@@ -42,9 +56,12 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
+//- (void)applicationDidBecomeActive:(UIApplication *)application {
+//    // register the didBeaconActive to active range in all the application
+//    // if you delete the DidBeaconActive Method the application will implement the range in the application
+//    [super applicationDidBecomeActive:application];
+//    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.

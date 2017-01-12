@@ -20,9 +20,8 @@
     return self;
 }
 
--(bool) createNewNotification:(ATBeaconContent *)newBeaconContent feedStatus:(ATRangeFeedStatus)feedStatus{
-    NSLog(@"min time %f %f",minNextTimeNotification , CACurrentMediaTime());
-    NSLog(@"min time %d ", minNextTimeNotification < CACurrentMediaTime());
+-(BOOL) createNewNotification:(ATBeaconContent *)newBeaconContent feedStatus:(ATRangeFeedStatus)feedStatus{
+
     return minNextTimeNotification < CACurrentMediaTime();
     //return YES ;
 }
@@ -33,7 +32,7 @@
     }
 }
 
--(bool) deleteCurrentNotification:(ATBeaconContent *)newBeaconContent feedStatus:(ATRangeFeedStatus)feedStatus{
+-(BOOL) deleteCurrentNotification:(ATBeaconContent *)newBeaconContent feedStatus:(ATRangeFeedStatus)feedStatus{
     return true;
 }
 

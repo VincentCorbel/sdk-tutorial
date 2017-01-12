@@ -1,0 +1,22 @@
+platform :ios, '8.0'
+
+target 'SimpleNotification' do
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+
+  use_frameworks!
+  pod "ATConnectionHttp",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATConnectionHttp.git", :tag => "2.5.3"
+  pod "ATAnalytics",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATAnalytics.git", :tag => "2.5.3"
+  pod "ATLocationBeacon",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATLocationBeacon.git", :tag => "2.5.3"
+  # Pods for beaconAlertStarter
+
+  target 'SimpleNotificationTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SimpleNotificationUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
