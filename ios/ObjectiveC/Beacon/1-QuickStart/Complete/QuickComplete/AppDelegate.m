@@ -14,34 +14,28 @@
 
 @implementation AppDelegate
 
-/******** MUST KNOW !!
+/*** MUST KNOW !!
   IF YOU WILL IMPLEMENT THE applicationDidBecomeActive METHOD YOU SHOULD ADD [super applicationDidBecomeActive:application];
     -   the super method will activate the range in your project
 */
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    // HELP:
+    // init the adtag platforme with the
+    // ** user Login : Login delivred by the Connecthings staff
+    // ** user Password : Password delivred by the Connecthings staff
+    // ** user Compagny : ....
+    // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
+    //
+    NSArray *uuids = @[@"**** UUID ****"];
     
-    /* ** Required -- used to initialize and setup the SDK
-     *
-     *
-     *
-     * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
-     * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
-     *                  ATUrlTypeProd     = > Production Platform
-     *                  ATUrlTypeDemo     = > Demo Platform
-     *
-     * Key/Value are related to the selected Platform
-     * -- 2- user Login : Login delivred by the Connecthings staff
-     * -- 3- user Password : Password delivred by the Connecthings staff
-     * -- 4- user Compagny : Define the compagny name
-     * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
-     * --
-     *
-     * All other SDK methods must be called after this one, because they won't exist until you do.
-     */
-    NSArray *uuids = @[@"**********UUID**********];
-     [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
+    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"USER" userPassword:@"PSW" userCompany:@"COMPANY" beaconArrayUuids:uuids];
     return YES;
+}
+
+- (void) applicationDidBecomeActive:(UIApplication *)application{
+    [super applicationDidBecomeActive:application];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
