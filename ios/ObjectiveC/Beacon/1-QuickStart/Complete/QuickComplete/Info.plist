@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>this is my message, Location authorization </string>
+	<string>Love tracking your location</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Bluetooth is life</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
