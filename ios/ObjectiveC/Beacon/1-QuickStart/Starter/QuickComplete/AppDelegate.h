@@ -10,7 +10,7 @@
 #import <ATLocationBeacon/ATLocationBeacon.h>
 #import <ATConnectionHttp/ATConnectionHttp.h>
 
-@interface AppDelegate : ATBeaconAppDelegate <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
