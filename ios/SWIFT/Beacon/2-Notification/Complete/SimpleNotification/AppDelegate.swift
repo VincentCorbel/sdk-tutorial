@@ -41,7 +41,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         let uuids = ["****UUID****"]
         initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
         
-     //   ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -67,10 +66,10 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     
     /** Receive the local notification **/
     override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-          super.application(application, didReceive: notification)
+        super.application(application, didReceive: notification)
         ATBeaconManager.sharedInstance().didReceive(notification);
     }
- 
+    
     override func applicationDidBecomeActive(_ application: UIApplication) {
         
         /* ** Required
@@ -94,7 +93,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         let localNotification:UILocalNotification = UILocalNotification()
         localNotification.alertBody = kLocalNotificationMessage
         localNotification.alertAction = kLocalNotificationAction
- 
+        
         let infoDict = [ KEY_NOTIFICATION_CONTENT : _beaconContent.toJSONString() ]
         localNotification.userInfo = infoDict
         print("create notification from app delegate");
@@ -104,12 +103,4 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         return localNotification;
     }
     
-    
-    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
- 
-    }
-    
-    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
-    }
 }

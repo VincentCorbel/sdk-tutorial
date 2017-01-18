@@ -41,7 +41,7 @@ class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate
     
     func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus, region: CLRegion!) {
         
-        var feedStatusString: String
+       var feedStatusString: String
         
         switch feedStatus {
         case ATRangeFeedStatusInProgress:

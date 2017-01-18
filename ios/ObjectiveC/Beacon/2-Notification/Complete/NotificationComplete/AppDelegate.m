@@ -35,11 +35,8 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    NSArray *uuids = @[@"UUID"];
-    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"USER" userPassword:@"PSWD" userCompany:@"COMPANY" beaconArrayUuids:uuids];
-    
-    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
-    
+    NSArray *uuids = @[@"**********UUID**********"];
+                       [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
     
   if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
     }
@@ -61,11 +58,6 @@
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
     [super application:application didReceiveLocalNotification:notification];
-}
-
--(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
-    NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

@@ -41,27 +41,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        let uuids = ["****UUID****"]
-        initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
-        
-        /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
-         / -- Registering Notification Settings **/
-        if #available(iOS 10.0, *) {
-            let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-                // Enable or disable features based on authorization.
-            }
-            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            UIApplication.shared.registerUserNotificationSettings(setting)
-            UIApplication.shared.registerForRemoteNotifications()
-        } else {
-            if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
-                let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
-                notificationCategory.identifier = "INVITE_CATEGORY"
-                //registerting for the notification.
-                UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
-            }
-        }
+ 
         return true
     }
     

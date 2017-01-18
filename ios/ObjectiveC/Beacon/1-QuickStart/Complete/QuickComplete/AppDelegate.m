@@ -28,9 +28,9 @@
     // ** user Compagny : ....
     // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
     //
-    NSArray *uuids = @[@"B0462602-CBF5-4ABB-87DE-B05340DCCBC5"];
+    NSArray *uuids = @[@"**UUID**"];
     
-    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"User_cbeacon" userPassword:@"fSKbCEvCDCbYTDlk" userCompany:@"ccbeacondemo" beaconArrayUuids:uuids];
+    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"**LOGIN**" userPassword:@"**PASSWORD**" userCompany:@"**COMPAGNY**" beaconArrayUuids:uuids];
     [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];

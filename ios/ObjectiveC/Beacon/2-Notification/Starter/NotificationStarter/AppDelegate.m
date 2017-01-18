@@ -31,6 +31,18 @@
     return YES;
 }
 
+// if you implement didBeacomeActive you should add a super call
+// if you don't just remove all the method
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [super applicationDidBecomeActive:application];
+}
+
+
+
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    [super application:application didReceiveLocalNotification:notification];
+}
+
 - (void)applicationDidEnterBackground:(UIApplication *)application {
 }
 
@@ -39,7 +51,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 }
-
 
 
 @end
