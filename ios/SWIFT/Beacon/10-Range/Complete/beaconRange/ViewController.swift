@@ -45,7 +45,7 @@ class ViewController: UIViewController,ATRangeDelegate {
         }
         
         self.txt_nbrBeacon.text = String(format: NSLocalizedString("beaconDetected", comment: ""), feedStatusString, _beacons.count, beaconContents.count)
- 
+        
     } 
 }
 

@@ -10,6 +10,7 @@ import UIKit
 import ATAnalytics
 import ATLocationBeacon
 import AVFoundation
+import UserNotifications
 
 /******** MUST KNOW !!!!
  IF YOU WILL IMPLEMENT THE applicationDidBecomeActive METHOD YOU SHOULD ADD [super applicationDidBecomeActive:application];
@@ -19,7 +20,6 @@ import AVFoundation
 class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
     
     var window: UIWindow?
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -65,7 +65,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
         return true
     }
     
-    
     /** Receive the local notification **/
     override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         super.application(application, didReceive: notification)
@@ -93,9 +92,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          */
         super.applicationDidBecomeActive(application);
     }
-    
-  
-    
     
 }
 

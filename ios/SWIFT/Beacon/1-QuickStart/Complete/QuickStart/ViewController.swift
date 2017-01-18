@@ -9,9 +9,11 @@ import UIKit
 import ATConnectionHttp
 import ATAnalytics
 import ATLocationBeacon
-class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate, ATRangeDelegate{
-         var beaconManager: ATBeaconManager!
+class ViewController: UIViewController, ATBeaconReceiveNotificatonContentDelegate,ATRangeDelegate{
     
+    var beaconManager: ATBeaconManager!
+    
+    @IBOutlet weak var txt_message: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +40,7 @@ class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate
         
     }
     
-    
-    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus, region: CLRegion!) {
-        
+    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus) {
         var feedStatusString: String
         
         switch feedStatus {
@@ -55,6 +55,9 @@ class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate
         default:
             feedStatusString = ""
         }
- 
+        
+        self.txt_message.text = String( format: feedStatusString, _beacons.count, beaconContents.count)
+
     }
+ 
 }
