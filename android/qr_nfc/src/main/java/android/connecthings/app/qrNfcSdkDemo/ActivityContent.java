@@ -1,10 +1,10 @@
 package android.connecthings.app.qrNfcSdkDemo;
 
 import android.app.Activity;
-import android.connecthings.adtag.analytics.AdtagLogsManager;
-import android.connecthings.adtag.analytics.model.AdtagLogContent;
-import android.connecthings.adtag.analytics.model.AdtagLogData;
-import android.connecthings.adtag.model.sdk.AdtagContent;
+import com.connecthings.adtag.analytics.AdtagLogsManager;
+import com.connecthings.adtag.analytics.model.AdtagLogContent;
+import com.connecthings.adtag.analytics.model.AdtagLogData;
+import com.connecthings.adtag.model.sdk.AdtagContent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;

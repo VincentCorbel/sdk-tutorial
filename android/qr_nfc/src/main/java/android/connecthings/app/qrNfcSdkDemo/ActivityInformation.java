@@ -1,7 +1,7 @@
 package android.connecthings.app.qrNfcSdkDemo;
 
 import android.app.Activity;
-import android.connecthings.util.Utils;
+import com.connecthings.util.Utils;
 import android.os.Bundle;
 import android.widget.TextView;
 

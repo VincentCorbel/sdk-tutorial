@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:2.2.3'
         classpath "net.researchgate:gradle-release:${project.versionGradleRelease}"
         classpath "com.github.dcendents:android-maven-gradle-plugin:${project.versionMavenAndroid}"
     }
@@ -59,8 +59,8 @@ dependencies {
     // compile "android.connecthings.adtag:android-adtag-sdk:${project.versionCt}"
 
     //Comment or remove these dependencies if you just want to use FragmentAdtagContentAsker without build-in integration with QR or NFC
-    compile "android.connecthings.adtag:android-qr:${project.versionCt}"
-    compile "android.connecthings.adtag:android-nfc-sdk:${project.versionCt}"
+    compile "com.connecthings.adtag:android-qr:${project.versionCt}"
+    compile "com.connecthings.adtag:android-nfc-sdk:${project.versionCt}"
 }
 
 android {

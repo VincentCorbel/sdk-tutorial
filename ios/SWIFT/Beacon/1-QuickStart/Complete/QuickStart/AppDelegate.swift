@@ -10,6 +10,7 @@ import UIKit
 import ATAnalytics
 import ATLocationBeacon
 import AVFoundation
+import UserNotifications
 
 /******** MUST KNOW !!!!
  IF YOU WILL IMPLEMENT THE applicationDidBecomeActive METHOD YOU SHOULD ADD [super applicationDidBecomeActive:application];
@@ -17,9 +18,8 @@ import AVFoundation
  */
 @UIApplicationMain
 class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
-
-    var window: UIWindow?
     
+    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -41,11 +41,37 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-             initAdtagInstance(with: Typedef-ENUM ,userLogin: "LOGIN" ,userPassword: "PASSWORD" ,userCompany: "COMPAGNY" ,beaconUuid: "UUID-VALUE");
-       
+        let uuids = ["****UUID****"]
+        initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
+        
+        /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
+         / -- Registering Notification Settings **/
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+                // Enable or disable features based on authorization.
+            }
+            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(setting)
+            UIApplication.shared.registerForRemoteNotifications()
+        } else {
+            if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
+                let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+                notificationCategory.identifier = "INVITE_CATEGORY"
+                //registerting for the notification.
+                UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
+            }
+        }
         return true
     }
+    
+    /** Receive the local notification **/
+    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        super.application(application, didReceive: notification)
+        ATBeaconManager.sharedInstance().didReceive(notification);
+    }
  
+    
     override func applicationWillResignActive(_ application: UIApplication) {
         
         /* ** Required
@@ -55,16 +81,8 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          */
         super.applicationWillResignActive(application)
     }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
+    
+    
     override func applicationDidBecomeActive(_ application: UIApplication) {
         
         /* ** Required
@@ -73,12 +91,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          * if a the super call isn't reachable the Beacon range won't be start
          */
         super.applicationDidBecomeActive(application);
-        
     }
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
+    
 }
 
