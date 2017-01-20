@@ -18,7 +18,7 @@ import android.text.TextUtils;
 
 /**
  */
-public class ApplicationNotification extends Application implements BeaconNotification {
+public class ApplicationNotification extends Application {
 
     private static final String TAG = "ApplicationNotification";
 
@@ -33,6 +33,9 @@ public class ApplicationNotification extends Application implements BeaconNotifi
         //If youe need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
         //Initiate the beaconManager with the UUID of your beacons company. our beaconManager manage only one beacon Region based on the uuid
         AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, "**UUID**");
+
+        //If you want to implement your own AsyncBeaconNotificationListener
+        //beaconManager.registerAsyncBeaconNotificationListener(new AsyncBeaconNotificationCreator(this));
     }
 
 
