@@ -40,8 +40,8 @@
     
   if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
     }
-    //To add the application to the notification center
-    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+    //To add the application to the notification center untill ios9
+    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
    
