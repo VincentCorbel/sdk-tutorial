@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewControllerBeacon.h"
+#import "MyBeaconNotificationBuilder.h"
 @interface AppDelegate ()
 
 @end
@@ -35,9 +36,10 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    NSArray *uuids = @[@"**********UUID**********"];
-                       [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
+    NSArray *uuids = @[@"B0462602-CBF5-4ABB-87DE-B05340DCCBC5"];
+    [self initAdtagInstanceWithUrlType:ATUrlTypeDev userLogin:@"User_cbeacon" userPassword:@"fSKbCEvCDCbYTDlk" userCompany:@"ccbeacondemo" beaconArrayUuids:uuids];
     
+    [self registerAsyncBeaconNotificationDelegate:[[ATAsyncBeaconNotificationImageCreator alloc] initWithCreateBeaconNotification:[[MyBeaconNotificationBuilder alloc] init]]];
   if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
     }
     //To add the application to the notification center untill ios9
@@ -54,10 +56,17 @@
     [super applicationDidBecomeActive:application];
 }
 
-
-
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
     [super application:application didReceiveLocalNotification:notification];
+}
+
+-(void) didReceiveBeaconNotification:(ATBeaconContent *)_beaconContent{
+    //Open the view controller associate to the notification
+    //You can use [_beaconContent getUri] to match with a deeplink
+    //Here a fast an simple exemple
+    NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
+    
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -68,25 +77,5 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 }
--(UILocalNotification *)createNotification:(ATBeaconContent *)_beaconContent {
-    if (_beaconContent) {
-        ILog(@"create notification from app delegate");
-        UILocalNotification *notification = [[UILocalNotification alloc]init];
-        [notification setAlertBody:[_beaconContent getNotificationDescription]];
-        if(SYSTEM_VERSION_GREATER_THAN(@"7.99")){
-            [notification setAlertTitle:[_beaconContent getAlertTitle]];
-        }
-        
-        NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[_beaconContent toJSONString] forKey: KEY_NOTIFICATION_CONTENT];
-        [notification setUserInfo:infoDict];
-        
-        [[UIApplication sharedApplication] presentLocalNotificationNow: notification];
- 
-        return notification;
-        
-    }
-    return nil;
-}
 
- 
 @end

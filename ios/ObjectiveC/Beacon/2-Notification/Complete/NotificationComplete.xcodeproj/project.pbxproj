@@ -122,9 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				14E45A921CA1B79500639B81 /* AppDelegate.h */,
+				14E45A931CA1B79500639B81 /* AppDelegate.m */,
 				7C86C8591E37B76F008C6A33 /* MyBeaconNotificationBuilder.h */,
 				7C86C85A1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m */,
-				14E45A931CA1B79500639B81 /* AppDelegate.m */,
 				14E45A951CA1B79500639B81 /* ViewControllerBeacon.h */,
 				14E45A961CA1B79500639B81 /* ViewControllerBeacon.m */,
 				14E45A981CA1B79500639B81 /* Main.storyboard */,
