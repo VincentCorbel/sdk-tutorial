@@ -36,8 +36,8 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    NSArray *uuids = @[@"B0462602-CBF5-4ABB-87DE-B05340DCCBC5"];
-    [self initAdtagInstanceWithUrlType:ATUrlTypeDev userLogin:@"User_cbeacon" userPassword:@"fSKbCEvCDCbYTDlk" userCompany:@"ccbeacondemo" beaconArrayUuids:uuids];
+    NSArray *uuids = @[@"**** UUID ******"];
+    [self initAdtagInstanceWithUrlType:ATUrlTypeDev userLogin:@"*** LOGIN ***" userPassword:@"*** PSW ***" userCompany:@"*** COMPANY ***" beaconArrayUuids:uuids];
     
     [self registerAsyncBeaconNotificationDelegate:[[ATAsyncBeaconNotificationImageCreator alloc] initWithCreateBeaconNotification:[[MyBeaconNotificationBuilder alloc] init]]];
   if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){

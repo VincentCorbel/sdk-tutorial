@@ -1,15 +1,15 @@
 //
-//  SimpleNotificationTests.swift
-//  SimpleNotificationTests
+//  CompleteTests.swift
+//  CompleteTests
 //
-//  Created by sarra srairi on 10/08/2016.
-//  Copyright © 2016 R&D connecthings. All rights reserved.
+//  Created by Stevens Olivier on 26/01/2017.
+//  Copyright © 2017 R&D connecthings. All rights reserved.
 //
 
 import XCTest
-@testable import SimpleNotification
+@testable import Complete
 
-class SimpleNotificationTests: XCTestCase {
+class CompleteTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
