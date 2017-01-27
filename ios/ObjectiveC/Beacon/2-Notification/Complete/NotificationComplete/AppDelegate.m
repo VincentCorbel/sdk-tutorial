@@ -38,6 +38,7 @@
     NSArray *uuids = @[@"**********UUID**********"];
                        [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
     
+    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
   if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
     }
     //To add the application to the notification center
@@ -87,6 +88,14 @@
     }
     return nil;
 }
+-(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
+    if (_beaconContent) {
+    }
+}
 
- 
+-(void)didReceiveWelcomeNotificationContentReceived:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
+}
+
 @end
+
+
