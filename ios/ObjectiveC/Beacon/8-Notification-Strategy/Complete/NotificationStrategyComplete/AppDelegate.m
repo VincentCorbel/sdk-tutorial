@@ -44,7 +44,7 @@
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
-    
+    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
     return YES;
 }
 
@@ -61,10 +61,6 @@
     application.applicationIconBadgeNumber = 0;
 }
 
-
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    
-}
 
 -(UILocalNotification *)createNotification:(ATBeaconContent *)_beaconContent {
     if (_beaconContent) {
@@ -84,6 +80,15 @@
         
     }
     return nil;
+}
+
+-(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
+    NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
+}
+
+-(void)didReceiveWelcomeNotificationContentReceived:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
+
 }
 
 @end

@@ -15,7 +15,7 @@ import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate,ATBeaconReceiveNotificatonContentDelegate {
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -38,8 +38,9 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        let uuids = ["****UUID****"]
-        initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
+        let uuids = ["B0462602-CBF5-4ABB-87DE-B05340DCCBC5"]
+        initAdtagInstance(with: ATUrlTypeProd, userLogin: "User_cbeacon", userPassword: "fSKbCEvCDCbYTDlk", userCompany: "demoasr", beaconArrayUuids: uuids, activatIos10Workaround: false)
+        
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -59,47 +60,16 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
         }
-        
-        
-        /*/******** SPAM REGION FILTER ********/
-         The notification sparm region is developped to associate one or many beacon to a region !  a region is a notification content and the structure  is {category, field} value.
-         In this case, if the current beacon notification and the new beacon notification has the same beacon notification  title --> category :beacon-notification / field : title ) means this two beacon are in the same region
-         
-         Finally we will have just one notification ! means that the notification of the new beacon detected will not replace the last one cause : this two beacon are in the same region (which is the same title )
-         
-         syntax :
-         self.addNotificationStrategy(ATBeaconNotificationStrategySpamRegionFilter(categoryAndField: "beacon-notification", field: "title"))
-         */
-        
-        
-        /*/******** SPAM Max FILTER ********/
-         Limit the number of notifications in a lapse time : in our case the application won't create more than 2 beacon notifications each hours
-         
-         syntax :
-         self.addNotificationStrategy(ATBeaconNotificationStrategySpamMaxFilter(notificationMaxNumber: 2, timeBtwNotification: 60 * 1000 * 60))
-         */
-        
-        
-        /*/******** SPAM Max FILTER ********/
-         
-         Permit to define :
-         - a time to wait before displaying a first notification after the application goes to background (in our exemple 10 minutes)
-         - a time to wait before displaying a new beacon notification (in our exemples 20 minutes
-         
-         syntax :
-         self.addNotificationStrategy(ATBeaconNotificationStrategySpamTimeFilter(minTimeBeforeCreatingNotificationWhenAppEnterInBackground: 60 * 1000, minTimeBetweenTwoNotification: 60 * 1000 * 20))
-         
-         */
-        
+        ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         return true
     }
     
     /** Receive the local notification **/
     override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-          super.application(application, didReceive: notification)
+        super.application(application, didReceive: notification)
         ATBeaconManager.sharedInstance().didReceive(notification);
     }
- 
+    
     override func applicationDidBecomeActive(_ application: UIApplication) {
         
         /* ** Required
@@ -123,7 +93,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         let localNotification:UILocalNotification = UILocalNotification()
         localNotification.alertBody = kLocalNotificationMessage
         localNotification.alertAction = kLocalNotificationAction
- 
+        
         let infoDict = [ KEY_NOTIFICATION_CONTENT : _beaconContent.toJSONString() ]
         localNotification.userInfo = infoDict
         print("create notification from app delegate");
@@ -132,6 +102,16 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         
         return localNotification;
     }
+    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
+        let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : _beaconContent]
+        let nc = NotificationCenter.default
+        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
+                object: nil,
+                userInfo:dict)
+        
+    }
     
- 
+    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
+        
+    }
 }
