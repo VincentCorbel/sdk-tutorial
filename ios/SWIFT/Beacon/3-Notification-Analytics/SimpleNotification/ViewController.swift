@@ -14,8 +14,8 @@ class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate
     @IBOutlet weak var txtMessage: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
+              NotificationCenter.default.addObserver(self, selector: #selector(self.remoteNotificationReceived), name: NSNotification.Name(rawValue: "LocalNotificationMessageReceivedNotification"), object: nil)
+
         // Do any additional setup after loading the view, typically from a nib
  
      }
@@ -25,13 +25,11 @@ class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate
         // Dispose of any resources that can be recreated.
     }
 
+  
     
-    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
-        self.txtMessage.text = _beaconContent.getNotificationTitle()
+    func remoteNotificationReceived(notification: NSNotification) {
+        let beaconContent: ATBeaconContent = (notification.userInfo!["beaconContent"] as! ATBeaconContent)
+        self.txtMessage.text = beaconContent.getNotificationTitle()
         self.txtMessage.setNeedsDisplay()
-    }
-    
-    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
     }
 }

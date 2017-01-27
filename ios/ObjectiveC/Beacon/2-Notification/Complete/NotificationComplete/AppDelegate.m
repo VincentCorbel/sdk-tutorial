@@ -45,9 +45,10 @@
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
-   
     return YES;
 }
+
+
 
 // if you implement didBeacomeActive you should add a super call
 // if you don't just remove all the method
@@ -56,8 +57,8 @@
 }
 
 
-
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+
     [super application:application didReceiveLocalNotification:notification];
 }
 
@@ -89,7 +90,11 @@
     return nil;
 }
 -(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
-    if (_beaconContent) {
+    if (_beaconContent) {  
+        if ([UIApplication sharedApplication].applicationState!=UIApplicationStateActive) {
+            NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalNotificationMessageReceivedNotification" object:nil userInfo:dict];
+        }
     }
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ATLocationBeacon/ATLocationBeacon.h>
 #import <ATConnectionHttp/ATConnectionHttp.h>
-@interface ViewControllerBeacon : UIViewController <ATBeaconReceiveNotificatonContentDelegate>{
+@interface ViewControllerBeacon : UIViewController {
  
 }
 

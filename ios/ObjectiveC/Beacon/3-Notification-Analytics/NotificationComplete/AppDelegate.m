@@ -44,7 +44,8 @@
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
-   
+    
+    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
     return YES;
 }
 
@@ -87,6 +88,18 @@
         
     }
     return nil;
+}
+-(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
+    if (_beaconContent) {
+        
+        if ([UIApplication sharedApplication].applicationState!=UIApplicationStateActive) {
+            NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalNotificationMessageReceivedNotification" object:nil userInfo:dict];
+        }
+    }
+}
+
+-(void)didReceiveWelcomeNotificationContentReceived:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
 }
 
  
