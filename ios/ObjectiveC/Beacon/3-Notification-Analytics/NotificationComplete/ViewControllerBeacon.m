@@ -7,7 +7,7 @@
 //
 
 #import "ViewControllerBeacon.h"
-
+#import <UserNotifications/UserNotifications.h>
 @interface ViewControllerBeacon ()
 
 @end
@@ -19,13 +19,27 @@
     [super viewDidLoad];
     
     self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
+   
+    //register to the notification center with the new iOs10 system
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                              completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                  if (!error) {
+                                      NSLog(@"request authorization succeeded!");
+                                  }
+                              }];
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(remoteNotificationReceived:) name:@"LocalNotificationMessageReceivedNotification"
+                                             selector:@selector(remoteNotificationReceived:) name:@"BeaconNotification"
                                                object:nil];
+
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    //self.txtMessage.text = messageString;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,11 +47,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-//Method to retreive notification BeaconContent from the AppDelegate
 - (void)remoteNotificationReceived:(NSNotification *)notification{
     ATBeaconContent *beaconContent = [notification.userInfo objectForKey:@"beaconContent"];
     self.txtMessage.text = [beaconContent getNotificationTitle];
     [self.txtMessage setNeedsDisplay];
 }
-
 @end

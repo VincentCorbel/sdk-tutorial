@@ -23,14 +23,14 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                              selector:@selector(remoteNotificationReceived:) name:@"BeaconNotification"
+                                                object:nil];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     //self.txtMessage.text = messageString;
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,19 +40,11 @@
 
 //Method to retreive notification BeaconContent from the AppDelegate
 - (void)remoteNotificationReceived:(NSNotification *)notification{
+    ATBeaconContent *beaconContent = [notification.userInfo objectForKey:@"beaconContent"];
+    self.txtMessage.text = [beaconContent getNotificationTitle];
+    [self.txtMessage setNeedsDisplay];
+}
+
     
-}
-
--(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
-    if (_beaconContent) {
-        self.txtMessage.text = [_beaconContent getNotificationTitle];
-        [self.txtMessage setNeedsDisplay];
-    }
-}
-
--(void)didReceiveWelcomeNotificationContentReceived:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
-}
-
-
 
 @end

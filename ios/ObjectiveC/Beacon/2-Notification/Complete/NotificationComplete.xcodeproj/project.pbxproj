@@ -18,9 +18,8 @@
 		14E45AB51CA1B79500639B81 /* NotificationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E45AB41CA1B79500639B81 /* NotificationUITests.m */; };
 		14E45AC31CA1B7EA00639B81 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E45AC21CA1B7EA00639B81 /* CoreLocation.framework */; };
 		14E45AC51CA1B7F100639B81 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E45AC41CA1B7F100639B81 /* libsqlite3.0.tbd */; };
-		3C6C906E2FBD2BE2C4801BE1 /* Pods_NotificationCompleteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A17120CD472E3F2B0846E3 /* Pods_NotificationCompleteTests.framework */; };
-		C6732D4920A4CBB17E660BF9 /* Pods_NotificationComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047D804C9B15F3423B6FE126 /* Pods_NotificationComplete.framework */; };
-		D3343272526ACC003CA18740 /* Pods_NotificationCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB61B1D27208B21630A5D7 /* Pods_NotificationCompleteUITests.framework */; };
+		7C86C85B1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C86C85A1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m */; };
+		EDCD7B7AB90635B944B13792 /* libPods-NotificationComplete.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A128387FE571EF8E43945486 /* libPods-NotificationComplete.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		047D804C9B15F3423B6FE126 /* Pods_NotificationComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14156F0C1CAD88AB00D83ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		14E45A8C1CA1B79500639B81 /* NotificationComplete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationComplete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E45A901CA1B79500639B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,11 +61,10 @@
 		14E45AC41CA1B7F100639B81 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		18A17120CD472E3F2B0846E3 /* Pods_NotificationCompleteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationCompleteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A67A72CB201F69544964394 /* Pods-NotificationComplete.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationComplete.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationComplete/Pods-NotificationComplete.debug.xcconfig"; sourceTree = "<group>"; };
-		2BC6EAA871D86B2488F20A9D /* Pods-NotificationCompleteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationCompleteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationCompleteUITests/Pods-NotificationCompleteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		51BB61B1D27208B21630A5D7 /* Pods_NotificationCompleteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationCompleteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E23269D556819F98A54DADA /* Pods-NotificationCompleteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationCompleteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationCompleteTests/Pods-NotificationCompleteTests.release.xcconfig"; sourceTree = "<group>"; };
-		C43B77E5CDF7A14FC472591A /* Pods-NotificationCompleteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationCompleteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationCompleteTests/Pods-NotificationCompleteTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DAB6C32BF5E09B9C2CAC7E2D /* Pods-NotificationCompleteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationCompleteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationCompleteUITests/Pods-NotificationCompleteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7C86C8591E37B76F008C6A33 /* MyBeaconNotificationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBeaconNotificationBuilder.h; sourceTree = "<group>"; };
+		7C86C85A1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBeaconNotificationBuilder.m; sourceTree = "<group>"; };
+		A128387FE571EF8E43945486 /* libPods-NotificationComplete.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotificationComplete.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9816C194C9F035617844AC4 /* Pods-NotificationComplete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationComplete.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationComplete/Pods-NotificationComplete.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +75,7 @@
 			files = (
 				14E45AC51CA1B7F100639B81 /* libsqlite3.0.tbd in Frameworks */,
 				14E45AC31CA1B7EA00639B81 /* CoreLocation.framework in Frameworks */,
-				C6732D4920A4CBB17E660BF9 /* Pods_NotificationComplete.framework in Frameworks */,
+				EDCD7B7AB90635B944B13792 /* libPods-NotificationComplete.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C6C906E2FBD2BE2C4801BE1 /* Pods_NotificationCompleteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3343272526ACC003CA18740 /* Pods_NotificationCompleteUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +123,8 @@
 			children = (
 				14E45A921CA1B79500639B81 /* AppDelegate.h */,
 				14E45A931CA1B79500639B81 /* AppDelegate.m */,
+				7C86C8591E37B76F008C6A33 /* MyBeaconNotificationBuilder.h */,
+				7C86C85A1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m */,
 				14E45A951CA1B79500639B81 /* ViewControllerBeacon.h */,
 				14E45A961CA1B79500639B81 /* ViewControllerBeacon.m */,
 				14E45A981CA1B79500639B81 /* Main.storyboard */,
@@ -171,10 +168,6 @@
 			children = (
 				1A67A72CB201F69544964394 /* Pods-NotificationComplete.debug.xcconfig */,
 				E9816C194C9F035617844AC4 /* Pods-NotificationComplete.release.xcconfig */,
-				C43B77E5CDF7A14FC472591A /* Pods-NotificationCompleteTests.debug.xcconfig */,
-				8E23269D556819F98A54DADA /* Pods-NotificationCompleteTests.release.xcconfig */,
-				2BC6EAA871D86B2488F20A9D /* Pods-NotificationCompleteUITests.debug.xcconfig */,
-				DAB6C32BF5E09B9C2CAC7E2D /* Pods-NotificationCompleteUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -184,9 +177,9 @@
 			children = (
 				14E45AC41CA1B7F100639B81 /* libsqlite3.0.tbd */,
 				14E45AC21CA1B7EA00639B81 /* CoreLocation.framework */,
-				047D804C9B15F3423B6FE126 /* Pods_NotificationComplete.framework */,
 				18A17120CD472E3F2B0846E3 /* Pods_NotificationCompleteTests.framework */,
 				51BB61B1D27208B21630A5D7 /* Pods_NotificationCompleteUITests.framework */,
+				A128387FE571EF8E43945486 /* libPods-NotificationComplete.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,12 +211,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14E45ABC1CA1B79500639B81 /* Build configuration list for PBXNativeTarget "NotificationCompleteTests" */;
 			buildPhases = (
-				9B1025021AD2D75626FDB294 /* 📦 Check Pods Manifest.lock */,
 				14E45AA11CA1B79500639B81 /* Sources */,
 				14E45AA21CA1B79500639B81 /* Frameworks */,
 				14E45AA31CA1B79500639B81 /* Resources */,
-				CE04FCD3981DBFD0F4BD5DE5 /* 📦 Embed Pods Frameworks */,
-				1E15674AFBFB272C78FC1BB0 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,11 +229,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14E45ABF1CA1B79500639B81 /* Build configuration list for PBXNativeTarget "NotificationCompleteUITests" */;
 			buildPhases = (
-				B4E85D453CD65CF98B9219AA /* 📦 Check Pods Manifest.lock */,
 				14E45AAC1CA1B79500639B81 /* Sources */,
 				14E45AAD1CA1B79500639B81 /* Frameworks */,
 				14E45AAE1CA1B79500639B81 /* Resources */,
-				7088C6426286A6E5D10C275B /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,36 +330,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotificationComplete/Pods-NotificationComplete-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1E15674AFBFB272C78FC1BB0 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotificationCompleteTests/Pods-NotificationCompleteTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7088C6426286A6E5D10C275B /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotificationCompleteUITests/Pods-NotificationCompleteUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		830F333123F3EA62FEE4714D /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,51 +343,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9B1025021AD2D75626FDB294 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B4E85D453CD65CF98B9219AA /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CE04FCD3981DBFD0F4BD5DE5 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotificationCompleteTests/Pods-NotificationCompleteTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EFAA6E9C64A1E8BA7384DF98 /* 📦 Copy Pods Resources */ = {
@@ -454,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C86C85B1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m in Sources */,
 				14E45A971CA1B79500639B81 /* ViewControllerBeacon.m in Sources */,
 				14E45A941CA1B79500639B81 /* AppDelegate.m in Sources */,
 				14E45A911CA1B79500639B81 /* main.m in Sources */,
@@ -635,7 +549,6 @@
 		};
 		14E45ABD1CA1B79500639B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C43B77E5CDF7A14FC472591A /* Pods-NotificationCompleteTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NotificationTests/Info.plist;
@@ -648,7 +561,6 @@
 		};
 		14E45ABE1CA1B79500639B81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E23269D556819F98A54DADA /* Pods-NotificationCompleteTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NotificationTests/Info.plist;
@@ -661,7 +573,6 @@
 		};
 		14E45AC01CA1B79500639B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BC6EAA871D86B2488F20A9D /* Pods-NotificationCompleteUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = NotificationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -674,7 +585,6 @@
 		};
 		14E45AC11CA1B79500639B81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAB6C32BF5E09B9C2CAC7E2D /* Pods-NotificationCompleteUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = NotificationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

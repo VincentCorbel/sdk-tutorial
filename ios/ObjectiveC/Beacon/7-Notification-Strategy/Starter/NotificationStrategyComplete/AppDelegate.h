@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AppDelegate.h
 //  Notification
 //
 //  Created by sarra srairi on 22/03/2016.
@@ -9,12 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <ATLocationBeacon/ATLocationBeacon.h>
 #import <ATConnectionHttp/ATConnectionHttp.h>
+@interface AppDelegate : ATBeaconAppDelegate <UIApplicationDelegate,ATBeaconNotificationDelegate,ATBeaconReceiveNotificatonContentDelegate>
 
-@interface ViewControllerBeacon : UIViewController{
-}
+@property (strong, nonatomic) UIWindow *window;
 
 
-@property (nonatomic, assign) IBOutlet UILabel *txtMessage;
- 
 @end
 
