@@ -36,10 +36,10 @@
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
     NSArray *uuids = @[@"**********UUID**********"];
-                       [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
+    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
     
     [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
-  if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
+    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
     }
     //To add the application to the notification center
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
@@ -47,9 +47,6 @@
     }
     return YES;
 }
-
-
-
 // if you implement didBeacomeActive you should add a super call
 // if you don't just remove all the method
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -58,7 +55,7 @@
 
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-
+    
     [super application:application didReceiveLocalNotification:notification];
 }
 
@@ -83,14 +80,14 @@
         [notification setUserInfo:infoDict];
         
         [[UIApplication sharedApplication] presentLocalNotificationNow: notification];
- 
+        
         return notification;
         
     }
     return nil;
 }
 -(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
-    if (_beaconContent) {  
+    if (_beaconContent) {
         if ([UIApplication sharedApplication].applicationState!=UIApplicationStateActive) {
             NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalNotificationMessageReceivedNotification" object:nil userInfo:dict];

@@ -24,19 +24,14 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(remoteNotificationReceived:) name:@"LocalNotificationMessageReceivedNotification"
                                                object:nil];
-
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    //self.txtMessage.text = messageString;
-    
  
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)remoteNotificationReceived:(NSNotification *)notification{
@@ -44,6 +39,5 @@
     self.txtMessage.text = [beaconContent getNotificationTitle];
     [self.txtMessage setNeedsDisplay];
 }
-
 
 @end
