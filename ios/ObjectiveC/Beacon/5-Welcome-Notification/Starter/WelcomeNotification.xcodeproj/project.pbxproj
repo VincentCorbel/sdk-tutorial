@@ -16,6 +16,8 @@
 		14C5BE201E095EB300565238 /* WelcomeNotificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C5BE1F1E095EB300565238 /* WelcomeNotificationTests.m */; };
 		14C5BE2B1E095EB300565238 /* WelcomeNotificationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C5BE2A1E095EB300565238 /* WelcomeNotificationUITests.m */; };
 		14C5BE391E096BF500565238 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C5BE381E096BF500565238 /* CoreLocation.framework */; };
+		7CAAFC761E40A0A300A176D0 /* wn_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFC741E40A0A300A176D0 /* wn_off.png */; };
+		7CAAFC771E40A0A300A176D0 /* wn_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFC751E40A0A300A176D0 /* wn_on.png */; };
 		86C3DF9964642A5CAB0BF364 /* Pods_WelcomeNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B274FE9A3419DBD145F625 /* Pods_WelcomeNotification.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		14C5BE381E096BF500565238 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		40B274FE9A3419DBD145F625 /* Pods_WelcomeNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WelcomeNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D132EF8AD092EFC1AD98B9B /* Pods-WelcomeNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.release.xcconfig"; sourceTree = "<group>"; };
+		7CAAFC741E40A0A300A176D0 /* wn_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wn_off.png; sourceTree = "<group>"; };
+		7CAAFC751E40A0A300A176D0 /* wn_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wn_on.png; sourceTree = "<group>"; };
 		CC773ED252762B019D52B8C5 /* Pods-WelcomeNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +115,8 @@
 		14C5BE041E095EB300565238 /* WelcomeNotification */ = {
 			isa = PBXGroup;
 			children = (
+				7CAAFC741E40A0A300A176D0 /* wn_off.png */,
+				7CAAFC751E40A0A300A176D0 /* wn_on.png */,
 				14C5BE081E095EB300565238 /* AppDelegate.h */,
 				14C5BE091E095EB300565238 /* AppDelegate.m */,
 				14C5BE0B1E095EB300565238 /* ViewController.h */,
@@ -280,6 +286,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CAAFC761E40A0A300A176D0 /* wn_off.png in Resources */,
+				7CAAFC771E40A0A300A176D0 /* wn_on.png in Resources */,
 				14C5BE151E095EB300565238 /* LaunchScreen.storyboard in Resources */,
 				14C5BE121E095EB300565238 /* Assets.xcassets in Resources */,
 				14C5BE101E095EB300565238 /* Main.storyboard in Resources */,

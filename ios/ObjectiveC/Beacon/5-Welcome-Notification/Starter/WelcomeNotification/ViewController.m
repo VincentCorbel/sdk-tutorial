@@ -20,6 +20,15 @@
     // self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
     
     // Do any additional setup after loading the view, typically from a nib.
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                              completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                  if (!error) {
+                                      NSLog(@"request authorization succeeded!");
+                                  }
+                              }];
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(remoteNotificationReceived:) name:@"BeaconNotification"

@@ -14,7 +14,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 
-@interface AppDelegate : ATBeaconAppDelegate <UIApplicationDelegate,ATBeaconWelcomeNotificationDelegate,ATBeaconNotificationDelegate, ATBeaconReceiveNotificatonContentDelegate>{
+@interface AppDelegate : ATBeaconAppDelegate <UIApplicationDelegate, ATBeaconReceiveNotificatonContentDelegate>{
 
 }
     

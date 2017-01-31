@@ -42,7 +42,7 @@
 
     [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
 
-    [self registerAsyncBeaconNotificationDelegate:[[ATAsyncBeaconNotificationImageCreator alloc] initWithCreateBeaconNotification:[[MyBeaconNotificationBuilder alloc] init]]];
+    [self registerAsyncBeaconNotificationDelegate:[[ATAsyncBeaconNotificationImageCreator alloc] initWithBeaconNotificationBuilder:[[MyBeaconNotificationBuilder alloc] init]]];
 
   if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
     }
