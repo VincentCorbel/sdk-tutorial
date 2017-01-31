@@ -3,17 +3,10 @@ platform :ios, '8.0'
 target 'NotificationComplete' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
-<<<<<<< HEAD
   pod "ATConnectionHttp",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATConnectionHttp.git", :tag => "2.5.8"
   pod "ATAnalytics",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATAnalytics.git", :tag => "2.5.8"
   pod "ATLocationBeacon",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATLocationBeacon.git", :tag => "2.5.8"
-=======
-  pod "ATConnectionHttp",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATConnectionHttp.git", :tag => "2.4.0"
-  pod "ATAnalytics",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATAnalytics.git", :tag => "2.4.0"
-  pod "ATLocationBeacon",:git => "https://forge.adtag.eu/ConnecthingsSDK/ATLocationBeacon.git", :tag => "2.4.0"
-  # Pods for beaconAlertStarter
 
->>>>>>> 261ce716addabaa0b314becc48c390a1105e77ec
 
   target 'NotificationCompleteTests' do
     inherit! :search_paths
