@@ -41,7 +41,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         let uuids = ["****UUID****"]
         initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
         
-     //   ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
+        ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -86,11 +86,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     
     func applicationWillTerminate(application: UIApplication) {
     }
-    
-    func createNotification(_ _beaconContent: ATBeaconContent!) -> UILocalNotification! {
-        
-    }
-    
     func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
  
     }

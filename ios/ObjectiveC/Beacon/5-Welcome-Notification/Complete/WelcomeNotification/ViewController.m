@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   // self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
+     self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
     
     // Do any additional setup after loading the view, typically from a nib.
     

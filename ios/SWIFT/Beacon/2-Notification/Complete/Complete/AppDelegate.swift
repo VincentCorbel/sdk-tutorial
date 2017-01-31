@@ -10,7 +10,7 @@ import UIKit
 import ATLocationBeacon
 
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNotificatonContentDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate,ATBeaconReceiveNotificatonContentDelegate {
 
     var window: UIWindow?
 
@@ -34,6 +34,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNo
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
+
         let uuids = ["__UUID__"]
         initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PASSWORD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
         
@@ -48,8 +49,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNo
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
         }
-        
-
+        ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         return true
     }
     
@@ -77,10 +77,5 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNo
          */
         super.applicationDidBecomeActive(application);
     }
-
-
-
-    
-
 }
 

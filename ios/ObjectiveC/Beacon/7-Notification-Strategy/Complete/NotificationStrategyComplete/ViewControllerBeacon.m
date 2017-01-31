@@ -19,7 +19,9 @@
     [super viewDidLoad];
     
     self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
-    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(remoteNotificationReceived:) name:@"BeaconNotification"
+                                               object:nil];
     // Do any additional setup after loading the view, typically from a nib.
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -30,13 +32,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//Method to retreive notification BeaconContent
--(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
-    if (_beaconContent) {
-        self.txtMessage.text = [_beaconContent getNotificationTitle];
-        [self.txtMessage setNeedsDisplay];
-    }
+//Method to retreive notification BeaconContent from the AppDelegate
+- (void)remoteNotificationReceived:(NSNotification *)notification{
+    ATBeaconContent *beaconContent = [notification.userInfo objectForKey:@"beaconContent"];
+    self.txtMessage.text = [beaconContent getNotificationTitle];
+    [self.txtMessage setNeedsDisplay];
 }
 
 @end

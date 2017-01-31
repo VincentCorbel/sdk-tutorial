@@ -9,7 +9,7 @@ import UIKit
 import ATConnectionHttp
 import ATAnalytics
 import ATLocationBeacon
-class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var txtMessage: UILabel!
     override func viewDidLoad() {
@@ -17,24 +17,30 @@ class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate
         
        // ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         // Do any additional setup after loading the view, typically from a nib
-           ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.remoteNotificationReceived), name: NSNotification.Name(rawValue: "LocalNotificationMessageReceivedNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.remoteWelcomeNotificationReceived), name: NSNotification.Name(rawValue: "LocalNotificationMessageReceivedWelcomeNotification"), object: nil)
+       
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     
-    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
-        self.txtMessage.text = _beaconContent.getNotificationTitle()
+    func remoteNotificationReceived(notification: NSNotification) {
+        let beaconContent: ATBeaconContent = (notification.userInfo!["beaconContent"] as! ATBeaconContent)
+        self.txtMessage.text = beaconContent.getNotificationTitle()
         self.txtMessage.setNeedsDisplay()
     }
     
-    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-       
-        
-        self.txtMessage.text = _welcomeNotificationContent.title
+    func remoteWelcomeNotificationReceived(notification: NSNotification) {
+        let beaconContent: ATBeaconContent = (notification.userInfo!["welcomeNotification"] as! ATBeaconContent)
+        self.txtMessage.text = beaconContent.getNotificationTitle()
         self.txtMessage.setNeedsDisplay()
     }
+
+
 }

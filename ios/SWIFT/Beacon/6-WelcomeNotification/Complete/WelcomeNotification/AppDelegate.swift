@@ -16,7 +16,7 @@ import UserNotifications
 
 @UIApplicationMain
 
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate,ATBeaconWelcomeNotificationDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate,ATBeaconWelcomeNotificationDelegate,ATBeaconReceiveNotificatonContentDelegate {
     
     var window: UIWindow?
     
@@ -68,7 +68,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
         }
-        
+            ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         return true
     }
     
@@ -130,7 +130,22 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     }
     
     
+    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
+        let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : _beaconContent]
+        let nc = NotificationCenter.default
+        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
+                object: nil,
+                userInfo:dict)
+        
+    }
     
+    func didReceiveWelcomeNotificationContentReceived(_ welcomeNotification: ATBeaconWelcomeNotification!) {
+        let dict: [NSObject : AnyObject] = ["welcomeNotification" as NSObject : welcomeNotification]
+        let nc = NotificationCenter.default
+        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedWelcomeNotification"),
+                object: nil,
+                userInfo:dict)
+    }
 
     
     
