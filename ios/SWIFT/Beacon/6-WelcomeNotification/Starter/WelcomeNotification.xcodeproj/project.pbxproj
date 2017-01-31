@@ -14,6 +14,8 @@
 		14BC5D381D6729BC00021DA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BC5D361D6729BC00021DA2 /* LaunchScreen.storyboard */; };
 		14BC5D431D6729BC00021DA2 /* WelcomeNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC5D421D6729BC00021DA2 /* WelcomeNotificationTests.swift */; };
 		14BC5D4E1D6729BC00021DA2 /* WelcomeNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC5D4D1D6729BC00021DA2 /* WelcomeNotificationUITests.swift */; };
+		7CAAFC971E40C46D00A176D0 /* wn_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFC951E40C46D00A176D0 /* wn_off.png */; };
+		7CAAFC981E40C46D00A176D0 /* wn_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFC961E40C46D00A176D0 /* wn_on.png */; };
 		821DA891DDB9D639B565865D /* Pods_WelcomeNotificationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CA25D6A28068806A2F18BD /* Pods_WelcomeNotificationUITests.framework */; };
 		8E9B9BC862DD7536E8C260C5 /* Pods_WelcomeNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536C8BCAA311F13DC70BE3B6 /* Pods_WelcomeNotification.framework */; };
 		D70FE37095CE3B735B28F291 /* Pods_WelcomeNotificationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A5C16D9FD87DB7965CEED4 /* Pods_WelcomeNotificationTests.framework */; };
@@ -53,6 +55,8 @@
 		14BC5D4D1D6729BC00021DA2 /* WelcomeNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNotificationUITests.swift; sourceTree = "<group>"; };
 		14BC5D4F1D6729BC00021DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		536C8BCAA311F13DC70BE3B6 /* Pods_WelcomeNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WelcomeNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CAAFC951E40C46D00A176D0 /* wn_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wn_off.png; sourceTree = "<group>"; };
+		7CAAFC961E40C46D00A176D0 /* wn_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wn_on.png; sourceTree = "<group>"; };
 		81A5C16D9FD87DB7965CEED4 /* Pods_WelcomeNotificationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WelcomeNotificationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F7AAF3129EDE5E9B72AA6C /* Pods-WelcomeNotificationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotificationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotificationUITests/Pods-WelcomeNotificationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A318B74402F3B67CA9992EDE /* Pods-WelcomeNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 		14BC5D2C1D6729BC00021DA2 /* WelcomeNotification */ = {
 			isa = PBXGroup;
 			children = (
+				7CAAFC951E40C46D00A176D0 /* wn_off.png */,
+				7CAAFC961E40C46D00A176D0 /* wn_on.png */,
 				14BC5D2D1D6729BC00021DA2 /* AppDelegate.swift */,
 				14BC5D2F1D6729BC00021DA2 /* ViewController.swift */,
 				14BC5D311D6729BC00021DA2 /* Main.storyboard */,
@@ -281,6 +287,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CAAFC971E40C46D00A176D0 /* wn_off.png in Resources */,
+				7CAAFC981E40C46D00A176D0 /* wn_on.png in Resources */,
 				14BC5D381D6729BC00021DA2 /* LaunchScreen.storyboard in Resources */,
 				14BC5D351D6729BC00021DA2 /* Assets.xcassets in Resources */,
 				14BC5D331D6729BC00021DA2 /* Main.storyboard in Resources */,

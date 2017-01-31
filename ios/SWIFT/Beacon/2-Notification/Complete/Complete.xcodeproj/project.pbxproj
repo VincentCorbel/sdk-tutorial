@@ -15,6 +15,7 @@
 		7C1203E41E3A408E007670D2 /* CompleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1203E31E3A408E007670D2 /* CompleteTests.swift */; };
 		7C1203EF1E3A408E007670D2 /* CompleteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1203EE1E3A408E007670D2 /* CompleteUITests.swift */; };
 		7C12040A1E3A4544007670D2 /* MyBeaconNotificationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1204091E3A4544007670D2 /* MyBeaconNotificationBuilder.swift */; };
+		7CAAFCA11E40C57700A176D0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAAFCA01E40C57700A176D0 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7C1204081E3A43C7007670D2 /* Embed Frameworks */ = {
+		7CAAFCB01E40C9AF00A176D0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -62,6 +63,7 @@
 		7C1203EE1E3A408E007670D2 /* CompleteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteUITests.swift; sourceTree = "<group>"; };
 		7C1203F01E3A408E007670D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C1204091E3A4544007670D2 /* MyBeaconNotificationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBeaconNotificationBuilder.swift; sourceTree = "<group>"; };
+		7CAAFCA01E40C57700A176D0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CAAFCA11E40C57700A176D0 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,7 @@
 				7C1203E21E3A408E007670D2 /* CompleteTests */,
 				7C1203ED1E3A408E007670D2 /* CompleteUITests */,
 				7C1203CC1E3A408E007670D2 /* Products */,
+				7CAAFC9F1E40C57700A176D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +145,14 @@
 			path = CompleteUITests;
 			sourceTree = "<group>";
 		};
+		7CAAFC9F1E40C57700A176D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CAAFCA01E40C57700A176D0 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,7 +163,7 @@
 				7C1203C71E3A408E007670D2 /* Sources */,
 				7C1203C81E3A408E007670D2 /* Frameworks */,
 				7C1203C91E3A408E007670D2 /* Resources */,
-				7C1204081E3A43C7007670D2 /* Embed Frameworks */,
+				7CAAFCB01E40C9AF00A176D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -540,6 +552,7 @@
 				7C1203F51E3A408E007670D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C1203F61E3A408E007670D2 /* Build configuration list for PBXNativeTarget "CompleteTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +561,7 @@
 				7C1203F81E3A408E007670D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C1203F91E3A408E007670D2 /* Build configuration list for PBXNativeTarget "CompleteUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +570,7 @@
 				7C1203FB1E3A408E007670D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

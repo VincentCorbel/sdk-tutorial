@@ -10,7 +10,7 @@ import UIKit
 import ATLocationBeacon
 
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate,ATBeaconReceiveNotificatonContentDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNotificatonContentDelegate {
 
     var window: UIWindow?
 
@@ -35,10 +35,10 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
 
-        let uuids = ["__UUID__"]
-        initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PASSWORD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
+        let uuids = ["__UID__"]
+        initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
         
-        register(ATAsyncBeaconNotificationImageCreator.init(createBeaconNotification:MyBeaconNotificationBuilder.init()))
+        register(ATAsyncBeaconNotificationImageCreator.init(beaconNotificationBuilder:MyBeaconNotificationBuilder.init()))
         
         if #available(iOS 10.0, *) {
         }else{
@@ -64,7 +64,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
         NotificationCenter.default.post(name: NSNotification.Name("beaconNotification"), object:nil, userInfo: beaconContentUserInfo)
     }
     
-    public func didReceiveWelcomeBeaconNotification(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!){
+    public func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
         
     }
     

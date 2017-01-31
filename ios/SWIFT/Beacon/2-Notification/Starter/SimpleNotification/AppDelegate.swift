@@ -38,8 +38,8 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        let uuids = ["****UUID****"]
-        initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
+        let uuids = ["__UID__"]
+        initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
         
         ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         
