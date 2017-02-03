@@ -75,19 +75,10 @@ android {
         versionCode "${project.versionCode}" as int
         versionName "${project.versionName}"
     }
-    signingConfigs {
-        release {
-            storeFile file(RELEASE_STORE_FILE)
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
-        }
-    }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
-            signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled false
@@ -101,16 +92,6 @@ android {
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['src/main/java']
             res.srcDirs=['res']
-        }
-    }
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "https://kohlanta.adtag.fr/nexus/content/repositories/${project.version.endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}") {
-                authentication(userName: mavenUser, password: mavenPassword)
-            }
         }
     }
 }
