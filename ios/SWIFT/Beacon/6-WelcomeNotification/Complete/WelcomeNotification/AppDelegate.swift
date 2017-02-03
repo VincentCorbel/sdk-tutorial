@@ -43,10 +43,10 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
         let uuids = ["__UID__"]
         initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
         
-        self.add(ATBeaconWelcomeNotification.init(title:"Nice Welcome Notification", description: "Good news: You have got network", picture: "wn_on.png", minDisplayTime: 1000 * 60 * 2, welcomeNotificationType: ATBeaconWelcomeNotificationTypeNetworkOn))
+        self.add(ATBeaconWelcomeNotification.init(title:"Nice Welcome Notification", description: "Good news: You have got network", picture: "wn_network_on.jpg", minDisplayTime: 1000 * 60 * 2, welcomeNotificationType: ATBeaconWelcomeNotificationTypeNetworkOn))
         
         
-        self.add(ATBeaconWelcomeNotification.init(title:"Nice Welcome Notification", description: "No network? Lucky you are, a free wifi is available!",picture:"wn_off.png", minDisplayTime: 1000 * 60 * 2, welcomeNotificationType: ATBeaconWelcomeNotificationTypeNetworkOff))
+        self.add(ATBeaconWelcomeNotification.init(title:"Nice Welcome Notification", description: "No network? Lucky you are, a free wifi is available!",picture:"wn_network_off.jpg", minDisplayTime: 1000 * 60 * 2, welcomeNotificationType: ATBeaconWelcomeNotificationTypeNetworkOff))
         
         self.register(ATAsyncBeaconWelcomeNotificationImageCreator.init(welcomeNotificationImageBuilder: MyBeaconWelcomeNotificationBuilder()))
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later

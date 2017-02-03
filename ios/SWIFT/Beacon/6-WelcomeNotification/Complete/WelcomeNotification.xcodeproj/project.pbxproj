@@ -17,8 +17,8 @@
 		7CAAFC851E40BD2800A176D0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAAFC841E40BD2800A176D0 /* libsqlite3.tbd */; };
 		7CAAFC871E40BDE700A176D0 /* MyAsyncWelcomeNotificationCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAFC861E40BDE700A176D0 /* MyAsyncWelcomeNotificationCreator.swift */; };
 		7CAAFC891E40BE7C00A176D0 /* MyBeaconWelcomeNotificationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAFC881E40BE7C00A176D0 /* MyBeaconWelcomeNotificationBuilder.swift */; };
-		7CAAFC8C1E40BFE600A176D0 /* wn_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFC8A1E40BFE600A176D0 /* wn_off.png */; };
-		7CAAFC8D1E40BFE600A176D0 /* wn_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFC8B1E40BFE600A176D0 /* wn_on.png */; };
+		7CAAFCD61E448FC700A176D0 /* wn_network_off.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFCD41E448FC700A176D0 /* wn_network_off.jpg */; };
+		7CAAFCD71E448FC700A176D0 /* wn_network_on.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFCD51E448FC700A176D0 /* wn_network_on.jpg */; };
 		821DA891DDB9D639B565865D /* Pods_WelcomeNotificationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CA25D6A28068806A2F18BD /* Pods_WelcomeNotificationUITests.framework */; };
 		D70FE37095CE3B735B28F291 /* Pods_WelcomeNotificationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A5C16D9FD87DB7965CEED4 /* Pods_WelcomeNotificationTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,8 +73,8 @@
 		7CAAFC841E40BD2800A176D0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7CAAFC861E40BDE700A176D0 /* MyAsyncWelcomeNotificationCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAsyncWelcomeNotificationCreator.swift; sourceTree = "<group>"; };
 		7CAAFC881E40BE7C00A176D0 /* MyBeaconWelcomeNotificationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBeaconWelcomeNotificationBuilder.swift; sourceTree = "<group>"; };
-		7CAAFC8A1E40BFE600A176D0 /* wn_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wn_off.png; sourceTree = "<group>"; };
-		7CAAFC8B1E40BFE600A176D0 /* wn_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wn_on.png; sourceTree = "<group>"; };
+		7CAAFCD41E448FC700A176D0 /* wn_network_off.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wn_network_off.jpg; sourceTree = "<group>"; };
+		7CAAFCD51E448FC700A176D0 /* wn_network_on.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wn_network_on.jpg; sourceTree = "<group>"; };
 		81A5C16D9FD87DB7965CEED4 /* Pods_WelcomeNotificationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WelcomeNotificationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F7AAF3129EDE5E9B72AA6C /* Pods-WelcomeNotificationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotificationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotificationUITests/Pods-WelcomeNotificationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A318B74402F3B67CA9992EDE /* Pods-WelcomeNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,9 +136,9 @@
 		14BC5D2C1D6729BC00021DA2 /* WelcomeNotification */ = {
 			isa = PBXGroup;
 			children = (
+				7CAAFCD41E448FC700A176D0 /* wn_network_off.jpg */,
+				7CAAFCD51E448FC700A176D0 /* wn_network_on.jpg */,
 				14BC5D2D1D6729BC00021DA2 /* AppDelegate.swift */,
-				7CAAFC8A1E40BFE600A176D0 /* wn_off.png */,
-				7CAAFC8B1E40BFE600A176D0 /* wn_on.png */,
 				14BC5D2F1D6729BC00021DA2 /* ViewController.swift */,
 				7CAAFC861E40BDE700A176D0 /* MyAsyncWelcomeNotificationCreator.swift */,
 				14BC5D311D6729BC00021DA2 /* Main.storyboard */,
@@ -306,9 +306,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CAAFC8C1E40BFE600A176D0 /* wn_off.png in Resources */,
-				7CAAFC8D1E40BFE600A176D0 /* wn_on.png in Resources */,
 				14BC5D381D6729BC00021DA2 /* LaunchScreen.storyboard in Resources */,
+				7CAAFCD61E448FC700A176D0 /* wn_network_off.jpg in Resources */,
+				7CAAFCD71E448FC700A176D0 /* wn_network_on.jpg in Resources */,
 				14BC5D351D6729BC00021DA2 /* Assets.xcassets in Resources */,
 				14BC5D331D6729BC00021DA2 /* Main.storyboard in Resources */,
 			);

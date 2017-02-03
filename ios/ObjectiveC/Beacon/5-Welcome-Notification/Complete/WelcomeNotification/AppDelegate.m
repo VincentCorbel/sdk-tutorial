@@ -42,9 +42,9 @@
     [self initAdtagInstanceWithUrlType:ATUrlTypeDev userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconArrayUuids:uuids];
     
     // [self disableNotifications];
-    ATBeaconWelcomeNotification *welcomeNotificationOn = [[ATBeaconWelcomeNotification alloc] initTitle:@"Nice Welcome notification" description:@"Good news: You have got network" picture:@"wn_on.png" minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOn];
+    ATBeaconWelcomeNotification *welcomeNotificationOn = [[ATBeaconWelcomeNotification alloc] initTitle:@"Nice Welcome notification" description:@"Good news: You have got network" picture:@"wn_network_on.jpg" minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOn];
     [self addWelcomeNotification:welcomeNotificationOn];
-    ATBeaconWelcomeNotification *welcomeNotificationOff = [[ATBeaconWelcomeNotification alloc] initTitle:@"Nice Welcome notification" description:@"No network? Lucky you are, a free wifi is available!" picture:@"wn_off.png" minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOff];
+    ATBeaconWelcomeNotification *welcomeNotificationOff = [[ATBeaconWelcomeNotification alloc] initTitle:@"Nice Welcome notification" description:@"No network? Lucky you are, a free wifi is available!" picture:@"wn_network_off.jpg" minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOff];
     [self addWelcomeNotification:welcomeNotificationOff];
     
     [self registerAsyncBeaconWelcomeNotificationDelegate:[[ATAsyncBeaconWelcomeNotificationImageCreator alloc] initWithWelcomeNotificationImageBuilder:[[MyBeaconWelcomeNotificationBuilder alloc] init]]];

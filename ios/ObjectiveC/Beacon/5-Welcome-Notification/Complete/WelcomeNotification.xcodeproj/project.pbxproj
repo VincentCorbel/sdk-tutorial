@@ -16,11 +16,11 @@
 		14C5BE201E095EB300565238 /* WelcomeNotificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C5BE1F1E095EB300565238 /* WelcomeNotificationTests.m */; };
 		14C5BE2B1E095EB300565238 /* WelcomeNotificationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C5BE2A1E095EB300565238 /* WelcomeNotificationUITests.m */; };
 		14C5BE391E096BF500565238 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C5BE381E096BF500565238 /* CoreLocation.framework */; };
-		7CAAFC671E408CD900A176D0 /* wn_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFC651E408CD900A176D0 /* wn_off.png */; };
-		7CAAFC681E408CD900A176D0 /* wn_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFC661E408CD900A176D0 /* wn_on.png */; };
 		7CAAFC6B1E40969100A176D0 /* MyBeaconWelcomeNotificationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAFC6A1E40969100A176D0 /* MyBeaconWelcomeNotificationBuilder.m */; };
 		7CAAFC711E4097C700A176D0 /* MyAsyncBeaconWelcomeNotificationCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAFC701E4097C700A176D0 /* MyAsyncBeaconWelcomeNotificationCreator.m */; };
 		7CAAFC731E409C5B00A176D0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAAFC721E409C5B00A176D0 /* libsqlite3.tbd */; };
+		7CAAFCCE1E448F4E00A176D0 /* wn_network_off.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFCCC1E448F4E00A176D0 /* wn_network_off.jpg */; };
+		7CAAFCCF1E448F4E00A176D0 /* wn_network_on.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFCCD1E448F4E00A176D0 /* wn_network_on.jpg */; };
 		EA9270BAA384E1974CFE16D8 /* libPods-WelcomeNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E6761A20C990655A331FCC /* libPods-WelcomeNotification.a */; };
 /* End PBXBuildFile section */
 
@@ -61,13 +61,13 @@
 		14C5BE381E096BF500565238 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		31E6761A20C990655A331FCC /* libPods-WelcomeNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WelcomeNotification.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D132EF8AD092EFC1AD98B9B /* Pods-WelcomeNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.release.xcconfig"; sourceTree = "<group>"; };
-		7CAAFC651E408CD900A176D0 /* wn_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wn_off.png; sourceTree = "<group>"; };
-		7CAAFC661E408CD900A176D0 /* wn_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wn_on.png; sourceTree = "<group>"; };
 		7CAAFC691E40969100A176D0 /* MyBeaconWelcomeNotificationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBeaconWelcomeNotificationBuilder.h; sourceTree = "<group>"; };
 		7CAAFC6A1E40969100A176D0 /* MyBeaconWelcomeNotificationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBeaconWelcomeNotificationBuilder.m; sourceTree = "<group>"; };
 		7CAAFC6F1E4097C700A176D0 /* MyAsyncBeaconWelcomeNotificationCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAsyncBeaconWelcomeNotificationCreator.h; sourceTree = "<group>"; };
 		7CAAFC701E4097C700A176D0 /* MyAsyncBeaconWelcomeNotificationCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAsyncBeaconWelcomeNotificationCreator.m; sourceTree = "<group>"; };
 		7CAAFC721E409C5B00A176D0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7CAAFCCC1E448F4E00A176D0 /* wn_network_off.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wn_network_off.jpg; sourceTree = "<group>"; };
+		7CAAFCCD1E448F4E00A176D0 /* wn_network_on.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wn_network_on.jpg; sourceTree = "<group>"; };
 		CC773ED252762B019D52B8C5 /* Pods-WelcomeNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,10 +124,10 @@
 		14C5BE041E095EB300565238 /* WelcomeNotification */ = {
 			isa = PBXGroup;
 			children = (
-				7CAAFC651E408CD900A176D0 /* wn_off.png */,
-				7CAAFC661E408CD900A176D0 /* wn_on.png */,
 				14C5BE081E095EB300565238 /* AppDelegate.h */,
 				14C5BE091E095EB300565238 /* AppDelegate.m */,
+				7CAAFCCC1E448F4E00A176D0 /* wn_network_off.jpg */,
+				7CAAFCCD1E448F4E00A176D0 /* wn_network_on.jpg */,
 				14C5BE0B1E095EB300565238 /* ViewController.h */,
 				14C5BE0C1E095EB300565238 /* ViewController.m */,
 				14C5BE0E1E095EB300565238 /* Main.storyboard */,
@@ -300,9 +300,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CAAFC671E408CD900A176D0 /* wn_off.png in Resources */,
-				7CAAFC681E408CD900A176D0 /* wn_on.png in Resources */,
 				14C5BE151E095EB300565238 /* LaunchScreen.storyboard in Resources */,
+				7CAAFCCE1E448F4E00A176D0 /* wn_network_off.jpg in Resources */,
+				7CAAFCCF1E448F4E00A176D0 /* wn_network_on.jpg in Resources */,
 				14C5BE121E095EB300565238 /* Assets.xcassets in Resources */,
 				14C5BE101E095EB300565238 /* Main.storyboard in Resources */,
 			);
