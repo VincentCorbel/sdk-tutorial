@@ -38,9 +38,6 @@ public class ApplicationNotification extends Application implements BeaconNotifi
 
     public int createNotification(BeaconContent beaconContent) {
         Log.d(TAG, "create notification");
-        if(TextUtils.isEmpty(beaconContent.getAlertTitle()) || TextUtils.isEmpty(beaconContent.getAlertDescription())){
-            return -1;
-        }
         //example of notification code
         if(mNotificationManager==null){
             mNotificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
