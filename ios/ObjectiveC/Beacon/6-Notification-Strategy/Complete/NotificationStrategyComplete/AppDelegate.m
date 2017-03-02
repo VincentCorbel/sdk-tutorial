@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewControllerBeacon.h"
-#import "MyBeaconNotificationBuilder.h"
+#import "BeaconNotificationStrategyFilter.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+
     
     /* ** Required -- used to initialize and setup the SDK
      *
@@ -36,53 +38,37 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    NSArray *uuids = @[@"**** UUID ******"];
-    [self initAdtagInstanceWithUrlType:ATUrlTypeDev userLogin:@"*** LOGIN ***" userPassword:@"*** PSW ***" userCompany:@"*** COMPANY ***" beaconArrayUuids:uuids];
-    
-
-    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
-
-    [self registerAsyncBeaconNotificationDelegate:[[ATAsyncBeaconNotificationImageCreator alloc] initWithCreateBeaconNotification:[[MyBeaconNotificationBuilder alloc] init]]];
-
-  if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
-    }
-    //To add the application to the notification center untill ios9
-    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+    NSArray *uuids = @[@"**********UUID**********"];
+                       [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
+    //To add the application to the notification center/Users/ssr/Desktop/FORGE/beacon-tutorial/ios/Beacon/2-Notification/NotificationComplete/Notification/AppDelegate.m
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
+    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
     return YES;
 }
 
 
-
-// if you implement didBeacomeActive you should add a super call
-// if you don't just remove all the method
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    [super applicationDidBecomeActive:application];
-}
-
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-
+    
     [super application:application didReceiveLocalNotification:notification];
 }
+// if you implement didBeacomeActive you should add a super call
+// if you don't just remove all the method
 
--(void) didReceiveBeaconNotification:(ATBeaconContent *)_beaconContent{
-    //Open the view controller associate to the notification
-    //You can use [_beaconContent getUri] to match with a deeplink
-    //Here a fast an simple exemple
+- (void)applicationDidBecomeActive:(UIApplication *)application{
+    [super applicationDidBecomeActive:application];
+    application.applicationIconBadgeNumber = 0;
+}
+
+
+-(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
     NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
-    
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
+-(void)didReceiveWelcomeNotificationContentReceived:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
+
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-}
 @end
-
-

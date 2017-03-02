@@ -66,24 +66,4 @@
     
 }
 
--(UILocalNotification *)createNotification:(ATBeaconContent *)_beaconContent {
-    if (_beaconContent) {
-        ILog(@"create notification from app delegate");
-        UILocalNotification *notification = [[UILocalNotification alloc]init];
-        [notification setAlertBody:[_beaconContent getNotificationDescription]];
-        if(SYSTEM_VERSION_GREATER_THAN(@"7.99")){
-            [notification setAlertTitle:[_beaconContent getAlertTitle]];
-        }
-        
-        NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[_beaconContent toJSONString] forKey:KEY_NOTIFICATION_CONTENT];
-        [notification setUserInfo:infoDict];
-        
-        [[UIApplication sharedApplication] presentLocalNotificationNow: notification];
-        
-        return notification;
-        
-    }
-    return nil;
-}
-
 @end
