@@ -12,9 +12,6 @@ import android.widget.TextView;
  */
 public class ApplicationQuickStart extends Application{
 
-    private static final String UUID = "B0462602-CBF5-4ABB-87DE-B05340DCCBC5";
-
-
 
     public void onCreate(){
         super.onCreate();
