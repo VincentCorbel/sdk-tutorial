@@ -9,7 +9,7 @@ import UIKit
 import ATConnectionHttp
 import ATAnalytics
 import ATLocationBeacon
-class ViewController: UIViewController, ATBeaconReceiveNotificatonContentDelegate,ATRangeDelegate{
+class ViewController: UIViewController, ATRangeDelegate{
     
     var beaconManager: ATBeaconManager!
     

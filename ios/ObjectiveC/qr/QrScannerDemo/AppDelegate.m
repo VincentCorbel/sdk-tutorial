@@ -25,7 +25,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    user = [ATUser initInstance:@"User_cbeacon" Pass:@"fSKbCEvCDCbYTDlk" Compagny:@"ccbeacondemo"];
+    user = [ATUser initInstance:@"__LOGIN__" Pass:@"__PSWD__" Compagny:@"__COMPANY__"];
     root = [ATUrlRoot initInstance: ATUrlTypeProd];
     
     ViewController *homeController = [[ViewController alloc] init];
