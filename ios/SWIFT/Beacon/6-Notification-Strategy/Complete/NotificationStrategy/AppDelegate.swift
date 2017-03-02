@@ -15,7 +15,7 @@ import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate,ATBeaconReceiveNotificatonContentDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNotificatonContentDelegate {
     
     var window: UIWindow?
     var beaconNotificationFilter:BeaconNotificationFilter!
@@ -111,24 +111,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     }
     
     func applicationWillTerminate(application: UIApplication) {
-    }
-    
- 
-    func createNotification(_ _beaconContent: ATBeaconContent!) -> UILocalNotification! {
-        
-        let kLocalNotificationMessage:String! = _beaconContent.getNotificationDescription()
-        let kLocalNotificationAction:String! = _beaconContent.getAlertTitle()
-        let localNotification:UILocalNotification = UILocalNotification()
-        localNotification.alertBody = kLocalNotificationMessage
-        localNotification.alertAction = kLocalNotificationAction
-        
-        let infoDict = [ KEY_NOTIFICATION_CONTENT : _beaconContent.toJSONString() ]
-        localNotification.userInfo = infoDict
-        print("create notification from app delegate");
-        localNotification.soundName = UILocalNotificationDefaultSoundName
-        UIApplication.shared.presentLocalNotificationNow(localNotification)
-        
-        return localNotification;
     }
     
     func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {

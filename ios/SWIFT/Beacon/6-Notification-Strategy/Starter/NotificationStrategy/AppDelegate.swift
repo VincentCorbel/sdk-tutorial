@@ -15,7 +15,7 @@ import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
     
     var window: UIWindow?
     var beaconNotificationFilter:BeaconNotificationFilter!
@@ -44,9 +44,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
          */
         let uuids = ["****UUID****"]
         initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
- 
-        
-        
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -111,23 +108,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     func applicationWillTerminate(application: UIApplication) {
     }
     
- 
-    func createNotification(_ _beaconContent: ATBeaconContent!) -> UILocalNotification! {
-        
-        let kLocalNotificationMessage:String! = _beaconContent.getNotificationDescription()
-        let kLocalNotificationAction:String! = _beaconContent.getAlertTitle()
-        let localNotification:UILocalNotification = UILocalNotification()
-        localNotification.alertBody = kLocalNotificationMessage
-        localNotification.alertAction = kLocalNotificationAction
-        
-        let infoDict = [ KEY_NOTIFICATION_CONTENT : _beaconContent.toJSONString() ]
-        localNotification.userInfo = infoDict
-        print("create notification from app delegate");
-        localNotification.soundName = UILocalNotificationDefaultSoundName
-        UIApplication.shared.presentLocalNotificationNow(localNotification)
-        
-        return localNotification;
-    }
     
 }
 
