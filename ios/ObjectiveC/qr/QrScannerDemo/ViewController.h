@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <ATConnectionHttp/ATConnectionHttp.h>
-#import <ATSdkAdtagContent/ATSdkAdtagContent.h>
+#import <ATQR/ATQR.h>
 #import "infoController.h"
 #import "ResultController.h"
 #import "QrCodeScanner.h"
