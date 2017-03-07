@@ -46,7 +46,6 @@
     [self addWelcomeNotification:welcomeNotificationOn];
     ATBeaconWelcomeNotification *welcomeNotificationOff = [[ATBeaconWelcomeNotification alloc] initTitle:@"Nice Welcome notification" description:@"No network? Lucky you are, a free wifi is available!" picture:@"wn_network_off.jpg" minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOff];
     [self addWelcomeNotification:welcomeNotificationOff];
-    
     [self registerAsyncBeaconWelcomeNotificationDelegate:[[ATAsyncBeaconWelcomeNotificationImageCreator alloc] initWithWelcomeNotificationImageBuilder:[[MyBeaconWelcomeNotificationBuilder alloc] init]]];
     if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){}
     
