@@ -3,18 +3,16 @@ source 'git@forge.adtag.eu:ConnecthingsSDK/Specs.git'
 
 platform :ios, '8.0'
 
-target 'SimpleNotification' do
+target 'NotificationStrategyComplete' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
-
   use_frameworks!
   pod "ATLocationBeacon", '~> 2.6-RC3'
-
-  target 'SimpleNotificationTests' do
+  target 'NotificationStrategyCompleteTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'SimpleNotificationUITests' do
+  target 'NotificationStrategyCompleteUITests' do
     inherit! :search_paths
     # Pods for testing
   end
