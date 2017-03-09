@@ -27,7 +27,7 @@ public class ApplicationNotification extends Application {
         //If you need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
         //Initiate the beaconManager with the UUID of your beacons company. our beaconManager manage only one beacon Region based on the uuid
         AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, "__UUID__");
-        AsyncBeaconNotificationImageCreator asyncBeaconNotificationCreator = new AsyncBeaconNotificationImageCreator(new MyBeaconNotificationImageBuilder(this));
+        AsyncBeaconNotificationImageCreator asyncBeaconNotificationCreator = new AsyncBeaconNotificationImageCreator(this, new MyBeaconNotificationImageBuilder(this));
         beaconManager.registerAsyncBeaconNotificationListener(asyncBeaconNotificationCreator);
     }
 
