@@ -9,15 +9,16 @@ import UIKit
 import ATConnectionHttp
 import ATAnalytics
 import ATLocationBeacon
-class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate, ATRangeDelegate{
-         var beaconManager: ATBeaconManager!
+class ViewController: UIViewController, ATRangeDelegate{
     
+    var beaconManager: ATBeaconManager!
+
+    @IBOutlet weak var txt_message: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         beaconManager = ATBeaconManager.sharedInstance()
         beaconManager.registerAdtagRangeDelegate(self)
-        beaconManager.registerNotificationContentDelegate(self);
         // Do any additional setup after loading the view, typically from a nib
         
     }
@@ -39,7 +40,7 @@ class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate
     }
     
     
-    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus, region: CLRegion!) {
+    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus) {
         
        var feedStatusString: String
         
@@ -55,6 +56,8 @@ class ViewController: UIViewController,ATBeaconReceiveNotificatonContentDelegate
         default:
             feedStatusString = ""
         }
+        
+        self.txt_message.text = String( format: NSLocalizedString("beaconAround", comment:""), feedStatusString, _beacons.count, beaconContents.count)
  
     }
 }

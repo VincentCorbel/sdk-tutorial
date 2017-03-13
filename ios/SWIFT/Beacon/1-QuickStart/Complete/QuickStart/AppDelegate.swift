@@ -42,7 +42,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
         let uuids = ["__UUID__"]
-        initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
+        initAdtagInstance(with: ATUrlTypeProd, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
