@@ -11,12 +11,12 @@ import android.text.TextUtils;
 
 import com.connecthings.util.adtag.beacon.model.BeaconIntent;
 import com.connecthings.util.adtag.beacon.model.notification.BeaconContentImage;
-import com.connecthings.util.adtag.beacon.model.notification.BeaconImageNotificationBuilder;
+import com.connecthings.util.adtag.beacon.model.notification.BeaconNotificationImageBuilder;
 
 /**
  * Created by Connecthings on 20/01/17.
  */
-public class MyBeaconNotificationImageBuilder implements BeaconImageNotificationBuilder {
+public class MyBeaconNotificationImageBuilder implements BeaconNotificationImageBuilder {
 
     private Context mContext;
 
