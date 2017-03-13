@@ -56,7 +56,7 @@
             break;
     }
     
-    _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"beaconArround", @""),feedStatusString,_beacons.count,_beaconContents.count];
+    _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"beaconAround", @""),feedStatusString,_beacons.count,_beaconContents.count];
 }
 
 @end

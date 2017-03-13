@@ -14,5 +14,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *txt_nbrBeacon;
+
+
 @end
 

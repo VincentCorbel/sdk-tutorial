@@ -18,34 +18,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
-    // Register Range Delegate protocol to your view
- 
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    // Register Range Delegate protocol to your view
+    [super viewDidAppear:animated];
+}
+
+- (void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)didRangeBeacons:(NSArray *)_beacons beaconContents:(NSArray *)_beaconContents informationStatus:(ATRangeInformationStatus)informationStatus feedStatus:(ATRangeFeedStatus)feedstatus region:(CLRegion *)region{
-  
-    feedStatusString=@"";
-    switch(feedstatus){
-        case ATRangeFeedStatusInProgress:
-            feedStatusString = @"IN_PROGRESS";
-            break;
-        case ATRangeFeedStatusBackendError:
-            feedStatusString= @"BACKEND_ERROR";
-            break;
-        case ATRangeFeedStatusNetworkError:
-            feedStatusString = @"NETWORK_ERROR";
-            break;
-        case ATRangeFeedStatusBackendSuccess:
-            feedStatusString = @"BACKEND_SUCCESS";
-            break;
-    }
-    
- }
 
 @end

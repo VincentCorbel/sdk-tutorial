@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <ATLocationBeacon/ATLocationBeacon.h>
 #import <ATConnectionHttp/ATConnectionHttp.h>
-@interface ViewController : UIViewController <ATRangeDelegate> {
+@interface ViewController : UIViewController  {
     ATBeaconManager *beaconManager;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *txt_nbrBeacon;
+
+
 @end
 

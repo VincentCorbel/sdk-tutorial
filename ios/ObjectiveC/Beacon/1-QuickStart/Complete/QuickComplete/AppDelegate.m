@@ -30,8 +30,7 @@
     //
     NSArray *uuids = @[@"**UUID**"];
     
-    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"**LOGIN**" userPassword:@"**PASSWORD**" userCompany:@"**COMPAGNY**" beaconArrayUuids:uuids];
-    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
+    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PASSWORD__" userCompany:@"__COMPANY__" beaconUuid:uuids];
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }

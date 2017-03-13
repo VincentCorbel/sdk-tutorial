@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ATConnectionHttp/ATConnectionHttp.h>
 #import <ATLocationBeacon/ATLocationBeacon.h>
-@interface AppDelegate :ATBeaconAppDelegate <UIApplicationDelegate>
+#import <ATConnectionHttp/ATConnectionHttp.h>
+
+@interface AppDelegate : ATBeaconAppDelegate <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 
 
