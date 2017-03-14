@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AlertTimerStrategyFirstWay.h"
+#import "AlertTimerStrategySecondWay.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
  
-
     /* ** Required -- used to initialize and setup the SDK
      *
      *
@@ -37,8 +37,11 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PASSWORD__" userCompany:@"__COMPANY__" beaconUuid:@"__UUID___"];
+  [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconUuid:@"__UUID__"];
+    
+    
     //register the protocol for did range beacon
+    
     return YES;
 }
 

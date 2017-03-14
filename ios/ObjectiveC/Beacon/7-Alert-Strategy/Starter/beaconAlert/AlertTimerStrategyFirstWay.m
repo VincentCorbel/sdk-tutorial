@@ -69,8 +69,8 @@ delayBeforeCreatingAlert:(int)_delayBeforeCreatingAlert
 
 
 -(void)testToReseatActionIsDone:(ATBeaconAlertParameter *) strategyParameter{
-    if ((![strategyParameter isConditionValid])|| (strategyParameter.maxTimeBeforeResetingIsActionDone <CFAbsoluteTimeGetCurrent() && [strategyParameter actionStatus] == ATBeaconActionStatusActionDone)){
-        
+    if ((![strategyParameter isConditionValid])|| (strategyParameter.maxTimeBeforeResetingIsActionDone <
+                                                   CFAbsoluteTimeGetCurrent() && [strategyParameter actionStatus] == ATBeaconActionStatusActionDone)){
         strategyParameter.actionStatus= ATBeaconActionStatusWaitingForAction;
     }
 }

@@ -11,12 +11,12 @@
 #import <ATConnectionHttp/ATConnectionHttp.h>
 @interface AlertTimerStrategyFirstWay : NSObject <ATBeaconAlertStrategyDelegate>{
     
-    int maxTimeBeforeReset;
+    double maxTimeBeforeReset;
     
     double delayBeforeCreatingAlert;
 }
 
-@property int maxTimeBeforeReset;
+@property double maxTimeBeforeReset;
 
 @property double delayBeforeCreatingAlert;
 

@@ -1,18 +1,18 @@
 //
-//  BeaconAlertStrategyStarterUITests.m
-//  BeaconAlertStrategyStarterUITests
+//  beaconAlertCompleteUITests.m
+//  beaconAlertCompleteUITests
 //
-//  Created by sarra srairi on 19/08/2016.
-//  Copyright © 2016 R&D connecthings. All rights reserved.
+//  Created by sarra srairi on 29/03/2016.
+//  Copyright © 2016 sarra srairi. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface BeaconAlertStrategyStarterUITests : XCTestCase
+@interface beaconAlertCompleteUITests : XCTestCase
 
 @end
 
-@implementation BeaconAlertStrategyStarterUITests
+@implementation beaconAlertCompleteUITests
 
 - (void)setUp {
     [super setUp];

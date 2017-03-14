@@ -37,7 +37,7 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-  [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"User_cbeacon" userPassword:@"fSKbCEvCDCbYTDlk" userCompany:@"demoasr" beaconUuid:@"B0462602-CBF5-4ABB-87DE-B05340DCCBC4"];
+  [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconUuid:@"__UUID__"];
     
     
     //register the protocol for did range beacon

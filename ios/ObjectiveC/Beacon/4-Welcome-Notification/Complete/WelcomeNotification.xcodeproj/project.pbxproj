@@ -21,7 +21,7 @@
 		7CAAFC731E409C5B00A176D0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAAFC721E409C5B00A176D0 /* libsqlite3.tbd */; };
 		7CAAFCCE1E448F4E00A176D0 /* wn_network_off.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFCCC1E448F4E00A176D0 /* wn_network_off.jpg */; };
 		7CAAFCCF1E448F4E00A176D0 /* wn_network_on.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFCCD1E448F4E00A176D0 /* wn_network_on.jpg */; };
-		EA9270BAA384E1974CFE16D8 /* libPods-WelcomeNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E6761A20C990655A331FCC /* libPods-WelcomeNotification.a */; };
+		A0690985CBF0062499BC6F61 /* Pods_WelcomeNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E663D6E409243F0AB767AF0 /* Pods_WelcomeNotification.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,7 @@
 		14C5BE2A1E095EB300565238 /* WelcomeNotificationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeNotificationUITests.m; sourceTree = "<group>"; };
 		14C5BE2C1E095EB300565238 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C5BE381E096BF500565238 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		31E6761A20C990655A331FCC /* libPods-WelcomeNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WelcomeNotification.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E663D6E409243F0AB767AF0 /* Pods_WelcomeNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WelcomeNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D132EF8AD092EFC1AD98B9B /* Pods-WelcomeNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.release.xcconfig"; sourceTree = "<group>"; };
 		7CAAFC691E40969100A176D0 /* MyBeaconWelcomeNotificationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBeaconWelcomeNotificationBuilder.h; sourceTree = "<group>"; };
 		7CAAFC6A1E40969100A176D0 /* MyBeaconWelcomeNotificationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBeaconWelcomeNotificationBuilder.m; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			files = (
 				7CAAFC731E409C5B00A176D0 /* libsqlite3.tbd in Frameworks */,
 				14C5BE391E096BF500565238 /* CoreLocation.framework in Frameworks */,
-				EA9270BAA384E1974CFE16D8 /* libPods-WelcomeNotification.a in Frameworks */,
+				A0690985CBF0062499BC6F61 /* Pods_WelcomeNotification.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +174,7 @@
 			children = (
 				7CAAFC721E409C5B00A176D0 /* libsqlite3.tbd */,
 				14C5BE381E096BF500565238 /* CoreLocation.framework */,
-				31E6761A20C990655A331FCC /* libPods-WelcomeNotification.a */,
+				4E663D6E409243F0AB767AF0 /* Pods_WelcomeNotification.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,12 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14C5BE2F1E095EB300565238 /* Build configuration list for PBXNativeTarget "WelcomeNotification" */;
 			buildPhases = (
-				E45F9222B9298720FF5CF58D /* 📦 Check Pods Manifest.lock */,
+				E45F9222B9298720FF5CF58D /* [CP] Check Pods Manifest.lock */,
 				14C5BDFE1E095EB300565238 /* Sources */,
 				14C5BDFF1E095EB300565238 /* Frameworks */,
 				14C5BE001E095EB300565238 /* Resources */,
-				88CE230A5D06D06697FB58F7 /* 📦 Embed Pods Frameworks */,
-				42A3F46E8EBC404646DACB3B /* 📦 Copy Pods Resources */,
+				88CE230A5D06D06697FB58F7 /* [CP] Embed Pods Frameworks */,
+				42A3F46E8EBC404646DACB3B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,14 +325,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		42A3F46E8EBC404646DACB3B /* 📦 Copy Pods Resources */ = {
+		42A3F46E8EBC404646DACB3B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,14 +340,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88CE230A5D06D06697FB58F7 /* 📦 Embed Pods Frameworks */ = {
+		88CE230A5D06D06697FB58F7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,19 +355,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E45F9222B9298720FF5CF58D /* 📦 Check Pods Manifest.lock */ = {
+		E45F9222B9298720FF5CF58D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

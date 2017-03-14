@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ATConnectionHttp/ATConnectionHttp.h>
 
-@interface TimeAlertStrategyParameter : ATBeaconAlertParameterProximity{
+@interface TimeAlertStrategyParameter : ATBeaconAlertParameter{
     
     double lastDetectionTime;
     
