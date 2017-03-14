@@ -19,7 +19,6 @@
 		1497E6DE1CB7D93100DEB68F /* AlertViewControllerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497E6DD1CB7D93100DEB68F /* AlertViewControllerAction.m */; };
 		925F292E397D93D705059B91 /* Pods_beaconAlertCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE081D0FB69413DD2CA490A /* Pods_beaconAlertCompleteUITests.framework */; };
 		9853F58992A1847BAB9B116D /* Pods_beaconAlertCompleteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDCA9CFD90910BA0207FFB9 /* Pods_beaconAlertCompleteTests.framework */; };
-		DC1B2F85703A992F05A6C4E6 /* Pods_beaconAlertComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18647DDCB279707C208369CE /* Pods_beaconAlertComplete.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14358D781CAA7C0900C302DE /* libsqlite3.0.tbd in Frameworks */,
-				DC1B2F85703A992F05A6C4E6 /* Pods_beaconAlertComplete.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,9 +616,9 @@
 				DEVELOPMENT_TEAM = 3T67HE76NG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/beaconAlertComplete",
+					"$(PROJECT_DIR)/beaconAlertStarter",
 				);
-				INFOPLIST_FILE = beaconAlertComplete/Info.plist;
+				INFOPLIST_FILE = beaconAlertStarter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertStarter;
@@ -637,9 +635,9 @@
 				DEVELOPMENT_TEAM = 3T67HE76NG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/beaconAlertComplete",
+					"$(PROJECT_DIR)/beaconAlertStarter",
 				);
-				INFOPLIST_FILE = beaconAlertComplete/Info.plist;
+				INFOPLIST_FILE = beaconAlertStarter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertStarter;
