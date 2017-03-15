@@ -5,16 +5,17 @@
 //  Created by sarra srairi on 11/08/2016.
 //  Copyright © 2016 R&D connecthings. All rights reserved.
 //
+
 import UIKit
-import ATConnectionHttp
 import ATAnalytics
 import ATLocationBeacon
+import AVFoundation
+
 
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate  {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
     
- 
-    
+    var window: UIWindow?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -37,11 +38,9 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate  {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        initAdtagInstance(with:ATUrlTypePreprod ,userLogin: "*****LOGIN****" ,userPassword: "****PASSWORD****" ,userCompany: "****COMPAGNY****" ,beaconUuid: "****UUID****")
+        initAdtagInstance(with:ATUrlTypePreprod ,userLogin: "__LOGIN__" ,userPassword: "__PSWD__" ,userCompany: "__COMPANY__" ,beaconUuid: "__UUID__")
+        addAlertStrategy(AlertTimerStrategyFirstWay(maxTime: 1000, DelayAfterDetectingBeaconToCreateAlert: 1000))
         
-        
-       
-              
         return true
     }
     

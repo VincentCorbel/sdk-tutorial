@@ -29,14 +29,16 @@ class AlertTimerStrategyFirstWay : NSObject, ATBeaconAlertStrategyDelegate {
     }
     
     func isConditionValid(_ _beaconParameter: ATBeaconAlertParameter!) -> Bool {
-             /* Complete */
-
+        
+        let strategyParameter: TimeAlertStrategyParameter = (_beaconParameter  as! TimeAlertStrategyParameter)
+        return strategyParameter.timeToShowAlert < CFAbsoluteTimeGetCurrent ()
     }
     
     
     func isReady(forAction _beaconParameter: ATBeaconAlertParameter!) -> Bool {
-             /* Complete */
-         }
+        return (_beaconParameter.actionStatus == ATBeaconActionStatusWaitingForAction && _beaconParameter.isConditionValid)
+        
+    }
     
     
     private func getBeaconAlertParameterClass() -> AnyObject! {
@@ -67,8 +69,11 @@ class AlertTimerStrategyFirstWay : NSObject, ATBeaconAlertStrategyDelegate {
         if (_beaconContent.beaconAlertParameter.actionStatus  == ATBeaconActionStatusActionDone){
             self.testToReseatActionIsDone(_beaconContent.beaconAlertParameter)
         }
- 
-        /* Complete */
+        
+        _beaconContent.beaconAlertParameter.isReadyForAction =  self.isReady(forAction:_beaconContent.beaconAlertParameter);
+        //Update each cycle -> means only a beacon that we don't see for more than maxTimeBeforeReset will be impact
+        _beaconContent.beaconAlertParameter.maxTimeBeforeResetingIsActionDone =  Int (CFAbsoluteTimeGetCurrent() +  maxTimeBeforeReset)
+        
     }
 
     

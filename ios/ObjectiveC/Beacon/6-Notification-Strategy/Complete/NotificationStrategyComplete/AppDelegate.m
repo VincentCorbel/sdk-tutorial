@@ -40,6 +40,7 @@
      */
     NSArray *uuids = @[@"__UUID__"];
     [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconArrayUuids:uuids];
+    [self addNotificationStrategy:[[BeaconNotificationStrategyFilter alloc] initWithMinTimeBetweenNotification:1000 * 60] ];
     //To add the application to the notification center/Users/ssr/Desktop/FORGE/beacon-tutorial/ios/Beacon/2-Notification/NotificationComplete/Notification/AppDelegate.m
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
@@ -60,24 +61,13 @@
     application.applicationIconBadgeNumber = 0;
 }
 
-
--(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
+-(void) didReceiveBeaconNotification:(ATBeaconContent *) _beaconContent{
     NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
 }
 
--(void)didReceiveWelcomeNotificationContentReceived:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
-
-
-}
-
--(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
-    NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
-}
-
--(void)didReceiveWelcomeNotificationContentReceived:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
-
+-(void) didReceiveBeaconWelcomeNotification:(ATBeaconWelcomeNotification *) _welcomeNotificationContent{
+    
 }
 
 @end
