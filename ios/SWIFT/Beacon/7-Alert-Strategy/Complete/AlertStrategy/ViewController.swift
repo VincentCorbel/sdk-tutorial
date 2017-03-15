@@ -12,9 +12,7 @@ import ATLocationBeacon
 
 class ViewController: UIViewController, ATBeaconAlertDelegate {
     
-    @IBOutlet weak var txtAlertMessage: UILabel!
-    
-    @IBOutlet weak var actionTxt: UILabel!
+
     var currentAlertBeaconContent: ATBeaconContent!
     
     override func viewDidLoad() {
@@ -30,23 +28,23 @@ class ViewController: UIViewController, ATBeaconAlertDelegate {
     func createBeaconAlert(_ _beaconContent: ATBeaconContent!) -> Bool {
         if ("popup" == _beaconContent.getAction()) {
             // create a popup view
-            actionTxt.text = "Well done! now you have created your alert action"
-            self.txtAlertMessage.text = _beaconContent.getAlertTitle()
-            txtAlertMessage.setNeedsDisplay()
+            //actionTxt.text = "Well done! now you have created your alert action"
+            //self.txtAlertMessage.text = _beaconContent.getAlertTitle()
+            //txtAlertMessage.setNeedsDisplay()
             
             currentAlertBeaconContent = _beaconContent
             return true
         }
-        self.txtAlertMessage.text = "No Beacons ready for action"
-        txtAlertMessage.setNeedsDisplay()
+        //self.txtAlertMessage.text = "No Beacons ready for action"
+        //txtAlertMessage.setNeedsDisplay()
         return false
         
     }
     
     func removeBeaconAlert(_ _beaconContent: ATBeaconContent!, actionStatus _actionStatus: ATBeaconRemoveStatus) -> Bool {
-        actionTxt.text = "Well done! now you have removed your alert action"
-        self.txtAlertMessage.text = "Remove beacon alert action"
-        txtAlertMessage.setNeedsDisplay()
+        //actionTxt.text = "Well done! now you have removed your alert action"
+        //self.txtAlertMessage.text = "Remove beacon alert action"
+        //txtAlertMessage.setNeedsDisplay()
         return true
         
     }
