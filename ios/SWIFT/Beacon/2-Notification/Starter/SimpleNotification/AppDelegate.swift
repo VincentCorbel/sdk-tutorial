@@ -15,7 +15,7 @@ import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -40,35 +40,8 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
          */
         let uuids = ["__UID__"]
         initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
-        
-        ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
-        
-        /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
-         / -- Registering Notification Settings **/
-        if #available(iOS 10.0, *) {
-            let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-                // Enable or disable features based on authorization.
-            }
-            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            UIApplication.shared.registerUserNotificationSettings(setting)
-            UIApplication.shared.registerForRemoteNotifications()
-        } else {
-            if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
-                let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
-                notificationCategory.identifier = "INVITE_CATEGORY"
-                //registerting for the notification.
-                UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
-            }
-        }
-        
-        return true
-    }
     
-    /** Receive the local notification **/
-    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-          super.application(application, didReceive: notification)
-        ATBeaconManager.sharedInstance().didReceive(notification);
+        return true
     }
  
     override func applicationDidBecomeActive(_ application: UIApplication) {
@@ -86,11 +59,5 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificati
     
     func applicationWillTerminate(application: UIApplication) {
     }
-    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
- 
-    }
-    
-    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
-    }
+
 }
