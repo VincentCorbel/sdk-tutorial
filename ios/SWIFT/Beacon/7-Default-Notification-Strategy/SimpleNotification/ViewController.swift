@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  NotificationStrategy
+//  SimpleNotification
 //
-//  Created by sarra srairi on 11/08/2016.
+//  Created by sarra srairi on 10/08/2016.
 //  Copyright © 2016 R&D connecthings. All rights reserved.
 //
 import UIKit
@@ -16,18 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.remoteNotificationReceived), name: NSNotification.Name(rawValue: "LocalNotificationMessageReceivedNotification"), object: nil)
 
-   
         // Do any additional setup after loading the view, typically from a nib
-    }
+ 
+     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     func remoteNotificationReceived(notification: NSNotification) {
         let beaconContent: ATBeaconContent = (notification.userInfo!["beaconContent"] as! ATBeaconContent)
         self.txtMessage.text = beaconContent.getNotificationTitle()
         self.txtMessage.setNeedsDisplay()
     }
+
 }

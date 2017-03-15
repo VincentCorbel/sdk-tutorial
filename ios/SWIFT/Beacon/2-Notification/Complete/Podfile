@@ -7,9 +7,11 @@ target 'Complete' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
 
   use_frameworks!
+
   pod "ATLocationBeacon", '~> 2.6-RC3'
 
   target 'CompleteTests' do
+
     inherit! :search_paths
     # Pods for testing
   end

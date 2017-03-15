@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  NotificationStrategy
+//  SimpleNotification
 //
-//  Created by sarra srairi on 11/08/2016.
+//  Created by sarra srairi on 10/08/2016.
 //  Copyright © 2016 R&D connecthings. All rights reserved.
 //
 
@@ -16,13 +16,11 @@ import UserNotifications
 
 @UIApplicationMain
 
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNotificatonContentDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconNotificationDelegate,ATBeaconWelcomeNotificationDelegate,ATBeaconReceiveNotificatonContentDelegate {
     
     var window: UIWindow?
-    var beaconNotificationFilter:BeaconNotificationFilter!
     
-    
-    
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         /* ** Required -- used to initialize and setup the SDK
@@ -46,9 +44,10 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
         let uuids = ["****UUID****"]
         initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
         
-        beaconNotificationFilter = BeaconNotificationFilter(timeBetweenNotification: 60 * 1000)
-        addNotificationStrategy(beaconNotificationFilter)
+        self.add(ATBeaconWelcomeNotification.init(title:"Nice Welcome Notification", description: "Good news: You have got network", minDisplayTime: 1000 * 60 * 2, welcomeNotificationType: ATBeaconWelcomeNotificationTypeNetworkOn))
         
+        
+        self.add(ATBeaconWelcomeNotification.init(title:"Nice Welcome Notification", description: "No network? Lucky you are, a free wifi is available!", minDisplayTime: 1000 * 60 * 2, welcomeNotificationType: ATBeaconWelcomeNotificationTypeNetworkOff))
         
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
@@ -69,33 +68,14 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
         }
-           ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
-        
+            ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         return true
     }
     
- 
     
-    /** Receive the local notification **/
     override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         super.application(application, didReceive: notification)
         ATBeaconManager.sharedInstance().didReceive(notification);
-    }
-    
-    override func applicationWillResignActive(_ application: UIApplication) {
-        
-        /* ** Required
-         * Add super.applicationWillResignActive to your  delegate method
-         * the super class will init the range beacon
-         * if a the super call isn't reachable the Beacon range won't be start
-         */
-        super.applicationWillResignActive(application)
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
     }
     
     override func applicationDidBecomeActive(_ application: UIApplication) {
@@ -114,6 +94,42 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
     func applicationWillTerminate(application: UIApplication) {
     }
     
+    func createNotification(_ _beaconContent: ATBeaconContent!) -> UILocalNotification! {
+        
+        let kLocalNotificationMessage:String! = _beaconContent.getNotificationDescription()
+        let kLocalNotificationAction:String! = _beaconContent.getAlertTitle()
+        let localNotification:UILocalNotification = UILocalNotification()
+        localNotification.alertBody = kLocalNotificationMessage
+        localNotification.alertAction = kLocalNotificationAction
+        
+        let infoDict = [ KEY_NOTIFICATION_CONTENT : _beaconContent.toJSONString() ]
+        localNotification.userInfo = infoDict
+        print("create notification from app delegate");
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.shared.presentLocalNotificationNow(localNotification)
+        
+        return localNotification;
+    }
+    
+    
+    func createWelcomeNotification(_ beaconWelcomeNotification: ATBeaconWelcomeNotification) -> UILocalNotification {
+       
+        let kLocalNotificationMessage:String! = beaconWelcomeNotification.description
+        let kLocalNotificationAction:String! = beaconWelcomeNotification.title
+        let localNotification:UILocalNotification = UILocalNotification()
+        localNotification.alertBody = kLocalNotificationMessage
+        localNotification.alertAction = kLocalNotificationAction
+        
+        let infoDict = [ KEY_WELCOME_NOTIFICATION_CONTENT : beaconWelcomeNotification.toJSONString() ]
+        localNotification.userInfo = infoDict
+        print("create notification from app delegate");
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.shared.presentLocalNotificationNow(localNotification)
+        
+        return localNotification
+    }
+    
+    
     func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
         let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : _beaconContent]
         let nc = NotificationCenter.default
@@ -123,24 +139,15 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
         
     }
     
-    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
-    }
-
-    
-    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
-        let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : _beaconContent]
+    func didReceiveWelcomeNotificationContentReceived(_ welcomeNotification: ATBeaconWelcomeNotification!) {
+        let dict: [NSObject : AnyObject] = ["welcomeNotification" as NSObject : welcomeNotification]
         let nc = NotificationCenter.default
-        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
+        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedWelcomeNotification"),
                 object: nil,
                 userInfo:dict)
-        
-    }
-    
-    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
     }
 
+    
     
 }
 

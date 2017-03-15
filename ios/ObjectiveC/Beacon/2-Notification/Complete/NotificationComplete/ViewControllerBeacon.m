@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
    
     //register to the notification center with the new iOs10 system
@@ -40,11 +39,11 @@
 
 -(void)viewWillAppear:(BOOL)animated{
 
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)remoteNotificationReceived:(NSNotification *)notification{
@@ -52,4 +51,5 @@
     self.txtMessage.text = [beaconContent getNotificationTitle];
     [self.txtMessage setNeedsDisplay];
 }
+
 @end

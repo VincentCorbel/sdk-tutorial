@@ -15,6 +15,7 @@ import UserNotifications
 
 
 @UIApplicationMain
+
 class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNotificatonContentDelegate {
     
     var window: UIWindow?
@@ -68,7 +69,11 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
         }
+<<<<<<< HEAD:ios/SWIFT/Beacon/5-Default-Notification-Strategy/SimpleNotification/AppDelegate.swift
         ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
+=======
+                ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
+>>>>>>> master:ios/SWIFT/Beacon/3-Notification-Analytics/SimpleNotification/AppDelegate.swift
         return true
     }
     
@@ -101,6 +106,33 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
                 object: nil,
                 userInfo:dict)
         
+<<<<<<< HEAD:ios/SWIFT/Beacon/5-Default-Notification-Strategy/SimpleNotification/AppDelegate.swift
+=======
+        let kLocalNotificationMessage:String! = _beaconContent.getNotificationDescription()
+        let kLocalNotificationAction:String! = _beaconContent.getAlertTitle()
+        let localNotification:UILocalNotification = UILocalNotification()
+        localNotification.alertBody = kLocalNotificationMessage
+        localNotification.alertAction = kLocalNotificationAction
+        
+        //  Converted with Swiftify v1.0.6198 - https://objectivec2swift.com/
+        let infoDict = [ KEY_NOTIFICATION_CONTENT : _beaconContent.toJSONString() ]
+        localNotification.userInfo = infoDict
+        print("create notification from app delegate");
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.shared.presentLocalNotificationNow(localNotification)
+        
+        return localNotification;
+    }
+    
+    
+    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
+        let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : _beaconContent]
+        let nc = NotificationCenter.default
+        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
+                object: nil,
+                userInfo:dict)
+        
+>>>>>>> master:ios/SWIFT/Beacon/3-Notification-Analytics/SimpleNotification/AppDelegate.swift
     }
     
     func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!){

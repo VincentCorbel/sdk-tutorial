@@ -17,6 +17,7 @@ public class ApplicationSdkDemo extends Application {
         //Initialize the connection to the adtag platform
         AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.__PLATFORM__)
                 .initUser("__USER__", "__PSWD66").initCompany("__COMPANY__");
+
         //Initiate the adtagLogManager that manages the way log are sent to the platform
         AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
     }
