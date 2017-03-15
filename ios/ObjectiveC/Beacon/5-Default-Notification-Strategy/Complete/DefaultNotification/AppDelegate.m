@@ -36,8 +36,8 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    NSArray *uuids = @[@"**********UUID**********"];
-                       [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"***LOGIN***" userPassword:@"****PASSWORD****" userCompany:@"****COMPAGNY****" beaconArrayUuids:uuids];
+    NSArray *uuids = @[@"__UUID__"];
+    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconArrayUuids:uuids];
     
     //Avoid to replace the current notification if the next notification has the same content for the {category, field} value.
     // In this case, if the current beacon notification and the new beacon notification has the same beacon notification title,

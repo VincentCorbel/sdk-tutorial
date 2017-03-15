@@ -21,23 +21,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgK-d9-ufg">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgK-d9-ufg">
                                 <rect key="frame" x="0.0" y="242" width="375" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Click here to get more informations &gt;"/>
                                 <connections>
                                     <segue destination="llQ-RD-Lza" kind="show" identifier="alert" id="AYA-eX-SjW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waiting for beacons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxX-Im-k6q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Waiting for beacons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxX-Im-k6q">
                                 <rect key="frame" x="0.0" y="130" width="375" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kxX-Im-k6q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="6bz-Um-YVU"/>
+                            <constraint firstItem="tgK-d9-ufg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IvV-2g-ZHe"/>
+                            <constraint firstItem="kxX-Im-k6q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Ztm-Ea-1dS"/>
+                            <constraint firstItem="tgK-d9-ufg" firstAttribute="top" secondItem="kxX-Im-k6q" secondAttribute="bottom" constant="27" id="o3u-1X-dQQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mSf-t0-Bxv"/>
                     <connections>
@@ -61,22 +65,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkN-va-Mwb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkN-va-Mwb">
                                 <rect key="frame" x="29" y="175" width="315" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alert Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIB-TQ-MYy">
-                                <rect key="frame" x="123" y="100" width="129" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Alert Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIB-TQ-MYy">
+                                <rect key="frame" x="8" y="100" width="351" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bIB-TQ-MYy" firstAttribute="top" secondItem="pFm-R2-266" secondAttribute="bottom" constant="36" id="912-OM-s7c"/>
+                            <constraint firstItem="bIB-TQ-MYy" firstAttribute="width" secondItem="C98-Uu-cny" secondAttribute="width" id="PCx-bA-hRK"/>
+                            <constraint firstItem="gkN-va-Mwb" firstAttribute="width" secondItem="C98-Uu-cny" secondAttribute="width" id="fKd-qg-9JS"/>
+                            <constraint firstItem="gkN-va-Mwb" firstAttribute="top" secondItem="bIB-TQ-MYy" secondAttribute="bottom" constant="54" id="oGB-8X-ive"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="txtdescription" destination="gkN-va-Mwb" id="4pp-l9-5Vh"/>
@@ -84,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swu-Gk-hDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902.5" y="446.5"/>
+            <point key="canvasLocation" x="1901.5999999999999" y="445.72713643178412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YzS-bj-xh7">

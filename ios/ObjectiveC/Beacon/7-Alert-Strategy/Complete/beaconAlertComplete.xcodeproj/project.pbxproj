@@ -280,6 +280,7 @@
 				TargetAttributes = {
 					14358D401CAA7B9500C302DE = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 3T67HE76NG;
 					};
 					14358D591CAA7B9500C302DE = {
 						CreatedOnToolsVersion = 7.3;
@@ -632,6 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/beaconAlertComplete",
@@ -650,6 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/beaconAlertComplete",

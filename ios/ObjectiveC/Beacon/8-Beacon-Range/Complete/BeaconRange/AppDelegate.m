@@ -35,7 +35,8 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconUuid:@"__UUID__"];
+    NSArray *uuids = @[@"__UUID__"];
+    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconArrayUuids:uuids];
     
     return YES;
 }
