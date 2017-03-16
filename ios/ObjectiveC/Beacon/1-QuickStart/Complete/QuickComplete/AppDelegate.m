@@ -46,7 +46,7 @@
     [super application:application didReceiveLocalNotification:notification];
 }
 
--(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
+-(void) didReceiveBeaconNotification:(ATBeaconContent *)_beaconContent{
     // redirect to the correct ViewController - in our case there is just one ViewController, so it's not necessary
 }
 
