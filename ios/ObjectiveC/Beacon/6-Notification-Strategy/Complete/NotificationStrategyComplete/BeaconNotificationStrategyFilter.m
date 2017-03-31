@@ -10,20 +10,24 @@
 
 @implementation BeaconNotificationStrategyFilter
 
+-(NSString *) getName {
+    return @"beaconNotificationStrategyFilter";
+}
+
+-(void)updateParameters:(NSDictionary *) params {
+}
+
 -(id) initWithMinTimeBetweenNotification:(long)minTime{
     self = [super init];
     if(self){
-      
-        minTimeBetweenNotification =   ((double)minTime / 1000);
+        minTimeBetweenNotification = ((double)minTime / 1000);
         minNextTimeNotification = 0 ;
     }
     return self;
 }
 
 -(BOOL) createNewNotification:(ATBeaconContent *)newBeaconContent feedStatus:(ATRangeFeedStatus)feedStatus{
-
     return minNextTimeNotification < CACurrentMediaTime();
-    //return YES ;
 }
 
 -(void) onNotificationIsCreated:(ATBeaconContent *)beconContent notificationStatus:(BOOL)notificationStatus{

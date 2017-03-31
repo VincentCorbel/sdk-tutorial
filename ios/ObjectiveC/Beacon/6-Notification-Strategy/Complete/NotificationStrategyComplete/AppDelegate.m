@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewControllerBeacon.h"
 #import "BeaconNotificationStrategyFilter.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,31 +18,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [super application:application didFinishLaunchingWithOptions:launchOptions];
     
-
+    NSString *USER = @"User_cbeacon";
+    NSString *PASS = @"fSKbCEvCDCbYTDlk";
+    NSString *COMPANY = @"ccbeacondemo";
     
-    /* ** Required -- used to initialize and setup the SDK
-     *
-     *
-     *
-     * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
-     * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
-     *                  ATUrlTypeProd     = > Production Platform
-     *                  ATUrlTypeDemo     = > Demo Platform
-     *
-     * Key/Value are related to the selected Platform
-     * -- 2- user Login : Login delivred by the Connecthings staff
-     * -- 3- user Password : Password delivred by the Connecthings staff
-     * -- 4- user Compagny : Define the compagny name
-     * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
-     * --
-     *
-     * All other SDK methods must be called after this one, because they won't exist until you do.
-     */
-    NSArray *uuids = @[@"__UUID__"];
-    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconArrayUuids:uuids];
-    [self addNotificationStrategy:[[BeaconNotificationStrategyFilter alloc] initWithMinTimeBetweenNotification:1000 * 60] ];
-    //To add the application to the notification center/Users/ssr/Desktop/FORGE/beacon-tutorial/ios/Beacon/2-Notification/NotificationComplete/Notification/AppDelegate.m
+    [[[ATAdtagInitializer sharedInstance] configureUrlType:ATUrlTypeDev andLogin:USER andPassword:PASS andCompany:COMPANY] synchronize];
+    [ATLogManager initInstanceWithInformation:30  MaxLogInDbBeforSending:200 maxNumberToSendToServer:200 sendLogWifiOnly:false];
+    
+    [self addNotificationStrategy:[[BeaconNotificationStrategyFilter alloc] initWithMinTimeBetweenNotification: 5 * 1000 * 60]];
+    
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
@@ -53,10 +40,10 @@
     
     [super application:application didReceiveLocalNotification:notification];
 }
-// if you implement didBeacomeActive you should add a super call
-// if you don't just remove all the method
 
-- (void)applicationDidBecomeActive:(UIApplication *)application{
+// if you implement didBeacomeActive you should add a super call, if you don't just remove all the method
+
+- (void)applicationDidBecomeActive:(UIApplication *) application{
     [super applicationDidBecomeActive:application];
     application.applicationIconBadgeNumber = 0;
 }
@@ -66,7 +53,8 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
 }
 
--(void) didReceiveBeaconWelcomeNotification:(ATBeaconWelcomeNotification *) _welcomeNotificationContent{
+
+-(void) didReceiveBeaconWelcomeNotification:(id<ATBeaconWelcomeNotification>) _welcomeNotificationContent {
     
 }
 
