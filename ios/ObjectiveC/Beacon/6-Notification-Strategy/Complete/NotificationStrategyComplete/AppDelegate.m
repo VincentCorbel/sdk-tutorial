@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewControllerBeacon.h"
 #import "BeaconNotificationStrategyFilter.h"
+
 @interface AppDelegate ()
 
 @end
@@ -52,10 +53,10 @@
     
     [super application:application didReceiveLocalNotification:notification];
 }
-// if you implement didBeacomeActive you should add a super call
-// if you don't just remove all the method
 
-- (void)applicationDidBecomeActive:(UIApplication *)application{
+// if you implement didBeacomeActive you should add a super call, if you don't just remove all the method
+
+- (void)applicationDidBecomeActive:(UIApplication *) application{
     [super applicationDidBecomeActive:application];
     application.applicationIconBadgeNumber = 0;
 }
@@ -65,7 +66,12 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
 }
 
+<<<<<<< HEAD
 -(void) didReceiveBeaconWelcomeNotification:(id<ATBeaconWelcomeNotification>) _welcomeNotificationContent{
+=======
+
+-(void) didReceiveBeaconWelcomeNotification:(id<ATBeaconWelcomeNotification>) _welcomeNotificationContent {
+>>>>>>> 761c1fa6df3bc392e4879e1fcf4683f55509d17f
     
 }
 
