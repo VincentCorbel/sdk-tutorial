@@ -20,7 +20,7 @@
 -(id) initWithMinTimeBetweenNotification:(long)minTime{
     self = [super init];
     if(self){
-        minTimeBetweenNotification = ((double)minTime / 1000);
+        minTimeBetweenNotification = ((double) minTime / 1000);
         minNextTimeNotification = 0 ;
     }
     return self;

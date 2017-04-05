@@ -15,9 +15,9 @@
 		14F4D2EB1DC0A3C0004F1A4E /* NotificationStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4D2EA1DC0A3C0004F1A4E /* NotificationStrategyTests.swift */; };
 		14F4D2F61DC0A3C0004F1A4E /* NotificationStrategyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4D2F51DC0A3C0004F1A4E /* NotificationStrategyUITests.swift */; };
 		14F4D3041DC0A3DD004F1A4E /* BeaconNotificationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4D3031DC0A3DD004F1A4E /* BeaconNotificationFilter.swift */; };
-		1E8A55FF0BFD6E4C19DAC361 /* Pods_NotificationStrategyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4B0D6A3AB75D42808F6F56 /* Pods_NotificationStrategyUITests.framework */; };
-		7D97EBF4FDF4AC58DD196553 /* Pods_NotificationStrategy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF0BD8052BAEF87BCCB595E /* Pods_NotificationStrategy.framework */; };
-		8EE0B36F182F8FF71671E561 /* Pods_NotificationStrategyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025C54F62192851A629AF385 /* Pods_NotificationStrategyTests.framework */; };
+		87614288E4AB0043F9EF1518 /* Pods_NotificationStrategyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32404B6ED1884313FC80BAB2 /* Pods_NotificationStrategyUITests.framework */; };
+		9BF6AFD280AE0F6982A5805D /* Pods_NotificationStrategyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7D054743674DB0326775C5 /* Pods_NotificationStrategyTests.framework */; };
+		E59C0E0607A32CA1297552D4 /* Pods_NotificationStrategy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81185E8F82BBFA799D920E1E /* Pods_NotificationStrategy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		025C54F62192851A629AF385 /* Pods_NotificationStrategyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		078E99152F66B19152297E62 /* Pods-NotificationStrategyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategyTests/Pods-NotificationStrategyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		14F4D2D21DC0A3C0004F1A4E /* NotificationStrategy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationStrategy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F4D2D51DC0A3C0004F1A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,12 +54,13 @@
 		14F4D2F71DC0A3C0004F1A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F4D3031DC0A3DD004F1A4E /* BeaconNotificationFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconNotificationFilter.swift; sourceTree = "<group>"; };
 		22D8218E71259198316907CC /* Pods-NotificationStrategyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategyUITests/Pods-NotificationStrategyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6A4B0D6A3AB75D42808F6F56 /* Pods_NotificationStrategyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32404B6ED1884313FC80BAB2 /* Pods_NotificationStrategyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF5E414CB7E4A6B766F279F /* Pods-NotificationStrategy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategy/Pods-NotificationStrategy.debug.xcconfig"; sourceTree = "<group>"; };
-		8CF0BD8052BAEF87BCCB595E /* Pods_NotificationStrategy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81185E8F82BBFA799D920E1E /* Pods_NotificationStrategy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9988B76968D9BE5D8D27D6C3 /* Pods-NotificationStrategy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategy.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategy/Pods-NotificationStrategy.release.xcconfig"; sourceTree = "<group>"; };
 		C84EA3A402D81C6E01AE0C7C /* Pods-NotificationStrategyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategyUITests/Pods-NotificationStrategyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D433378EA0865A04609A173A /* Pods-NotificationStrategyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategyTests/Pods-NotificationStrategyTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE7D054743674DB0326775C5 /* Pods_NotificationStrategyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D97EBF4FDF4AC58DD196553 /* Pods_NotificationStrategy.framework in Frameworks */,
+				E59C0E0607A32CA1297552D4 /* Pods_NotificationStrategy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EE0B36F182F8FF71671E561 /* Pods_NotificationStrategyTests.framework in Frameworks */,
+				9BF6AFD280AE0F6982A5805D /* Pods_NotificationStrategyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E8A55FF0BFD6E4C19DAC361 /* Pods_NotificationStrategyUITests.framework in Frameworks */,
+				87614288E4AB0043F9EF1518 /* Pods_NotificationStrategyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,9 +161,9 @@
 		BE945D99F19B53FB7E2892BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8CF0BD8052BAEF87BCCB595E /* Pods_NotificationStrategy.framework */,
-				025C54F62192851A629AF385 /* Pods_NotificationStrategyTests.framework */,
-				6A4B0D6A3AB75D42808F6F56 /* Pods_NotificationStrategyUITests.framework */,
+				81185E8F82BBFA799D920E1E /* Pods_NotificationStrategy.framework */,
+				FE7D054743674DB0326775C5 /* Pods_NotificationStrategyTests.framework */,
+				32404B6ED1884313FC80BAB2 /* Pods_NotificationStrategyUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

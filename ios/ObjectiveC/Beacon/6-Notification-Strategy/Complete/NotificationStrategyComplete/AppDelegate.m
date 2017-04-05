@@ -19,13 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [super application:application didFinishLaunchingWithOptions:launchOptions];
-    
-    NSString *USER = @"User_cbeacon";
-    NSString *PASS = @"fSKbCEvCDCbYTDlk";
-    NSString *COMPANY = @"ccbeacondemo";
+
+    NSString *USER = @"";
+    NSString *PASS = @"";
+    NSString *COMPANY = @"";
     
     [[[ATAdtagInitializer sharedInstance] configureUrlType:ATUrlTypeDev andLogin:USER andPassword:PASS andCompany:COMPANY] synchronize];
-    [ATLogManager initInstanceWithInformation:30  MaxLogInDbBeforSending:200 maxNumberToSendToServer:200 sendLogWifiOnly:false];
     
     [self addNotificationStrategy:[[BeaconNotificationStrategyFilter alloc] initWithMinTimeBetweenNotification: 5 * 1000 * 60]];
     

@@ -20,10 +20,10 @@
 		14E45AC51CA1B7F100639B81 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E45AC41CA1B7F100639B81 /* libsqlite3.0.tbd */; };
 		23FE71466BEDD6DBB5648DC7 /* Pods_NotificationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001625042A18408672374C8D /* Pods_NotificationUITests.framework */; };
 		24976DAE431B835CE4A39527 /* Pods_NotificationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923317B9945806C2DA964CE8 /* Pods_NotificationTests.framework */; };
-		747883A2089435BC913823E9 /* Pods_NotificationStrategyComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DA2122B9214CF221EBF903 /* Pods_NotificationStrategyComplete.framework */; };
+		3E57078ACA45CBDA17E8BE90 /* Pods_NotificationStrategyComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8965ED0D31B1C8D2FF095A4F /* Pods_NotificationStrategyComplete.framework */; };
 		7CE417891CFD91170032EEBD /* BeaconNotificationStrategyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE417881CFD91170032EEBD /* BeaconNotificationStrategyFilter.m */; };
-		D92F84E51FEEB38B0AA50352 /* Pods_NotificationStrategyCompleteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669CC4F39EE54FB54D0736A9 /* Pods_NotificationStrategyCompleteTests.framework */; };
-		E86F9A743A705A05E6439579 /* Pods_NotificationStrategyCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816598ADD660BF6BDC960A1E /* Pods_NotificationStrategyCompleteUITests.framework */; };
+		7F7FF59D8BF8DB50329385E5 /* Pods_NotificationStrategyCompleteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B805C22CDE8279DFBF639482 /* Pods_NotificationStrategyCompleteTests.framework */; };
+		F3F2F6D8AE66BFE8F15A9825 /* Pods_NotificationStrategyCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628185C1FD0E6180ABB8797D /* Pods_NotificationStrategyCompleteUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,14 +65,14 @@
 		14E45AC21CA1B7EA00639B81 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		14E45AC41CA1B7F100639B81 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		52EE14777F3463DE7FB08133 /* Pods-NotificationStrategyComplete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategyComplete.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategyComplete/Pods-NotificationStrategyComplete.release.xcconfig"; sourceTree = "<group>"; };
-		669CC4F39EE54FB54D0736A9 /* Pods_NotificationStrategyCompleteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyCompleteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		628185C1FD0E6180ABB8797D /* Pods_NotificationStrategyCompleteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyCompleteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE417871CFD91170032EEBD /* BeaconNotificationStrategyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconNotificationStrategyFilter.h; sourceTree = "<group>"; };
 		7CE417881CFD91170032EEBD /* BeaconNotificationStrategyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconNotificationStrategyFilter.m; sourceTree = "<group>"; };
-		816598ADD660BF6BDC960A1E /* Pods_NotificationStrategyCompleteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyCompleteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8965ED0D31B1C8D2FF095A4F /* Pods_NotificationStrategyComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89DC464C45C1EB34B74BBB5D /* Pods-NotificationStrategyComplete.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategyComplete.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategyComplete/Pods-NotificationStrategyComplete.debug.xcconfig"; sourceTree = "<group>"; };
 		923317B9945806C2DA964CE8 /* Pods_NotificationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8F5366733FE5949B8AAE2E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3DA2122B9214CF221EBF903 /* Pods_NotificationStrategyComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B805C22CDE8279DFBF639482 /* Pods_NotificationStrategyCompleteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationStrategyCompleteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41F46D1B5F0B882BD1926EE /* Pods-NotificationStrategyCompleteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategyCompleteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategyCompleteUITests/Pods-NotificationStrategyCompleteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D63A48146C71598CACA27A1D /* Pods-NotificationStrategyCompleteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationStrategyCompleteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationStrategyCompleteTests/Pods-NotificationStrategyCompleteTests.release.xcconfig"; sourceTree = "<group>"; };
 		D70A4F19CCB30932F9A464B0 /* Pods_Notification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +87,7 @@
 			files = (
 				14E45AC51CA1B7F100639B81 /* libsqlite3.0.tbd in Frameworks */,
 				14E45AC31CA1B7EA00639B81 /* CoreLocation.framework in Frameworks */,
-				747883A2089435BC913823E9 /* Pods_NotificationStrategyComplete.framework in Frameworks */,
+				3E57078ACA45CBDA17E8BE90 /* Pods_NotificationStrategyComplete.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24976DAE431B835CE4A39527 /* Pods_NotificationTests.framework in Frameworks */,
-				D92F84E51FEEB38B0AA50352 /* Pods_NotificationStrategyCompleteTests.framework in Frameworks */,
+				7F7FF59D8BF8DB50329385E5 /* Pods_NotificationStrategyCompleteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23FE71466BEDD6DBB5648DC7 /* Pods_NotificationUITests.framework in Frameworks */,
-				E86F9A743A705A05E6439579 /* Pods_NotificationStrategyCompleteUITests.framework in Frameworks */,
+				F3F2F6D8AE66BFE8F15A9825 /* Pods_NotificationStrategyCompleteUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,9 +201,9 @@
 				D70A4F19CCB30932F9A464B0 /* Pods_Notification.framework */,
 				923317B9945806C2DA964CE8 /* Pods_NotificationTests.framework */,
 				001625042A18408672374C8D /* Pods_NotificationUITests.framework */,
-				B3DA2122B9214CF221EBF903 /* Pods_NotificationStrategyComplete.framework */,
-				669CC4F39EE54FB54D0736A9 /* Pods_NotificationStrategyCompleteTests.framework */,
-				816598ADD660BF6BDC960A1E /* Pods_NotificationStrategyCompleteUITests.framework */,
+				8965ED0D31B1C8D2FF095A4F /* Pods_NotificationStrategyComplete.framework */,
+				B805C22CDE8279DFBF639482 /* Pods_NotificationStrategyCompleteTests.framework */,
+				628185C1FD0E6180ABB8797D /* Pods_NotificationStrategyCompleteUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

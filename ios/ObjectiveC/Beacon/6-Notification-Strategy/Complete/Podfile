@@ -4,7 +4,6 @@ source 'git@forge.adtag.eu:ConnecthingsSDK/Specs.git'
 platform :ios, '8.0'
 
 target 'NotificationStrategyComplete' do
-	use_frameworks!
 	pod "ATLocationBeacon", '~> 2.7-RC0'
 	
 	target 'NotificationStrategyCompleteTests' do

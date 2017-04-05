@@ -6,50 +6,28 @@
 //  Copyright © 2016 R&D connecthings. All rights reserved.
 //
 
-
 import UIKit
 import ATConnectionHttp
 import ATAnalytics
 import ATLocationBeacon
 import UserNotifications
 
-
 @UIApplicationMain
 
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNotificatonContentDelegate {
-    
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNotificatonContentDelegate {
     var window: UIWindow?
     var beaconNotificationFilter:BeaconNotificationFilter!
     
-    
-    
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        /* ** Required -- used to initialize and setup the SDK
-         *
-         *
-         *
-         * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
-         * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
-         *                  ATUrlTypeProd     = > Production Platform
-         *                  ATUrlTypeDemo     = > Demo Platform
-         *
-         * Key/Value are related to the selected Platform
-         * -- 2- user Login : Login delivred by the Connecthings staff
-         * -- 3- user Password : Password delivred by the Connecthings staff
-         * -- 4- user Compagny : Define the compagny name
-         * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
-         * --
-         *
-         * All other SDK methods must be called after this one, because they won't exist until you do.
-         */
-
-        initAdtagInstance(with:ATUrlTypeProd ,userLogin: "__LOGIN__" ,userPassword: "__PSWD__" ,userCompany: "__COMPANY__" ,beaconUuid: "__UUID__")
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        let USER = "User_cbeacon";
+        let PASS = "fSKbCEvCDCbYTDlk";
+        let COMPANY = "ccbeacondemo";
+        let UUID = "B0462602-CBF5-4ABB-87DE-B05340DCCBC6";
         
-        beaconNotificationFilter = BeaconNotificationFilter(timeBetweenNotification: 60 * 1000)
-        addNotificationStrategy(beaconNotificationFilter)
+        initAdtagInstance(with: ATUrlTypeDev, userLogin: USER, userPassword: PASS, userCompany: COMPANY, beaconUuid: UUID, activatIos10Workaround: true)
+        ATAdtagInitializer.sharedInstance().synchronize()
         
-        
+        addNotificationStrategy(BeaconNotificationFilter(timeBetweenNotification: 5 * 60 * 1000))
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -66,8 +44,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
         return true
     }
     
- 
-    
     /** Receive the local notification **/
     override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         super.application(application, didReceive: notification)
@@ -75,7 +51,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
     }
     
     override func applicationWillResignActive(_ application: UIApplication) {
-        
         /* ** Required
          * Add super.applicationWillResignActive to your  delegate method
          * the super class will init the range beacon
@@ -91,7 +66,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
     }
     
     override func applicationDidBecomeActive(_ application: UIApplication) {
-        
         /* ** Required
          * Add super.applicationDidBecomeActive to your delegate method
          * the super class will init the range beacon
@@ -114,10 +88,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
                 userInfo:dict)
     }
     
-
     func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
         
     }
-    
 }
-
