@@ -30,27 +30,9 @@ public class ApplicationNotification extends Application {
     public void onCreate(){
         super.onCreate();
         AdtagInitializer.initInstance(this).initUrlType(Url.UrlType.__PLATFORM__)
-                .initUser("__LOGIN__", "__PSWD__").initCompany("__COMPANY__");
-        //Initiate the adtagLogManager that manages the way log are sent to the platform
-        AdtagLogsManager.initInstance(this, Network.ALL, 200, 1000 * 60 * 2);
-        //If you need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
-        //Initiate the beaconManager with the UUID of your beacons company. our beaconManager manage only one beacon Region based on the uuid
-        AdtagBeaconManager beaconManager = AdtagBeaconManager.initInstance(this, "__UUID__");
+                .initUser("__LOGIN__", "__PSWD__").initCompany("__COMPANY__").synchronize();
 
-        BeaconWelcomeNotification beaconDefaultNotificationOn = new BeaconWelcomeNotification(BeaconWelcomeNotification.TYPE.NETWORK_ON,
-                getString(R.string.beacon_welcome_on_title),
-                getString(R.string.beacon_welcome_on_description),
-                -1,
-                R.drawable.wn_network_on,
-                2 * 1000 * 60);
-        beaconManager.addWelcomeNotification(beaconDefaultNotificationOn);
-        BeaconWelcomeNotification beaconDefaultNotificationOff = new BeaconWelcomeNotification(BeaconWelcomeNotification.TYPE.NETWORK_ERROR,
-                getString(R.string.beacon_welcome_off_title),
-                getString(R.string.beacon_welcome_off_description),
-                -1,
-                R.drawable.wn_network_off,
-                2*1000*60);
-        beaconManager.addWelcomeNotification(beaconDefaultNotificationOff);
+        AdtagBeaconManager beaconManager = AdtagBeaconManager.getInstance();
         AsyncBeaconWelcomeNotificationImageCreator asyncBeaconWelcomeNotificationCreator = new AsyncBeaconWelcomeNotificationImageCreator(new MyBeaconWelcomeNotificationImageBuilder(this), this.getResources());
         beaconManager.registerAsyncBeaconWelcomeNotificationListener(asyncBeaconWelcomeNotificationCreator);
     }

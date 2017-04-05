@@ -17,14 +17,6 @@ public class ApplicationQuickStart extends Application{
         super.onCreate();
         //Intiate the AdtagInitializer
 
-        //Initiate the adtagLogManager that manages the way log are sent to the platform
-
-        //If you need more parameter - AdtagLogsManager.initInstance(this, Network.ALL,  50, 1000*60*2);
-
-        //Initiate the beaconManager with the UUID of your beacons company. our beaconManager manage only one beacon Region based on the uuid
-
-        //Authorize the SDK to use the bluetooth
-
     }
 
 }
