@@ -20,17 +20,9 @@
 */
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    // HELP:
-    // init the adtag platforme with the
-    // ** user Login : Login delivred by the Connecthings staff
-    // ** user Password : Password delivred by the Connecthings staff
-    // ** user Compagny : ....
-    // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
-    //
-    NSArray *uuids = @[@"**UUID**"];
+    [super application:application didFinishLaunchingWithOptions:launchOptions];
     
-    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PASSWORD__" userCompany:@"__COMPANY__" beaconUuid:uuids];
+    [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }

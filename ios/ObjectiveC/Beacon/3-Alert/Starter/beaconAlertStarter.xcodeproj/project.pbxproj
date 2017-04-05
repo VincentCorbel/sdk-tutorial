@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AAEB6E868F8181528637084 /* Pods_beaconAlertStarterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E4A1F8F9D5D620216CAD44 /* Pods_beaconAlertStarterUITests.framework */; };
 		14358D461CAA7B9500C302DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D451CAA7B9500C302DE /* main.m */; };
 		14358D491CAA7B9500C302DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D481CAA7B9500C302DE /* AppDelegate.m */; };
 		14358D4C1CAA7B9500C302DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D4B1CAA7B9500C302DE /* ViewController.m */; };
@@ -17,8 +18,10 @@
 		14358D6A1CAA7B9500C302DE /* beaconAlertCompleteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D691CAA7B9500C302DE /* beaconAlertCompleteUITests.m */; };
 		14358D781CAA7C0900C302DE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358D771CAA7C0900C302DE /* libsqlite3.0.tbd */; };
 		1497E6DE1CB7D93100DEB68F /* AlertViewControllerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497E6DD1CB7D93100DEB68F /* AlertViewControllerAction.m */; };
+		75DD51C86221F767B422002C /* Pods_beaconAlertStarter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2DD5631D6F4685A44492DD /* Pods_beaconAlertStarter.framework */; };
 		925F292E397D93D705059B91 /* Pods_beaconAlertCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE081D0FB69413DD2CA490A /* Pods_beaconAlertCompleteUITests.framework */; };
 		9853F58992A1847BAB9B116D /* Pods_beaconAlertCompleteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDCA9CFD90910BA0207FFB9 /* Pods_beaconAlertCompleteTests.framework */; };
+		C902A0BF0F04DA610B421D03 /* Pods_beaconAlertStarterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330A14A5A7BFD262C48725D2 /* Pods_beaconAlertStarterTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,13 +62,22 @@
 		1497E6DC1CB7D93100DEB68F /* AlertViewControllerAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewControllerAction.h; sourceTree = "<group>"; };
 		1497E6DD1CB7D93100DEB68F /* AlertViewControllerAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewControllerAction.m; sourceTree = "<group>"; };
 		18647DDCB279707C208369CE /* Pods_beaconAlertComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4BD12C18BF04F308893341 /* Pods-beaconAlertStarterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertStarterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertStarterUITests/Pods-beaconAlertStarterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		22534A33CA6C60415310E9CB /* Pods-beaconAlertCompleteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteTests/Pods-beaconAlertCompleteTests.release.xcconfig"; sourceTree = "<group>"; };
+		330A14A5A7BFD262C48725D2 /* Pods_beaconAlertStarterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertStarterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5B3577E014688EFD9B236C /* Pods-beaconAlertComplete.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertComplete.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete.debug.xcconfig"; sourceTree = "<group>"; };
 		43A8A2777429490A59E719EA /* Pods-beaconAlertCompleteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteUITests/Pods-beaconAlertCompleteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4CE081D0FB69413DD2CA490A /* Pods_beaconAlertCompleteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertCompleteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A6764FAF3B13E3D9526F06 /* Pods-beaconAlertStarterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertStarterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertStarterUITests/Pods-beaconAlertStarterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B2DD5631D6F4685A44492DD /* Pods_beaconAlertStarter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertStarter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF425C2CCDE6C7708B44958 /* Pods-beaconAlertComplete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertComplete.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete.release.xcconfig"; sourceTree = "<group>"; };
 		8EDCA9CFD90910BA0207FFB9 /* Pods_beaconAlertCompleteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertCompleteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EABE00AC3A49A637E3B2991 /* Pods-beaconAlertStarter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertStarter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertStarter/Pods-beaconAlertStarter.debug.xcconfig"; sourceTree = "<group>"; };
 		B9BBDDCE21D3DAD1098737F6 /* Pods-beaconAlertCompleteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteTests/Pods-beaconAlertCompleteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BBECCA7C7E3BB46DF983E023 /* Pods-beaconAlertStarterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertStarterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertStarterTests/Pods-beaconAlertStarterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BFBC62CCBA3B44D405DCCBCA /* Pods-beaconAlertStarter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertStarter.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertStarter/Pods-beaconAlertStarter.release.xcconfig"; sourceTree = "<group>"; };
+		C0C4CD796E7468AE3A5BA380 /* Pods-beaconAlertStarterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertStarterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertStarterTests/Pods-beaconAlertStarterTests.release.xcconfig"; sourceTree = "<group>"; };
+		D0E4A1F8F9D5D620216CAD44 /* Pods_beaconAlertStarterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertStarterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C7D5C70CB34A5E42E93C7B /* Pods-beaconAlertCompleteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteUITests/Pods-beaconAlertCompleteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14358D781CAA7C0900C302DE /* libsqlite3.0.tbd in Frameworks */,
+				75DD51C86221F767B422002C /* Pods_beaconAlertStarter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9853F58992A1847BAB9B116D /* Pods_beaconAlertCompleteTests.framework in Frameworks */,
+				C902A0BF0F04DA610B421D03 /* Pods_beaconAlertStarterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				925F292E397D93D705059B91 /* Pods_beaconAlertCompleteUITests.framework in Frameworks */,
+				0AAEB6E868F8181528637084 /* Pods_beaconAlertStarterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +121,12 @@
 				22534A33CA6C60415310E9CB /* Pods-beaconAlertCompleteTests.release.xcconfig */,
 				D6C7D5C70CB34A5E42E93C7B /* Pods-beaconAlertCompleteUITests.debug.xcconfig */,
 				43A8A2777429490A59E719EA /* Pods-beaconAlertCompleteUITests.release.xcconfig */,
+				9EABE00AC3A49A637E3B2991 /* Pods-beaconAlertStarter.debug.xcconfig */,
+				BFBC62CCBA3B44D405DCCBCA /* Pods-beaconAlertStarter.release.xcconfig */,
+				BBECCA7C7E3BB46DF983E023 /* Pods-beaconAlertStarterTests.debug.xcconfig */,
+				C0C4CD796E7468AE3A5BA380 /* Pods-beaconAlertStarterTests.release.xcconfig */,
+				74A6764FAF3B13E3D9526F06 /* Pods-beaconAlertStarterUITests.debug.xcconfig */,
+				1A4BD12C18BF04F308893341 /* Pods-beaconAlertStarterUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -183,6 +204,9 @@
 				18647DDCB279707C208369CE /* Pods_beaconAlertComplete.framework */,
 				8EDCA9CFD90910BA0207FFB9 /* Pods_beaconAlertCompleteTests.framework */,
 				4CE081D0FB69413DD2CA490A /* Pods_beaconAlertCompleteUITests.framework */,
+				7B2DD5631D6F4685A44492DD /* Pods_beaconAlertStarter.framework */,
+				330A14A5A7BFD262C48725D2 /* Pods_beaconAlertStarterTests.framework */,
+				D0E4A1F8F9D5D620216CAD44 /* Pods_beaconAlertStarterUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -335,7 +359,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertCompleteTests/Pods-beaconAlertCompleteTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertStarterTests/Pods-beaconAlertStarterTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		16AD689DC7E00DB9831F44E3 /* [CP] Copy Pods Resources */ = {
@@ -350,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertCompleteTests/Pods-beaconAlertCompleteTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertStarterTests/Pods-beaconAlertStarterTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5C5E28D34A4620F845E559AA /* [CP] Check Pods Manifest.lock */ = {
@@ -395,7 +419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertCompleteUITests/Pods-beaconAlertCompleteUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertStarterUITests/Pods-beaconAlertStarterUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3095FB6D52B6BD8CF65F2E8 /* [CP] Embed Pods Frameworks */ = {
@@ -410,7 +434,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertStarter/Pods-beaconAlertStarter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB89BB2266CE185173560602 /* [CP] Copy Pods Resources */ = {
@@ -425,7 +449,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertCompleteUITests/Pods-beaconAlertCompleteUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertStarterUITests/Pods-beaconAlertStarterUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DAAE99838D2D7A6D6D165805 /* [CP] Check Pods Manifest.lock */ = {
@@ -455,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertStarter/Pods-beaconAlertStarter-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -609,7 +633,7 @@
 		};
 		14358D6F1CAA7B9500C302DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F5B3577E014688EFD9B236C /* Pods-beaconAlertComplete.debug.xcconfig */;
+			baseConfigurationReference = 9EABE00AC3A49A637E3B2991 /* Pods-beaconAlertStarter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -628,7 +652,7 @@
 		};
 		14358D701CAA7B9500C302DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CF425C2CCDE6C7708B44958 /* Pods-beaconAlertComplete.release.xcconfig */;
+			baseConfigurationReference = BFBC62CCBA3B44D405DCCBCA /* Pods-beaconAlertStarter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -647,7 +671,7 @@
 		};
 		14358D721CAA7B9500C302DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9BBDDCE21D3DAD1098737F6 /* Pods-beaconAlertCompleteTests.debug.xcconfig */;
+			baseConfigurationReference = BBECCA7C7E3BB46DF983E023 /* Pods-beaconAlertStarterTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = beaconAlertCompleteTests/Info.plist;
@@ -660,7 +684,7 @@
 		};
 		14358D731CAA7B9500C302DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22534A33CA6C60415310E9CB /* Pods-beaconAlertCompleteTests.release.xcconfig */;
+			baseConfigurationReference = C0C4CD796E7468AE3A5BA380 /* Pods-beaconAlertStarterTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = beaconAlertCompleteTests/Info.plist;
@@ -673,7 +697,7 @@
 		};
 		14358D751CAA7B9500C302DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6C7D5C70CB34A5E42E93C7B /* Pods-beaconAlertCompleteUITests.debug.xcconfig */;
+			baseConfigurationReference = 74A6764FAF3B13E3D9526F06 /* Pods-beaconAlertStarterUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = beaconAlertCompleteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -685,7 +709,7 @@
 		};
 		14358D761CAA7B9500C302DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43A8A2777429490A59E719EA /* Pods-beaconAlertCompleteUITests.release.xcconfig */;
+			baseConfigurationReference = 1A4BD12C18BF04F308893341 /* Pods-beaconAlertStarterUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = beaconAlertCompleteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

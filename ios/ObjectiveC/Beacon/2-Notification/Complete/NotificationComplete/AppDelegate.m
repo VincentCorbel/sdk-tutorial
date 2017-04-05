@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+     [super application:application didFinishLaunchingWithOptions:launchOptions];
     /* ** Required -- used to initialize and setup the SDK
      *
      *
@@ -36,15 +36,13 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-  if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
-      NSArray *uuids = @[@"__UUID__"];
-      [self initAdtagInstanceWithUrlType:ATUrlTypeDev userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconArrayUuids:uuids];
+     if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
+         [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
       
       
-      [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
-      
-      [self registerAsyncBeaconNotificationDelegate:[[ATAsyncBeaconNotificationImageCreator alloc] initWithBeaconNotificationBuilder:[[MyBeaconNotificationBuilder alloc] init]]];
- }
+         [self registerNotificationContentDelegate:self];
+         [self registerAsyncBeaconNotificationDelegate:[[ATAsyncBeaconNotificationImageCreator alloc] initWithBeaconNotificationBuilder:[[MyBeaconNotificationBuilder alloc] init]]];
+    }
     //To add the application to the notification center untill ios9
     if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];

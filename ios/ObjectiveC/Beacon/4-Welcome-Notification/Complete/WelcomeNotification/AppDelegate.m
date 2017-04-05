@@ -18,8 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    
+    [super application:application didFinishLaunchingWithOptions:launchOptions];
     /* ** Required -- used to initialize and setup the SDK
      *
      *
@@ -38,16 +37,11 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    NSArray *uuids = @[@"__UID__"];
-    [self initAdtagInstanceWithUrlType:ATUrlTypeDev userLogin:@"__LOGIN__" userPassword:@"__PSWD__" userCompany:@"__COMPANY__" beaconArrayUuids:uuids];
-    
-    // [self disableNotifications];
-    ATBeaconWelcomeNotification *welcomeNotificationOn = [[ATBeaconWelcomeNotification alloc] initTitle:@"Nice Welcome notification" description:@"Good news: You have got network" picture:@"wn_network_on.jpg" minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOn];
-    [self addWelcomeNotification:welcomeNotificationOn];
-    ATBeaconWelcomeNotification *welcomeNotificationOff = [[ATBeaconWelcomeNotification alloc] initTitle:@"Nice Welcome notification" description:@"No network? Lucky you are, a free wifi is available!" picture:@"wn_network_off.jpg" minDisplayTime: 1000 * 60 *5 welcomeNotificationType:ATBeaconWelcomeNotificationTypeNetworkOff];
-    [self addWelcomeNotification:welcomeNotificationOff];
-    [self registerAsyncBeaconWelcomeNotificationDelegate:[[ATAsyncBeaconWelcomeNotificationImageCreator alloc] initWithWelcomeNotificationImageBuilder:[[MyBeaconWelcomeNotificationBuilder alloc] init]]];
-    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){}
+    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
+        [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
+        
+        [self registerAsyncBeaconWelcomeNotificationDelegate:[[ATAsyncBeaconWelcomeNotificationImageCreator alloc] initWithWelcomeNotificationImageBuilder:[[MyBeaconWelcomeNotificationBuilder alloc] init]]];
+    }
     
     //To add the application to the notification center
     if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
@@ -66,7 +60,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
 }
 
--(void)didReceiveBeaconWelcomeNotification:(ATBeaconWelcomeNotification *)_welcomeNotificationContent {
+-(void)didReceiveBeaconWelcomeNotification:(id<ATBeaconWelcomeNotification>)_welcomeNotificationContent {
     //Simple way to redirect to a ViewController - not the best
     NSDictionary* dict = [NSDictionary dictionaryWithObject: _welcomeNotificationContent forKey:@"welcomeNotification"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconWelcomeNotification" object:nil userInfo:dict];

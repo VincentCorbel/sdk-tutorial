@@ -16,7 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   
+    [super application:application didFinishLaunchingWithOptions:launchOptions];
     // Override point for customization after application launch.
     // HELP:
     // init the adtag platforme with the
@@ -26,7 +26,7 @@
     // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
     //
     [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"****" userPassword:@"****" userCompany:@"****" beaconUuid:@"********-****-****-****-************"];
-    
+    [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
     
     return YES;
 }
