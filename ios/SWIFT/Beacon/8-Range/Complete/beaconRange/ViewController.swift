@@ -28,7 +28,7 @@ class ViewController: UIViewController,ATRangeDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus, region: CLRegion!) {
+    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus) {
         var feedStatusString: String
         
         switch feedStatus {

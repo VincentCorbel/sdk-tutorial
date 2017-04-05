@@ -15,12 +15,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
- 
+        NotificationCenter.default.addObserver(self, selector: #selector(remoteNotificationReceived), name: NSNotification.Name("beaconNotification"), object: nil)
      }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func remoteNotificationReceived(notification:NSNotification!) {
+        let beaconContent:ATBeaconContent! = notification.userInfo?["beaconContent"] as! ATBeaconContent;
+        self.txtMessage.text = beaconContent.getNotificationTitle()
+        self.txtMessage.setNeedsDisplay()
+    }
+
 
 }

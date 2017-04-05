@@ -17,6 +17,7 @@ import UserNotifications
 @UIApplicationMain
 
 class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
+
     
     var window: UIWindow?
     
@@ -43,8 +44,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          */
         let uuids = ["__UID__"]
         initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
-  
-        
+
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
         if #available(iOS 10.0, *) {
@@ -57,7 +57,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
         }
-        
+        ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         return true
     }
     
@@ -91,6 +91,17 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
                 userInfo:dict)
         
     }
+    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
+        let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : _beaconContent]
+        let nc = NotificationCenter.default
+        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
+                object: nil,
+                userInfo:dict)
+        
+    }
     
+    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
+        
+    }
 }
 

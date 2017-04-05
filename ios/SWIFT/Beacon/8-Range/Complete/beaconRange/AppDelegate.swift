@@ -36,7 +36,8 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        initAdtagInstance(with:ATUrlTypePreprod ,userLogin: "*****LOGIN****" ,userPassword: "****PASSWORD****" ,userCompany: "****COMPAGNY****" ,beaconUuid: "****UUID****")
+        initAdtagInstance(with:ATUrlTypeProd ,userLogin: "__LOGIN__" ,userPassword: "__PSWD__" ,userCompany: "__COMPANY__" ,beaconUuid: "__UUID__")
+
     
         return true
     }

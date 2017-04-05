@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "android.connecthings.com.tuto.notification"
@@ -25,3 +25,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile "com.connecthings.adtag:android-adtag-beacon:2.7-RC1"
 }
+

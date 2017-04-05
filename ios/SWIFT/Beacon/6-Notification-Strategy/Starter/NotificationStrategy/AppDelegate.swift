@@ -15,7 +15,7 @@ import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNotificatonContentDelegate {
     
     var window: UIWindow?
     var beaconNotificationFilter:BeaconNotificationFilter!
@@ -42,19 +42,13 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        let uuids = ["****UUID****"]
-        initAdtagInstance(with: ATUrlTypeProd, userLogin: "*****LOGIN*****", userPassword: "****PASSWORD****", userCompany: "****COMPAGNY****", beaconArrayUuids: uuids, activatIos10Workaround: false)
+        let uuids = ["__UUID__"]
+        initAdtagInstance(with: ATUrlTypeProd, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
         if #available(iOS 10.0, *) {
-            let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-                // Enable or disable features based on authorization.
-            }
-            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            UIApplication.shared.registerUserNotificationSettings(setting)
-            UIApplication.shared.registerForRemoteNotifications()
+
         } else {
             if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
                 let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
@@ -108,6 +102,18 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
     }
     
+    func didReceiveBeaconNotification(_ _beaconContent: ATBeaconContent!){
+        let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : _beaconContent]
+        let nc = NotificationCenter.default
+        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
+                object: nil,
+                userInfo:dict)
+    }
+    
+    
+    func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
+        
+    }
     
 }
 

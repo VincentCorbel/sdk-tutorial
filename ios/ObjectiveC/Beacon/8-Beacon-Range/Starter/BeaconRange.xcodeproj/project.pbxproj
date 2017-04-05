@@ -17,6 +17,7 @@
 		142268D31D58ADDD00942528 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142268D21D58ADDD00942528 /* ViewController.m */; };
 		693C8429096426A6A2D17102 /* Pods_BeaconRange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE62DA70DD2025D4E9E197C /* Pods_BeaconRange.framework */; };
 		7B8E862D9415757667C195F9 /* Pods_BeaconRangeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655203E68BBFBBF918CEE7D1 /* Pods_BeaconRangeTests.framework */; };
+		7C6493CE1E76FA090049E17F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C6493CC1E76FA090049E17F /* Localizable.strings */; };
 		A63CDCB8C220727FF21F03D8 /* Pods_BeaconRangeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0F88D410E76F86CFE26B70 /* Pods_BeaconRangeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		655203E68BBFBBF918CEE7D1 /* Pods_BeaconRangeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeaconRangeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4203487E2BF848F244E498 /* Pods-BeaconRange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconRange.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconRange/Pods-BeaconRange.release.xcconfig"; sourceTree = "<group>"; };
 		78E44F010D14BBE54D7BC090 /* Pods-BeaconRangeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconRangeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconRangeTests/Pods-BeaconRangeTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C6493CD1E76FA090049E17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84092CD63AE9CA801096F7A0 /* Pods-BeaconRangeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconRangeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconRangeTests/Pods-BeaconRangeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88725B0431BD11AC718216D3 /* Pods-BeaconRange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconRange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconRange/Pods-BeaconRange.debug.xcconfig"; sourceTree = "<group>"; };
 		9617DEA82D3E8903DDB0E05C /* Pods-BeaconRangeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconRangeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconRangeUITests/Pods-BeaconRangeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		1422689E1D588CC800942528 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7C6493CC1E76FA090049E17F /* Localizable.strings */,
 				1422689F1D588CC800942528 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -187,12 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142268C81D588CC800942528 /* Build configuration list for PBXNativeTarget "BeaconRange" */;
 			buildPhases = (
-				72A5D1A231F9B191F21E24C0 /* 📦 Check Pods Manifest.lock */,
+				C358227704BF0608659AA287 /* [CP] Check Pods Manifest.lock */,
 				142268971D588CC700942528 /* Sources */,
 				142268981D588CC700942528 /* Frameworks */,
 				142268991D588CC700942528 /* Resources */,
-				AADF69A5FEABAC3C1FCE5CF4 /* 📦 Embed Pods Frameworks */,
-				AE69C8A0012DAF5625A6EBBD /* 📦 Copy Pods Resources */,
+				4E0B497DE07605F9C3D035CC /* [CP] Embed Pods Frameworks */,
+				BD7A6C8CB1CA27B599573E35 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,12 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142268CB1D588CC800942528 /* Build configuration list for PBXNativeTarget "BeaconRangeTests" */;
 			buildPhases = (
-				D0E175F09C56208F5ABA542F /* 📦 Check Pods Manifest.lock */,
+				D0E175F09C56208F5ABA542F /* [CP] Check Pods Manifest.lock */,
 				142268B01D588CC800942528 /* Sources */,
 				142268B11D588CC800942528 /* Frameworks */,
 				142268B21D588CC800942528 /* Resources */,
-				44D8DCB9D21B9DF9E0432F95 /* 📦 Embed Pods Frameworks */,
-				C8A2267D5B88B81E42364CD1 /* 📦 Copy Pods Resources */,
+				44D8DCB9D21B9DF9E0432F95 /* [CP] Embed Pods Frameworks */,
+				C8A2267D5B88B81E42364CD1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,11 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 142268CE1D588CC800942528 /* Build configuration list for PBXNativeTarget "BeaconRangeUITests" */;
 			buildPhases = (
-				F45DAC9338C01689B46E6CB2 /* 📦 Check Pods Manifest.lock */,
+				F45DAC9338C01689B46E6CB2 /* [CP] Check Pods Manifest.lock */,
 				142268BB1D588CC800942528 /* Sources */,
 				142268BC1D588CC800942528 /* Frameworks */,
 				142268BD1D588CC800942528 /* Resources */,
-				EEB066BD7000CBAB0C7F57E8 /* 📦 Copy Pods Resources */,
+				EEB066BD7000CBAB0C7F57E8 /* [CP] Copy Pods Resources */,
+				DB6C3CF0F7E608DF9F839C57 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +259,7 @@
 				TargetAttributes = {
 					1422689A1D588CC700942528 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3T67HE76NG;
 					};
 					142268B31D588CC800942528 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -292,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142268AE1D588CC800942528 /* LaunchScreen.storyboard in Resources */,
+				7C6493CE1E76FA090049E17F /* Localizable.strings in Resources */,
 				142268AB1D588CC800942528 /* Assets.xcassets in Resources */,
 				142268A91D588CC800942528 /* Main.storyboard in Resources */,
 			);
@@ -314,14 +320,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		44D8DCB9D21B9DF9E0432F95 /* 📦 Embed Pods Frameworks */ = {
+		44D8DCB9D21B9DF9E0432F95 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,29 +335,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconRangeTests/Pods-BeaconRangeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		72A5D1A231F9B191F21E24C0 /* 📦 Check Pods Manifest.lock */ = {
+		4E0B497DE07605F9C3D035CC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		AADF69A5FEABAC3C1FCE5CF4 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,14 +350,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconRange/Pods-BeaconRange-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AE69C8A0012DAF5625A6EBBD /* 📦 Copy Pods Resources */ = {
+		BD7A6C8CB1CA27B599573E35 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,14 +365,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconRange/Pods-BeaconRange-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8A2267D5B88B81E42364CD1 /* 📦 Copy Pods Resources */ = {
+		C358227704BF0608659AA287 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8A2267D5B88B81E42364CD1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,29 +395,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconRangeTests/Pods-BeaconRangeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D0E175F09C56208F5ABA542F /* 📦 Check Pods Manifest.lock */ = {
+		D0E175F09C56208F5ABA542F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		EEB066BD7000CBAB0C7F57E8 /* 📦 Copy Pods Resources */ = {
+		DB6C3CF0F7E608DF9F839C57 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconRangeUITests/Pods-BeaconRangeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEB066BD7000CBAB0C7F57E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,19 +440,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconRangeUITests/Pods-BeaconRangeUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F45DAC9338C01689B46E6CB2 /* 📦 Check Pods Manifest.lock */ = {
+		F45DAC9338C01689B46E6CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -493,6 +514,14 @@
 				142268AD1D588CC800942528 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7C6493CC1E76FA090049E17F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C6493CD1E76FA090049E17F /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -588,6 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = BeaconRange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.BeaconRange;
@@ -601,6 +631,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = BeaconRange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.BeaconRange;

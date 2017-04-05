@@ -30,8 +30,7 @@
     //
     NSArray *uuids = @[@"**UUID**"];
     
-    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"**LOGIN**" userPassword:@"**PASSWORD**" userCompany:@"**COMPAGNY**" beaconArrayUuids:uuids];
-    [[ATBeaconManager sharedInstance] registerNotificationContentDelegate:self];
+    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PASSWORD__" userCompany:@"__COMPANY__" beaconUuid:uuids];
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
@@ -47,7 +46,7 @@
     [super application:application didReceiveLocalNotification:notification];
 }
 
--(void)didReceiveNotificationContentReceived:(ATBeaconContent *)_beaconContent {
+-(void) didReceiveBeaconNotification:(ATBeaconContent *)_beaconContent{
     // redirect to the correct ViewController - in our case there is just one ViewController, so it's not necessary
 }
 

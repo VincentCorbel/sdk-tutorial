@@ -8,11 +8,17 @@
 
 import ATLocationBeacon
 import Foundation
+
 class BeaconNotificationFilter: NSObject, ATBeaconNotificationStrategyDelegate {
-    
     var minNextTimeNotification : Double!
     var minTimeBetweenNotification : Double!
     
+    func getName() -> String! {
+        return "beaconNotificationStrategyFilter"
+    }
+    
+    func updateParameters(_ params: [AnyHashable : Any]!) {
+    }
     
     /**
      * The filter will be defined by 2 attributes : _maxNumberNotification and _timeBetweenNotification
@@ -23,13 +29,10 @@ class BeaconNotificationFilter: NSObject, ATBeaconNotificationStrategyDelegate {
         self.init()
         self.minNextTimeNotification = 0
         self.minTimeBetweenNotification = (Double(timeBetweenNotification) / 1000)
-        
-        
     }
     
     func createNewNotification(_ newBeaconContent: ATBeaconContent, feedStatus: ATRangeFeedStatus) -> Bool {
-        
-        return  self.minNextTimeNotification < CFAbsoluteTimeGetCurrent()
+        return self.minNextTimeNotification < CFAbsoluteTimeGetCurrent()
     }
     
     func deleteCurrentNotification(_ newBeaconContent: ATBeaconContent, feedStatus: ATRangeFeedStatus) -> Bool {
@@ -53,16 +56,14 @@ class BeaconNotificationFilter: NSObject, ATBeaconNotificationStrategyDelegate {
     
     func onNotificationIsDeleted(_ beconContent: ATBeaconContent, notificationStatus: Bool) {
     }
- 
- 
+
     // this permits you to save your last data when the app is killed
     func save(_ dataStore: UserDefaults) {
         dataStore.set(minNextTimeNotification, forKey: "com.notification.minNextTimeNotification")
     }
+    
     // this permits to reload your data when app was killed
     func load(_ dataStore: UserDefaults) {
         minNextTimeNotification = dataStore.double(forKey: "com.notification.minNextTimeNotification")
-        
     }
-
 }

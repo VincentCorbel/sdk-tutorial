@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lfX-S8-E7Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lfX-S8-E7Z">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,29 +21,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Waiting for beacons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxX-Im-k6q">
+                                <rect key="frame" x="0.0" y="88" width="375" height="85"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgK-d9-ufg">
-                                <rect key="frame" x="0.0" y="165" width="375" height="39"/>
+                                <rect key="frame" x="16" y="208" width="343" height="39"/>
                                 <state key="normal" title="Click here to get more informations &gt;"/>
                                 <connections>
                                     <segue destination="llQ-RD-Lza" kind="show" identifier="alert" id="AYA-eX-SjW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Waiting for beacons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxX-Im-k6q">
-                                <rect key="frame" x="0.0" y="53" width="375" height="85"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kxX-Im-k6q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nko-XD-i89"/>
-                            <constraint firstItem="kxX-Im-k6q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SsW-oC-JgX"/>
-                            <constraint firstItem="tgK-d9-ufg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n4D-gT-Aoe"/>
+                            <constraint firstItem="kxX-Im-k6q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="BFc-5J-hH8"/>
+                            <constraint firstItem="kxX-Im-k6q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="h3s-dV-Lej"/>
+                            <constraint firstItem="tgK-d9-ufg" firstAttribute="top" secondItem="kxX-Im-k6q" secondAttribute="bottom" constant="35" id="nO6-ur-IEz"/>
+                            <constraint firstItem="tgK-d9-ufg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tKX-vG-gqs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mSf-t0-Bxv"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="buttonAlert" destination="tgK-d9-ufg" id="lNC-Ly-7cy"/>
                         <outlet property="txtAlertMessage" destination="kxX-Im-k6q" id="mil-kE-9l2"/>
@@ -47,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376.5" y="447.5"/>
+            <point key="canvasLocation" x="1375.2" y="446.62668665667172"/>
         </scene>
         <!--Alert View Controller Action-->
         <scene sceneID="vhb-GX-RL4">
@@ -61,36 +65,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkN-va-Mwb">
-                                <rect key="frame" x="29" y="175" width="315" height="91"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkN-va-Mwb">
+                                <rect key="frame" x="16" y="175" width="343" height="91"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alert Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIB-TQ-MYy">
-                                <rect key="frame" x="123" y="100" width="129" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Alert Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIB-TQ-MYy">
+                                <rect key="frame" x="16" y="100" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gkN-va-Mwb" firstAttribute="top" secondItem="bIB-TQ-MYy" secondAttribute="bottom" constant="54" id="9Dm-1F-Bsh"/>
+                            <constraint firstItem="gkN-va-Mwb" firstAttribute="width" secondItem="C98-Uu-cny" secondAttribute="width" id="bBI-UX-L8G"/>
+                            <constraint firstItem="bIB-TQ-MYy" firstAttribute="top" secondItem="pFm-R2-266" secondAttribute="bottom" constant="36" id="niR-g5-t9I"/>
+                            <constraint firstItem="bIB-TQ-MYy" firstAttribute="width" secondItem="C98-Uu-cny" secondAttribute="width" id="tlm-Ai-ogh"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="txtdescription" destination="gkN-va-Mwb" id="4pp-l9-5Vh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swu-Gk-hDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902.5" y="446.5"/>
+            <point key="canvasLocation" x="1901.5999999999999" y="445.72713643178412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YzS-bj-xh7">
             <objects>
                 <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" id="lfX-S8-E7Z" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LCC-j8-nVC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

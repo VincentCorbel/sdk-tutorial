@@ -16,6 +16,7 @@ public class ApplicationSdkDemo extends Application {
 		super.onCreate();
         AdtagInitializer.initInstance(this).initUrlType(UrlType.PROD)
                 .initUser("User_cbeacon", "fSKbCEvCDCbYTDlk").initCompany("ccbeacondemo").synchronize();
+
     }
 
 }

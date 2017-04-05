@@ -11,11 +11,11 @@
 @implementation MyBeaconWelcomeNotificationBuilder
 
 -(NSObject *)createBeaconWelcomeNotification:(ATBeaconWelcomeNotification *)content andImageUrl:(NSURL *)imageUrl{
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[content toJSONString] forKey:KEY_NOTIFICATION_CONTENT];
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[content toJSONString] forKey:KEY_WELCOME_NOTIFICATION_CONTENT];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         UNMutableNotificationContent *notificationContent = [[UNMutableNotificationContent alloc] init];
-        notificationContent.title = @"title tiel";//content.title;
+        notificationContent.title = content.title;
         notificationContent.body = content.description;
         notificationContent.userInfo = infoDict;
         if(imageUrl){

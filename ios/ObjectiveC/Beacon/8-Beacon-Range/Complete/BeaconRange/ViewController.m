@@ -19,16 +19,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     beaconManager = [ATBeaconManager sharedInstance];
+    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) viewDidAppear:(BOOL)animated{
     // Register Range Delegate protocol to your view
     [beaconManager registerAdtagRangeDelegate:self];
-    // Do any additional setup after loading the view, typically from a nib.
+    [super viewDidAppear:animated];
+}
+
+- (void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [beaconManager registerAdtagRangeDelegate:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)didRangeBeacons:(NSArray *)_beacons beaconContents:(NSArray *)_beaconContents informationStatus:(ATRangeInformationStatus)informationStatus feedStatus:(ATRangeFeedStatus)feedstatus region:(CLRegion *)region{
+-(void)didRangeBeacons:(NSArray *)_beacons beaconContents:(NSArray *)_beaconContents informationStatus:(ATRangeInformationStatus)informationStatus feedStatus:(ATRangeFeedStatus)feedstatus {
   
     feedStatusString=@"";
     switch(feedstatus){
@@ -46,7 +55,7 @@
             break;
     }
     
-    _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"beaconArrounds", @""),feedStatusString,_beacons.count,_beaconContents.count];
+    _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"beaconAround", @""),feedStatusString,_beacons.count,_beaconContents.count];
 }
 
 @end

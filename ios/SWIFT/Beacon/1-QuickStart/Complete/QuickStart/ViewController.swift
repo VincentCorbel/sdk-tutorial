@@ -56,7 +56,7 @@ class ViewController: UIViewController, ATRangeDelegate{
             feedStatusString = ""
         }
         
-        self.txt_message.text = String( format: feedStatusString, _beacons.count, beaconContents.count)
+        self.txt_message.text = String( format: NSLocalizedString("beaconAround", comment:""), feedStatusString, _beacons.count, beaconContents.count)
 
     }
  

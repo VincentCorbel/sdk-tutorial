@@ -19,8 +19,10 @@
 		14358D6A1CAA7B9500C302DE /* beaconAlertCompleteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D691CAA7B9500C302DE /* beaconAlertCompleteUITests.m */; };
 		14358D781CAA7C0900C302DE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358D771CAA7C0900C302DE /* libsqlite3.0.tbd */; };
 		1497E6DE1CB7D93100DEB68F /* AlertViewControllerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497E6DD1CB7D93100DEB68F /* AlertViewControllerAction.m */; };
+		1737EEE178ED570C9C947EA0 /* libPods-beaconAlertComplete.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F0C225A5048AD75FE7FDF5 /* libPods-beaconAlertComplete.a */; };
+		4394B7771241B7A65CD3DD98 /* libPods-beaconAlertCompleteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D7A483FE2A0A6443D9C7D8D /* libPods-beaconAlertCompleteUITests.a */; };
 		7CA4E0061D6ED39B0094AA42 /* TimeAlertStrategyParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4E0051D6ED39B0094AA42 /* TimeAlertStrategyParameter.m */; };
-		D94EF90A990981699367ACC2 /* Pods_beaconAlertComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94B1FBB696A3962B11D35A8 /* Pods_beaconAlertComplete.framework */; };
+		D8CB833E726EAEC46910C550 /* libPods-beaconAlertCompleteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 296271121DACA7DA4A475FD2 /* libPods-beaconAlertCompleteTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		054AABA54980ADDFB142C665 /* Pods-beaconAlertComplete.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertComplete.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete.debug.xcconfig"; sourceTree = "<group>"; };
+		07F0C225A5048AD75FE7FDF5 /* libPods-beaconAlertComplete.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-beaconAlertComplete.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		140A7E6B1D50D11700BC33FB /* AlertTimerStrategyFirstWay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTimerStrategyFirstWay.h; sourceTree = "<group>"; };
 		140A7E6C1D50D11700BC33FB /* AlertTimerStrategyFirstWay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertTimerStrategyFirstWay.m; sourceTree = "<group>"; };
 		140A7E6E1D50D12700BC33FB /* AlertTimerStrategySecondWay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTimerStrategySecondWay.h; sourceTree = "<group>"; };
@@ -65,12 +68,15 @@
 		14358D771CAA7C0900C302DE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		1497E6DC1CB7D93100DEB68F /* AlertViewControllerAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewControllerAction.h; sourceTree = "<group>"; };
 		1497E6DD1CB7D93100DEB68F /* AlertViewControllerAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewControllerAction.m; sourceTree = "<group>"; };
-		46426E05B09858C97000DA8D /* Pods_beaconAlertCompleteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertCompleteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B1A4629E4482FA68A7F5F2A /* Pods_beaconAlertCompleteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertCompleteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		296271121DACA7DA4A475FD2 /* libPods-beaconAlertCompleteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-beaconAlertCompleteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D7A483FE2A0A6443D9C7D8D /* libPods-beaconAlertCompleteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-beaconAlertCompleteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4031952CA99C3D11A414B81C /* Pods-beaconAlertCompleteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteUITests/Pods-beaconAlertCompleteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CA4E0041D6ED39B0094AA42 /* TimeAlertStrategyParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAlertStrategyParameter.h; sourceTree = "<group>"; };
 		7CA4E0051D6ED39B0094AA42 /* TimeAlertStrategyParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAlertStrategyParameter.m; sourceTree = "<group>"; };
+		848D08EB669718DD7C47DB6A /* Pods-beaconAlertCompleteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteTests/Pods-beaconAlertCompleteTests.release.xcconfig"; sourceTree = "<group>"; };
 		895C420D066F0EEB820BECEB /* Pods-beaconAlertComplete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertComplete.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete.release.xcconfig"; sourceTree = "<group>"; };
-		F94B1FBB696A3962B11D35A8 /* Pods_beaconAlertComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E30FD85F72AB4532D3EAC91A /* Pods-beaconAlertCompleteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteTests/Pods-beaconAlertCompleteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E56A43A1665EBCAC22D1B1CE /* Pods-beaconAlertCompleteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteUITests/Pods-beaconAlertCompleteUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14358D781CAA7C0900C302DE /* libsqlite3.0.tbd in Frameworks */,
-				D94EF90A990981699367ACC2 /* Pods_beaconAlertComplete.framework in Frameworks */,
+				1737EEE178ED570C9C947EA0 /* libPods-beaconAlertComplete.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CB833E726EAEC46910C550 /* libPods-beaconAlertCompleteTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4394B7771241B7A65CD3DD98 /* libPods-beaconAlertCompleteUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +185,10 @@
 			children = (
 				054AABA54980ADDFB142C665 /* Pods-beaconAlertComplete.debug.xcconfig */,
 				895C420D066F0EEB820BECEB /* Pods-beaconAlertComplete.release.xcconfig */,
+				E30FD85F72AB4532D3EAC91A /* Pods-beaconAlertCompleteTests.debug.xcconfig */,
+				848D08EB669718DD7C47DB6A /* Pods-beaconAlertCompleteTests.release.xcconfig */,
+				4031952CA99C3D11A414B81C /* Pods-beaconAlertCompleteUITests.debug.xcconfig */,
+				E56A43A1665EBCAC22D1B1CE /* Pods-beaconAlertCompleteUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -185,9 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				14358D771CAA7C0900C302DE /* libsqlite3.0.tbd */,
-				F94B1FBB696A3962B11D35A8 /* Pods_beaconAlertComplete.framework */,
-				46426E05B09858C97000DA8D /* Pods_beaconAlertCompleteTests.framework */,
-				7B1A4629E4482FA68A7F5F2A /* Pods_beaconAlertCompleteUITests.framework */,
+				07F0C225A5048AD75FE7FDF5 /* libPods-beaconAlertComplete.a */,
+				296271121DACA7DA4A475FD2 /* libPods-beaconAlertCompleteTests.a */,
+				2D7A483FE2A0A6443D9C7D8D /* libPods-beaconAlertCompleteUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,12 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14358D6E1CAA7B9500C302DE /* Build configuration list for PBXNativeTarget "beaconAlertComplete" */;
 			buildPhases = (
-				99FA1B6148CBF59F7BF32BE7 /* 📦 Check Pods Manifest.lock */,
+				99FA1B6148CBF59F7BF32BE7 /* [CP] Check Pods Manifest.lock */,
 				14358D3D1CAA7B9500C302DE /* Sources */,
 				14358D3E1CAA7B9500C302DE /* Frameworks */,
 				14358D3F1CAA7B9500C302DE /* Resources */,
-				5B5CC36B4379CEA6A5142B3F /* 📦 Embed Pods Frameworks */,
-				5007A6DD71C80AAB3877DB93 /* 📦 Copy Pods Resources */,
+				5B5CC36B4379CEA6A5142B3F /* [CP] Embed Pods Frameworks */,
+				5007A6DD71C80AAB3877DB93 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14358D711CAA7B9500C302DE /* Build configuration list for PBXNativeTarget "beaconAlertCompleteTests" */;
 			buildPhases = (
+				C7FDD1156AF4B01382F7362C /* [CP] Check Pods Manifest.lock */,
 				14358D561CAA7B9500C302DE /* Sources */,
 				14358D571CAA7B9500C302DE /* Frameworks */,
 				14358D581CAA7B9500C302DE /* Resources */,
+				888AADCBB004908DAC77DE08 /* [CP] Embed Pods Frameworks */,
+				E291D88A35E187156AA79332 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14358D741CAA7B9500C302DE /* Build configuration list for PBXNativeTarget "beaconAlertCompleteUITests" */;
 			buildPhases = (
+				8D70F48CF649282EF9457142 /* [CP] Check Pods Manifest.lock */,
 				14358D611CAA7B9500C302DE /* Sources */,
 				14358D621CAA7B9500C302DE /* Frameworks */,
 				14358D631CAA7B9500C302DE /* Resources */,
+				7E8C7ACC6A0561A17668C585 /* [CP] Embed Pods Frameworks */,
+				D8E1068DD03C32754C27B5EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +280,7 @@
 				TargetAttributes = {
 					14358D401CAA7B9500C302DE = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 3T67HE76NG;
 					};
 					14358D591CAA7B9500C302DE = {
 						CreatedOnToolsVersion = 7.3;
@@ -321,14 +340,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5007A6DD71C80AAB3877DB93 /* 📦 Copy Pods Resources */ = {
+		5007A6DD71C80AAB3877DB93 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,14 +355,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B5CC36B4379CEA6A5142B3F /* 📦 Embed Pods Frameworks */ = {
+		5B5CC36B4379CEA6A5142B3F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,19 +370,109 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		99FA1B6148CBF59F7BF32BE7 /* 📦 Check Pods Manifest.lock */ = {
+		7E8C7ACC6A0561A17668C585 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertCompleteUITests/Pods-beaconAlertCompleteUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		888AADCBB004908DAC77DE08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertCompleteTests/Pods-beaconAlertCompleteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D70F48CF649282EF9457142 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99FA1B6148CBF59F7BF32BE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C7FDD1156AF4B01382F7362C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D8E1068DD03C32754C27B5EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertCompleteUITests/Pods-beaconAlertCompleteUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E291D88A35E187156AA79332 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertCompleteTests/Pods-beaconAlertCompleteTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -524,6 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/beaconAlertComplete",
@@ -542,6 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 3T67HE76NG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/beaconAlertComplete",
@@ -556,6 +667,7 @@
 		};
 		14358D721CAA7B9500C302DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E30FD85F72AB4532D3EAC91A /* Pods-beaconAlertCompleteTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = beaconAlertCompleteTests/Info.plist;
@@ -568,6 +680,7 @@
 		};
 		14358D731CAA7B9500C302DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 848D08EB669718DD7C47DB6A /* Pods-beaconAlertCompleteTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = beaconAlertCompleteTests/Info.plist;
@@ -580,6 +693,7 @@
 		};
 		14358D751CAA7B9500C302DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4031952CA99C3D11A414B81C /* Pods-beaconAlertCompleteUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = beaconAlertCompleteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -591,6 +705,7 @@
 		};
 		14358D761CAA7B9500C302DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E56A43A1665EBCAC22D1B1CE /* Pods-beaconAlertCompleteUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = beaconAlertCompleteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

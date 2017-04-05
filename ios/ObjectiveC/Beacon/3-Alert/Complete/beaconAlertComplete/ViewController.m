@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "AlertViewControllerAction.h"
-#import "FirstWayAlertTimerStrategy.h"
+
 @interface ViewController () {
  
     ATBeaconContent *currentAlertBeaconContent;
