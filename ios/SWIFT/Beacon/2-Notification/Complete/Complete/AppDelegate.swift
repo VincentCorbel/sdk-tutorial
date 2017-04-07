@@ -34,9 +34,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-
-        let uuids = ["__UID__"]
-        initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize();
         
         register(ATAsyncBeaconNotificationImageCreator.init(beaconNotificationBuilder:MyBeaconNotificationBuilder.init()))
         
@@ -49,7 +47,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
         }
-        ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
+
         return true
     }
     
