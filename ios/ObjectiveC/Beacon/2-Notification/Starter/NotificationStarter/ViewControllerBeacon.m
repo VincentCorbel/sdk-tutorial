@@ -21,8 +21,7 @@
     self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
     
     // Do any additional setup after loading the view, typically from a nib.
-    
-    
+        
     [[NSNotificationCenter defaultCenter] addObserver:self
                                               selector:@selector(remoteNotificationReceived:) name:@"BeaconNotification"
                                                 object:nil];
