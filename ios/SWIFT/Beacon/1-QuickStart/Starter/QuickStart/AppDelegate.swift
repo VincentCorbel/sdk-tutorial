@@ -41,7 +41,25 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
- 
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize();
+        
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+                // Enable or disable features based on authorization.
+            }
+            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(setting)
+            UIApplication.shared.registerForRemoteNotifications()
+        } else {
+            if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
+                let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+                notificationCategory.identifier = "INVITE_CATEGORY"
+                //registerting for the notification.
+                UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
+            }
+        }
+
         return true
     }
     
@@ -51,31 +69,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
         super.application(application, didReceive: notification)
         ATBeaconManager.sharedInstance().didReceive(notification);
     }
- 
-    
-    override func applicationWillResignActive(_ application: UIApplication) {
-        
-        /* ** Required
-         * Add super.applicationWillResignActive to your  delegate method
-         * the super class will init the range beacon
-         * if a the super call isn't reachable the Beacon range won't be start
-         */
-        super.applicationWillResignActive(application)
-    }
-    
-    
-    override func applicationDidBecomeActive(_ application: UIApplication) {
-        
-        /* ** Required
-         * Add super.applicationDidBecomeActive to your delegate method
-         * the super class will init the range beacon
-         * if a the super call isn't reachable the Beacon range won't be start
-         */
-        super.applicationDidBecomeActive(application);
-    }
-    
-  
-    
+
     
 }
 

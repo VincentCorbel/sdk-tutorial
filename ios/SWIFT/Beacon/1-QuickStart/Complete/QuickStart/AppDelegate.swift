@@ -40,7 +40,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNo
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlTYpe__, andLogin: "__USER", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize();
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize();
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -86,11 +86,11 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNo
     }
     
     func didReceiveBeaconNotification(_ _beaconContent: ATBeaconContent!) {
-        
+        //Call when a beacon notification is clicked
     }
     
     func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
+        //Call when a welcome notification is clicked
     }
     
 }
