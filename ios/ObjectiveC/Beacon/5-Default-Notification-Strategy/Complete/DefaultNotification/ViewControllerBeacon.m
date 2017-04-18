@@ -17,20 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(remoteNotificationReceived:) name:@"BeaconNotification"
                                                object:nil];
-    
-
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     //self.txtMessage.text = messageString;
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
