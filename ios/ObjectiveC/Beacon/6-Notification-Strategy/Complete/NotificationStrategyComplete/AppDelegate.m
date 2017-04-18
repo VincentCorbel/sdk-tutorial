@@ -2,8 +2,6 @@
 //  AppDelegate.m
 //  Notification
 //
-//  Created by sarra srairi on 22/03/2016.
-//  Copyright © 2016 sarra srairi. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -18,7 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [super application:application didFinishLaunchingWithOptions:launchOptions];
     /* ** Required -- used to initialize and setup the SDK
      *
      *
@@ -37,10 +34,9 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
-        [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
-        [self registerNotificationStrategy:[[BeaconNotificationStrategyFilter alloc] initWithMinTimeBetweenNotification:1000 * 60] ];
-    }
+    [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__USER__" andPassword:@"__PSWD__" andCompany:@"__COMPANY__"] synchronize];
+
+    [self registerNotificationStrategy:[[BeaconNotificationStrategyFilter alloc] initWithMinTimeBetweenNotification:1000 * 60] ];
     //To add the application to the notification center/Users/ssr/Desktop/FORGE/beacon-tutorial/ios/Beacon/2-Notification/NotificationComplete/Notification/AppDelegate.m
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
@@ -66,13 +62,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
 }
 
-<<<<<<< HEAD
 -(void) didReceiveBeaconWelcomeNotification:(id<ATBeaconWelcomeNotification>) _welcomeNotificationContent{
-=======
-
--(void) didReceiveBeaconWelcomeNotification:(id<ATBeaconWelcomeNotification>) _welcomeNotificationContent {
->>>>>>> 761c1fa6df3bc392e4879e1fcf4683f55509d17f
-    
 }
 
 @end

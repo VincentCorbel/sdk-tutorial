@@ -37,13 +37,11 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
-        [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
+    [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
     
-        //register the protocol for did range beacon
-        AlertTimerStrategySecondWay *alertTimeFilter = [[AlertTimerStrategySecondWay alloc]initWithMaxTime:60000 delayBeforeCreatingAlert:60000];
-        [self addAlertStrategy:alertTimeFilter];
-    }
+    //register the protocol for did range beacon
+    AlertTimerStrategySecondWay *alertTimeFilter = [[AlertTimerStrategySecondWay alloc]initWithMaxTime:60000 delayBeforeCreatingAlert:60000];
+    [self addAlertStrategy:alertTimeFilter];
     return YES;
 }
 
