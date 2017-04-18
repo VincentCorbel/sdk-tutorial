@@ -12,7 +12,7 @@
 
 -(NSObject *)createBeaconWelcomeNotification:(id<ATBeaconWelcomeNotification>)content andImageUrl:(NSURL *)imageUrl{
     ATJSONModel *model = (ATJSONModel *) content;
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[model toJSONString] forKey:KEY_REMOTE_WELCOME_NOTIFICATION_CONTENT];
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[model toJSONString] forKey:[content mKey]];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         UNMutableNotificationContent *notificationContent = [[UNMutableNotificationContent alloc] init];
