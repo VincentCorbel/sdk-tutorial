@@ -13,11 +13,12 @@ class MyBeaconWelcomeNotificationBuilder: NSObject, ATBeaconWelcomeNotificationI
     
     
     func createBeaconWelcomeNotification(_ content: ATBeaconWelcomeNotification!, andImageUrl imageUrl: URL!) -> NSObject!{
-        let infoDict = [ KEY_NOTIFICATION_CONTENT : content.toJSONString() ]
+        let model : ATJSONModel = (content as! ATJSONModel)
+        let infoDict = [ content.mKey() : model.toJSONString() ]
         if #available(iOS 10.0, *) {
             let notificationContent:UNMutableNotificationContent! = UNMutableNotificationContent()
-            notificationContent.title = content.title
-            notificationContent.body = content.description
+            notificationContent.title = content.mTitle()
+            notificationContent.body = content.mDescription()
             
             if imageUrl != nil {
                 do{
@@ -30,8 +31,8 @@ class MyBeaconWelcomeNotificationBuilder: NSObject, ATBeaconWelcomeNotificationI
         }else{
             let localNotification:UILocalNotification = UILocalNotification()
             
-            localNotification.alertTitle = content.title
-            localNotification.alertBody = content.description
+            localNotification.alertTitle = content.mTitle()
+            localNotification.alertBody = content.mDescription()
             
             localNotification.userInfo = infoDict
             return localNotification;

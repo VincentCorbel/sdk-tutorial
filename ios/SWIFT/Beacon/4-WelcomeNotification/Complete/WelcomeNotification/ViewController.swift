@@ -46,8 +46,8 @@ class ViewController: UIViewController {
     }
     
     func remoteWelcomeNotificationReceived(notification: NSNotification) {
-        let beaconContent: ATBeaconContent = (notification.userInfo!["welcomeNotification"] as! ATBeaconContent)
-        self.txtMessage.text = beaconContent.getNotificationTitle()
+        let beaconContent: ATBeaconWelcomeNotification = (notification.userInfo!["welcomeNotification"] as! ATBeaconWelcomeNotification)
+        self.txtMessage.text = beaconContent.mTitle()
         self.txtMessage.setNeedsDisplay()
     }
 

@@ -17,23 +17,27 @@ class MyAsyncWelcomeNotificationCreator: NSObject, ATAsyncBeaconWelcomeNotificat
     }
     
     func createNotification(_ content: ATBeaconWelcomeNotification!) -> NSObject{
-        let infoDict = [ KEY_NOTIFICATION_CONTENT : content.toJSONString() ]
+        let infoDict = [ content.mKey() : (content as! ATJSONModel).toJSONString() ]
         if #available(iOS 10.0, *) {
             let notificationContent:UNMutableNotificationContent! = UNMutableNotificationContent()
-            notificationContent.title = content.title
-            notificationContent.body = content.description
+            notificationContent.title = content.mTitle()
+            notificationContent.body = content.mDescription()
             
             notificationContent.userInfo = infoDict
             return notificationContent;
         }else{
             let localNotification:UILocalNotification = UILocalNotification()
             
-            localNotification.alertTitle = content.title
-            localNotification.alertBody = content.description
+            localNotification.alertTitle = content.mTitle()
+            localNotification.alertBody = content.mDescription()
             
             localNotification.userInfo = infoDict
             return localNotification;
         }
 
+    }
+    
+    func stopBackgroundTask() {
+        
     }
 }
