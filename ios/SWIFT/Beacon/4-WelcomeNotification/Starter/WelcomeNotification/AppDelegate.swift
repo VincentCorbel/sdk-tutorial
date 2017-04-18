@@ -42,8 +42,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        let uuids = ["__UID__"]
-        initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize()
 
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -59,12 +58,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
         }
         ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         return true
-    }
-    
-    
-    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        super.application(application, didReceive: notification)
-        ATBeaconManager.sharedInstance().didReceive(notification);
     }
     
     override func applicationDidBecomeActive(_ application: UIApplication) {
@@ -91,17 +84,10 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
                 userInfo:dict)
         
     }
-    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
-        let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : _beaconContent]
-        let nc = NotificationCenter.default
-        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
-                object: nil,
-                userInfo:dict)
-        
-    }
     
-    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
+    func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
+
     }
+
 }
 
