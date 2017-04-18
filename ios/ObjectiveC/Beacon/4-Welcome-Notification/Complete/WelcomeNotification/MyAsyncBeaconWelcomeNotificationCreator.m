@@ -10,18 +10,19 @@
 
 @implementation MyAsyncBeaconWelcomeNotificationCreator
 
--(void) createBeaconWelcomeNotification:(ATBeaconWelcomeNotification *)_beaconWelcomeNotification withNotificationManager:(id<ATAsyncBeaconWelcomeNotificationManager>)notificationManager{
+-(void) createBeaconWelcomeNotification:(id<ATBeaconWelcomeNotification>)_beaconWelcomeNotification withNotificationManager:(id<ATAsyncBeaconWelcomeNotificationManager>)notificationManager{
     //Very simple exemple totally syncrhone ;)
     [notificationManager displayBeaconWelcomeNotificationOn:_beaconWelcomeNotification usingNotification:[self createNotification:_beaconWelcomeNotification]];
 }
 
--(NSObject *) createNotification:(ATBeaconWelcomeNotification *) content{
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[content toJSONString] forKey:KEY_NOTIFICATION_CONTENT];
+-(NSObject *) createNotification:(id<ATBeaconWelcomeNotification>) content{
+    ATJSONModel *model = (ATJSONModel *) content;
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[model toJSONString] forKey:KEY_NOTIFICATION_CONTENT];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         UNMutableNotificationContent *notificationContent = [[UNMutableNotificationContent alloc] init];
-        notificationContent.title = content.title;
-        notificationContent.body = content.description;
+        notificationContent.title = [content mTitle];
+        notificationContent.body = [content mDescription];
         notificationContent.userInfo = infoDict;
         
         return notificationContent;
@@ -29,11 +30,15 @@
         UILocalNotification *notification = [[UILocalNotification alloc]init];
         [notification setAlertBody:content.description];
         if(SYSTEM_VERSION_GREATER_THAN(@"7.99")){
-            [notification setAlertTitle:content.title];
+            [notification setAlertTitle:[content mTitle]];
         }
         [notification setUserInfo:infoDict];
         return notification;
     }
+
+}
+
+-(void) stopBackgroundTask{
 
 }
 

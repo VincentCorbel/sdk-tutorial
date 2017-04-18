@@ -10,13 +10,14 @@
 
 @implementation MyBeaconWelcomeNotificationBuilder
 
--(NSObject *)createBeaconWelcomeNotification:(ATBeaconWelcomeNotification *)content andImageUrl:(NSURL *)imageUrl{
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[content toJSONString] forKey:KEY_WELCOME_NOTIFICATION_CONTENT];
+-(NSObject *)createBeaconWelcomeNotification:(id<ATBeaconWelcomeNotification>)content andImageUrl:(NSURL *)imageUrl{
+    ATJSONModel *model = (ATJSONModel *) content;
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[model toJSONString] forKey:KEY_REMOTE_WELCOME_NOTIFICATION_CONTENT];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         UNMutableNotificationContent *notificationContent = [[UNMutableNotificationContent alloc] init];
-        notificationContent.title = content.title;
-        notificationContent.body = content.description;
+        notificationContent.title = [content mTitle];
+        notificationContent.body = [content mDescription];
         notificationContent.userInfo = infoDict;
         if(imageUrl){
             UNNotificationAttachment *attachement1 = [UNNotificationAttachment attachmentWithIdentifier:@"com.connecthings.beaconWelcomeNotificationImage" URL:imageUrl options:nil error:nil];
@@ -25,9 +26,9 @@
         return notificationContent;
     }else{
         UILocalNotification *notification = [[UILocalNotification alloc]init];
-        [notification setAlertBody:content.description];
+        [notification setAlertBody:[content mDescription]];
         if(SYSTEM_VERSION_GREATER_THAN(@"7.99")){
-            [notification setAlertTitle:content.title];
+            [notification setAlertTitle:[content mTitle]];
         }
         [notification setUserInfo:infoDict];
         return notification;

@@ -37,11 +37,9 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]){
-        [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
-        
-        [self registerAsyncBeaconWelcomeNotificationDelegate:[[ATAsyncBeaconWelcomeNotificationImageCreator alloc] initWithWelcomeNotificationImageBuilder:[[MyBeaconWelcomeNotificationBuilder alloc] init]]];
-    }
+     [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__USER__" andPassword:@"__PSWD__" andCompany:@"__COMPANY__"] synchronize];
+     [self registerAsyncBeaconWelcomeNotificationDelegate:[[ATAsyncBeaconWelcomeNotificationImageCreator alloc] initWithWelcomeNotificationImageBuilder:[[MyBeaconWelcomeNotificationBuilder alloc] init]]];
+    
     
     //To add the application to the notification center
     if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
