@@ -44,22 +44,14 @@
     return YES;
 }
 
-
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    
-    [super application:application didReceiveLocalNotification:notification];
-}
 // if you implement didBeacomeActive you should add a super call
 // if you don't just remove all the method
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     [super applicationDidBecomeActive:application];
-    application.applicationIconBadgeNumber = 0;
 }
 
 
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    
-}
+
 
 @end
