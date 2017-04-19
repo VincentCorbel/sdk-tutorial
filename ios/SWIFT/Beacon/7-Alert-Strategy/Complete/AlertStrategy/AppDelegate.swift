@@ -38,7 +38,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        initAdtagInstance(with:ATUrlTypePreprod ,userLogin: "User_cbeacon" ,userPassword: "fSKbCEvCDCbYTDlk" ,userCompany: "ccbeacondemo" ,beaconUuid: "B0462602-CBF5-4ABB-87DE-B05340DCCBC5")
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize()
         addAlertStrategy(AlertTimerStrategyFirstWay(maxTime: 1000, DelayAfterDetectingBeaconToCreateAlert: 1000))
         
         return true
