@@ -13,7 +13,6 @@
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [super application:application didFinishLaunchingWithOptions:launchOptions];
     /* ** Required -- used to initialize and setup the SDK
      *
      *
@@ -32,7 +31,7 @@
      *
      * All other SDK methods must be called after this one, because they won't exist until you do.
      */
-    [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
+    [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__USER__" andPassword:@"__PSWD__" andCompany:@"__COMPANY__"] synchronize];
 
     return YES;
 }
