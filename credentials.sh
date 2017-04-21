@@ -40,20 +40,27 @@ function updateURLType() {
 	esac
 
 	grep -rlE "configureUrlType:.*" ios/ObjectiveC | xargs sed -i '' "s/\(configureUrlType:\).[^ ]*\(.*\)/\1$URLTYPE\2/g"
+
+	grep -rlE "configureUrlType\(.*" ios/SWIFT | xargs sed -i '' "s/\(configureUrlType(\).[^,]*\(.*\)/\1$URLTYPE\2/g"
 }
 
 function updateUser() { 
 	grep -rlE "initUser(.*)"  android | xargs sed -i '' "s/\(.initUser(\).[^)]*\(.*\)/\1\"$1\", \"$2\"\2/g"
+
 	grep -rlE "andLogin:.*" ios/ObjectiveC | xargs sed -i '' "s/\(andLogin:\).[^ ]*\(.*\)/\1@\"$1\"\2/g"
 	grep -rlE "andPassword:.*" ios/ObjectiveC | xargs sed -i '' "s/\(andPassword:\).[^ ]*\(.*\)/\1@\"$2\"\2/g"
+
+	grep -rlE "andLogin:.*" ios/SWIFT | xargs sed -i '' "s/\(andLogin:\).[^,]*\(.*\)/\1 \"$1\"\2/g"
+	grep -rlE "andPassword:.*" ios/SWIFT | xargs sed -i '' "s/\(andPassword:\).[^,]*\(.*\)/\1 \"$2\"\2/g"
 }
 
 function updateCompany() { 
 	grep -rlE "initCompany(.*)" android | xargs sed -i '' "s/\(.initCompany(\).[^)]*\(.*\)/\1\"$1\"\2/g"
-	grep -rlE "andCompany:.*" ios/ObjectiveC | xargs sed -i '' "s/\(andCompany:\).[^]]*\(.*\)/\1@\"$1\"\2/g"
-}
 
-# ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize();
+	grep -rlE "andCompany:.*" ios/ObjectiveC | xargs sed -i '' "s/\(andCompany:\).[^]]*\(.*\)/\1@\"$1\"\2/g"
+
+	grep -rlE "andCompany:.*" ios/SWIFT | xargs sed -i '' "s/\(andCompany:\).[^)]*\(.*\)/\1 \"$1\"\2/g"
+}
 
 updateURLType $urltype
 updateUser $user $pass
