@@ -3,6 +3,7 @@
 export LC_CTYPE=C
 export LANG=C
 
+echo -e "\t\t..:::: Update Credentials ::::.."
 read -ep "User name? " user 
 read -ep "Password? " pass 
 read -ep "Company key? " company
