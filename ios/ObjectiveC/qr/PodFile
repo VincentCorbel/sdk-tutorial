@@ -1,6 +1,6 @@
 # Uncomment this line to define a global platform for your project
 source 'https://github.com/CocoaPods/Specs.git'
-source 'git@forge.adtag.eu:ConnecthingsSDK/Specs.git'
+source 'https://forge.adtag.eu/pub/Specs'
 platform :ios, '8.0'
 
 target 'QrScannerDemo' do
