@@ -2,8 +2,6 @@
 //  BeaconNotificationStrategyFilter.m
 //  Notification
 //
-//  Created by Stevens Olivier on 31/05/2016.
-//  Copyright © 2016 sarra srairi. All rights reserved.
 //
 
 #import "BeaconNotificationStrategyFilter.h"

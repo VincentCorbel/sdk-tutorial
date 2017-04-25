@@ -17,13 +17,16 @@ class ViewController: UIViewController, ATBeaconAlertDelegate {
     @IBOutlet weak var actionTxt: UILabel!
     var currentAlertBeaconContent: ATBeaconContent!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
- 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
         ATBeaconManager.sharedInstance().registerBeaconAlertDelgate(self)
-   
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        ATBeaconManager.sharedInstance().registerBeaconAlertDelgate(nil)
     }
  
     override func didReceiveMemoryWarning() {
@@ -56,7 +59,10 @@ class ViewController: UIViewController, ATBeaconAlertDelegate {
     }
     
     func onNetworkError(_ _feedStatus: ATRangeFeedStatus) {
-        
+        actionTxt.text = "We can't connect to the Adtag Platform"
+        self.txtAlertMessage.text = "Network Error"
+        actionTxt.setNeedsDisplay()
+        txtAlertMessage.setNeedsDisplay()
     }
 
 }

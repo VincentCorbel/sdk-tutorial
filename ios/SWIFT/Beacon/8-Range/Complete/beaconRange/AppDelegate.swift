@@ -36,7 +36,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        initAdtagInstance(with:ATUrlTypeProd ,userLogin: "__LOGIN__" ,userPassword: "__PSWD__" ,userCompany: "__COMPANY__" ,beaconUuid: "__UUID__")
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize()
 
     
         return true

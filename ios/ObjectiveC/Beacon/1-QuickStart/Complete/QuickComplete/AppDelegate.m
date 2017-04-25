@@ -20,17 +20,7 @@
 */
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    // HELP:
-    // init the adtag platforme with the
-    // ** user Login : Login delivred by the Connecthings staff
-    // ** user Password : Password delivred by the Connecthings staff
-    // ** user Compagny : ....
-    // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
-    //
-    NSArray *uuids = @[@"**UUID**"];
-    
-    [self initAdtagInstanceWithUrlType:ATUrlTypeProd userLogin:@"__LOGIN__" userPassword:@"__PASSWORD__" userCompany:@"__COMPANY__" beaconUuid:uuids];
+     [[[ATAdtagInitializer sharedInstance] configureUrlType:__PLATFORM__ andLogin:@"__USER__" andPassword:@"__PSWD__" andCompany:@"__COMPANY__"] synchronize];
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
@@ -41,10 +31,6 @@
     [super applicationDidBecomeActive:application];
 }
 
-
--(void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    [super application:application didReceiveLocalNotification:notification];
-}
 
 -(void) didReceiveBeaconNotification:(ATBeaconContent *)_beaconContent{
     // redirect to the correct ViewController - in our case there is just one ViewController, so it's not necessary

@@ -11,8 +11,6 @@
 #import "ViewController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
 
-    ATUser * user ;
-    ATUrlRoot * root ;
 }
 
 @property (strong, nonatomic) UIWindow *window;

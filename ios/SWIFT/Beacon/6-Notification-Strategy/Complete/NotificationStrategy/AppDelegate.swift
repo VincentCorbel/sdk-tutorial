@@ -19,15 +19,10 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNo
     var beaconNotificationFilter:BeaconNotificationFilter!
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        let USER = "User_cbeacon";
-        let PASS = "fSKbCEvCDCbYTDlk";
-        let COMPANY = "ccbeacondemo";
-        let UUID = "B0462602-CBF5-4ABB-87DE-B05340DCCBC6";
         
-        initAdtagInstance(with: ATUrlTypeDev, userLogin: USER, userPassword: PASS, userCompany: COMPANY, beaconUuid: UUID, activatIos10Workaround: true)
-        ATAdtagInitializer.sharedInstance().synchronize()
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize()
         
-        addNotificationStrategy(BeaconNotificationFilter(timeBetweenNotification: 5 * 60 * 1000))
+        registerNotificationStrategy(BeaconNotificationFilter(timeBetweenNotification: 5 * 60 * 1000))
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -43,12 +38,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNo
         
         return true
     }
-    
-    /** Receive the local notification **/
-    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        super.application(application, didReceive: notification)
-        ATBeaconManager.sharedInstance().didReceive(notification);
-    }
+
     
     override func applicationWillResignActive(_ application: UIApplication) {
         /* ** Required

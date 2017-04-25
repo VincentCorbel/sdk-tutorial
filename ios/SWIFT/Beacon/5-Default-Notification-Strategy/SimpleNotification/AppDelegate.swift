@@ -39,23 +39,14 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        let uuids = ["__UUID__"]
-        initAdtagInstance(with: ATUrlTypeProd, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize()
         /**
          * The notifications strategies....
         **/
-        // the current beacon notification is not replaced by a notification associated to the new beacon.
-        //addNotificationStrategy(ATBeaconNotificationStrategySpamRegionFilter(categoryAndField: "beacon-notification", field: "title"))
+        //register the notification strategy, and declare it in the list of custom notification strategy on the adtag platform under the name "spamRegionFilter"
+        registerNotificationStrategy(ATBeaconNotificationStrategySpamRegionFilter(categoryAndField: "beacon-notification", field: "title"))
         
-        //Limit the number of notifications in a lapse time : in our case the application won't create more than 2 beacon notifications each hours
-        //addNotificationStrategy(ATBeaconNotificationStrategySpamMaxFilter(notificationMaxNumber: 2, timeBtwNotification: 60 * 1000 * 60))
         
-        //Permit to define :
-        // - a time to wait before displaying a first notification after the application goes to background (in our exemple 10 minutes)
-        // - a time to wait before displaying a new beacon notification (in our exemples 20 minutes
-        //addNotificationStrategy(ATBeaconNotificationStrategySpamTimeFilter(minTimeBeforeCreatingNotificationWhenAppEnterInBackground: 60 * 1000, minTimeBetweenTwoNotification: 60 * 1000 * 20))
-        
-       
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -69,11 +60,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
         }
-<<<<<<< HEAD:ios/SWIFT/Beacon/5-Default-Notification-Strategy/SimpleNotification/AppDelegate.swift
-        ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
-=======
-                ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
->>>>>>> master:ios/SWIFT/Beacon/3-Notification-Analytics/SimpleNotification/AppDelegate.swift
         return true
     }
     
@@ -105,34 +91,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
         nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
                 object: nil,
                 userInfo:dict)
-        
-<<<<<<< HEAD:ios/SWIFT/Beacon/5-Default-Notification-Strategy/SimpleNotification/AppDelegate.swift
-=======
-        let kLocalNotificationMessage:String! = _beaconContent.getNotificationDescription()
-        let kLocalNotificationAction:String! = _beaconContent.getAlertTitle()
-        let localNotification:UILocalNotification = UILocalNotification()
-        localNotification.alertBody = kLocalNotificationMessage
-        localNotification.alertAction = kLocalNotificationAction
-        
-        //  Converted with Swiftify v1.0.6198 - https://objectivec2swift.com/
-        let infoDict = [ KEY_NOTIFICATION_CONTENT : _beaconContent.toJSONString() ]
-        localNotification.userInfo = infoDict
-        print("create notification from app delegate");
-        localNotification.soundName = UILocalNotificationDefaultSoundName
-        UIApplication.shared.presentLocalNotificationNow(localNotification)
-        
-        return localNotification;
-    }
-    
-    
-    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
-        let dict: [NSObject : AnyObject] = ["beaconContent" as NSObject : _beaconContent]
-        let nc = NotificationCenter.default
-        nc.post(name:Notification.Name(rawValue:"LocalNotificationMessageReceivedNotification"),
-                object: nil,
-                userInfo:dict)
-        
->>>>>>> master:ios/SWIFT/Beacon/3-Notification-Analytics/SimpleNotification/AppDelegate.swift
     }
     
     func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!){

@@ -19,8 +19,6 @@
 		7CAAFC6B1E40969100A176D0 /* MyBeaconWelcomeNotificationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAFC6A1E40969100A176D0 /* MyBeaconWelcomeNotificationBuilder.m */; };
 		7CAAFC711E4097C700A176D0 /* MyAsyncBeaconWelcomeNotificationCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAFC701E4097C700A176D0 /* MyAsyncBeaconWelcomeNotificationCreator.m */; };
 		7CAAFC731E409C5B00A176D0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAAFC721E409C5B00A176D0 /* libsqlite3.tbd */; };
-		7CAAFCCE1E448F4E00A176D0 /* wn_network_off.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFCCC1E448F4E00A176D0 /* wn_network_off.jpg */; };
-		7CAAFCCF1E448F4E00A176D0 /* wn_network_on.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFCCD1E448F4E00A176D0 /* wn_network_on.jpg */; };
 		A0690985CBF0062499BC6F61 /* Pods_WelcomeNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E663D6E409243F0AB767AF0 /* Pods_WelcomeNotification.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +64,6 @@
 		7CAAFC6F1E4097C700A176D0 /* MyAsyncBeaconWelcomeNotificationCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAsyncBeaconWelcomeNotificationCreator.h; sourceTree = "<group>"; };
 		7CAAFC701E4097C700A176D0 /* MyAsyncBeaconWelcomeNotificationCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAsyncBeaconWelcomeNotificationCreator.m; sourceTree = "<group>"; };
 		7CAAFC721E409C5B00A176D0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		7CAAFCCC1E448F4E00A176D0 /* wn_network_off.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wn_network_off.jpg; sourceTree = "<group>"; };
-		7CAAFCCD1E448F4E00A176D0 /* wn_network_on.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wn_network_on.jpg; sourceTree = "<group>"; };
 		CC773ED252762B019D52B8C5 /* Pods-WelcomeNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WelcomeNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WelcomeNotification/Pods-WelcomeNotification.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,8 +122,6 @@
 			children = (
 				14C5BE081E095EB300565238 /* AppDelegate.h */,
 				14C5BE091E095EB300565238 /* AppDelegate.m */,
-				7CAAFCCC1E448F4E00A176D0 /* wn_network_off.jpg */,
-				7CAAFCCD1E448F4E00A176D0 /* wn_network_on.jpg */,
 				14C5BE0B1E095EB300565238 /* ViewController.h */,
 				14C5BE0C1E095EB300565238 /* ViewController.m */,
 				14C5BE0E1E095EB300565238 /* Main.storyboard */,
@@ -301,8 +295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C5BE151E095EB300565238 /* LaunchScreen.storyboard in Resources */,
-				7CAAFCCE1E448F4E00A176D0 /* wn_network_off.jpg in Resources */,
-				7CAAFCCF1E448F4E00A176D0 /* wn_network_on.jpg in Resources */,
 				14C5BE121E095EB300565238 /* Assets.xcassets in Resources */,
 				14C5BE101E095EB300565238 /* Main.storyboard in Resources */,
 			);

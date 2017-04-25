@@ -12,7 +12,7 @@ import ATLocationBeacon
 import AVFoundation
 
 
-class ViewController: UIViewController,ATBeaconBleLocationStatusDelegate {
+class ViewController: UIViewController, ATBeaconBleLocationStatusDelegate {
     
     @IBOutlet weak var labelStatus: UILabel!
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController,ATBeaconBleLocationStatusDelegate {
     }
     
     
-    func checkBleStatus(_ bleStatus: CBCentralManagerState, locationStatus: CLAuthorizationStatus) {
+    func checkBleStatus(_ bleStatus: CBManagerState, locationStatus: CLAuthorizationStatus){
         
         if locationStatus == CLAuthorizationStatus.denied || locationStatus == CLAuthorizationStatus.restricted {
             self.labelStatus.text = "Please authorize the application to access to your location"

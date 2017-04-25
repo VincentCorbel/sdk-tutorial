@@ -40,14 +40,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        let uuids = ["__UID__"]
-        initAdtagInstance(with: ATUrlTypeDev, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
-        
-        self.add(ATBeaconWelcomeNotification.init(title:"Nice Welcome Notification", description: "Good news: You have got network", picture: "wn_network_on.jpg", minDisplayTime: 1000 * 60 * 2, welcomeNotificationType: ATBeaconWelcomeNotificationTypeNetworkOn))
-        
-        
-        self.add(ATBeaconWelcomeNotification.init(title:"Nice Welcome Notification", description: "No network? Lucky you are, a free wifi is available!",picture:"wn_network_off.jpg", minDisplayTime: 1000 * 60 * 2, welcomeNotificationType: ATBeaconWelcomeNotificationTypeNetworkOff))
-        
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize()
         self.register(ATAsyncBeaconWelcomeNotificationImageCreator.init(welcomeNotificationImageBuilder: MyBeaconWelcomeNotificationBuilder()))
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -64,12 +57,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
             ATBeaconManager.sharedInstance().registerNotificationContentDelegate(self);
         return true
     }
-    
-    
-    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        super.application(application, didReceive: notification)
-        ATBeaconManager.sharedInstance().didReceive(notification);
-    }
+
     
     override func applicationDidBecomeActive(_ application: UIApplication) {
         

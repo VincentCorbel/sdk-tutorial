@@ -42,8 +42,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        let uuids = ["__UUID__"]
-        initAdtagInstance(with: ATUrlTypeProd, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize()
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -62,13 +61,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
         return true
     }
     
- 
-    
-    /** Receive the local notification **/
-    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        super.application(application, didReceive: notification)
-        ATBeaconManager.sharedInstance().didReceive(notification);
-    }
+
     
     override func applicationWillResignActive(_ application: UIApplication) {
         

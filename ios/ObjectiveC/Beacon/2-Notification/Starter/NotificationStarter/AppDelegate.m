@@ -16,7 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   
     // Override point for customization after application launch.
     // HELP:
     // init the adtag platforme with the
@@ -25,7 +24,7 @@
     // ** user Compagny : ....
     // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
     //
-    [self initAdtagInstanceWithUrlType:ATUrlTypeItg userLogin:@"****" userPassword:@"****" userCompany:@"****" beaconUuid:@"********-****-****-****-************"];
+    [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"USER" andPassword:@"PSWD" andCompany:@"COMPANY"] synchronize];
     
     
     return YES;
@@ -33,15 +32,9 @@
 
 // if you implement didBeacomeActive you should add a super call
 // if you don't just remove all the method
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    [super applicationDidBecomeActive:application];
-}
 
 
 
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    [super application:application didReceiveLocalNotification:notification];
-}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
 }

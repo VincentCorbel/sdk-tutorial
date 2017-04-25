@@ -1,17 +1,22 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'git@forge.adtag.eu:ConnecthingsSDK/Specs.git'
+source 'https://forge.adtag.eu/pub/Specs'
 
 platform :ios, '8.0'
 
 target 'NotificationStrategy' do
-	use_frameworks!
-	pod "ATLocationBeacon", '~> 2.7-RC0'
+    # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+    use_frameworks!
 
-	target 'NotificationStrategyTests' do
-		inherit! :search_paths
-	end
+    pod "ATLocationBeacon", '~> 2.7-RC5'
 
-	target 'NotificationStrategyUITests' do
-		inherit! :search_paths
-	end
+    target 'NotificationStrategyTests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+
+    target 'NotificationStrategyUITests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+
 end

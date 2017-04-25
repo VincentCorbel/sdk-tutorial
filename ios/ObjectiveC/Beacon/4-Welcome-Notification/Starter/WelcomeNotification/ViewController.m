@@ -57,8 +57,8 @@
 
 //Method to retreive notification BeaconContent from the AppDelegate
 - (void)remoteWelcomeNotificationReceived:(NSNotification *)notification{
-    ATBeaconWelcomeNotification *welcomeNotification = [notification.userInfo objectForKey:@"welcomeNotification"];
-    self.txtMessage.text = [welcomeNotification title];
+    id<ATBeaconWelcomeNotification> welcomeNotification = [notification.userInfo objectForKey:@"welcomeNotification"];
+    self.txtMessage.text = [welcomeNotification mTitle];
     [self.txtMessage setNeedsDisplay];
 }
 

@@ -19,15 +19,12 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+    [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__YourLogin__" andPassword:@"__YourPassword__" andCompany:@"__YourCompany__"] synchronize];
    
 
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    user = [ATUser initInstance:@"__LOGIN__" Pass:@"__PSWD__" Compagny:@"__COMPANY__"];
-    root = [ATUrlRoot initInstance: ATUrlTypeProd];
-    
     ViewController *homeController = [[ViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc]  initWithRootViewController:homeController];
     self.window.rootViewController = navigationController;

@@ -17,12 +17,11 @@ import UserNotifications
  -   the super method will activate the range in your project
  */
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
+class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNotificatonContentDelegate {
     
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         /* ** Required -- used to initialize and setup the SDK
          *
          *
@@ -41,8 +40,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
-        let uuids = ["__UUID__"]
-        initAdtagInstance(with: ATUrlTypeProd, userLogin: "__LOGIN__", userPassword: "__PSWD__", userCompany: "__COMPANY__", beaconArrayUuids: uuids, activatIos10Workaround: true)
+        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize();
         
         /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
          / -- Registering Notification Settings **/
@@ -64,14 +62,8 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
         }
         return true
     }
-    
-    /** Receive the local notification **/
-    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        super.application(application, didReceive: notification)
-        ATBeaconManager.sharedInstance().didReceive(notification);
-    }
- 
-    
+
+
     override func applicationWillResignActive(_ application: UIApplication) {
         
         /* ** Required
@@ -91,6 +83,14 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate {
          * if a the super call isn't reachable the Beacon range won't be start
          */
         super.applicationDidBecomeActive(application);
+    }
+    
+    func didReceiveBeaconNotification(_ _beaconContent: ATBeaconContent!) {
+        //Call when a beacon notification is clicked
+    }
+    
+    func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
+        //Call when a welcome notification is clicked
     }
     
 }
