@@ -13,24 +13,12 @@ allprojects {
     repositories {
         jcenter()
         maven {
-            credentials {
-                username = forgeMavenUser
-                password = forgeMavenPassword
-            }
             url "https://forge.adtag.eu/nexus/content/groups/public"
         }
         maven {
-            credentials {
-                username = forgeMavenUser
-                password = forgeMavenPassword
-            }
             url "https://forge.adtag.eu/nexus/content/repositories/releases"
         }
         maven {
-            credentials {
-                username = forgeMavenUser
-                password = forgeMavenPassword
-            }
             url "https://forge.adtag.eu/nexus/content/repositories/snapshots"
         }
     }
