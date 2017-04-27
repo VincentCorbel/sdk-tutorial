@@ -6,11 +6,11 @@ read -ep "Release version? " version
 echo ""
 
 function updateAndroidBuild() {
-	grep -r --include \*.gradle -lE "$1" android | xargs sed -i '' "s/\($1:\).[^\"]*\(.*\)/\1$version\2/g"
+	grep -r --include \*.gradle -lE "$1" android | xargs sed -i '' "s/\($1:\).[^\"]*\(.*\)/\1"$version"\2/g"
 }
 
 function updateIOSBuild() {
-	grep -rlE "$1" "$2" | xargs sed -i '' "s/\($1, '~> \).[^\']*\(.*\)/\1$version\2/g"
+	grep -rlE "$1" "$2" | xargs sed -i '' "s/\($1, '~> \).[^\']*\(.*\)/\1"$version"\2/g"
 }
 
 case "$os" in
