@@ -29,9 +29,7 @@
 }
 
 -(void) onNotificationIsCreated:(ATBeaconContent *)beconContent notificationStatus:(BOOL)notificationStatus{
-    if(notificationStatus){
-        minNextTimeNotification = CACurrentMediaTime() + minTimeBetweenNotification;
-    }
+    
 }
 
 -(BOOL) deleteCurrentNotification:(ATBeaconContent *)newBeaconContent feedStatus:(ATRangeFeedStatus)feedStatus{
@@ -39,6 +37,9 @@
 }
 
 -(void) onNotificationIsDeleted:(ATBeaconContent *)beconContent notificationStatus:(BOOL)notificationStatus{
+    if(notificationStatus){
+        minNextTimeNotification = CACurrentMediaTime() + minTimeBetweenNotification;
+    }
 }
 
 -(void) onBackground{}
