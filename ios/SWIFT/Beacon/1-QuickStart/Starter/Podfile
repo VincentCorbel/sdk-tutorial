@@ -5,7 +5,7 @@ platform :ios, '8.0'
 target 'QuickStart' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
-  pod "ATLocationBeacon", '~> 2.7'  # Pods for beaconAlertStarter
+  pod "ATLocationBeacon", '~> 2.7.2'  # Pods for beaconAlertStarter
 
   target 'QuickStartTests' do
     inherit! :search_paths

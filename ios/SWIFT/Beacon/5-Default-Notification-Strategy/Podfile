@@ -8,7 +8,7 @@ target 'SimpleNotification' do
 
   use_frameworks!
 
-  pod "ATLocationBeacon", '~> 2.7'
+  pod "ATLocationBeacon", '~> 2.7.2'
 
   target 'SimpleNotificationTests' do
     inherit! :search_paths
