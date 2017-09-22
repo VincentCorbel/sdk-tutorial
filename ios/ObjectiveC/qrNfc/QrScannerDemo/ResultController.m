@@ -87,13 +87,13 @@
 }
 */
 
-- (id)initWithResult:(ATAdtagContent*)result{
+- (id)initWithResult:(ATAdtagContent*)result andTechnology:(NSString *) technology{
     self = [super init];
     if (self) {
         self.resultInformation = result ;
         NSLog(@"result %@",result);
  
-        adTagLogContent = [[ATAdtagLogContent alloc] initWihAdtagContent:result subType:ATLogSubtypeRedirect from:@"ResultController"];
+        adTagLogContent = [[ATAdtagLogContent alloc] initWihAdtagContent:result technology:technology subType:ATLogSubtypeRedirect from:@"ResultController"];
         logManager = [[ATLogManager alloc] init];
         [logManager sendLog:adTagLogContent];
     }

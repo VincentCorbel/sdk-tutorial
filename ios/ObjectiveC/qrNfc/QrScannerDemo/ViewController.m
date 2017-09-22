@@ -17,13 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-  //  CGSize viewSize = self.view.bounds.size;
+    if ([ATNfcReader isReadingNfcTagSupported]) {
+        nfcReader = [[ATNfcReader alloc] initWithMessage:@"Flash the NFC Tag"];
+    }
+    //  CGSize viewSize = self.view.bounds.size;
     CGSize viewSize = self.view.bounds.size;
-    contentAsker = [[ATContentAsker alloc] init];
+    contentAsker = [ATContentAsker sharedInstance];
     [contentAsker registerAdtagContentReceiverDelegate:self];
-    scanner = [[QrCodeScanner alloc] init];
-    [scanner registerQrCodeScannerDelegate:contentAsker];
+    qrCodeScanner = [[QrCodeScanner alloc] init];
+    [qrCodeScanner registerQrCodeScannerDelegate:contentAsker];
     // clear Color navirgation Controller
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -31,7 +33,7 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
-   
+
     //adding background image
     [self.view setBackgroundColor:[UIColor clearColor]];
     UIImage * img = [UIImage imageNamed:@"bg.jpg"];
@@ -46,32 +48,46 @@
     UIView * centerView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, viewSize.width-90, viewSize.height/7)];
     centerView.center = self.view.center;
     [centerView setBackgroundColor:[UIColor clearColor]];
+
+    //[centerView.layer addSublayer:borderLayer];
+    [self.view addSubview:centerView];
+    
+    // label
+    self.fromLabel = [[UIButton alloc]initWithFrame:CGRectMake(0,0,  150, 50)];
+    [self.fromLabel setCenter:CGPointMake(self.view.bounds.size.width/2,  75)];
+    [self.fromLabel setTitle:@"Scan QR CODE" forState:UIControlStateNormal];
+    [self.fromLabel setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     CALayer *borderLayer = [CALayer layer];
-    CGRect borderFrame = CGRectMake(0, 0, (centerView.frame.size.width), (centerView.frame.size.height));
+    CGRect borderFrame = CGRectMake(0, 0, (self.fromLabel.frame.size.width), (self.fromLabel.frame.size.height));
     [borderLayer setBackgroundColor:[[UIColor clearColor] CGColor]];
     [borderLayer setFrame:borderFrame];
     [borderLayer setCornerRadius:kCornerRadius];
     [borderLayer setBorderWidth:2.0];
     [borderLayer setBorderColor:[[UIColor whiteColor] CGColor]];
-    [centerView.layer addSublayer:borderLayer];
-    [self.view addSubview:centerView];
-    
-    // label
-    self.fromLabel = [[UIButton alloc]initWithFrame:CGRectMake(0,0,  150, 50)];
-    self.fromLabel.center = self.view.center;
-    [self.fromLabel setTitle:@"Scan QR CODE" forState:UIControlStateNormal];
-    [self.fromLabel setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
+    [self.fromLabel.layer addSublayer:borderLayer];
     [self.view addSubview: self.fromLabel];
-    
-    // Button Scanning
-    UIImage *btnScan = [UIImage imageNamed:@"ico-arrow.png"];
-    self.scanbtn = [[UIButton alloc] initWithFrame:CGRectMake(viewSize.width - 80 ,(viewSize.height /2) -10,  btnScan.size.width, btnScan.size.height)];
-    [self.scanbtn setImage:btnScan forState:UIControlStateNormal];
     [self.fromLabel addTarget:self
-                     action:@selector(startScan)
-           forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview: self.scanbtn];
-    
+                       action:@selector(startScan)
+             forControlEvents:UIControlEventTouchUpInside];
+
+    if (nfcReader) {
+        self.buttonNfcTag = [[UIButton alloc]initWithFrame:CGRectMake(0,0,  150, 50)];
+        [self.buttonNfcTag setCenter:CGPointMake(self.view.bounds.size.width/2,  150)];
+        CALayer *borderLayerNfc = [CALayer layer];
+        CGRect borderFrameNfc = CGRectMake(0, 0, (self.buttonNfcTag.frame.size.width), (self.buttonNfcTag.frame.size.height));
+        [borderLayerNfc setBackgroundColor:[[UIColor clearColor] CGColor]];
+        [borderLayerNfc setFrame:borderFrameNfc];
+        [borderLayerNfc setCornerRadius:kCornerRadius];
+        [borderLayerNfc setBorderWidth:2.0];
+        [borderLayerNfc setBorderColor:[[UIColor whiteColor] CGColor]];
+        [self.buttonNfcTag.layer addSublayer:borderLayerNfc];
+        [self.buttonNfcTag setTitle:@"Scan NFC TAG" forState:UIControlStateNormal];
+        [self.buttonNfcTag setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
+        [self.view addSubview: self.buttonNfcTag];
+        [self.buttonNfcTag addTarget:self
+                              action:@selector(startDetectingNfcTag)
+                    forControlEvents:UIControlEventTouchUpInside];
+    }
     //information button
     UIImage *btnInformation = [UIImage imageNamed:@"ico-info.png"];
     self.infobtn = [[UIButton alloc] initWithFrame:CGRectMake(viewSize.width - 50,viewSize.height-50 ,  btnInformation.size.width, btnInformation.size.height)];
@@ -81,7 +97,7 @@
            forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview: self.infobtn];
     
-   
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,9 +106,10 @@
 }
 
 - (void)onReceiveAdtagContent:(ATAdtagContent *)content
-                   feedStatus:(ATFeedStatus)feedStatus{
+                   feedStatus:(ATFeedStatus)feedStatus
+                   technology:(NSString *)technology {
     if (feedStatus == ATFeedStatusBackendSuccess) {
-        ResultController *resultControl = [[ResultController alloc]  initWithResult:content];
+        ResultController *resultControl = [[ResultController alloc]  initWithResult:content andTechnology:technology];
         [self.navigationController pushViewController:resultControl animated:YES];
     }else if(feedStatus == ATFeedStatusInProgress){
         NSLog(@"start to connect to server to get data");
@@ -101,8 +118,12 @@
     }
 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 
-- (void)startScan {
-    [scanner setUpScanner];
+- (void) startScan {
+    [qrCodeScanner setUpScanner];
+}
+
+- (void) startDetectingNfcTag {
+    [nfcReader startReader];
 }
 
 -(void)infoPage{
