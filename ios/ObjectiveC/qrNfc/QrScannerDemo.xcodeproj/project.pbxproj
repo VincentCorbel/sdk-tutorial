@@ -34,7 +34,7 @@
 		14DF19971B2F245600C7DC83 /* bg@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14DF19961B2F245600C7DC83 /* bg@3x.jpg */; };
 		14DF19991B2F2F0E00C7DC83 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DF19981B2F2F0D00C7DC83 /* Default-568h@2x.png */; };
 		7C258B1C1B9F080A0072D216 /* QrCodeScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C258B1B1B9F080A0072D216 /* QrCodeScanner.m */; };
-		E7BA0713FBB193AD278E0A7A /* Pods_QrScannerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC186F11CB7A357A51A0F393 /* Pods_QrScannerDemo.framework */; };
+		B850D84C1BA16F29E7A35442 /* Pods_QrScannerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D9CE0B145842217A1B7EA9 /* Pods_QrScannerDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +89,9 @@
 		5C7318EBD1115324C988D3DF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7C258B1A1B9F080A0072D216 /* QrCodeScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QrCodeScanner.h; sourceTree = "<group>"; };
 		7C258B1B1B9F080A0072D216 /* QrCodeScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QrCodeScanner.m; sourceTree = "<group>"; };
+		A85175471F4B2BBD00BD1B9C /* QrScannerDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QrScannerDemo.entitlements; sourceTree = "<group>"; };
 		BAE665068D21C99C5F72D512 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		BC186F11CB7A357A51A0F393 /* Pods_QrScannerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrScannerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D9CE0B145842217A1B7EA9 /* Pods_QrScannerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrScannerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +103,7 @@
 				1454EFA41B32E35B0005C668 /* UIKit.framework in Frameworks */,
 				1454EFA21B32E3570005C668 /* Foundation.framework in Frameworks */,
 				1454EFA01B32E3520005C668 /* libsqlite3.dylib in Frameworks */,
-				E7BA0713FBB193AD278E0A7A /* Pods_QrScannerDemo.framework in Frameworks */,
+				B850D84C1BA16F29E7A35442 /* Pods_QrScannerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +141,7 @@
 		14DF19501B2EF2E400C7DC83 /* QrScannerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A85175471F4B2BBD00BD1B9C /* QrScannerDemo.entitlements */,
 				7C258B1A1B9F080A0072D216 /* QrCodeScanner.h */,
 				7C258B1B1B9F080A0072D216 /* QrCodeScanner.m */,
 				14DF19851B2F0D0500C7DC83 /* images */,
@@ -213,7 +215,7 @@
 				1454EFA11B32E3570005C668 /* Foundation.framework */,
 				1454EF9F1B32E3520005C668 /* libsqlite3.dylib */,
 				15D19FF8D78BAE542DD78CBB /* libPods.a */,
-				BC186F11CB7A357A51A0F393 /* Pods_QrScannerDemo.framework */,
+				F4D9CE0B145842217A1B7EA9 /* Pods_QrScannerDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -282,6 +284,14 @@
 					14DF194D1B2EF2E400C7DC83 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = 3T67HE76NG;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 					14DF19661B2EF2E400C7DC83 = {
 						CreatedOnToolsVersion = 6.3;
@@ -354,7 +364,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9D429EDB27C96666627C5529 /* [CP] Copy Pods Resources */ = {
@@ -458,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -497,7 +507,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -510,8 +520,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 039095F81792DADEE4332CED /* Pods-QrScannerDemo.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = QrScannerDemo/QrScannerDemo.entitlements;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = QrScannerDemo/Info.plist;
@@ -527,8 +539,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 43B1EF36F265DA71CB4EA900 /* Pods-QrScannerDemo.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = QrScannerDemo/QrScannerDemo.entitlements;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 3T67HE76NG;
 				INFOPLIST_FILE = QrScannerDemo/Info.plist;

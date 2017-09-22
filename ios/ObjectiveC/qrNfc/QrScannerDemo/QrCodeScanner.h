@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import <ATQR/ATQR.h>
+#import <ATQrNfc/ATQrNfc.h>
 #import <UIKit/UIKit.h>
 @interface QrCodeScanner : NSObject <AVCaptureMetadataOutputObjectsDelegate>{
     NSObject *qrCodeScannerDelegateLock;
