@@ -7,23 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ATConnectionHttp/ATConnectionHttp.h>
 #import <ATQrNfc/ATQrNfc.h>
 #import "infoController.h"
 #import "ResultController.h"
 #import "QrCodeScanner.h"
 
-@interface ViewController : UIViewController <ATContentReceiver>{
+@interface ViewController : UIViewController <ATContentReceiver, ATNfcReceiver>{
     ATContentAsker *contentAsker;
     QrCodeScanner *qrCodeScanner;
     ATNfcReader *nfcReader;
 }
 
 
-@property (strong, nonatomic) IBOutlet UIButton *scanbtn;
-@property (strong, nonatomic) IBOutlet UIButton *infobtn;
-@property (strong, nonatomic) IBOutlet UIButton *fromLabel;
-@property (strong, nonatomic) IBOutlet UIButton *buttonNfcTag;
- 
+@property (strong, nonatomic) IBOutlet UIButton *buttonInfo;
+@property (strong, nonatomic) IBOutlet UIButton *buttonQrCodeReader;
+@property (strong, nonatomic) IBOutlet UIButton *buttonNfcTagReader;
+@property (strong, nonatomic) IBOutlet UITextView *tvNfcError;
+
 @end
 

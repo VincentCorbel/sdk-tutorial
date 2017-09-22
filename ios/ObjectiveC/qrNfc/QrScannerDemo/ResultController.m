@@ -46,7 +46,7 @@
     // version Label
     UILabel *version = [[UILabel alloc]initWithFrame:CGRectMake(centerView.frame.origin.x +40 ,centerView.frame.origin.y ,  viewCenterSize.width- 10 , 50)];
     
-    version.text = @"QrCode Information";
+    version.text = @"Information";
     [version setTextColor: [UIColor whiteColor]];
     [self.view addSubview: version];
     

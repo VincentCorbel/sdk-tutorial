@@ -19,7 +19,7 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [[[ATAdtagInitializer sharedInstance] configureUrlType:ATUrlTypePreprod andLogin:@"plopi" andPassword:@"fSKbCEvCDCbYTDlk" andCompany:@"ccbeacondemo"] synchronize];
+    [[[ATAdtagInitializer sharedInstance] configureUrlType:ATUrlTypeProd andLogin:@"****" andPassword:@"****" andCompany:@"****"] synchronize];
    
 
     // Override point for customization after application launch.

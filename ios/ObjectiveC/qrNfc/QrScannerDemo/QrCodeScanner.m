@@ -145,7 +145,7 @@
             // If the found metadata is equal to the QR code metadata then update the status label's text,
             // stop reading and change the bar button item's title and the flag's value.
             // Everything is done on the main thread.
-            [self performSelectorOnMainThread:@selector(onReadingQrCode:) withObject:metadataObj waitUntilDone:YES];
+            [self performSelectorOnMainThread:@selector(onReadingQrCode:) withObject:metadataObj waitUntilDone:NO];
             _isReading = NO;
             // If the audio player is not nil, then play the sound effect.
             if (_audioPlayer) {
