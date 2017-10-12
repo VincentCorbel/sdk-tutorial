@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Love tracking your location</string>
+	<string>For Beacons</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>For beacons</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>For beacons</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Bluetooth is life</string>
 	<key>CFBundleDevelopmentRegion</key>

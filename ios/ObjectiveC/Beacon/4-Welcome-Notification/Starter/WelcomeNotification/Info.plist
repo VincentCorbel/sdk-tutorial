@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>to detect beacon</string>
-	<key>Application NSLocationWhenInUseUsageDescription</key>
-	<string>to detect beacon</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>this is my message, Location authorization </string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>this is my message, Location authorization </string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>this is my message, Location authorization </string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

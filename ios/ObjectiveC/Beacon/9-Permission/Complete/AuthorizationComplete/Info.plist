@@ -4,8 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Beautifull permission demand</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>this is my message, Location authorization </string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>this is my message, Location authorization </string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>this is my message, Location authorization </string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
