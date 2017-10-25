@@ -5,13 +5,14 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:3.0.0-beta7'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        google()
         maven {
             url "https://forge.adtag.eu/nexus/content/groups/public"
         }
