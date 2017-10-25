@@ -8,7 +8,7 @@ target 'Complete' do
 
   use_frameworks!
 
-  pod "ATLocationBeacon", '~> 2.7.3'
+  pod "ATLocationBeacon", '~> 2.8'
 
   target 'CompleteTests' do
 

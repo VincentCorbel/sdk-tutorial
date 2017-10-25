@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ATConnectionHttp/ATConnectionHttp.h>
 #import <ATAnalytics/ATAnalytics.h>
-@interface ResultController : UIViewController{
+@interface ResultController : UIViewController {
     ATAdtagContent  *resultInformation;
     ATAdtagLogContent * adTagLogContent;
     ATLogManager *logManager ;
@@ -19,6 +19,6 @@
 
 @property (strong, nonatomic) ATAdtagContent  *resultInformation;
 
-- (id)initWithResult:(ATAdtagContent*)resultContent;
+- (id)initWithResult:(ATAdtagContent*)resultContent andTechnology:(NSString *) technology;
 @property (strong, nonatomic) IBOutlet UIButton *backbtn;
 @end

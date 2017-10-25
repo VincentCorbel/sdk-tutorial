@@ -1,0 +1,10 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '8.0'
+
+target 'QrScannerDemo' do
+    # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+
+pod 'ATConnectionHttp', :path => '../ios-atconnectionhttp'
+pod 'ATAnalytics', :path => '../ios-atanalytics'
+pod 'ATQrNfc', :path => '../ios-atqr'
+end
