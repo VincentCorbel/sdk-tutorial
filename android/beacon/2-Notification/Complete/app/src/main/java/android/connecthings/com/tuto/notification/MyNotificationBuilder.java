@@ -11,14 +11,11 @@ import com.connecthings.connectplace.actions.model.PlaceNotification;
 import com.connecthings.connectplace.actions.model.PlaceNotificationImage;
 import com.connecthings.connectplace.actions.notification.builder.interfaces.NotificationBuilder;
 
-import java.util.UUID;
-
 /**
  * Created by Connecthings on 20/01/17.
  */
 public class MyNotificationBuilder implements NotificationBuilder {
     private Context context;
-    private String channelId = UUID.randomUUID().toString();
 
     public MyNotificationBuilder(Context context) {
         this.context = context.getApplicationContext();
@@ -28,7 +25,7 @@ public class MyNotificationBuilder implements NotificationBuilder {
     public NotificationCompat.Builder generateNotificationBuilder(PlaceNotificationImage placeNotificationImage) {
         PlaceNotification placeNotification = placeNotificationImage.getPlaceNotification();
 
-        NotificationCompat.Builder mNotificationBuilder = new NotificationCompat.Builder(context, channelId);
+        NotificationCompat.Builder mNotificationBuilder = new NotificationCompat.Builder(context);
         mNotificationBuilder.setContentTitle(placeNotification.getTitle());
         mNotificationBuilder.setContentText(placeNotification.getDescription());
 
