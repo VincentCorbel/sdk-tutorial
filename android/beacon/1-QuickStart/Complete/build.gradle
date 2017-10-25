@@ -13,6 +13,7 @@ allprojects {
     repositories {
         jcenter()
         google()
+        mavenLocal()
         maven {
             url "https://forge.adtag.eu/nexus/content/groups/public"
         }

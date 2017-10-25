@@ -33,7 +33,7 @@ public class BeaconArrayAdapter extends ArrayAdapter<AdtagPlaceInAppAction> {
     }
 
     private String buildBeaconRow(AdtagPlaceInAppAction adtagPlaceInAppAction){
-        return adtagPlaceInAppAction.getDescription();
+        return adtagPlaceInAppAction.getAdtagContent().getNotificationDescription();
     }
 
     private class ViewHolder {

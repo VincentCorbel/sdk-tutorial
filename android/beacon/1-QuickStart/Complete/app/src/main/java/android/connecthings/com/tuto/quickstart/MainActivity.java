@@ -8,12 +8,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.connecthings.adtag.AdtagInitializer;
-import com.connecthings.adtag.model.sdk.BeaconContent;
 import com.connecthings.connectplace.common.content.detection.InProximityInForeground;
 import com.connecthings.connectplace.common.utils.error.ProximityErrorListener;
 import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
 import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
-import com.connecthings.util.adtag.beacon.model.BeaconRange;
 
 import java.util.List;
 
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
 
     @Override
     public void proximityContentsInForeground(@NonNull List<AdtagPlaceInAppAction> list) {
-        tvBeaconNumber.setText(getString(R.string.tv_beacon_number, list.size());
+        tvBeaconNumber.setText(getString(R.string.tv_beacon_number, list.size()));
         if(list.size() > 0){
             findViewById(R.id.tv_beacon_next_step).setVisibility(View.VISIBLE);
         }
