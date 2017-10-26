@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ATLocationBeacon/ATLocationBeacon.h>
-#import <ATConnectionHttp/ATConnectionHttp.h>
+#import "AdtagConnection/AdtagConnection-Swift.h"
+#import "AdtagLocationBeacon-Swift.h"
 
-@interface AppDelegate : ATBeaconAppDelegate <UIApplicationDelegate,ATBeaconReceiveNotificatonContentDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
-
 @end
-

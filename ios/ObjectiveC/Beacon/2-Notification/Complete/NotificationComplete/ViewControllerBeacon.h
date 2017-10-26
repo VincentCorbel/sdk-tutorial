@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ATLocationBeacon/ATLocationBeacon.h>
-#import <ATConnectionHttp/ATConnectionHttp.h>
+#import "ConnectPlaceActions-Swift.h"
+#import "AdtagConnection-Swift.h"
+#import "AdtagLocationBeacon-Swift.h"
 
-@interface ViewControllerBeacon : UIViewController{
+@interface ViewControllerBeacon : UIViewController <ReceiveNotificatonContentDelegate> {
 }
-
 
 @property (nonatomic, assign) IBOutlet UILabel *txtMessage;
  
