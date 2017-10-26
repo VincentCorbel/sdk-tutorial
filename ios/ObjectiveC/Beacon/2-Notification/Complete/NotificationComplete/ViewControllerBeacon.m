@@ -19,7 +19,6 @@
     [super viewDidLoad];
     self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
    
-    //register to the notification center with the new iOs10 system
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
@@ -33,13 +32,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(remoteNotificationReceived:) name:@"BeaconNotification"
                                                object:nil];
-
-
 }
 
--(void)viewWillAppear:(BOOL)animated{
-
-
+-(void)viewWillAppear:(BOOL)animated {
+    
 }
 
 - (void)didReceiveMemoryWarning {

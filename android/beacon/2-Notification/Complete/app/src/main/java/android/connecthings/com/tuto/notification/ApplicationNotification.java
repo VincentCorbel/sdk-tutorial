@@ -14,9 +14,9 @@ public class ApplicationNotification extends Application {
 
         AdtagInitializer.getInstance()
                 .initContext(this)
-                .initUrlType(Url.UrlType.PRE_PROD)
-                .initUser("Lvi_cbeacon", "RGVZChwWe3LNqwBTY7qa")
-                .initCompany("ccbeacondemo")
+                .initUrlType(Url.UrlType.PROD)
+                .initUser("user", "pass")
+                .initCompany("company")
                 .synchronize();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

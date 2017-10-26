@@ -11,14 +11,11 @@ import ATLocationBeacon
 
 @UIApplicationMain
 class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNotificatonContentDelegate {
-
+    private let notificationIdentifier: String = "INVITE_CATEGORY"
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         /* ** Required -- used to initialize and setup the SDK
-         *
-         *
          *
          * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
          * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
@@ -30,7 +27,6 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
          * -- 3- user Password : Password delivred by the Connecthings staff
          * -- 4- user Compagny : Define the compagny name
          * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
-         * --
          *
          * All other SDK methods must be called after this one, because they won't exist until you do.
          */
@@ -42,8 +38,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
         }else{
             if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
                 let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
-                notificationCategory.identifier = "INVITE_CATEGORY"
-                //registerting for the notification.
+                notificationCategory.identifier = notificationIdentifier
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
         }
@@ -67,13 +62,8 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
     }
     
     override func applicationDidBecomeActive(_ application: UIApplication) {
-        
-        /* ** Required
-         * Add super.applicationDidBecomeActive to your delegate method
-         * the super class will init the range beacon
-         * if a the super call isn't reachable the Beacon range won't be start
-         */
-        super.applicationDidBecomeActive(application);
+        // [[AdtagBeaconManager shared] didReceivePlaceNotification:[notification userInfo]];
+        // AdtagBeaconManager.shared.
     }
 }
 
