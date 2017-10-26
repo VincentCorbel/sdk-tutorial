@@ -7,37 +7,27 @@
 //
 
 import UIKit
-import ATLocationBeacon
+import ConnectPlaceActions
+import AdtagConnection
+import AdtagLocationBeacon
 
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNotificatonContentDelegate {
+
+class AppDelegate: NSObject, UIApplicationDelegate {
     private let notificationIdentifier: String = "INVITE_CATEGORY"
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        /* ** Required -- used to initialize and setup the SDK
-         *
-         * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
-         * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
-         *                  ATUrlTypeProd     = > Production Platform
-         *                  ATUrlTypeDemo     = > Demo Platform
-         *
-         * Key/Value are related to the selected Platform
-         * -- 2- user Login : Login delivred by the Connecthings staff
-         * -- 3- user Password : Password delivred by the Connecthings staff
-         * -- 4- user Compagny : Define the compagny name
-         * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
-         *
-         * All other SDK methods must be called after this one, because they won't exist until you do.
-         */
-        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize();
-        
-        register(ATAsyncBeaconNotificationImageCreator.init(beaconNotificationBuilder:MyBeaconNotificationBuilder.init()))
-        
+        AdtagInitializer.shared.configPlatform(platform: Platform.preProd)
+                               .configUser(login: "Lvi_cbeacon", password: "RGVZChwWe3LNqwBTY7qa", company: "ccbeacondemo")
+                               .synchronize()
+
+        AdtagBeaconManager.shared.registerNotificationBuilder(MyBeaconNotificationBuilder())
+
         if #available(iOS 10.0, *) {
-        }else{
-            if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
-                let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        } else{
+            if UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:))) {
+                let notificationCategory: UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
                 notificationCategory.identifier = notificationIdentifier
                 UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
             }
@@ -46,24 +36,7 @@ class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate,ATBeaconReceiveNot
         return true
     }
     
-    /** Receive the local notification **/
-    override func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        super.application(application, didReceive: notification)
-    }
-    
-    public func didReceiveBeaconNotification(_ _beaconContent: ATBeaconContent!){
-        let beaconContentUserInfo:[String: ATBeaconContent] = ["beaconContent": _beaconContent]
-        
-        NotificationCenter.default.post(name: NSNotification.Name("beaconNotification"), object:nil, userInfo: beaconContentUserInfo)
-    }
-    
-    public func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
-    }
-    
-    override func applicationDidBecomeActive(_ application: UIApplication) {
-        // [[AdtagBeaconManager shared] didReceivePlaceNotification:[notification userInfo]];
-        // AdtagBeaconManager.shared.
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        AdtagBeaconManager.shared.didReceivePlaceNotification(notification.userInfo)
     }
 }
-
