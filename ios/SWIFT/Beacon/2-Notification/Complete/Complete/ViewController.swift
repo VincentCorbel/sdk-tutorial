@@ -13,7 +13,7 @@ import AdtagLocationBeacon
 
 class ViewController: UIViewController, ReceiveNotificatonContentDelegate {
     @IBOutlet weak var labelBeacon: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,15 +32,15 @@ class ViewController: UIViewController, ReceiveNotificatonContentDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     func didReceivePlaceNotification(placeNotification: PlaceNotification) {
         displayRemoteNotification(placeNotification)
     }
-    
+
     func didReceiveWelcomeNotification(welcomeNotification: PlaceWelcomeNotification) {
         displayRemoteNotification(welcomeNotification)
     }
-    
+
     private func displayRemoteNotification(_ placeNotification: PlaceNotification) {
         self.labelBeacon.text = placeNotification.getTitle()
         self.labelBeacon.setNeedsDisplay()
