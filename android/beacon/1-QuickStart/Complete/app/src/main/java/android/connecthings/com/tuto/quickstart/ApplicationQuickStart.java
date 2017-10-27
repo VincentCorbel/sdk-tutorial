@@ -20,9 +20,8 @@ public class ApplicationQuickStart extends Application{
                 .initUser("__LOGIN__", "__PSWD__").initCompany("__COMPANY__");
         adtagInitializer.synchronize();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            adtagInitializer.addPermission(Manifest.permission.ACCESS_COARSE_LOCATION);
-        }
+
+        adtagInitializer.addPermissionToAsk(Manifest.permission.ACCESS_COARSE_LOCATION);
     }
 
 }
