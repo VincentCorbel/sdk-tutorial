@@ -19,10 +19,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         AdtagInitializer.shared.configPlatform(platform: Platform.preProd)
-                               .configUser(login: "Lvi_cbeacon", password: "RGVZChwWe3LNqwBTY7qa", company: "ccbeacondemo")
+                               .configUser(login: "", password: "", company: "")
                                .synchronize()
 
         AdtagBeaconManager.shared.registerNotificationBuilder(MyBeaconNotificationBuilder())
+        AdtagBeaconManager.shared.registerNotificationTask(AsyncNotificationTask())
 
         if #available(iOS 10.0, *) {
         } else{

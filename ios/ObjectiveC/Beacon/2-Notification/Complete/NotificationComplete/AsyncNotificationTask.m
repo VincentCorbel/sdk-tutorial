@@ -13,10 +13,7 @@
 @implementation AsyncNotificationTask
 
 - (AnyPromise * _Nonnull)launchNotificationTask:(id<PlaceNotification> _Nonnull)placeNotification {
-    return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve) {
-        PlaceNotificationImage *placeNotificationImage = [[PlaceNotificationImage alloc] initWithPlaceNotification:placeNotification];
-        resolve(placeNotificationImage);
-    }];
+    return [AnyPromise promiseWithValue:[[PlaceNotificationImage alloc] initWithPlaceNotification:placeNotification]];
 }
 
 @end

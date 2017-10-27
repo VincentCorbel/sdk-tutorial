@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewControllerBeacon.h"
 #import "MyBeaconNotificationBuilder.h"
+#import "AsyncNotificationTask.h"
 
 #define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
@@ -20,8 +21,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     AdtagInitializer *adtagInitializer = [AdtagInitializer shared];
-    [[[adtagInitializer configPlatformWithPlatform: AdtagPlatform.preProd] configUserWithLogin:@"___" password:@"___" company:@"___"] synchronize];
+    [[[adtagInitializer configPlatformWithPlatform: AdtagPlatform.preProd] configUserWithLogin:@"" password:@"" company:@""] synchronize];
     [[AdtagBeaconManager shared] registerNotificationBuilder: [[MyBeaconNotificationBuilder alloc] init]];
+    [[AdtagBeaconManager shared] registerNotificationTask: [AsyncNotificationTask alloc]];
 
     if (SYSTEM_VERSION_LESS_THAN(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings: [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
