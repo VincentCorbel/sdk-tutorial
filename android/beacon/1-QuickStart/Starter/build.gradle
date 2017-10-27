@@ -13,16 +13,6 @@ allprojects {
     repositories {
         jcenter()
         google()
-        mavenLocal()
-        maven {
-            url "https://forge.adtag.eu/nexus/content/groups/public"
-        }
-        maven {
-            url "https://forge.adtag.eu/nexus/content/repositories/releases"
-        }
-        maven {
-            url "https://forge.adtag.eu/nexus/content/repositories/snapshots"
-        }
     }
 }
 
