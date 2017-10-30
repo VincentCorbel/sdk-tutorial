@@ -8,6 +8,9 @@
 
 #import "ViewControllerBeacon.h"
 #import <UserNotifications/UserNotifications.h>
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 @interface ViewControllerBeacon ()
 
 @end
@@ -19,7 +22,6 @@
     [super viewDidLoad];
     self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
    
-    //register to the notification center with the new iOs10 system
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
@@ -30,26 +32,30 @@
                               }];
     }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(remoteNotificationReceived:) name:@"BeaconNotification"
-                                               object:nil];
-
-
+    [[AdtagBeaconManager shared] registerReceiveNotificatonContentDelegate:self];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-
-
+-(void)viewWillAppear:(BOOL)animated {
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (void)remoteNotificationReceived:(NSNotification *)notification{
-    ATBeaconContent *beaconContent = [notification.userInfo objectForKey:@"beaconContent"];
-    self.txtMessage.text = [beaconContent getNotificationTitle];
-    [self.txtMessage setNeedsDisplay];
+
+
+- (void) didReceivePlaceNotificationWithPlaceNotification:(id<PlaceNotification> _Nonnull)placeNotification {
+    [self remoteNotificationReceived:placeNotification];
 }
+    
+- (void) didReceiveWelcomeNotificationWithWelcomeNotification:(id<PlaceWelcomeNotification> _Nonnull)welcomeNotification {
+    [self remoteNotificationReceived:welcomeNotification];
+}
+    
+- (void) remoteNotificationReceived:(id<PlaceNotification> _Nonnull) placeNotification {
+    self.txtMessage.text = [placeNotification getTitle];
+    [self.txtMessage setNeedsDisplay];
+ }
 
 @end

@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ATLocationBeacon/ATLocationBeacon.h>
+#import <UserNotifications/UserNotifications.h>
+#import "AdtagLocationBeacon-Swift.h"
+#import "ConnectPlaceActions-Swift.h"
 
-@interface MyBeaconNotificationBuilder : NSObject <ATBeaconNotificationImageBuilderDelegate>
+@interface MyBeaconNotificationBuilder : NSObject <NotificationBuilder> {
+    
+}
 
 @end
