@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ATLocationBeacon/ATLocationBeacon.h>
-#import <ATConnectionHttp/ATConnectionHttp.h>
-@interface ViewController : UIViewController <ATRangeDelegate> {
-    ATBeaconManager *beaconManager;
+@import AdtagLocationBeacon;
+@import AdtagConnection;
+@import ConnectPlaceCommon;
+
+@interface ViewController : UIViewController <AdtagInProximityInForegroundDelegate, CTProximityErrorDelegate> {
+
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *txt_nbrBeacon;

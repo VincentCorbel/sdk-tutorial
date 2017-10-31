@@ -7,91 +7,65 @@
 //
 
 import UIKit
-import ATAnalytics
-import ATLocationBeacon
 import AVFoundation
 import UserNotifications
+import ConnectPlaceActions
+import AdtagConnection
+import AdtagLocationBeacon
 
-/******** MUST KNOW !!!!
- IF YOU WILL IMPLEMENT THE applicationDidBecomeActive METHOD YOU SHOULD ADD [super applicationDidBecomeActive:application];
- -   the super method will activate the range in your project
- */
 @UIApplicationMain
-class AppDelegate: ATBeaconAppDelegate, UIApplicationDelegate, ATBeaconReceiveNotificatonContentDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, ReceiveNotificatonContentDelegate {
     
     var window: UIWindow?
+    var adtagInitializer: AdtagInitializer?
+    var adtagBeaconManager: AdtagBeaconManager?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        /* ** Required -- used to initialize and setup the SDK
-         *
-         *
-         *
-         * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
-         * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
-         *                  ATUrlTypeProd     = > Production Platform
-         *                  ATUrlTypeDemo     = > Demo Platform
-         *
-         * Key/Value are related to the selected Platform
-         * -- 2- user Login : Login delivred by the Connecthings staff
-         * -- 3- user Password : Password delivred by the Connecthings staff
-         * -- 4- user Compagny : Define the compagny name
-         * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
-         * --
-         *
-         * All other SDK methods must be called after this one, because they won't exist until you do.
-         */
-        ATAdtagInitializer.sharedInstance().configureUrlType(__UrlType__, andLogin: "__USER__", andPassword: "__PSWD__", andCompany: "__COMPANY__").synchronize();
-        
-        /* Required --- Ask for User Permission to Receive (UILocalNotifications/ UIUserNotification) in iOS 8 and later
-         / -- Registering Notification Settings **/
+        adtagInitializer = AdtagInitializer.shared
+        adtagInitializer?.configPlatform(platform: Platform.prod).configUser(login: "__LOGIN__", password: "__PSWD__", company: "__COMPANY__").synchronize()
+        adtagBeaconManager = AdtagBeaconManager.shared
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
+            //The request can be done as well in a viewController which allows to display a message if the user refuse the receive notifications
             center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-                // Enable or disable features based on authorization.
+                if (error == nil) {
+                    NSLog("request authorization succeeded!");
+                }
             }
-            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            UIApplication.shared.registerUserNotificationSettings(setting)
-            UIApplication.shared.registerForRemoteNotifications()
-        } else {
-            if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
-                let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
-                notificationCategory.identifier = "INVITE_CATEGORY"
-                //registerting for the notification.
-                UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .badge, .sound], categories: nil))
-            }
+            center.delegate = self
+        } else if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .sound], categories: nil))
         }
+        adtagBeaconManager?.registerReceiveNotificatonContentDelegate(self)
         return true
     }
 
+    func applicationWillResignActive(_ application: UIApplication) {
+        adtagInitializer?.onAppInBackground()
+    }
 
-    override func applicationWillResignActive(_ application: UIApplication) {
-        
-        /* ** Required
-         * Add super.applicationWillResignActive to your  delegate method
-         * the super class will init the range beacon
-         * if a the super call isn't reachable the Beacon range won't be start
-         */
-        super.applicationWillResignActive(application)
+    func applicationDidBecomeActive(_ application: UIApplication) {
+         adtagInitializer?.onAppInForeground()
     }
-    
-    
-    override func applicationDidBecomeActive(_ application: UIApplication) {
-        
-        /* ** Required
-         * Add super.applicationDidBecomeActive to your delegate method
-         * the super class will init the range beacon
-         * if a the super call isn't reachable the Beacon range won't be start
-         */
-        super.applicationDidBecomeActive(application);
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        adtagBeaconManager?.didReceivePlaceNotification(response.notification.request.content.userInfo)
     }
-    
-    func didReceiveBeaconNotification(_ _beaconContent: ATBeaconContent!) {
-        //Call when a beacon notification is clicked
+
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        adtagBeaconManager?.didReceivePlaceNotification(notification.userInfo)
     }
-    
-    func didReceive(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        //Call when a welcome notification is clicked
+
+    func didReceivePlaceNotification(placeNotification: PlaceNotification) {
+        if let place: AdtagPlaceNotification = placeNotification as? AdtagPlaceNotification {
+            NSLog("open a controller with a place notification")
+        }
     }
-    
+
+    func didReceiveWelcomeNotification(welcomeNotification: PlaceWelcomeNotification) {
+        if let place: AdtagPlaceWelcomeNotification = welcomeNotification as? AdtagPlaceWelcomeNotification {
+            NSLog("open a controller with a place welcome notification")
+        }
+    }
 }
 
