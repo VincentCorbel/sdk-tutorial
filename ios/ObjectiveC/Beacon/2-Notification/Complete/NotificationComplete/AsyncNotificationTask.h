@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdtagLocationBeacon-Swift.h"
+@import AdtagLocationBeacon;
 
 @interface AsyncNotificationTask : NSObject <AdtagNotificationTaskDelegate> {
     

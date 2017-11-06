@@ -7,12 +7,13 @@
 //
 
 #import "AsyncNotificationTask.h"
-#import "ConnectPlaceActions-Swift.h"
-#import "PromiseKit-Swift.h"
+
+@import ConnectPlaceActions;
+@import PromiseKit;
 
 @implementation AsyncNotificationTask
 
-- (AnyPromise * _Nonnull)launchNotificationTask:(id<PlaceNotification> _Nonnull)placeNotification {
+- (AnyPromise * _Nonnull) launchNotificationTask:(id<PlaceNotification> _Nonnull)placeNotification {
     return [AnyPromise promiseWithValue:[[PlaceNotificationImage alloc] initWithPlaceNotification:placeNotification]];
 }
 

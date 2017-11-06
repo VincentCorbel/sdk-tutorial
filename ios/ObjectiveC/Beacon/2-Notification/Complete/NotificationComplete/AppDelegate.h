@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AdtagConnection/AdtagConnection-Swift.h"
-#import "AdtagLocationBeacon-Swift.h"
+@import AdtagConnection;
+@import AdtagLocationBeacon;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
 }

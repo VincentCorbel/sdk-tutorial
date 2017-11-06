@@ -26,7 +26,7 @@
         notificationContent.title = [placeNotification getTitle];
     }
 
-    if (placeNotificationImage.hasImage) {
+    if ([placeNotification hasImage]) {
         UNNotificationAttachment *attachement1 = [UNNotificationAttachment attachmentWithIdentifier:@"com.connecthings.beaconNotificationImage" URL:placeNotificationImage.getImageURL options:nil error:nil];
         notificationContent.attachments=@[attachement1];
     }
