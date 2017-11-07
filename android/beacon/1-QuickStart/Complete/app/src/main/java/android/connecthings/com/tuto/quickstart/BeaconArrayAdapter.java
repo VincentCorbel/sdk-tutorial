@@ -1,49 +1,42 @@
 package android.connecthings.com.tuto.quickstart;
 
-import com.connecthings.adtag.model.sdk.BeaconContent;
-import com.connecthings.util.adapter.ArrayAdapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.connecthings.util.adapter.ArrayAdapter;
+import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
 
 import java.util.ArrayList;
 
-public class BeaconArrayAdapter extends ArrayAdapter<BeaconContent> {
-
+public class BeaconArrayAdapter extends ArrayAdapter<AdtagPlaceInAppAction> {
     public BeaconArrayAdapter(Context context) {
-        super(context, R.layout.row_list_beacon, new ArrayList<BeaconContent>());
+        super(context, R.layout.row_list_beacon, new ArrayList<AdtagPlaceInAppAction>());
     }
 
     @Override
-    protected View bindView(int position, BeaconContent element, ViewGroup parent,
-                            boolean isEnabled, boolean dropDown) {
+    protected View bindView(int i, AdtagPlaceInAppAction placeInAppAction, ViewGroup parent, boolean b, boolean b1) {
         View view = this.inflateDefaultView(parent);
         view.setTag(new ViewHolder(view));
         return view;
     }
 
     @Override
-    protected void setContentToView(int position, BeaconContent element,
-                                    View convertView, boolean isEnable, boolean dropDown) {
+    protected void setContentToView(int i, AdtagPlaceInAppAction placeInAppAction, View convertView, boolean b, boolean b1) {
         ViewHolder vh = (ViewHolder) convertView.getTag();
-        vh.tv.setText(buildBeaconRow(element));
+        vh.tv.setText(buildBeaconRow(placeInAppAction));
     }
 
-    private String buildBeaconRow(BeaconContent beaconContent){
-        return beaconContent.getNotificationDescription();
+    private String buildBeaconRow(AdtagPlaceInAppAction placeInAppAction) {
+        return placeInAppAction.getDescription();
     }
 
     private class ViewHolder {
-        public TextView tv;
+        private TextView tv;
 
-        public ViewHolder(View view){
-            tv = (TextView) view.findViewById(R.id.content);
+        private ViewHolder(View view) {
+            tv = view.findViewById(R.id.content);
         }
-
     }
-
-
 }
-
