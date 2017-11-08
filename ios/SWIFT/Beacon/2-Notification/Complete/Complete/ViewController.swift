@@ -9,9 +9,10 @@
 import UIKit
 import UserNotifications
 import ConnectPlaceActions
+import AdtagConnection
 import AdtagLocationBeacon
 
-class ViewController: UIViewController, ReceiveNotificatonContentDelegate {
+class ViewController: UIViewController, AdtagReceiveNotificationContentDelegate {
     @IBOutlet weak var labelBeacon: UILabel!
 
     override func viewDidLoad() {
@@ -33,11 +34,11 @@ class ViewController: UIViewController, ReceiveNotificatonContentDelegate {
         super.didReceiveMemoryWarning()
     }
 
-    func didReceivePlaceNotification(placeNotification: PlaceNotification) {
+    func didReceivePlaceNotification(_ placeNotification: AdtagPlaceNotification) {
         displayRemoteNotification(placeNotification)
     }
 
-    func didReceiveWelcomeNotification(welcomeNotification: PlaceWelcomeNotification) {
+    func didReceiveWelcomeNotification(_ welcomeNotification: AdtagPlaceWelcomeNotification) {
         displayRemoteNotification(welcomeNotification)
     }
 

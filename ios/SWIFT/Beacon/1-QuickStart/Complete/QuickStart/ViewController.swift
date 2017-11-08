@@ -6,18 +6,18 @@
 //  Copyright © 2016 R&D connecthings. All rights reserved.
 //
 import UIKit
-import ATConnectionHttp
-import ATAnalytics
-import ATLocationBeacon
+import AdtagConnection
+import AdtagAnalytics
+import AdtagLocationBeacon
+
 class ViewController: UIViewController, ATRangeDelegate{
-    
-    var beaconManager: ATBeaconManager!
+    var beaconManager: AdtagBeaconManager!
     
     @IBOutlet weak var txt_message: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        beaconManager = ATBeaconManager.sharedInstance()
+        beaconManager = AdtagBeaconManager.shared
         beaconManager.registerAdtagRangeDelegate(self)
         beaconManager.registerNotificationContentDelegate(self);
         // Do any additional setup after loading the view, typically from a nib

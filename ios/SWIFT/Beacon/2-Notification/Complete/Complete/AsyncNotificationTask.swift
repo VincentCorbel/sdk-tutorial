@@ -12,15 +12,8 @@ import ConnectPlaceActions
 import AdtagConnection
 import AdtagLocationBeacon
 
-public class AsyncNotificationTask: AdtagNotificationTaskDelegate {
-    public func launchNotificationTask(_ placeNotification: PlaceNotification) -> AnyPromise {
-        return AnyPromise(Promise<PlaceNotificationImage> { fulfill, reject in
-            let placeNotificationImage: PlaceNotificationImage? = PlaceNotificationImage(placeNotification: placeNotification)
-            if let placeNotificationImage = placeNotificationImage {
-                fulfill(placeNotificationImage)
-            } else {
-                reject("An error occured...")
-            }
-        })
+public class AsyncNotificationTask: NSObject, AdtagNotificationTaskDelegate {
+    public func launchNotificationTask(placeNotification: AdtagPlaceNotification, displayPlaceNotificationDelegate: DisplayPlaceNotificationDelegate) {
+        displayPlaceNotificationDelegate.displayPlaceNotification(PlaceNotificationImage(placeNotification: placeNotification))
     }
 }
