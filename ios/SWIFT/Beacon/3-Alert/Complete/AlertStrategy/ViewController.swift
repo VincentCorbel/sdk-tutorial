@@ -7,63 +7,48 @@
 //
 
 import UIKit
-import ATAnalytics
-import ATLocationBeacon
+import ConnectPlaceActions
+import AdtagAnalytics
+import AdtagConnection
+import AdtagLocationBeacon
 
-class ViewController: UIViewController, ATBeaconAlertDelegate {
-    
+class ViewController: UIViewController, AdtagInAppActionDelegate {
     @IBOutlet weak var txtAlertMessage: UILabel!
- 
     @IBOutlet weak var actionTxt: UILabel!
-    var currentAlertBeaconContent: ATBeaconContent!
+    
+    var currentPlaceInAppAction: PlaceInAppAction!
   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        ATBeaconManager.sharedInstance().registerBeaconAlertDelgate(self)
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        AdtagBeaconManager.shared.registerInAppActionDelegate(self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        ATBeaconManager.sharedInstance().registerBeaconAlertDelgate(nil)
+        AdtagBeaconManager.shared.unregisterInAppActionDelegate()
     }
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func createBeaconAlert(_ _beaconContent: ATBeaconContent!) -> Bool {
-        if ("popup" == _beaconContent.getAction()) {
-            // create a popup view
+    func createInAppAction(_ placeInAppAction: AdtagPlaceInAppAction, statusManager: InAppActionStatusManagerDelegate) -> Bool {
+        if ("popup" == placeInAppAction.getAction()) {
             actionTxt.text = "Well done! now you have created your alert action"
-            self.txtAlertMessage.text = _beaconContent.getAlertTitle()
+            self.txtAlertMessage.text = placeInAppAction.getTitle()
             txtAlertMessage.setNeedsDisplay()
- 
-            currentAlertBeaconContent = _beaconContent
+            currentPlaceInAppAction = placeInAppAction
             return true
         }
         self.txtAlertMessage.text = "No Beacons ready for action"
         txtAlertMessage.setNeedsDisplay()
         return false
-
     }
     
-    func removeBeaconAlert(_ _beaconContent: ATBeaconContent!, actionStatus _actionStatus: ATBeaconRemoveStatus) -> Bool {
+    func removeInAppAction(_ placeInAppAction: AdtagPlaceInAppAction, inAppActionRemoveStatus: InAppActionRemoveStatus) -> Bool {
         actionTxt.text = "Well done! now you have removed your alert action"
         self.txtAlertMessage.text = "Remove beacon alert action"
         txtAlertMessage.setNeedsDisplay()
         return true
-
     }
-    
-    func onNetworkError(_ _feedStatus: ATRangeFeedStatus) {
-        actionTxt.text = "We can't connect to the Adtag Platform"
-        self.txtAlertMessage.text = "Network Error"
-        actionTxt.setNeedsDisplay()
-        txtAlertMessage.setNeedsDisplay()
-    }
-
 }
-
