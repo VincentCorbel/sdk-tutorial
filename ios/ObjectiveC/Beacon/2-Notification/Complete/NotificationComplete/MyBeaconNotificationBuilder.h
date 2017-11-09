@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
-#import "AdtagLocationBeacon-Swift.h"
-#import "ConnectPlaceActions-Swift.h"
+@import ConnectPlaceActions;
+@import AdtagLocationBeacon;
+@import AdtagConnection;
 
 @interface MyBeaconNotificationBuilder : NSObject <NotificationBuilder> {
     

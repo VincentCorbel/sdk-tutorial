@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 import AVFoundation
 import UserNotifications
 import ConnectPlaceActions
@@ -15,15 +16,17 @@ import AdtagLocationBeacon
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, ReceiveNotificatonContentDelegate {
-    
+
     var window: UIWindow?
     var adtagInitializer: AdtagInitializer?
     var adtagBeaconManager: AdtagBeaconManager?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
         adtagInitializer = AdtagInitializer.shared
         adtagInitializer?.configPlatform(platform: Platform.prod).configUser(login: "__LOGIN__", password: "__PSWD__", company: "__COMPANY__").synchronize()
         adtagBeaconManager = AdtagBeaconManager.shared
+
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             //The request can be done as well in a viewController which allows to display a message if the user refuse the receive notifications
@@ -68,4 +71,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
 }
-

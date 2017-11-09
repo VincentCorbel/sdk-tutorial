@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.connecthings.util.adapter.ArrayAdapter;
+import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
 
 import java.util.ArrayList;
 
@@ -37,14 +39,10 @@ public class BeaconArrayAdapter extends ArrayAdapter<AdtagPlaceInAppAction> {
     }
 
     private class ViewHolder {
-        public TextView tv;
+        private TextView tv;
 
-        public ViewHolder(View view){
-            tv = (TextView) view.findViewById(R.id.content);
+        private ViewHolder(View view) {
+            tv = view.findViewById(R.id.content);
         }
-
     }
-
-
 }
-

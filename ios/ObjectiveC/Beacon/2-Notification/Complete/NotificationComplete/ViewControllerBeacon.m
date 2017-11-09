@@ -43,16 +43,14 @@
     [super didReceiveMemoryWarning];
 }
 
-
-
-- (void) didReceivePlaceNotificationWithPlaceNotification:(id<PlaceNotification> _Nonnull)placeNotification {
+- (void)didReceivePlaceNotification:(AdtagPlaceNotification * _Nonnull)placeNotification {
     [self remoteNotificationReceived:placeNotification];
 }
-    
-- (void) didReceiveWelcomeNotificationWithWelcomeNotification:(id<PlaceWelcomeNotification> _Nonnull)welcomeNotification {
+
+- (void)didReceiveWelcomeNotification:(AdtagPlaceWelcomeNotification * _Nonnull)welcomeNotification {
     [self remoteNotificationReceived:welcomeNotification];
 }
-    
+
 - (void) remoteNotificationReceived:(id<PlaceNotification> _Nonnull) placeNotification {
     self.txtMessage.text = [placeNotification getTitle];
     [self.txtMessage setNeedsDisplay];

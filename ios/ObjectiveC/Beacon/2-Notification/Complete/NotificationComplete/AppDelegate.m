@@ -21,7 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     AdtagInitializer *adtagInitializer = [AdtagInitializer shared];
-    [[[adtagInitializer configPlatformWithPlatform: AdtagPlatform.preProd] configUserWithLogin:@"" password:@"" company:@""] synchronize];
+    [[[adtagInitializer configPlatform:AdtagPlatform.preProd] configUserWithLogin:@"" password:@"" company:@""] synchronize];
     [[AdtagBeaconManager shared] registerNotificationBuilder: [[MyBeaconNotificationBuilder alloc] init]];
     [[AdtagBeaconManager shared] registerNotificationTask: [AsyncNotificationTask alloc]];
 

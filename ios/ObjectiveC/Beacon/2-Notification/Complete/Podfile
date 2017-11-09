@@ -6,17 +6,7 @@ platform :ios, '9.0'
 target 'NotificationComplete' do
     use_frameworks!
     swift_version = "4.0"
-    pod 'ConnectPlaceCommon', :path => '~/Desktop/ios-connectplace-common'
-    pod 'ConnectPlaceProvider', :path => '~/Desktop/ios-connectplace-provider'
-    pod 'ConnectPlaceBeaconDetection', :path => '~/Desktop/ios-connectplace-beacondetection'
-    pod 'ConnectPlaceActions', :path => '~/Desktop/ios-connectplace-actions'
-    pod 'AdtagConnection', :path => '~/Desktop/ios-atconnectionhttp'
-    pod 'AdtagAnalytics', :path => '~/Desktop/ios-atanalytics'
-    pod 'AdtagLocationBeacon', :path => '~/Desktop/ios-atlocationbeacon'
-    pod "PromiseKit", "~> 4.4"
-    pod "PromiseKit/Foundation"
-    pod 'SQLite.swift'
-    pod 'Shimmer'
+    pod 'AdtagLocationBeacon', '~> 3.0-RC7' 
     
     target 'NotificationCompleteTests' do
         inherit! :search_paths

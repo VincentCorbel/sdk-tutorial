@@ -272,7 +272,7 @@
 		14E45A841CA1B79500639B81 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "sarra srairi";
 				TargetAttributes = {
 					14E45A8B1CA1B79500639B81 = {
@@ -345,17 +345,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NotificationComplete/Pods-NotificationComplete-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AdtagAnalytics/AdtagAnalytics.framework",
-				"${BUILT_PRODUCTS_DIR}/AdtagConnection/AdtagConnection.framework",
-				"${BUILT_PRODUCTS_DIR}/AdtagLocationBeacon/AdtagLocationBeacon.framework",
+				"${PODS_ROOT}/AdtagAnalytics/AdtagAnalytics.framework",
+				"${PODS_ROOT}/AdtagConnection/AdtagConnection.framework",
+				"${PODS_ROOT}/AdtagLocationBeacon/AdtagLocationBeacon.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/ConnectPlaceActions/ConnectPlaceActions.framework",
-				"${BUILT_PRODUCTS_DIR}/ConnectPlaceBeaconDetection/ConnectPlaceBeaconDetection.framework",
-				"${BUILT_PRODUCTS_DIR}/ConnectPlaceCommon/ConnectPlaceCommon.framework",
-				"${BUILT_PRODUCTS_DIR}/ConnectPlaceProvider/ConnectPlaceProvider.framework",
+				"${PODS_ROOT}/ConnectPlaceActions/ConnectPlaceActions.framework",
+				"${PODS_ROOT}/ConnectPlaceBeaconDetection/ConnectPlaceBeaconDetection.framework",
+				"${PODS_ROOT}/ConnectPlaceCommon/ConnectPlaceCommon.framework",
+				"${PODS_ROOT}/ConnectPlaceProvider/ConnectPlaceProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
-				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -369,7 +368,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

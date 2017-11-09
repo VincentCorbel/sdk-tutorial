@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		137296F488AD391D9EF35BE1 /* Pods_QuickStartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4280D86B3E68FFBDFE4B276 /* Pods_QuickStartTests.framework */; };
 		1484CDFF1D5B1DAA00BFAD6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484CDFE1D5B1DAA00BFAD6E /* AppDelegate.swift */; };
 		1484CE011D5B1DAA00BFAD6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484CE001D5B1DAA00BFAD6E /* ViewController.swift */; };
 		1484CE041D5B1DAA00BFAD6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1484CE021D5B1DAA00BFAD6E /* Main.storyboard */; };
@@ -15,8 +14,8 @@
 		1484CE091D5B1DAA00BFAD6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1484CE071D5B1DAA00BFAD6E /* LaunchScreen.storyboard */; };
 		1484CE141D5B1DAA00BFAD6E /* QuickStartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484CE131D5B1DAA00BFAD6E /* QuickStartTests.swift */; };
 		1484CE1F1D5B1DAA00BFAD6E /* QuickStartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484CE1E1D5B1DAA00BFAD6E /* QuickStartUITests.swift */; };
+		43320F601FB33BFF004B8D13 /* MyNotificationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43320F5F1FB33BFF004B8D13 /* MyNotificationFilter.swift */; };
 		7C6493D11E7701FA0049E17F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C6493CF1E7701FA0049E17F /* Localizable.strings */; };
-		972FA90DB7A54D963040749E /* Pods_QuickStartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4DD75CD57E2F66B9B28216 /* Pods_QuickStartUITests.framework */; };
 		A9399CBFAD3E31A2AA345809 /* Pods_QuickStart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916B9824424979D86EF4DCFE /* Pods_QuickStart.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0EB9D969846C9013ADB31A86 /* Pods-QuickStartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickStartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickStartTests/Pods-QuickStartTests.release.xcconfig"; sourceTree = "<group>"; };
 		1484CDFB1D5B1DAA00BFAD6E /* QuickStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1484CDFE1D5B1DAA00BFAD6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1484CE001D5B1DAA00BFAD6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +50,7 @@
 		1484CE1A1D5B1DAA00BFAD6E /* QuickStartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickStartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1484CE1E1D5B1DAA00BFAD6E /* QuickStartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStartUITests.swift; sourceTree = "<group>"; };
 		1484CE201D5B1DAA00BFAD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63EB7AD81564A926C7201705 /* Pods-QuickStartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickStartUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickStartUITests/Pods-QuickStartUITests.release.xcconfig"; sourceTree = "<group>"; };
+		43320F5F1FB33BFF004B8D13 /* MyNotificationFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationFilter.swift; sourceTree = "<group>"; };
 		7C6493D01E7701FA0049E17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		916B9824424979D86EF4DCFE /* Pods_QuickStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4280D86B3E68FFBDFE4B276 /* Pods_QuickStartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				137296F488AD391D9EF35BE1 /* Pods_QuickStartTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				972FA90DB7A54D963040749E /* Pods_QuickStartUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +112,7 @@
 				7C6493CF1E7701FA0049E17F /* Localizable.strings */,
 				1484CDFE1D5B1DAA00BFAD6E /* AppDelegate.swift */,
 				1484CE001D5B1DAA00BFAD6E /* ViewController.swift */,
+				43320F5F1FB33BFF004B8D13 /* MyNotificationFilter.swift */,
 				1484CE021D5B1DAA00BFAD6E /* Main.storyboard */,
 				1484CE051D5B1DAA00BFAD6E /* Assets.xcassets */,
 				1484CE071D5B1DAA00BFAD6E /* LaunchScreen.storyboard */,
@@ -156,8 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				D11FD98A43CCDBCAD973ED59 /* Pods-QuickStart.release.xcconfig */,
-				0EB9D969846C9013ADB31A86 /* Pods-QuickStartTests.release.xcconfig */,
-				63EB7AD81564A926C7201705 /* Pods-QuickStartUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -189,12 +184,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1484CE261D5B1DAA00BFAD6E /* Build configuration list for PBXNativeTarget "QuickStartTests" */;
 			buildPhases = (
-				BB9275C8CFF691E586754E24 /* [CP] Check Pods Manifest.lock */,
 				1484CE0B1D5B1DAA00BFAD6E /* Sources */,
 				1484CE0C1D5B1DAA00BFAD6E /* Frameworks */,
 				1484CE0D1D5B1DAA00BFAD6E /* Resources */,
-				CCAD26EC8472478B3906A060 /* [CP] Embed Pods Frameworks */,
-				72DA6A28C1C59FF4EF8F85D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,12 +202,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1484CE291D5B1DAA00BFAD6E /* Build configuration list for PBXNativeTarget "QuickStartUITests" */;
 			buildPhases = (
-				CFF9F3902EFFFB41ACBFBACE /* [CP] Check Pods Manifest.lock */,
 				1484CE161D5B1DAA00BFAD6E /* Sources */,
 				1484CE171D5B1DAA00BFAD6E /* Frameworks */,
 				1484CE181D5B1DAA00BFAD6E /* Resources */,
-				046A8EA61152B969E11D3437 /* [CP] Copy Pods Resources */,
-				B8B9E1611EBA8D80E4365CEA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,21 +292,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		046A8EA61152B969E11D3437 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickStartUITests/Pods-QuickStartUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		594A03A24A90CDFF4E2FCAD9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,30 +307,18 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickStart/Pods-QuickStart-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		72DA6A28C1C59FF4EF8F85D7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickStartTests/Pods-QuickStartTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9E81AAD551A4EF7F57BAA264 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickStart-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -369,9 +331,32 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuickStart/Pods-QuickStart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AdtagAnalytics/AdtagAnalytics.framework",
+				"${BUILT_PRODUCTS_DIR}/AdtagConnection/AdtagConnection.framework",
+				"${BUILT_PRODUCTS_DIR}/AdtagLocationBeacon/AdtagLocationBeacon.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceActions/ConnectPlaceActions.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceBeaconDetection/ConnectPlaceBeaconDetection.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceCommon/ConnectPlaceCommon.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceProvider/ConnectPlaceProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdtagAnalytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdtagConnection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdtagLocationBeacon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceActions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceBeaconDetection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,6 +432,7 @@
 			files = (
 				1484CE011D5B1DAA00BFAD6E /* ViewController.swift in Sources */,
 				1484CDFF1D5B1DAA00BFAD6E /* AppDelegate.swift in Sources */,
+				43320F601FB33BFF004B8D13 /* MyNotificationFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,7 +554,6 @@
 		};
 		1484CE281D5B1DAA00BFAD6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EB9D969846C9013ADB31A86 /* Pods-QuickStartTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = QuickStartTests/Info.plist;
@@ -582,7 +567,6 @@
 		};
 		1484CE2B1D5B1DAA00BFAD6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63EB7AD81564A926C7201705 /* Pods-QuickStartUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = QuickStartUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -10,8 +10,7 @@
 #import "AlertViewControllerAction.h"
 
 @interface ViewController () {
- 
-    ATBeaconContent *currentAlertBeaconContent;
+    AdtagPlaceInAppAction *currentPlaceInAppAction;
 }
 
 @end
@@ -20,36 +19,31 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
- 
-    // Do any additional setup after loading the view, typically from a nib.
-}
+ }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    //register the protocol for did range beacon
-    [[ATBeaconManager sharedInstance] registerBeaconAlertDelgate:self];
+    [[AdtagBeaconManager shared] registerInAppActionDelegate:self];
  
 }
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [[ATBeaconManager sharedInstance] registerBeaconAlertDelgate:nil];
+    [[AdtagBeaconManager shared] unregisterInAppActionDelegate];
 }
 
 -(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-//comment Alert delegate method
--(BOOL)createBeaconAlert:(ATBeaconContent *)_beaconContent{
-   
-    if([@"popup" isEqualToString:[_beaconContent getAction]]){
+
+- (BOOL)createInAppAction:(AdtagPlaceInAppAction * _Nonnull)placeInAppAction statusManager:(id<InAppActionStatusManagerDelegate> _Nonnull)statusManager {
+    if([@"popup" isEqualToString:[placeInAppAction getAction]]){
         // create a popup view
         NSLog(@"Well done! now you can create your Pop UP");
-        _txtAlertMessage.text = [_beaconContent getAlertTitle];
+        _txtAlertMessage.text = [placeInAppAction getTitle];
         [_txtAlertMessage setNeedsDisplay];
         _buttonAlert.hidden=false;
-        currentAlertBeaconContent = _beaconContent;
+        currentPlaceInAppAction = placeInAppAction;
         return YES ;
     }
     
@@ -57,23 +51,12 @@
     [_txtAlertMessage setNeedsDisplay];
     return NO ;
 }
- 
--(BOOL)removeBeaconAlert:(ATBeaconContent *)_beaconContent actionStatus:(ATBeaconRemoveStatus)_actionStatus{
+
+- (BOOL)removeInAppAction:(AdtagPlaceInAppAction * _Nonnull)placeInAppAction inAppActionRemoveStatus:(enum InAppActionRemoveStatus)inAppActionRemoveStatus {
     _buttonAlert.hidden= true;
     _txtAlertMessage.text = @"Remove beacon alert action";
     [_txtAlertMessage setNeedsDisplay];
     return YES;
-}
-
--(void)onNetworkError:(ATRangeFeedStatus)_feedStatus{
-}
-
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"alert"]) {
-        AlertViewControllerAction *controllerAlert= (AlertViewControllerAction *)[segue destinationViewController];
-        controllerAlert.alertBeaconContent = currentAlertBeaconContent;
-    }
 }
 
 @end

@@ -13,6 +13,6 @@ public class AsyncNotificationTask implements NotificationTask {
     public void launchNotificationTask(PlaceNotification placeNotification, DisplayPlaceNotificationListener displayPlaceNotificationListener) {
         // Very simple use case with no async at all, just to show some codes. Use the asyncBeaconNotificationManager to display
         // your notification when your async job finishes.
-        displayPlaceNotificationListener.displayPlaceNotificationContent(new PlaceNotificationImage(placeNotification));
+        displayPlaceNotificationListener.displayPlaceNotification(new PlaceNotificationImage(placeNotification));
     }
 }

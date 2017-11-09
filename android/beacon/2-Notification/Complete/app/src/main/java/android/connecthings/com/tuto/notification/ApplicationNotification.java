@@ -20,7 +20,7 @@ public class ApplicationNotification extends Application {
                 .synchronize();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            AdtagInitializer.getInstance().addPermission(Manifest.permission.ACCESS_COARSE_LOCATION);
+            AdtagInitializer.getInstance().addPermissionToAsk(Manifest.permission.ACCESS_COARSE_LOCATION);
         }
 
         AdtagBeaconManager beaconManager = AdtagBeaconManager.getInstance();

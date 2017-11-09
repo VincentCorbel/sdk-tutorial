@@ -7,9 +7,13 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+
 import com.connecthings.adtag.AdtagInitializer;
 import com.connecthings.connectplace.common.content.detection.InProximityInForeground;
 import com.connecthings.connectplace.common.utils.error.ProximityErrorListener;
+
+import com.connecthings.connectplace.common.content.detection.InProximityInForeground;
+
 import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
 import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
 
@@ -19,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
 
     private TextView tvBeaconNumber;
     private List<AdtagPlaceInAppAction> previousList;
+
     private BeaconArrayAdapter beaconArrayAdapter;
     private AdtagBeaconManager adtagBeaconManager;
 
@@ -28,10 +33,11 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
         setContentView(R.layout.activity_main);
         adtagBeaconManager = AdtagBeaconManager.getInstance();
         tvBeaconNumber = (TextView) findViewById(R.id.tv_beacon_number);
+
         beaconArrayAdapter = new BeaconArrayAdapter(this);
         ((ListView) findViewById(R.id.list_beacons)).setAdapter(beaconArrayAdapter);
     }
-
+    
     protected void onResume(){
         super.onResume();
         adtagBeaconManager.registerInProximityInForeground(this);
