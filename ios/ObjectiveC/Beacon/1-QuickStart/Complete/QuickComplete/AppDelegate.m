@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 @import AdtagLocationBeacon;
-@import AdtagConnection;
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
@@ -28,7 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     adtagInitializer = [AdtagInitializer shared];
-    [[[adtagInitializer configPlatformWithPlatform: AdtagPlatform.prod]
+    [[[adtagInitializer configPlatform: AdtagPlatform.prod]
         configUserWithLogin:@"__LOGIN__" password:@"__PSW__" company:@"__COMPANY__"] synchronize];
     adtagBeaconManager = [AdtagBeaconManager shared];
     if (SYSTEM_VERSION_LESS_THAN(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
@@ -65,14 +64,14 @@ didReceiveLocalNotification:(UILocalNotification *)notification {
     [adtagBeaconManager didReceivePlaceNotification:[notification userInfo]];
 }
 
-- (void) didReceivePlaceNotificationWithPlaceNotification:(id<PlaceNotification>)placeNotification {
-    AdtagPlaceNotification *notification = (AdtagPlaceNotification *) placeNotification;
+- (void) didReceivePlaceNotification:(AdtagPlaceNotification *)placeNotification {
     //Do action with this object when the notification is clicked, a beacon notification
+    NSLog(@"Do an action when the beacon notification is clicked - for example open a controller");
 }
 
-- (void) didReceiveWelcomeNotificationWithWelcomeNotification:(id<PlaceWelcomeNotification>)welcomeNotification {
-    AdtagPlaceWelcomeNotification *notification = (AdtagPlaceWelcomeNotification *) welcomeNotification;
+- (void) didReceiveWelcomeNotification:(AdtagPlaceWelcomeNotification *)welcomeNotification {
     //Do action with this object when the notification is clicked, from welcome notification
+    NSLog(@"Do an action when the beacon notification is clicked - for example open a controller");
 }
 
 

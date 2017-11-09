@@ -11,7 +11,7 @@
 @import AdtagConnection;
 @import ConnectPlaceCommon;
 
-@interface ViewController : UIViewController <AdtagInProximityInForegroundDelegate, CTProximityErrorDelegate> {
+@interface ViewController : UIViewController <AdtagInProximityInForegroundDelegate, ProximityErrorDelegate> {
 
 }
 

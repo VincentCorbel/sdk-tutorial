@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 @import UserNotifications;
-@import ConnectPlaceActions;
+@import AdtagConnection;
 
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, ReceiveNotificatonContentDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, AdtagReceiveNotificationContentDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

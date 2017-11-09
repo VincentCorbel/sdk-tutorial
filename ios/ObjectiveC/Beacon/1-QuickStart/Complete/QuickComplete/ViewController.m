@@ -31,15 +31,15 @@
 
 - (void) viewDidAppear:(BOOL)animated{
     // Register Range Delegate protocol to your view
-    [beaconManager registerInProximityInForegroundWithDelegate:self];
-    [adtagInitializer registerProximityErrorDelegateWithDelegate:self];
+    [beaconManager registerInProximityInForeground:self];
+    [adtagInitializer registerProximityErrorDelegate:self];
     [super viewDidAppear:animated];
 }
 
 - (void) viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [beaconManager unregisterInProximityInForegroundWithDelegate:self];
-    [adtagInitializer unregisterProximityErrorDelegateWithDelegate:self];
+    [beaconManager unregisterInProximityInForeground:self];
+    [adtagInitializer unregisterProximityErrorDelegate:self];
     //[beaconManager registerAdtagRangeDelegate:nil];
 }
 
