@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
         beaconArrayAdapter = new BeaconArrayAdapter(this);
         ((ListView) findViewById(R.id.list_beacons)).setAdapter(beaconArrayAdapter);
     }
-    
+
     protected void onResume(){
         super.onResume();
         adtagBeaconManager.registerInProximityInForeground(this);

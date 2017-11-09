@@ -26,15 +26,15 @@ class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, Pr
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        adtagInitializer?.registerProximityErrorDelegate(delegate: self)
-        adtagBeaconManager?.registerInProximityInForeground(delegate: self)
+        adtagInitializer?.registerProximityErrorDelegate(self)
+        adtagBeaconManager?.registerInProximityInForeground(self)
         super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        adtagInitializer?.unregisterProximityErrorDelegate(delegate: self)
-        adtagBeaconManager?.unregisterInProximityInForeground(delegate: self)
+        adtagInitializer?.unregisterProximityErrorDelegate(self)
+        adtagBeaconManager?.unregisterInProximityInForeground(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,7 +42,7 @@ class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, Pr
         // Dispose of any resources that can be recreated.
     }
     
-    func proximityContentsInForeground(contents: [PlaceInAppAction]) {
+    func proximityContentsInForeground(contents: [AdtagPlaceInAppAction]) {
         self.txt_message.text = String( format: NSLocalizedString("beaconAround", comment:""), contents.count)
     }
 

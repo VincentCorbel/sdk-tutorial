@@ -10,12 +10,11 @@ import UIKit
 
 import AVFoundation
 import UserNotifications
-import ConnectPlaceActions
 import AdtagConnection
 import AdtagLocationBeacon
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, ReceiveNotificatonContentDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, AdtagReceiveNotificationContentDelegate {
 
     var window: UIWindow?
     var adtagInitializer: AdtagInitializer?
@@ -24,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         adtagInitializer = AdtagInitializer.shared
-        adtagInitializer?.configPlatform(platform: Platform.prod).configUser(login: "__LOGIN__", password: "__PSWD__", company: "__COMPANY__").synchronize()
+        adtagInitializer?.configPlatform(Platform.prod).configUser(login: "__LOGIN__", password: "__PSWD__", company: "__COMPANY__").synchronize()
         adtagBeaconManager = AdtagBeaconManager.shared
 
         if #available(iOS 10.0, *) {
@@ -59,15 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         adtagBeaconManager?.didReceivePlaceNotification(notification.userInfo)
     }
 
-    func didReceivePlaceNotification(placeNotification: PlaceNotification) {
-        if let place: AdtagPlaceNotification = placeNotification as? AdtagPlaceNotification {
-            NSLog("open a controller with a place notification")
-        }
+    func didReceivePlaceNotification(_ placeNotification: AdtagPlaceNotification) {
+        NSLog("open a controller with a place notification")
     }
 
-    func didReceiveWelcomeNotification(welcomeNotification: PlaceWelcomeNotification) {
-        if let place: AdtagPlaceWelcomeNotification = welcomeNotification as? AdtagPlaceWelcomeNotification {
-            NSLog("open a controller with a place welcome notification")
-        }
+    func didReceiveWelcomeNotification(_ welcomeNotification: AdtagPlaceWelcomeNotification) {
+        NSLog("open a controller with a place welcome notification")
     }
 }
