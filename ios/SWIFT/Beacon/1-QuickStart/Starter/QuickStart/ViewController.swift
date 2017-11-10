@@ -6,21 +6,35 @@
 //  Copyright © 2016 R&D connecthings. All rights reserved.
 //
 import UIKit
-import ATConnectionHttp
-import ATAnalytics
-import ATLocationBeacon
-class ViewController: UIViewController, ATRangeDelegate{
-    
-    var beaconManager: ATBeaconManager!
+import AdtagConnection
+import ConnectPlaceActions
+import AdtagLocationBeacon
+import ConnectPlaceCommon
 
-    @IBOutlet weak var txt_message: UILabel!
+class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, ProximityErrorDelegate {
     
+    @IBOutlet weak var txt_message: UILabel!
+    var adtagInitializer: AdtagInitializer?
+    var adtagBeaconManager: AdtagBeaconManager?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        beaconManager = ATBeaconManager.sharedInstance()
-        beaconManager.registerAdtagRangeDelegate(self)
+        adtagInitializer = AdtagInitializer.shared
+        adtagBeaconManager = AdtagBeaconManager.shared
         // Do any additional setup after loading the view, typically from a nib
-        
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        adtagInitializer?.registerProximityErrorDelegate(self)
+        adtagBeaconManager?.registerInProximityInForeground(self)
+        super.viewWillAppear(animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        adtagInitializer?.unregisterProximityErrorDelegate(self)
+        adtagBeaconManager?.unregisterInProximityInForeground(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,36 +42,12 @@ class ViewController: UIViewController, ATRangeDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
-        
-        // Display the notification content :  _beaconContent.getNotificationTitle()
+    func proximityContentsInForeground(contents: [AdtagPlaceInAppAction]) {
+        self.txt_message.text = String( format: NSLocalizedString("beaconAround", comment:""), contents.count)
+    }
+
+    func onProximityError(errorType: Int, message: NSString) {
+        self.txt_message.text = String( format: NSLocalizedString("error", comment:""), errorType, message)
+    }
  
-    }
-    
-    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
-    }
-    
-    
-    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus) {
-        
-       var feedStatusString: String
-        
-        switch feedStatus {
-        case ATRangeFeedStatusInProgress:
-            feedStatusString = "IN_PROGRESS"
-        case ATRangeFeedStatusBackendError:
-            feedStatusString = "BACKEND_ERROR"
-        case ATRangeFeedStatusNetworkError:
-            feedStatusString = "NETWORK_ERROR"
-        case ATRangeFeedStatusBackendSuccess:
-            feedStatusString = "BACKEND_SUCCESS"
-        default:
-            feedStatusString = ""
-        }
-        
-        self.txt_message.text = String( format: NSLocalizedString("beaconAround", comment:""), feedStatusString, _beacons.count, beaconContents.count)
- 
-    }
 }

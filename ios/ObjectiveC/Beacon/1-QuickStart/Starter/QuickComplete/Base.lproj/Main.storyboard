@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Waiting for beacons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhY-Hp-yEn">
-                                <rect key="frame" x="16" y="113" width="292" height="130.99999999999997"/>
+                                <rect key="frame" x="12" y="91" width="292" height="130.99999999999997"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.26979712041884818" green="0.26979712041884818" blue="0.26979712041884818" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -30,8 +30,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bhY-Hp-yEn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="93" id="0wM-H9-h3d"/>
-                            <constraint firstItem="bhY-Hp-yEn" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hjR-Gy-hjf"/>
+                            <constraint firstItem="bhY-Hp-yEn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="71" id="Eds-D4-e6L"/>
+                            <constraint firstItem="bhY-Hp-yEn" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yCK-Ot-4df"/>
                         </constraints>
                     </view>
                     <connections>

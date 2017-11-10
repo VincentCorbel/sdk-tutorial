@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ATLocationBeacon/ATLocationBeacon.h>
-#import <ATConnectionHttp/ATConnectionHttp.h>
+@import UserNotifications;
+@import AdtagConnection;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
