@@ -14,11 +14,12 @@ import AdtagConnection
 import AdtagLocationBeacon
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, AdtagReceiveNotificationContentDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AdtagReceiveNotificationContentDelegate {
 
     var window: UIWindow?
     var adtagInitializer: AdtagInitializer?
     var adtagBeaconManager: AdtagBeaconManager?
+    var myNotificationDelegate: MyNotificationDelegate?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -34,7 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     NSLog("request authorization succeeded!");
                 }
             }
-            center.delegate = self
+            myNotificationDelegate = MyNotificationDelegate(adtagBeaconManager: adtagBeaconManager!)
+            center.delegate = myNotificationDelegate
         } else if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .sound], categories: nil))
         }
@@ -48,10 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationDidBecomeActive(_ application: UIApplication) {
          adtagInitializer?.onAppInForeground()
-    }
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        adtagBeaconManager?.didReceivePlaceNotification(response.notification.request.content.userInfo)
     }
 
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {

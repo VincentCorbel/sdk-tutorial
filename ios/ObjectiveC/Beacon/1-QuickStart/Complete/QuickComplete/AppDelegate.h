@@ -10,7 +10,7 @@
 @import UserNotifications;
 @import AdtagConnection;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, AdtagReceiveNotificationContentDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, AdtagReceiveNotificationContentDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

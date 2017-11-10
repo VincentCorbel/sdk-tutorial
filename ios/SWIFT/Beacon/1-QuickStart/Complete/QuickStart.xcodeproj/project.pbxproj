@@ -12,11 +12,11 @@
 		1484CE041D5B1DAA00BFAD6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1484CE021D5B1DAA00BFAD6E /* Main.storyboard */; };
 		1484CE061D5B1DAA00BFAD6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1484CE051D5B1DAA00BFAD6E /* Assets.xcassets */; };
 		1484CE091D5B1DAA00BFAD6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1484CE071D5B1DAA00BFAD6E /* LaunchScreen.storyboard */; };
-		1484CE141D5B1DAA00BFAD6E /* QuickStartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484CE131D5B1DAA00BFAD6E /* QuickStartTests.swift */; };
 		1484CE1F1D5B1DAA00BFAD6E /* QuickStartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484CE1E1D5B1DAA00BFAD6E /* QuickStartUITests.swift */; };
 		43320F601FB33BFF004B8D13 /* MyNotificationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43320F5F1FB33BFF004B8D13 /* MyNotificationFilter.swift */; };
 		7C6493D11E7701FA0049E17F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C6493CF1E7701FA0049E17F /* Localizable.strings */; };
 		9BB6C339F42D4D250179D84C /* Pods_QuickStartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4280D86B3E68FFBDFE4B276 /* Pods_QuickStartTests.framework */; };
+		A80E32A41FB4B83B000E0632 /* MyNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E32A31FB4B83B000E0632 /* MyNotificationDelegate.swift */; };
 		A9399CBFAD3E31A2AA345809 /* Pods_QuickStart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916B9824424979D86EF4DCFE /* Pods_QuickStart.framework */; };
 		CC63EB318B0DE8CD6FD32457 /* Pods_QuickStartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4DD75CD57E2F66B9B28216 /* Pods_QuickStartUITests.framework */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,6 @@
 		1484CE081D5B1DAA00BFAD6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1484CE0A1D5B1DAA00BFAD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1484CE0F1D5B1DAA00BFAD6E /* QuickStartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickStartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1484CE131D5B1DAA00BFAD6E /* QuickStartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStartTests.swift; sourceTree = "<group>"; };
 		1484CE151D5B1DAA00BFAD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1484CE1A1D5B1DAA00BFAD6E /* QuickStartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickStartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1484CE1E1D5B1DAA00BFAD6E /* QuickStartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStartUITests.swift; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		43320F5F1FB33BFF004B8D13 /* MyNotificationFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationFilter.swift; sourceTree = "<group>"; };
 		7C6493D01E7701FA0049E17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		916B9824424979D86EF4DCFE /* Pods_QuickStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80E32A31FB4B83B000E0632 /* MyNotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationDelegate.swift; sourceTree = "<group>"; };
 		B4280D86B3E68FFBDFE4B276 /* Pods_QuickStartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11FD98A43CCDBCAD973ED59 /* Pods-QuickStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickStart.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickStart/Pods-QuickStart.release.xcconfig"; sourceTree = "<group>"; };
 		DE4DD75CD57E2F66B9B28216 /* Pods_QuickStartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +119,7 @@
 				1484CDFE1D5B1DAA00BFAD6E /* AppDelegate.swift */,
 				1484CE001D5B1DAA00BFAD6E /* ViewController.swift */,
 				43320F5F1FB33BFF004B8D13 /* MyNotificationFilter.swift */,
+				A80E32A31FB4B83B000E0632 /* MyNotificationDelegate.swift */,
 				1484CE021D5B1DAA00BFAD6E /* Main.storyboard */,
 				1484CE051D5B1DAA00BFAD6E /* Assets.xcassets */,
 				1484CE071D5B1DAA00BFAD6E /* LaunchScreen.storyboard */,
@@ -130,7 +131,6 @@
 		1484CE121D5B1DAA00BFAD6E /* QuickStartTests */ = {
 			isa = PBXGroup;
 			children = (
-				1484CE131D5B1DAA00BFAD6E /* QuickStartTests.swift */,
 				1484CE151D5B1DAA00BFAD6E /* Info.plist */,
 			);
 			path = QuickStartTests;
@@ -477,6 +477,7 @@
 				1484CE011D5B1DAA00BFAD6E /* ViewController.swift in Sources */,
 				1484CDFF1D5B1DAA00BFAD6E /* AppDelegate.swift in Sources */,
 				43320F601FB33BFF004B8D13 /* MyNotificationFilter.swift in Sources */,
+				A80E32A41FB4B83B000E0632 /* MyNotificationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +485,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1484CE141D5B1DAA00BFAD6E /* QuickStartTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +572,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

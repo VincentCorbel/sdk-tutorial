@@ -6,7 +6,7 @@
     <string>Your description goes here</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>Your description goes here</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
+    <key>NSLocationAlwaysUsageDescription</key>
     <string>Your description goes here</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+ params.plist
+ ConnectPlaceBeaconDetection
+
+ Created by Ludovic Vimont on 13/10/2017.
+ Copyright (c) 2017 Connecthings. All rights reserved.
+ -->
+<plist version="1.0">
+    <dict>
+        <!-- BeaconDetectionParameter -->
+        <key>autoStartAuthorised</key>
+        <true />
+        <key>uuids</key>
+        <array />
+        <key>askLocationPermissionAtStart</key>
+        <true />
+
+        <!-- BeaconsToMonitorInBackgroundParameter -->
+        <key>listSize</key>
+        <integer>5</integer>
+
+        <!-- BackgroundConsumerParameters -->
+        <key>securityDelayBeforeDispatching</key>
+        <integer>12000</integer>
+        <key>maxDelayToWaitBeforeStoppingRanging</key>
+        <integer>12000</integer>
+
+        <!-- RangingManagerBgFgParameter -->
+        <key>scanInForeground</key>
+        <true />
+        <key>scanInBackground</key>
+        <true />
+    </dict>
+</plist>
+
