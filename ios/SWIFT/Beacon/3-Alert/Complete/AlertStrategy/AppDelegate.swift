@@ -19,7 +19,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         AdtagInitializer.shared.configPlatform(Platform.preProd)
-                               .configUser(login: "", password: "", company: "")
+                               .configUser(login: "__LOGIN__", password: "__PSWD__", company: "__COMPANY__")
                                .synchronize()
         
         return true

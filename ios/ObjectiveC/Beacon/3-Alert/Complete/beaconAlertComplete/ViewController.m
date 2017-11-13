@@ -21,13 +21,13 @@
     [super viewDidLoad];
  }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [[AdtagBeaconManager shared] registerInAppActionDelegate:self];
  
 }
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [[AdtagBeaconManager shared] unregisterInAppActionDelegate];
 }
 
