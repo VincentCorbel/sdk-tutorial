@@ -41,9 +41,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>To Flash QR CODE</string>
-	<key>NFCReaderUsageDescription</key>
-	<string>To SCAN NFC TAG</string>
 </dict>
 </plist>
