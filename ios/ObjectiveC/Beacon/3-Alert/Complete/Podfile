@@ -10,7 +10,7 @@ target 'beaconAlertComplete' do
 	target 'beaconAlertCompleteTests' do
 		inherit! :search_paths
 	end
-	
+
 	target 'beaconAlertCompleteUITests' do
 		inherit! :search_paths
 	end

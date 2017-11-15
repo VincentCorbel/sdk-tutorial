@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Application;
 
 import com.connecthings.adtag.AdtagInitializer;
+import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
 import com.connecthings.util.connection.Url;
 
 public class ApplicationAlert extends Application{
@@ -13,10 +14,12 @@ public class ApplicationAlert extends Application{
         AdtagInitializer.getInstance().
                 initContext(this)
                 .initUrlType(Url.UrlType.PRE_PROD)
-                .initUser("Lvi_cbeacon", "RGVZChwWe3LNqwBTY7qa")
-                .initCompany("ccbeacondemo")
+                .initUser("", "")
+                .initCompany("")
                 .synchronize();
 
         AdtagInitializer.getInstance().addPermissionToAsk(Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        AdtagBeaconManager.getInstance().addInAppActionConditions(new TimeConditions(30000 , 60000));
     }
 }

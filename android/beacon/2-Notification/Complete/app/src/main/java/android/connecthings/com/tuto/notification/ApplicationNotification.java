@@ -14,14 +14,16 @@ public class ApplicationNotification extends Application {
 
         AdtagInitializer.getInstance()
                 .initContext(this)
-                .initUrlType(Url.UrlType.PROD)
-                .initUser("user", "pass")
-                .initCompany("company")
+                .initUrlType(Url.UrlType.PRE_PROD)
+                .initUser("Lvi_cbeacon", "RGVZChwWe3LNqwBTY7qa")
+                .initCompany("ccbeacondemo")
                 .synchronize();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             AdtagInitializer.getInstance().addPermissionToAsk(Manifest.permission.ACCESS_COARSE_LOCATION);
         }
+
+        AdtagInitializer.getInstance().initGroup("sdk-group-filter", "group-filter");
 
         AdtagBeaconManager beaconManager = AdtagBeaconManager.getInstance();
         beaconManager.registeNotificationTask(new AsyncNotificationTask());

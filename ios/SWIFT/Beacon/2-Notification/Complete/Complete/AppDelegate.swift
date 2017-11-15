@@ -19,9 +19,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         AdtagInitializer.shared.configPlatform(Platform.preProd)
-                               .configUser(login: "", password: "", company: "")
+                               .configUser(login: "Lvi_cbeacon", password: "RGVZChwWe3LNqwBTY7qa", company: "ccbeacondemo")
                                .synchronize()
 
+        AdtagInitializer.shared.initGroup(category: "sdk-group-filter", fieldName: "group-filter")
+        
         AdtagBeaconManager.shared.registerNotificationBuilder(MyBeaconNotificationBuilder())
         AdtagBeaconManager.shared.registerNotificationTask(AsyncNotificationTask())
 

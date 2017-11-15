@@ -13,5 +13,5 @@ target 'AlertStrategy' do
 
 	target 'AlertStrategyUITests' do
 		inherit! :search_paths
-	end
+    end
 end

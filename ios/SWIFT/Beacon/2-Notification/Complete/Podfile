@@ -1,18 +1,35 @@
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://forge.adtag.eu/pub/Specs'
+# source 'https://github.com/CocoaPods/Specs.git'
+# source 'https://forge.adtag.eu/pub/Specs'
+
+# platform :ios, '9.0'
+
+# target 'Complete' do
+#	use_frameworks!
+#    swift_version = "4.0"
+#    pod 'AdtagLocationBeacon', '~> 3.0-RC7' 
+
+#	target 'CompleteTests' do
+#		inherit! :search_paths
+#	end
+
+#	target 'CompleteUITests' do
+#		inherit! :search_paths
+#	 end
+# end
 
 platform :ios, '9.0'
 
 target 'Complete' do
-	use_frameworks!
-    swift_version = "4.0"
-    pod 'AdtagLocationBeacon', '~> 3.0-RC7' 
-
-	target 'CompleteTests' do
-		inherit! :search_paths
-	end
-
-	target 'CompleteUITests' do
-		inherit! :search_paths
-	 end
+    use_frameworks!
+	pod 'ConnectPlaceCommon', :path => '~/Desktop/ios-connectplace-common'
+	pod 'ConnectPlaceProvider', :path => '~/Desktop/ios-connectplace-provider'
+	pod 'ConnectPlaceBeaconDetection', :path => '~/Desktop/ios-connectplace-beacondetection'
+	pod 'ConnectPlaceActions', :path => '~/Desktop/ios-connectplace-actions'
+	pod 'AdtagConnection', :path => '~/Desktop/ios-atconnectionhttp'
+	pod 'AdtagAnalytics', :path => '~/Desktop/ios-atanalytics'
+	pod 'AdtagLocationBeacon', :path => '~/Desktop/ios-atlocationbeacon'
+	pod 'SQLite.swift', "0.11.4"
+	pod "PromiseKit"
+	pod "PromiseKit/Foundation"
+	pod 'Shimmer'
 end

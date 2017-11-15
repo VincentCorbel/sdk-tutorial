@@ -17,7 +17,7 @@ import com.connecthings.util.adtag.beacon.analytics.InAppActionRedirectHelper;
 
 
 public class ActivityMain extends AppCompatActivity implements InAppActionListener, View.OnClickListener {
-    private TextView tvBeaconAlert;
+    private TextView textViewInAppAction;
     private Button btnMore;
     private PlaceInAppAction currentPlaceInAppAction;
 
@@ -26,12 +26,23 @@ public class ActivityMain extends AppCompatActivity implements InAppActionListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvBeaconAlert = findViewById(R.id.tv_beacon_alert);
+        textViewInAppAction = findViewById(R.id.tv_beacon_alert);
         btnMore = findViewById(R.id.btn_more);
         btnMore.setOnClickListener(this);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         AdtagBeaconManager adtagBeaconManager = AdtagBeaconManager.getInstance();
         adtagBeaconManager.registerInAppActionListener(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AdtagBeaconManager adtagBeaconManager = AdtagBeaconManager.getInstance();
+        adtagBeaconManager.unregisterInAppActionListener();
     }
 
     @Override
@@ -46,18 +57,18 @@ public class ActivityMain extends AppCompatActivity implements InAppActionListen
     public boolean createInAppAction(PlaceInAppAction placeInAppAction, InAppActionStatusManagerListener inAppActionStatusManagerListener) {
         currentPlaceInAppAction = placeInAppAction;
         if (currentPlaceInAppAction.getAction().equals("popup")) {
-            tvBeaconAlert.setText(currentPlaceInAppAction.getTitle());
+            textViewInAppAction.setText(currentPlaceInAppAction.getTitle());
             btnMore.setVisibility(View.VISIBLE);
             return true;
         }
-        tvBeaconAlert.setText(getString(R.string.create_in_app_action_no_popup));
+        textViewInAppAction.setText(getString(R.string.create_in_app_action_no_popup));
         btnMore.setVisibility(View.GONE);
         return false;
     }
 
     @Override
     public boolean removeInAppAction(PlaceInAppAction placeInAppAction, InAppActionRemoveStatus inAppActionRemoveStatus) {
-        tvBeaconAlert.setText(getString(R.string.remove_in_app_action));
+        textViewInAppAction.setText(getString(R.string.remove_in_app_action));
         btnMore.setVisibility(View.GONE);
         return true;
     }
