@@ -26,9 +26,9 @@
     [super viewDidLoad];
     adtagInitializer = [AdtagInitializer shared];
     adtagScanProximityManager = [AdtagScanProximityManager shared];
-    qrCodeReader = [[AdtagQrCodeReader alloc] initWithController:self cancelLabel:@"Cancel QR CODE"];
+    qrCodeReader = [[AdtagQrCodeReader alloc] initWithController:self cancelLabel:@"Cancel"];
     nfcReader = [[AdtagNfcReader alloc] initWithMessage:@"Read NFC TAG"];
-    [_btnNfc setHidden:[NfcUtils isReadingNfcTagSupported]];
+    [_btnNfc setHidden:![NfcUtils isReadingNfcTagSupported]];
 }
 
 
