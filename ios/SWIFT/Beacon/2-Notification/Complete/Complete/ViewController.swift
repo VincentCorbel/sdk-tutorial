@@ -29,6 +29,11 @@ class ViewController: UIViewController, AdtagReceiveNotificationContentDelegate 
 
         AdtagBeaconManager.shared.registerReceiveNotificatonContentDelegate(self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

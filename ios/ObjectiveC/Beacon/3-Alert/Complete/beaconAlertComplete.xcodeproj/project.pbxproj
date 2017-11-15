@@ -17,6 +17,9 @@
 		14358D6A1CAA7B9500C302DE /* beaconAlertCompleteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14358D691CAA7B9500C302DE /* beaconAlertCompleteUITests.m */; };
 		14358D781CAA7C0900C302DE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14358D771CAA7C0900C302DE /* libsqlite3.0.tbd */; };
 		1497E6DE1CB7D93100DEB68F /* AlertViewControllerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497E6DD1CB7D93100DEB68F /* AlertViewControllerAction.m */; };
+		4385D2411FBAFF6C00734236 /* TimeConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385D2401FBAFF6C00734236 /* TimeConditions.swift */; };
+		4385D2431FBAFF8700734236 /* TimeConditionsParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385D2421FBAFF8700734236 /* TimeConditionsParameter.swift */; };
+		438D5D911FBC4114000369AA /* TimeConditionsFirstWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D5D901FBC4114000369AA /* TimeConditionsFirstWay.swift */; };
 		925F292E397D93D705059B91 /* Pods_beaconAlertCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE081D0FB69413DD2CA490A /* Pods_beaconAlertCompleteUITests.framework */; };
 		9853F58992A1847BAB9B116D /* Pods_beaconAlertCompleteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDCA9CFD90910BA0207FFB9 /* Pods_beaconAlertCompleteTests.framework */; };
 		DC1B2F85703A992F05A6C4E6 /* Pods_beaconAlertComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18647DDCB279707C208369CE /* Pods_beaconAlertComplete.framework */; };
@@ -62,6 +65,10 @@
 		18647DDCB279707C208369CE /* Pods_beaconAlertComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22534A33CA6C60415310E9CB /* Pods-beaconAlertCompleteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteTests/Pods-beaconAlertCompleteTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F5B3577E014688EFD9B236C /* Pods-beaconAlertComplete.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertComplete.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete.debug.xcconfig"; sourceTree = "<group>"; };
+		4385D23F1FBAFF6B00734236 /* beaconAlertComplete-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "beaconAlertComplete-Bridging-Header.h"; sourceTree = "<group>"; };
+		4385D2401FBAFF6C00734236 /* TimeConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConditions.swift; sourceTree = "<group>"; };
+		4385D2421FBAFF8700734236 /* TimeConditionsParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConditionsParameter.swift; sourceTree = "<group>"; };
+		438D5D901FBC4114000369AA /* TimeConditionsFirstWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConditionsFirstWay.swift; sourceTree = "<group>"; };
 		43A8A2777429490A59E719EA /* Pods-beaconAlertCompleteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertCompleteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertCompleteUITests/Pods-beaconAlertCompleteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4CE081D0FB69413DD2CA490A /* Pods_beaconAlertCompleteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beaconAlertCompleteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF425C2CCDE6C7708B44958 /* Pods-beaconAlertComplete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beaconAlertComplete.release.xcconfig"; path = "Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +150,10 @@
 				14358D481CAA7B9500C302DE /* AppDelegate.m */,
 				14358D4A1CAA7B9500C302DE /* ViewController.h */,
 				14358D4B1CAA7B9500C302DE /* ViewController.m */,
+				4385D2401FBAFF6C00734236 /* TimeConditions.swift */,
+				4385D2421FBAFF8700734236 /* TimeConditionsParameter.swift */,
+				438D5D901FBC4114000369AA /* TimeConditionsFirstWay.swift */,
+				4385D23F1FBAFF6B00734236 /* beaconAlertComplete-Bridging-Header.h */,
 				14358D4D1CAA7B9500C302DE /* Main.storyboard */,
 				14358D501CAA7B9500C302DE /* Assets.xcassets */,
 				14358D521CAA7B9500C302DE /* LaunchScreen.storyboard */,
@@ -266,6 +277,7 @@
 					14358D401CAA7B9500C302DE = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 3T67HE76NG;
+						LastSwiftMigration = 0910;
 					};
 					14358D591CAA7B9500C302DE = {
 						CreatedOnToolsVersion = 7.3;
@@ -413,14 +425,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-beaconAlertComplete/Pods-beaconAlertComplete-frameworks.sh",
-				"${PODS_ROOT}/AdtagAnalytics/AdtagAnalytics.framework",
-				"${PODS_ROOT}/AdtagConnection/AdtagConnection.framework",
-				"${PODS_ROOT}/AdtagLocationBeacon/AdtagLocationBeacon.framework",
+				"${BUILT_PRODUCTS_DIR}/AdtagAnalytics/AdtagAnalytics.framework",
+				"${BUILT_PRODUCTS_DIR}/AdtagConnection/AdtagConnection.framework",
+				"${BUILT_PRODUCTS_DIR}/AdtagLocationBeacon/AdtagLocationBeacon.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${PODS_ROOT}/ConnectPlaceActions/ConnectPlaceActions.framework",
-				"${PODS_ROOT}/ConnectPlaceBeaconDetection/ConnectPlaceBeaconDetection.framework",
-				"${PODS_ROOT}/ConnectPlaceCommon/ConnectPlaceCommon.framework",
-				"${PODS_ROOT}/ConnectPlaceProvider/ConnectPlaceProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceActions/ConnectPlaceActions.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceBeaconDetection/ConnectPlaceBeaconDetection.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceCommon/ConnectPlaceCommon.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceProvider/ConnectPlaceProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
@@ -497,8 +509,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4385D2411FBAFF6C00734236 /* TimeConditions.swift in Sources */,
 				14358D4C1CAA7B9500C302DE /* ViewController.m in Sources */,
 				14358D491CAA7B9500C302DE /* AppDelegate.m in Sources */,
+				4385D2431FBAFF8700734236 /* TimeConditionsParameter.swift in Sources */,
+				438D5D911FBC4114000369AA /* TimeConditionsFirstWay.swift in Sources */,
 				14358D461CAA7B9500C302DE /* main.m in Sources */,
 				1497E6DE1CB7D93100DEB68F /* AlertViewControllerAction.m in Sources */,
 			);
@@ -645,16 +660,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3T67HE76NG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/beaconAlertComplete",
 				);
 				INFOPLIST_FILE = beaconAlertComplete/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertComplete;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "beaconAlertComplete/beaconAlertComplete-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -664,16 +682,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3T67HE76NG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/beaconAlertComplete",
 				);
 				INFOPLIST_FILE = beaconAlertComplete/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertComplete;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "beaconAlertComplete/beaconAlertComplete-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -681,6 +701,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B9BBDDCE21D3DAD1098737F6 /* Pods-beaconAlertCompleteTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = beaconAlertCompleteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -694,6 +715,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 22534A33CA6C60415310E9CB /* Pods-beaconAlertCompleteTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = beaconAlertCompleteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -707,6 +729,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D6C7D5C70CB34A5E42E93C7B /* Pods-beaconAlertCompleteUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = beaconAlertCompleteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertCompleteUITests;
@@ -719,6 +742,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 43A8A2777429490A59E719EA /* Pods-beaconAlertCompleteUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = beaconAlertCompleteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.connecthings.beaconAlertCompleteUITests;

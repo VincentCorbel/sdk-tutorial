@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%s", [currentPlaceInAppAction getTitle]);
     self.txtdescription.text = [currentPlaceInAppAction getDescription];
 }
 

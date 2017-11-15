@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>This is my message, for beacon detection </string>
+    <string>To detect beacon on foreground and background</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>To detect beacon on foreground and background</string>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string>this is my message, for beacon detection</string>
+    <string>To detect beacon on foreground</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
