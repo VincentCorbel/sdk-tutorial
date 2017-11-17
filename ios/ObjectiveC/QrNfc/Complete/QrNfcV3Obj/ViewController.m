@@ -12,6 +12,7 @@
 @interface ViewController ()
     @property (weak, nonatomic) IBOutlet UITextView *textViewContent;
     @property (weak, nonatomic) IBOutlet UIButton *btnNfc;
+@property (weak, nonatomic) IBOutlet UIButton *btnQrCode;
 
 @end
 
@@ -29,6 +30,7 @@
     qrCodeReader = [[AdtagQrCodeReader alloc] initWithController:self cancelLabel:@"Cancel"];
     nfcReader = [[AdtagNfcReader alloc] initWithMessage:@"Read NFC TAG"];
     [_btnNfc setHidden:![NfcUtils isReadingNfcTagSupported]];
+    [_btnQrCode setHidden:![qrCodeReader isCameraAccessDenied]];
 }
 
 

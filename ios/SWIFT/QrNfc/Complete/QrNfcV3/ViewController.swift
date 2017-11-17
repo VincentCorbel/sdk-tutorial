@@ -15,7 +15,8 @@ import AVFoundation
 class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityErrorDelegate {
     @IBOutlet weak var tvContentError: UITextView!
     @IBOutlet weak var btnNfcReader: UIButton!
-
+    @IBOutlet weak var btnQrCode: UIButton!
+    
     let adtagInitializer: AdtagInitializer = AdtagInitializer.shared
     let adtagScanProximityManager: AdtagScanProximityManager = AdtagScanProximityManager.shared
     var adtagQrCodeReader: AdtagQrCodeReader?
@@ -27,6 +28,7 @@ class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityErr
         adtagQrCodeReader?.readerVC
         adtagNfcReader = AdtagNfcReader(message: "Read NFC TAG")
         btnNfcReader.isHidden = !NfcUtils.isReadingNfcTagSupported()
+        btnQrCode.isHidden = adtagQrCodeReader?.isCameraAccessDenied()
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -11,6 +11,7 @@
 @interface ViewController ()
     @property (weak, nonatomic) IBOutlet UITextView *textViewContent;
     @property (weak, nonatomic) IBOutlet UIButton *btnNfc;
+    @property (weak, nonatomic) IBOutlet UIButton *btnQrCode;
 
 @end
 

@@ -12,7 +12,8 @@ import AVFoundation
 class ViewController: UIViewController {
     @IBOutlet weak var tvContentError: UITextView!
     @IBOutlet weak var btnNfcReader: UIButton!
-
+    @IBOutlet weak var btnQrCode: UIButton!
+    
 
 
     override func viewDidLoad() {

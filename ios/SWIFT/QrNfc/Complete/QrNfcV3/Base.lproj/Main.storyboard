@@ -47,6 +47,7 @@
                     </view>
                     <connections>
                         <outlet property="btnNfcReader" destination="ThB-Z9-Qei" id="21B-D5-gpj"/>
+                        <outlet property="btnQrCode" destination="SHU-EC-2tS" id="jD4-zY-sRf"/>
                         <outlet property="tvContentError" destination="0Tz-pb-4QC" id="LtH-7u-391"/>
                     </connections>
                 </viewController>
