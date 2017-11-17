@@ -30,7 +30,7 @@
     qrCodeReader = [[AdtagQrCodeReader alloc] initWithController:self cancelLabel:@"Cancel"];
     nfcReader = [[AdtagNfcReader alloc] initWithMessage:@"Read NFC TAG"];
     [_btnNfc setHidden:![NfcUtils isReadingNfcTagSupported]];
-    [_btnQrCode setHidden:![qrCodeReader isCameraAccessDenied]];
+    [_btnQrCode setHidden:[qrCodeReader isCameraAccessDenied]];
 }
 
 

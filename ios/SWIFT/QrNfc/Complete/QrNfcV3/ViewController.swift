@@ -28,7 +28,7 @@ class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityErr
         adtagQrCodeReader?.readerVC
         adtagNfcReader = AdtagNfcReader(message: "Read NFC TAG")
         btnNfcReader.isHidden = !NfcUtils.isReadingNfcTagSupported()
-        btnQrCode.isHidden = adtagQrCodeReader?.isCameraAccessDenied()
+        btnQrCode.isHidden = adtagQrCodeReader!.isCameraAccessDenied()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +62,7 @@ class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityErr
 
     func onScanProximityContent(placeInAppAction: AdtagPlaceInAppAction?) {
         if let placeInAppAction = placeInAppAction {
-            tvContentError.text = "\(placeInAppAction.adtagContent!.getValue(categoryName: "Name", fieldName: "Nom"))\n\(placeInAppAction.getDescription())"
+            tvContentError.text = placeInAppAction.adtagContent!.getValue(categoryName: "Name", fieldName: "Nom")
         } else {
             tvContentError.text = "No content associated to the tag"
         }
