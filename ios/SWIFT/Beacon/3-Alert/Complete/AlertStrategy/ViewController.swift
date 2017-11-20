@@ -14,7 +14,7 @@ import AdtagLocationBeacon
 
 class ViewController: UIViewController, AdtagInAppActionDelegate {
     @IBOutlet weak var txtAlertMessage: UILabel!
-    @IBOutlet weak var actionTxt: UILabel!
+    @IBOutlet weak var buttonInAppAction: UIButton!
     
     var currentPlaceInAppAction: PlaceInAppAction!
   
@@ -34,9 +34,10 @@ class ViewController: UIViewController, AdtagInAppActionDelegate {
     
     func createInAppAction(_ placeInAppAction: AdtagPlaceInAppAction, statusManager: InAppActionStatusManagerDelegate) -> Bool {
         if ("popup" == placeInAppAction.getAction()) {
-            actionTxt.text = "Well done! now you have created your alert action"
+            print("Well done! now you have created your alert action")
             self.txtAlertMessage.text = placeInAppAction.getTitle()
             txtAlertMessage.setNeedsDisplay()
+            buttonInAppAction.isHidden = false
             currentPlaceInAppAction = placeInAppAction
             return true
         }
@@ -46,9 +47,18 @@ class ViewController: UIViewController, AdtagInAppActionDelegate {
     }
     
     func removeInAppAction(_ placeInAppAction: AdtagPlaceInAppAction, inAppActionRemoveStatus: InAppActionRemoveStatus) -> Bool {
-        actionTxt.text = "Well done! now you have removed your alert action"
-        self.txtAlertMessage.text = "Remove beacon alert action"
+        print("Well done! now you have removed your alert action")
+        buttonInAppAction.isHidden = true
+        txtAlertMessage.text = "Remove beacon alert action"
         txtAlertMessage.setNeedsDisplay()
         return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let alertViewController = segue.destination as? AlertViewControllerAction {
+            if let currentAdtagPlaceInAppAction = currentPlaceInAppAction as? AdtagPlaceInAppAction {
+                alertViewController.currentPlaceInAppAction = currentAdtagPlaceInAppAction
+            }
+        }
     }
 }

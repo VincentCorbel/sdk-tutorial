@@ -7,13 +7,9 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
 import com.connecthings.adtag.AdtagInitializer;
 import com.connecthings.connectplace.common.content.detection.InProximityInForeground;
 import com.connecthings.connectplace.common.utils.error.ProximityErrorListener;
-
-import com.connecthings.connectplace.common.content.detection.InProximityInForeground;
-
 import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
 import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
 
@@ -56,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
         if(list.size() > 0){
             findViewById(R.id.tv_beacon_next_step).setVisibility(View.VISIBLE);
         }
-        //update the beaconList when beaconContents update
+        // Update the beaconList when beaconContents update
         if(previousList == null || previousList.size() != list.size() || !list.containsAll(previousList)){
             beaconArrayAdapter.setList(list);
         }

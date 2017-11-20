@@ -12,7 +12,7 @@ import ConnectPlaceActions
 import AdtagConnection
 import AdtagLocationBeacon
 
-class ViewController: UIViewController, AdtagReceiveNotificationContentDelegate {
+class ViewController: UIViewController, AdtagReceiveNotificationContentDelegate, AdtagInProximityInForegroundDelegate {
     @IBOutlet weak var labelBeacon: UILabel!
 
     override func viewDidLoad() {
@@ -26,13 +26,24 @@ class ViewController: UIViewController, AdtagReceiveNotificationContentDelegate 
                 }
             }
         }
-
+        
         AdtagBeaconManager.shared.registerReceiveNotificatonContentDelegate(self)
+    }
+    
+    func proximityContentsInForeground(contents: [AdtagPlaceInAppAction]) {
+        for placeInAppAction in contents {
+            print("placeInAppAction: \(placeInAppAction)")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        AdtagBeaconManager.shared.registerInProximityInForeground(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AdtagBeaconManager.shared.unregisterInProximityInForeground(self)
     }
 
     override func didReceiveMemoryWarning() {
