@@ -10,7 +10,7 @@
 @import AdtagConnection;
 @import AdtagLocationBeacon;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+@interface AppDelegate : UIResponder <UIApplicationDelegate, AdtagReceiveNotificationContentDelegate> {
 }
 
 @property (strong, nonatomic) UIWindow *window;

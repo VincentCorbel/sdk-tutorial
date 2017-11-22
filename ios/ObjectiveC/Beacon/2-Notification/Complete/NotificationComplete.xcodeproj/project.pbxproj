@@ -23,6 +23,7 @@
 		4384A2941FA367FA00C3A0BD /* AsyncNotificationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4384A2931FA367FA00C3A0BD /* AsyncNotificationTask.m */; };
 		7AE06484DB12328B84BEB3C4 /* Pods_NotificationCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB61B1D27208B21630A5D7 /* Pods_NotificationCompleteUITests.framework */; };
 		7C86C85B1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C86C85A1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m */; };
+		A81CC7D61FC5B017002610D5 /* MyNotificationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A81CC7D51FC5B017002610D5 /* MyNotificationDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		7C86C8591E37B76F008C6A33 /* MyBeaconNotificationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBeaconNotificationBuilder.h; sourceTree = "<group>"; };
 		7C86C85A1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBeaconNotificationBuilder.m; sourceTree = "<group>"; };
 		8CCCEDAD1A3A77BC599A0961 /* Pods-NotificationCompleteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationCompleteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationCompleteTests/Pods-NotificationCompleteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A81CC7D41FC5B017002610D5 /* MyNotificationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNotificationDelegate.h; sourceTree = "<group>"; };
+		A81CC7D51FC5B017002610D5 /* MyNotificationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNotificationDelegate.m; sourceTree = "<group>"; };
 		E9816C194C9F035617844AC4 /* Pods-NotificationComplete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationComplete.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationComplete/Pods-NotificationComplete.release.xcconfig"; sourceTree = "<group>"; };
 		ED0FC898FA8E83F0D9A2DF17 /* Pods-NotificationCompleteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationCompleteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationCompleteTests/Pods-NotificationCompleteTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +135,8 @@
 		14E45A8E1CA1B79500639B81 /* NotificationComplete */ = {
 			isa = PBXGroup;
 			children = (
+				A81CC7D41FC5B017002610D5 /* MyNotificationDelegate.h */,
+				A81CC7D51FC5B017002610D5 /* MyNotificationDelegate.m */,
 				14E45A921CA1B79500639B81 /* AppDelegate.h */,
 				14E45A931CA1B79500639B81 /* AppDelegate.m */,
 				4384A2921FA367E600C3A0BD /* AsyncNotificationTask.h */,
@@ -404,7 +409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		474A8CBF68C7658F58EBCC30 /* [CP] Check Pods Manifest.lock */ = {
@@ -422,7 +427,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		830F333123F3EA62FEE4714D /* [CP] Check Pods Manifest.lock */ = {
@@ -440,7 +445,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A1D0A9CDE4724C24E8B573DC /* [CP] Copy Pods Resources */ = {
@@ -515,6 +520,7 @@
 				14E45A971CA1B79500639B81 /* ViewControllerBeacon.m in Sources */,
 				14E45A941CA1B79500639B81 /* AppDelegate.m in Sources */,
 				14E45A911CA1B79500639B81 /* main.m in Sources */,
+				A81CC7D61FC5B017002610D5 /* MyNotificationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

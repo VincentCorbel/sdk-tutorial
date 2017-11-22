@@ -11,7 +11,7 @@
 @import AdtagLocationBeacon;
 @import AdtagConnection;
 
-@interface ViewControllerBeacon : UIViewController <AdtagReceiveNotificationContentDelegate> {
+@interface ViewControllerBeacon : UIViewController {
 }
 
 @property (nonatomic, assign) IBOutlet UILabel *txtMessage;

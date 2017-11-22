@@ -21,18 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.txtMessage.text = NSLocalizedString(@"beacon_content_empty", @"");
-   
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
-                              completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                                  if (!error) {
-                                      NSLog(@"request authorization succeeded!");
-                                  }
-                              }];
-    }
-    
-    [[AdtagBeaconManager shared] registerReceiveNotificatonContentDelegate:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(remoteNotificationReceived:) name:@"placeNotification"
+                                               object:nil];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -43,15 +35,8 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)didReceivePlaceNotification:(AdtagPlaceNotification * _Nonnull)placeNotification {
-    [self remoteNotificationReceived:placeNotification];
-}
-
-- (void)didReceiveWelcomeNotification:(AdtagPlaceWelcomeNotification * _Nonnull)welcomeNotification {
-    [self remoteNotificationReceived:welcomeNotification];
-}
-
-- (void) remoteNotificationReceived:(id<PlaceNotification> _Nonnull) placeNotification {
+- (void) remoteNotificationReceived:(NSNotification *)notification {
+    id<PlaceNotification> placeNotification = (id<PlaceNotification> _Nonnull) [notification.userInfo objectForKey:@"placeNotification"];
     self.txtMessage.text = [placeNotification getTitle];
     [self.txtMessage setNeedsDisplay];
  }
