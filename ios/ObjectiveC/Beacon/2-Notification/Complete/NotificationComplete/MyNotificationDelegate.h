@@ -12,6 +12,6 @@
 
 @interface MyNotificationDelegate : NSObject <UNUserNotificationCenterDelegate>
 
--(id) initWithAdtagManager: (AdtagBeaconManager *) _adtagBeaconManager;
+-(id) initWithAdtagManager: (AdtagBeaconManager *) adtagBeaconManager;
 
 @end
