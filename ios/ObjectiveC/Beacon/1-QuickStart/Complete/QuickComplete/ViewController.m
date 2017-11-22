@@ -29,15 +29,15 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void) viewDidAppear:(BOOL)animated{
+- (void) viewWillAppear:(BOOL)animated{
     // Register Range Delegate protocol to your view
     [beaconManager registerInProximityInForeground:self];
     [adtagInitializer registerProximityErrorDelegate:self];
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
 }
 
-- (void) viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [beaconManager unregisterInProximityInForeground:self];
     [adtagInitializer unregisterProximityErrorDelegate:self];
     //[beaconManager registerAdtagRangeDelegate:nil];
