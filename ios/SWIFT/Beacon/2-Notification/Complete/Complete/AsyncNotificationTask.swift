@@ -2,7 +2,7 @@
 //  AsyncNotificationTask.swift
 //  Complete
 //
-//  Created by Ludovic Vimont on 27/10/2017.
+//  Created by Connecthings on 27/10/2017.
 //  Copyright © 2017 R&D connecthings. All rights reserved.
 //
 
