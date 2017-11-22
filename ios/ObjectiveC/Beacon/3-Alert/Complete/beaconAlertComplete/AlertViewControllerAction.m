@@ -20,8 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%s", [currentPlaceInAppAction getTitle]);
+    NSLog(@"%@", [currentPlaceInAppAction getTitle]);
     self.txtdescription.text = [currentPlaceInAppAction getDescription];
+    [[AdtagBeaconManager shared] redirectWithPlaceInAppAction:currentPlaceInAppAction from:@"AlertViewControllerAction"];
 }
 
 - (void)didReceiveMemoryWarning {

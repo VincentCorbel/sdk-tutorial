@@ -19,6 +19,7 @@
 		43853BFA1FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43853BF91FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift */; };
 		43853BFE1FB9F120002B21C9 /* TimeConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43853BFD1FB9F120002B21C9 /* TimeConditions.swift */; };
 		43853C001FB9F9D2002B21C9 /* TimeConditionsParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43853BFF1FB9F9D2002B21C9 /* TimeConditionsParameter.swift */; };
+		4395F4C21FC30BF500CDBD32 /* AlertViewControllerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395F4C11FC30BF500CDBD32 /* AlertViewControllerAction.swift */; };
 		946BDBBB1FC20C275D7E90FE /* Pods_AlertStrategyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F3EA34D43644C38C53140E /* Pods_AlertStrategyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		43853BF91FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConditionsFirstWay.swift; sourceTree = "<group>"; };
 		43853BFD1FB9F120002B21C9 /* TimeConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConditions.swift; sourceTree = "<group>"; };
 		43853BFF1FB9F9D2002B21C9 /* TimeConditionsParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConditionsParameter.swift; sourceTree = "<group>"; };
+		4395F4C11FC30BF500CDBD32 /* AlertViewControllerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewControllerAction.swift; sourceTree = "<group>"; };
 		48E5990880B517636D05D5D4 /* Pods-AlertStrategyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertStrategyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlertStrategyTests/Pods-AlertStrategyTests.release.xcconfig"; sourceTree = "<group>"; };
 		59F3ED67ED789E10A69F9D98 /* Pods_AlertStrategy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlertStrategy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F3EA34D43644C38C53140E /* Pods_AlertStrategyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlertStrategyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				142B36CF1D5CA1090026B352 /* AppDelegate.swift */,
+				4395F4C11FC30BF500CDBD32 /* AlertViewControllerAction.swift */,
 				142B36D11D5CA1090026B352 /* ViewController.swift */,
 				43853BF91FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift */,
 				43853BFD1FB9F120002B21C9 /* TimeConditions.swift */,
@@ -489,6 +492,7 @@
 				142B36D21D5CA1090026B352 /* ViewController.swift in Sources */,
 				43853BFA1FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift in Sources */,
 				43853C001FB9F9D2002B21C9 /* TimeConditionsParameter.swift in Sources */,
+				4395F4C21FC30BF500CDBD32 /* AlertViewControllerAction.swift in Sources */,
 				142B36D01D5CA1090026B352 /* AppDelegate.swift in Sources */,
 				43853BFE1FB9F120002B21C9 /* TimeConditions.swift in Sources */,
 			);

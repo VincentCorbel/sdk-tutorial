@@ -9,6 +9,7 @@
 import Foundation
 import UserNotifications
 import ConnectPlaceActions
+import AdtagConnection
 import AdtagLocationBeacon
 
 class MyBeaconNotificationBuilder: NSObject, NotificationBuilder {
