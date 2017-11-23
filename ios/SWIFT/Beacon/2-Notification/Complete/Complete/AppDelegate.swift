@@ -32,11 +32,12 @@ class AppDelegate: NSObject, UIApplicationDelegate, AdtagReceiveNotificationCont
         adtagBeaconManager?.registerReceiveNotificatonContentDelegate(self)
         adtagBeaconManager?.registerNotificationBuilder(MyBeaconNotificationBuilder())
         adtagBeaconManager?.registerNotificationTask(AsyncNotificationTask())
-        //Registering a builder for your welcomeNotification
+        //To register a builder and a task for a welcomeNotification
         //adtagBeaconManager?.registerEnterWelcomeNotificationBuilder(MyBeaconNotificationBuilder());
+        //adtagBeaconManager?.registerEnterWelcomeNotificationTask(AsyncNotificationTask())
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
-            //The request can be done as well in a viewController which allows to display a message if the user refuse the receive notifications
+            //The request can be done as well in a viewController which allows to display a message if the user refuse to receive notifications
             center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
                 if (error == nil) {
                     NSLog("request authorization succeeded!");

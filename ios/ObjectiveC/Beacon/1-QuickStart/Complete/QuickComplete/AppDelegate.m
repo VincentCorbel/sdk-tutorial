@@ -36,7 +36,7 @@
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
     } else {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        //The request can be done as well in a viewController which allows to display a message if the user refuse the receive notifications
+        //The request can be done as well in a viewController which allows to display a message if the user refuse to receive notifications
         [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
                               completionHandler:^(BOOL granted, NSError * _Nullable error) {
                                   if (!error) {
