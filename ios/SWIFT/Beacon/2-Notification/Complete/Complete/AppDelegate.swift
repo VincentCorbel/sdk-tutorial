@@ -24,7 +24,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, AdtagReceiveNotificationCont
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         adtagInitializer = AdtagInitializer.shared
         adtagInitializer?.configPlatform(Platform.preProd)
-                               .configUser(login: "Lvi_cbeacon", password: "RGVZChwWe3LNqwBTY7qa", company: "ccbeacondemo")
+                               .configUser(login: "__LOGIN__", password: "__PASSORD__", company: "__COMPANY__")
                                .synchronize()
 
         //AdtagInitializer.shared.initGroup(category: "sdk-group-filter", fieldName: "group-filter")
@@ -32,7 +32,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, AdtagReceiveNotificationCont
         adtagBeaconManager?.registerReceiveNotificatonContentDelegate(self)
         adtagBeaconManager?.registerNotificationBuilder(MyBeaconNotificationBuilder())
         adtagBeaconManager?.registerNotificationTask(AsyncNotificationTask())
-
+        //Registering a builder for your welcomeNotification
+        //adtagBeaconManager?.registerEnterWelcomeNotificationBuilder(MyBeaconNotificationBuilder());
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             //The request can be done as well in a viewController which allows to display a message if the user refuse the receive notifications
