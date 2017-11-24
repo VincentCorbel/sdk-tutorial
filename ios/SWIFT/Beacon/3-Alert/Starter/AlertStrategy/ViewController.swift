@@ -13,7 +13,7 @@ import AdtagConnection
 import AdtagLocationBeacon
 import ConnectPlaceCommon
 
-class ViewController: UIViewController, AdtagInAppActionDelegate {
+class ViewController: UIViewController {
     @IBOutlet weak var txtAlertMessage: UILabel!
     @IBOutlet weak var buttonInAppAction: UIButton!
     
