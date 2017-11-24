@@ -23,6 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                                .synchronize()
 
         AdtagBeaconManager.shared.addInAppActionConditions(TimeConditions(maxTimeBeforeReset: 60, delayBeforeCreation: 60))
+        //AdtagBeaconManager.shared.addInAppActionConditions(TimeConditionsFirstWay())
         return true
     }
     

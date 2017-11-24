@@ -10,15 +10,15 @@ import Foundation
 import ConnectPlaceCommon
 import ConnectPlaceActions
 
-@objc public class TimeConditionsFirstWay: NSObject, InAppActionConditions {
-    var maxTimeBeforeReset: Double
-    var timeProvider: TimeProvider
-    var delayBeforeCreation: Double
-    
-    public init(maxTimeBeforeReset: Double = 60, delayBeforeCreation: Int) {
+public class TimeConditionsFirstWay: InAppActionConditions, InAppActionConditionsUpdater {
+    let maxTimeBeforeReset: Double
+    let timeProvider: TimeProvider
+    let delayBeforeCreation: Double
+
+    public init(maxTimeBeforeReset: Double = 60, delayBeforeCreation: Double = 60) {
         self.maxTimeBeforeReset = maxTimeBeforeReset
+        self.delayBeforeCreation = delayBeforeCreation
         self.timeProvider = TimeProviderAbsolute()
-        self.delayBeforeCreation = (Double(delayBeforeCreation) / 1000.0)
     }
     
     public func getApplicationNamespace() -> String {
@@ -26,7 +26,7 @@ import ConnectPlaceActions
     }
     
     public func getConditionsKey() -> String {
-        return "timeConditionsFirstWay"
+        return "inAppActionTimeConditions"
     }
     
     public func getInAppActionParameterClass() -> String {
@@ -34,28 +34,50 @@ import ConnectPlaceActions
     }
     
     public func updateInAppActionConditionsParameter(_ conditionsParameter: InAppActionConditionsParameter) {
+        updateLastDetectionTime(conditionsParameter)
+        conditionsParameter.isConditionValid = isConditionValid(conditionsParameter)
+        conditionsParameter.inAppActionStatus = updateInAppActionStatus(conditionsParameter)
+        conditionsParameter.isReadyForAction = isReadyForAction(conditionsParameter)
+        conditionsParameter.maxTimeBeforeActionDoneReset = updateMaxTimeBeforeActionDoneReset(conditionsParameter)
+    }
+
+    public func updateLastDetectionTime(_ conditionsParameter: InAppActionConditionsParameter) {
         if let strategyParameter = conditionsParameter as? TimeConditionsParameter {
-            let currentTime: Double = CFAbsoluteTimeGetCurrent()
+            let currentTime: Double = timeProvider.getTime()
             if strategyParameter.lastDetectionTime + 3 < currentTime {
                 GlobalLogger.shared.debug("delay before creating " , delayBeforeCreation)
                 strategyParameter.timeToShowAlert = currentTime + delayBeforeCreation
             }
             strategyParameter.lastDetectionTime = currentTime + 0
         }
+    }
+
+    public func isConditionValid(_ conditionsParameter: InAppActionConditionsParameter) -> Bool {
         if let strategyParameter = conditionsParameter as? TimeConditionsParameter {
-            conditionsParameter.isConditionValid = strategyParameter.timeToShowAlert < CFAbsoluteTimeGetCurrent ()
+            GlobalLogger.shared.debug("remaining time ",(timeProvider.getTime() - strategyParameter.timeToShowAlert))
+            return strategyParameter.timeToShowAlert < timeProvider.getTime()
         } else {
-            conditionsParameter.isConditionValid = true
+            return true
         }
+    }
+
+    public func isReadyForAction(_ conditionsParameter: InAppActionConditionsParameter) -> Bool {
+       return conditionsParameter.inAppActionStatus == InAppActionStatus.WAITING_FOR_ACTION
+            && conditionsParameter.isConditionValid
+    }
+
+    public func updateMaxTimeBeforeActionDoneReset(_ conditionsParameter: InAppActionConditionsParameter) -> Double {
+        return timeProvider.getTime() + maxTimeBeforeReset
+    }
+
+    public func updateInAppActionStatus(_ conditionsParameter: InAppActionConditionsParameter) -> InAppActionStatus {
         if conditionsParameter.inAppActionStatus == InAppActionStatus.DONE {
             if !conditionsParameter.isConditionValid
                 || conditionsParameter.maxTimeBeforeActionDoneReset < timeProvider.getTime() {
-                conditionsParameter.inAppActionStatus = InAppActionStatus.WAITING_FOR_ACTION
+                return InAppActionStatus.WAITING_FOR_ACTION
             }
         }
-        conditionsParameter.isReadyForAction = conditionsParameter.inAppActionStatus == InAppActionStatus.WAITING_FOR_ACTION
-            && conditionsParameter.isConditionValid
-        conditionsParameter.maxTimeBeforeActionDoneReset = timeProvider.getTime() + maxTimeBeforeReset
+        return conditionsParameter.inAppActionStatus
     }
 }
 
