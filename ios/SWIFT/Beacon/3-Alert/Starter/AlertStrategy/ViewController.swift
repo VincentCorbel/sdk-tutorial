@@ -7,33 +7,37 @@
 //
 
 import UIKit
-import ATAnalytics
-import ATLocationBeacon
+import ConnectPlaceActions
+import AdtagAnalytics
+import AdtagConnection
+import AdtagLocationBeacon
+import ConnectPlaceCommon
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var txtAlertMessage: UILabel!
- 
-    @IBOutlet weak var actionTxt: UILabel!
-    var currentAlertBeaconContent: ATBeaconContent!
+    @IBOutlet weak var buttonInAppAction: UIButton!
+    
+    var currentPlaceInAppAction: PlaceInAppAction!
   
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-   
-        // Do any additional setup after loading the view, typically from a nib.
+        AdtagBeaconManager.shared.registerInAppActionDelegate(self)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewDidAppear(animated);
+        AdtagBeaconManager.shared.unregisterInAppActionDelegate()
     }
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
-    
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let alertViewController = segue.destination as? AlertViewControllerAction {
+            if let currentAdtagPlaceInAppAction = currentPlaceInAppAction as? AdtagPlaceInAppAction {
+                alertViewController.currentPlaceInAppAction = currentAdtagPlaceInAppAction
+            }
+        }
+    }
 }
-
