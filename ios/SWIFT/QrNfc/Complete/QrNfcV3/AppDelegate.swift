@@ -10,15 +10,13 @@ import UIKit
 import AdtagConnection
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
         AdtagInitializer.shared.configPlatform(Platform.preProd)
-                                .configUser(login: "__LOGIN__", password: "__PSWD__", company: "__COMPANY__")
+                                .configUser(login: "", password: "", company: "")
                                 .synchronize()
         return true
     }
@@ -44,7 +42,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-
