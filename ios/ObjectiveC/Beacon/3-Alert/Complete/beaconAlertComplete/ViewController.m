@@ -54,7 +54,7 @@
 
 - (BOOL)removeInAppAction:(AdtagPlaceInAppAction * _Nonnull)placeInAppAction inAppActionRemoveStatus:(enum InAppActionRemoveStatus)inAppActionRemoveStatus {
     _buttonAlert.hidden= true;
-    _txtAlertMessage.text = @"Remove beacon alert action";
+    _txtAlertMessage.text = @"The In-App Action has been removed";
     [_txtAlertMessage setNeedsDisplay];
     return YES;
 }

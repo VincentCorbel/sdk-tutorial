@@ -8,13 +8,14 @@
 
 import Foundation
 import ConnectPlaceActions
+import ConnectPlaceCommon
 
 public class TimeConditions: InAppActionConditionsDefault {
-    var delayBeforeCreation: Double!
+    @objc let delayBeforeCreation: Double
     
-    public init(maxTimeBeforeReset: Double, delayBeforeCreation: Int) {
+    public init(maxTimeBeforeReset: Double, delayBeforeCreation: Double) {
+        self.delayBeforeCreation = delayBeforeCreation
         super.init(maxTimeBeforeReset: maxTimeBeforeReset)
-        self.delayBeforeCreation = (Double(delayBeforeCreation) / 1000.0)
     }
     
     public override func getApplicationNamespace() -> String {
@@ -33,7 +34,7 @@ public class TimeConditions: InAppActionConditionsDefault {
         if let strategyParameter = conditionsParameter as? TimeConditionsParameter {
             let currentTime: Double = CFAbsoluteTimeGetCurrent()
             if strategyParameter.lastDetectionTime + 3 < currentTime {
-                print("delay before creating " , delayBeforeCreation)
+                GlobalLogger.shared.debug("delay before creating " , delayBeforeCreation)
                 strategyParameter.timeToShowAlert = currentTime + delayBeforeCreation
             }
             strategyParameter.lastDetectionTime = currentTime + 0
@@ -43,7 +44,8 @@ public class TimeConditions: InAppActionConditionsDefault {
     
     public override func isConditionValid(_ conditionsParameter: InAppActionConditionsParameter) -> Bool {
         if let strategyParameter = conditionsParameter as? TimeConditionsParameter {
-            return strategyParameter.timeToShowAlert < CFAbsoluteTimeGetCurrent ()
+            GlobalLogger.shared.debug("delay remaining " , ( CFAbsoluteTimeGetCurrent() - strategyParameter.timeToShowAlert))
+            return strategyParameter.timeToShowAlert < CFAbsoluteTimeGetCurrent()
         }
         return true
     }
