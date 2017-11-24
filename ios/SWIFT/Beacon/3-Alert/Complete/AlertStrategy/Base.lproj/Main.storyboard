@@ -21,14 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Waiting for beacons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3s7-5H-Enm">
-                                <rect key="frame" x="20" y="110" width="375" height="85"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Waiting for actions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3s7-5H-Enm">
+                                <rect key="frame" x="20" y="110" width="319" height="85"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJd-u8-W1d">
-                                <rect key="frame" x="20" y="255" width="375" height="39"/>
+                                <rect key="frame" x="20" y="255" width="328" height="39"/>
                                 <state key="normal" title="Click here to get more informations &gt;"/>
                                 <connections>
                                     <segue destination="cHz-lL-1lg" kind="show" identifier="alert" id="Ph9-ms-nYF">
@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn5-94-r1u" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="447"/>
+            <point key="canvasLocation" x="1412" y="446.62668665667172"/>
         </scene>
         <!--Alert View Controller Action-->
         <scene sceneID="ahW-QD-BlE">

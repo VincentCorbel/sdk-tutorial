@@ -59,4 +59,9 @@
     return YES;
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    AlertViewControllerAction *alertViewController = (AlertViewControllerAction *) segue.destinationViewController;
+    alertViewController.currentPlaceInAppAction = currentPlaceInAppAction;
+}
+
 @end
