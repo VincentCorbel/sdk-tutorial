@@ -7,14 +7,16 @@ import com.connecthings.adtag.AdtagInitializer;
 import com.connecthings.util.connection.Url;
 
 public class ApplicationQuickStart extends Application {
-    public void onCreate(){
+    public void onCreate() {
         super.onCreate();
-        AdtagInitializer adtagInitializer = AdtagInitializer.getInstance().initContext(this).initUrlType(Url.UrlType.PRE_PROD)
-                .initUser("", "").initCompany("");
+
+        AdtagInitializer adtagInitializer = AdtagInitializer.getInstance()
+                .initContext(this)
+                .initUrlType(Url.UrlType.PROD)
+                .initUser("__USER__", "__PASSWORD__")
+                .initCompany("__COMPANY__");
+
         adtagInitializer.synchronize();
-
-
         adtagInitializer.addPermissionToAsk(Manifest.permission.ACCESS_COARSE_LOCATION);
     }
-
 }

@@ -15,13 +15,13 @@
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate 
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     AdtagInitializer *adtagInitializer = [AdtagInitializer shared];
     [[[adtagInitializer configPlatform: AdtagPlatform.preProd]
-      configUserWithLogin:@"__LOGIN__" password:@"__PSWD__" company:@"__COMPANY__"] synchronize];
+      configUserWithLogin:@"" password:@"" company:@""] synchronize];
     // Override point for customization after application launch.
     return YES;
 }

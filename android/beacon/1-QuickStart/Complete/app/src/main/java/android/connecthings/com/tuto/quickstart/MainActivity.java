@@ -28,19 +28,19 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         adtagBeaconManager = AdtagBeaconManager.getInstance();
-        tvBeaconNumber = (TextView) findViewById(R.id.tv_beacon_number);
+        tvBeaconNumber = findViewById(R.id.tv_beacon_number);
 
         beaconArrayAdapter = new BeaconArrayAdapter(this);
         ((ListView) findViewById(R.id.list_beacons)).setAdapter(beaconArrayAdapter);
     }
 
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         adtagBeaconManager.registerInProximityInForeground(this);
         AdtagInitializer.getInstance().registerProximityErrorListener(this);
     }
 
-    protected  void onPause() {
+    protected void onPause() {
         adtagBeaconManager.unregisterInProximityInForeground(this);
         AdtagInitializer.getInstance().unregisterProximityErrorListener(this);
         super.onPause();
@@ -49,11 +49,10 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
     @Override
     public void proximityContentsInForeground(@NonNull List<AdtagPlaceInAppAction> list) {
         tvBeaconNumber.setText(getString(R.string.tv_beacon_number, list.size()));
-        if(list.size() > 0){
+        if (list.size() > 0) {
             findViewById(R.id.tv_beacon_next_step).setVisibility(View.VISIBLE);
         }
-        // Update the beaconList when beaconContents update
-        if(previousList == null || previousList.size() != list.size() || !list.containsAll(previousList)){
+        if (previousList == null || previousList.size() != list.size() || !list.containsAll(previousList)) {
             beaconArrayAdapter.setList(list);
         }
         previousList = list;
