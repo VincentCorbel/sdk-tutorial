@@ -12,7 +12,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class BeaconArrayAdapter extends ArrayAdapter<AdtagPlaceInAppAction> {
-
     public BeaconArrayAdapter(Context context) {
         super(context, R.layout.row_list_beacon, new ArrayList<AdtagPlaceInAppAction>());
     }
@@ -32,19 +31,16 @@ public class BeaconArrayAdapter extends ArrayAdapter<AdtagPlaceInAppAction> {
         vh.tv.setText(buildBeaconRow(element));
     }
 
-    private String buildBeaconRow(AdtagPlaceInAppAction adtagPlaceInAppAction){
+    private String buildBeaconRow(AdtagPlaceInAppAction adtagPlaceInAppAction) {
         return adtagPlaceInAppAction.getAdtagContent().getNotificationDescription();
     }
 
     private class ViewHolder {
         public TextView tv;
 
-        public ViewHolder(View view){
+        public ViewHolder(View view) {
             tv = (TextView) view.findViewById(R.id.content);
         }
 
     }
-
-
 }
-

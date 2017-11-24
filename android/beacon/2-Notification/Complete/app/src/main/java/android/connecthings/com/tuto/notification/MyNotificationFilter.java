@@ -1,4 +1,4 @@
-package android.connecthings.com.tuto.quickstart;
+package android.connecthings.com.tuto.notification;
 
 import android.support.annotation.NonNull;
 
