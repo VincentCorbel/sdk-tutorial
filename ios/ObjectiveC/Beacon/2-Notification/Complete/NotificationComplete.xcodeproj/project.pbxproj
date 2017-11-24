@@ -24,6 +24,7 @@
 		7AE06484DB12328B84BEB3C4 /* Pods_NotificationCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB61B1D27208B21630A5D7 /* Pods_NotificationCompleteUITests.framework */; };
 		7C86C85B1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C86C85A1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m */; };
 		A81CC7D61FC5B017002610D5 /* MyNotificationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A81CC7D51FC5B017002610D5 /* MyNotificationDelegate.m */; };
+		A8B2C3731FC8263B00C3D98E /* MyNotificationFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B2C3721FC8263B00C3D98E /* MyNotificationFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		8CCCEDAD1A3A77BC599A0961 /* Pods-NotificationCompleteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationCompleteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationCompleteTests/Pods-NotificationCompleteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A81CC7D41FC5B017002610D5 /* MyNotificationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNotificationDelegate.h; sourceTree = "<group>"; };
 		A81CC7D51FC5B017002610D5 /* MyNotificationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNotificationDelegate.m; sourceTree = "<group>"; };
+		A8B2C3711FC8263B00C3D98E /* MyNotificationFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNotificationFilter.h; sourceTree = "<group>"; };
+		A8B2C3721FC8263B00C3D98E /* MyNotificationFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNotificationFilter.m; sourceTree = "<group>"; };
 		E9816C194C9F035617844AC4 /* Pods-NotificationComplete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationComplete.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationComplete/Pods-NotificationComplete.release.xcconfig"; sourceTree = "<group>"; };
 		ED0FC898FA8E83F0D9A2DF17 /* Pods-NotificationCompleteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationCompleteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationCompleteTests/Pods-NotificationCompleteTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +138,8 @@
 		14E45A8E1CA1B79500639B81 /* NotificationComplete */ = {
 			isa = PBXGroup;
 			children = (
+				A8B2C3711FC8263B00C3D98E /* MyNotificationFilter.h */,
+				A8B2C3721FC8263B00C3D98E /* MyNotificationFilter.m */,
 				A81CC7D41FC5B017002610D5 /* MyNotificationDelegate.h */,
 				A81CC7D51FC5B017002610D5 /* MyNotificationDelegate.m */,
 				14E45A921CA1B79500639B81 /* AppDelegate.h */,
@@ -517,6 +522,7 @@
 			files = (
 				4384A2941FA367FA00C3A0BD /* AsyncNotificationTask.m in Sources */,
 				7C86C85B1E37B76F008C6A33 /* MyBeaconNotificationBuilder.m in Sources */,
+				A8B2C3731FC8263B00C3D98E /* MyNotificationFilter.m in Sources */,
 				14E45A971CA1B79500639B81 /* ViewControllerBeacon.m in Sources */,
 				14E45A941CA1B79500639B81 /* AppDelegate.m in Sources */,
 				14E45A911CA1B79500639B81 /* main.m in Sources */,

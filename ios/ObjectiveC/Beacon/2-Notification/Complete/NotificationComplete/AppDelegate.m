@@ -11,6 +11,7 @@
 #import "MyBeaconNotificationBuilder.h"
 #import "AsyncNotificationTask.h"
 #import "MyNotificationDelegate.h"
+#import "MyNotificationFilter.h"
 
 #define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
@@ -35,7 +36,7 @@
     //To register a builder and a task for a welcomeNotification
     //[adtagBeaconManager registerEnterWelcomeNotificationBuilder:[[MyBeaconNotificationBuilder alloc] init]];
     //[adtagBeaconManager registerEnterWelcomeNotificationTask: [AsyncNotificationTask alloc]];
-
+    [adtagBeaconManager registerNotificationFilter:[[MyNotificationFilter alloc] initWithMinTimeBetweenNotification:2 * 60]];
     if (SYSTEM_VERSION_LESS_THAN(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
     } else {
