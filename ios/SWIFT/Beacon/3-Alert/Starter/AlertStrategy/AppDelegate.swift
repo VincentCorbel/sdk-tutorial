@@ -21,7 +21,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         AdtagInitializer.shared.configPlatform(Platform.preProd)
                                .configUser(login: "__LOGIN__", password: "__PSWD__", company: "__COMPANY__")
                                .synchronize()
-
         return true
     }
     

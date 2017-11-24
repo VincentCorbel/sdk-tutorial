@@ -50,7 +50,7 @@ class ViewController: UIViewController, AdtagInAppActionDelegate {
     func removeInAppAction(_ placeInAppAction: AdtagPlaceInAppAction, inAppActionRemoveStatus: InAppActionRemoveStatus) -> Bool {
         GlobalLogger.shared.debug("Well done! now you have removed your alert action")
         buttonInAppAction.isHidden = true
-        txtAlertMessage.text = "Remove beacon alert action"
+        txtAlertMessage.text = "The In-App Action has been removed"
         txtAlertMessage.setNeedsDisplay()
         return true
     }

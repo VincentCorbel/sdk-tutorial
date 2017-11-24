@@ -13,7 +13,7 @@ import AdtagConnection
 import AdtagLocationBeacon
 import ConnectPlaceCommon
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AdtagInAppActionDelegate {
     @IBOutlet weak var txtAlertMessage: UILabel!
     @IBOutlet weak var buttonInAppAction: UIButton!
     
@@ -21,12 +21,10 @@ class ViewController: UIViewController {
   
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        AdtagBeaconManager.shared.registerInAppActionDelegate(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        AdtagBeaconManager.shared.unregisterInAppActionDelegate()
     }
  
     override func didReceiveMemoryWarning() {
