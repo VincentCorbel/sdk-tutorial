@@ -5,7 +5,7 @@ platform :ios, '9.0'
 
 target 'beaconAlertComplete' do
 	use_frameworks!
-	pod "AdtagLocationBeacon", '~> 3.0-RC7'
+	pod "AdtagLocationBeacon", '~> 3.0-RC9'
 
 	target 'beaconAlertCompleteTests' do
 		inherit! :search_paths

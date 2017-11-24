@@ -18,8 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     AdtagInitializer *adtagInitializer = [AdtagInitializer shared];
     [[[adtagInitializer configPlatform:AdtagPlatform.preProd] configUserWithLogin:@"__LOGIN__" password:@"__PSW__" company:@"__COMPANY__"] synchronize];
-    
-    [[AdtagBeaconManager shared] addInAppActionConditions:[[TimeConditionsFirstWay alloc] initWithMaxTimeBeforeReset:60000 delayBeforeCreation:60000]];
+    [[AdtagBeaconManager shared] addInAppActionConditions:[[TimeConditions alloc] initWithMaxTimeBeforeReset:60 delayBeforeCreation:60]];
 
     return YES;
 }

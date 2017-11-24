@@ -2,8 +2,8 @@
 //  TimeConditionsParameter.swift
 //  beaconAlertComplete
 //
-//  Created by Ludovic Vimont on 14/11/2017.
-//  Copyright © 2017 sarra srairi. All rights reserved.
+//  Created by Connecthings on 14/11/2017.
+//  Copyright © 2017 Connecthings. All rights reserved.
 //
 
 import Foundation
