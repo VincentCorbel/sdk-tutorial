@@ -11,6 +11,7 @@ import ConnectPlaceActions
 import AdtagAnalytics
 import AdtagConnection
 import AdtagLocationBeacon
+import ConnectPlaceCommon
 
 class ViewController: UIViewController, AdtagInAppActionDelegate {
     @IBOutlet weak var txtAlertMessage: UILabel!
@@ -34,7 +35,7 @@ class ViewController: UIViewController, AdtagInAppActionDelegate {
     
     func createInAppAction(_ placeInAppAction: AdtagPlaceInAppAction, statusManager: InAppActionStatusManagerDelegate) -> Bool {
         if ("popup" == placeInAppAction.getAction()) {
-            print("Well done! now you have created your alert action")
+            GlobalLogger.shared.debug("Well done! now you have created your alert action")
             self.txtAlertMessage.text = placeInAppAction.getTitle()
             txtAlertMessage.setNeedsDisplay()
             buttonInAppAction.isHidden = false
@@ -47,7 +48,7 @@ class ViewController: UIViewController, AdtagInAppActionDelegate {
     }
     
     func removeInAppAction(_ placeInAppAction: AdtagPlaceInAppAction, inAppActionRemoveStatus: InAppActionRemoveStatus) -> Bool {
-        print("Well done! now you have removed your alert action")
+        GlobalLogger.shared.debug("Well done! now you have removed your alert action")
         buttonInAppAction.isHidden = true
         txtAlertMessage.text = "Remove beacon alert action"
         txtAlertMessage.setNeedsDisplay()

@@ -37,7 +37,7 @@ import ConnectPlaceActions
         if let strategyParameter = conditionsParameter as? TimeConditionsParameter {
             let currentTime: Double = CFAbsoluteTimeGetCurrent()
             if strategyParameter.lastDetectionTime + 3 < currentTime {
-                print("delay before creating " , delayBeforeCreation)
+                GlobalLogger.shared.debug("delay before creating " , delayBeforeCreation)
                 strategyParameter.timeToShowAlert = currentTime + delayBeforeCreation
             }
             strategyParameter.lastDetectionTime = currentTime + 0
