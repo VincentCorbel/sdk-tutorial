@@ -29,12 +29,14 @@ class AppDelegate: NSObject, UIApplicationDelegate, AdtagReceiveNotificationCont
 
         //AdtagInitializer.shared.initGroup(category: "sdk-group-filter", fieldName: "group-filter")
         adtagBeaconManager = AdtagBeaconManager.shared
+
         adtagBeaconManager?.registerReceiveNotificatonContentDelegate(self)
         adtagBeaconManager?.registerNotificationBuilder(MyBeaconNotificationBuilder())
         adtagBeaconManager?.registerNotificationTask(AsyncNotificationTask())
         //To register a builder and a task for a welcomeNotification
         //adtagBeaconManager?.registerEnterWelcomeNotificationBuilder(MyBeaconNotificationBuilder());
         //adtagBeaconManager?.registerEnterWelcomeNotificationTask(AsyncNotificationTask())
+        adtagBeaconManager?.registerNotificationFilter(MyNotificationFilter(60 * 2))
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             //The request can be done as well in a viewController which allows to display a message if the user refuse to receive notifications
