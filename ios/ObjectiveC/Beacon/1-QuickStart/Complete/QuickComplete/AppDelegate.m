@@ -30,7 +30,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     adtagInitializer = [AdtagInitializer shared];
     [[[adtagInitializer configPlatform: AdtagPlatform.preProd]
-        configUserWithLogin:@"__LOGIN__" password:@"__PSWD__" company:@"__COMPANY__"] synchronize];
+        configUserWithLogin:@"__USER__" password:@"__PASSWORD__" company:@"__COMPANY__"] synchronize];
     adtagBeaconManager = [AdtagBeaconManager shared];
     if (SYSTEM_VERSION_LESS_THAN(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
@@ -64,12 +64,12 @@ didReceiveLocalNotification:(UILocalNotification *)notification {
 }
 
 - (void) didReceivePlaceNotification:(AdtagPlaceNotification *)placeNotification {
-    //Do action with this object when the notification is clicked, a beacon notification
+    // Do action with this object when the notification is clicked, a beacon notification
     NSLog(@"Do an action when the beacon notification is clicked - for example open a controller");
 }
 
 - (void) didReceiveWelcomeNotification:(AdtagPlaceWelcomeNotification *)welcomeNotification {
-    //Do action with this object when the notification is clicked, from welcome notification
+    // Do action with this object when the notification is clicked, from welcome notification
     NSLog(@"Do an action when the beacon notification is clicked - for example open a controller");
 }
 

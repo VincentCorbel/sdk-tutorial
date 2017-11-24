@@ -12,7 +12,6 @@ import AdtagLocationBeacon;
 import ConnectPlaceCommon;
 
 class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, ProximityErrorDelegate {
-    
     @IBOutlet weak var txt_message: UILabel!
     var adtagInitializer: AdtagInitializer?
     var adtagBeaconManager: AdtagBeaconManager?
@@ -21,8 +20,6 @@ class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, Pr
         super.viewDidLoad()
         adtagInitializer = AdtagInitializer.shared
         adtagBeaconManager = AdtagBeaconManager.shared
-        // Do any additional setup after loading the view, typically from a nib
-
     }
 
     override func viewWillAppear(_ animated: Bool) {

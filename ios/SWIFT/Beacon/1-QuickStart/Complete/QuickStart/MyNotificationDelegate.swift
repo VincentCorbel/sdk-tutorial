@@ -11,7 +11,6 @@ import UserNotifications
 import AdtagLocationBeacon
 
 public class MyNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
-
     let adtagBeaconManager: AdtagBeaconManager
 
     public init(adtagBeaconManager: AdtagBeaconManager) {
@@ -23,5 +22,4 @@ public class MyNotificationDelegate: NSObject, UNUserNotificationCenterDelegate 
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         adtagBeaconManager.didReceivePlaceNotification(response.notification.request.content.userInfo)
     }
-
 }
