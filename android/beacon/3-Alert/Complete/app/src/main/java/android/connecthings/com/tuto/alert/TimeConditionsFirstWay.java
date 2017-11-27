@@ -23,7 +23,7 @@ public class TimeConditionsFirstWay implements InAppActionConditions, InAppActio
 
     @Override
     public String getConditionsKey() {
-        return "timeConditions";
+        return "inAppActionTimeConditions";
     }
 
     @Override

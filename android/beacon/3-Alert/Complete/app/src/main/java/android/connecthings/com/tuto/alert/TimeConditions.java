@@ -24,7 +24,7 @@ public class TimeConditions extends InAppActionConditionsDefault {
 
     @Override
     public String getConditionsKey() {
-        return "timeConditions";
+        return "inAppActionTimeConditions";
     }
 
     @Override

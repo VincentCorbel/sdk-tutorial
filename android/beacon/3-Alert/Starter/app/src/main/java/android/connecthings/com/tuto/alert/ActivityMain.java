@@ -2,9 +2,7 @@ package android.connecthings.com.tuto.alert;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,12 +12,9 @@ import com.connecthings.connectplace.actions.inappaction.InAppActionListener;
 import com.connecthings.connectplace.actions.inappaction.InAppActionStatusManagerListener;
 import com.connecthings.connectplace.actions.inappaction.enums.InAppActionRemoveStatus;
 import com.connecthings.connectplace.actions.model.PlaceInAppAction;
-import com.connecthings.connectplace.common.content.detection.InProximityInForeground;
 import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
 import com.connecthings.util.adtag.beacon.analytics.InAppActionRedirectHelper;
 import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
-
-import java.util.List;
 
 
 public class ActivityMain extends AppCompatActivity implements View.OnClickListener {
