@@ -13,7 +13,7 @@ import AdtagConnection
 import AdtagLocationBeacon
 import ConnectPlaceCommon
 
-class ViewController: UIViewController, AdtagInAppActionDelegate {
+class ViewController: UIViewController, AdtagInAppActionDelegate, AdtagInProximityInForegroundDelegate {
     @IBOutlet weak var txtAlertMessage: UILabel!
     @IBOutlet weak var buttonInAppAction: UIButton!
     
@@ -22,11 +22,13 @@ class ViewController: UIViewController, AdtagInAppActionDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
         AdtagBeaconManager.shared.registerInAppActionDelegate(self)
+        AdtagBeaconManager.shared.registerInProximityInForeground(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidAppear(animated);
         AdtagBeaconManager.shared.unregisterInAppActionDelegate()
+        AdtagBeaconManager.shared.unregisterInProximityInForeground(self)
     }
  
     override func didReceiveMemoryWarning() {
@@ -53,6 +55,12 @@ class ViewController: UIViewController, AdtagInAppActionDelegate {
         txtAlertMessage.text = "The In-App Action has been removed"
         txtAlertMessage.setNeedsDisplay()
         return true
+    }
+
+    func proximityContentsInForeground(_ contents: [AdtagPlaceInAppAction]) {
+        for place in contents {
+            print("place: \(place)")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

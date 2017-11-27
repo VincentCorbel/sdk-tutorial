@@ -24,11 +24,13 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[AdtagBeaconManager shared] registerInAppActionDelegate:self];
+    [[AdtagBeaconManager shared] registerInProximityInForeground:self];
  
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[AdtagBeaconManager shared] unregisterInAppActionDelegate];
+    [[AdtagBeaconManager shared] unregisterInProximityInForeground:self];
 }
 
 -(void)didReceiveMemoryWarning {
@@ -57,6 +59,12 @@
     _txtAlertMessage.text = @"The In-App Action has been removed";
     [_txtAlertMessage setNeedsDisplay];
     return YES;
+}
+
+- (void) proximityContentsInForeground:(NSArray<AdtagPlaceInAppAction *> *)contents {
+    for (AdtagPlaceInAppAction *place in contents) {
+        NSLog(@"place: %@", place);
+    }
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
