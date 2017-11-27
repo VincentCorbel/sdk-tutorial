@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "beaconAlertComplete-Swift.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     AdtagInitializer *adtagInitializer = [AdtagInitializer shared];
     [[[adtagInitializer configPlatform:AdtagPlatform.preProd] configUserWithLogin:@"__LOGIN__" password:@"__PSWD__" company:@"__COMPANY__"] synchronize];
+    [[AdtagBeaconManager shared] addInAppActionConditions:[[TimeConditions alloc] initWithMaxTimeBeforeReset:60 delayBeforeCreation: 60]];
     return YES;
 }
 

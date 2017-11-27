@@ -10,7 +10,7 @@
 @import AdtagConnection;
 @import AdtagLocationBeacon;
 
-@interface ViewController : UIViewController <AdtagInAppActionDelegate>
+@interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonAlert;
 @property (weak, nonatomic) IBOutlet UILabel *txtAlertMessage;
