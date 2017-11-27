@@ -82,7 +82,7 @@ public class ActivityMain extends AppCompatActivity implements InAppActionListen
     @Override
     public void proximityContentsInForeground(@NonNull List<AdtagPlaceInAppAction> adtagPlaceInAppActions) {
         for (AdtagPlaceInAppAction adtagPlaceInAppAction : adtagPlaceInAppActions) {
-            Log.e(ActivityMain.class.getSimpleName(), adtagPlaceInAppAction.toString());
+            Log.d(ActivityMain.class.getSimpleName(), adtagPlaceInAppAction.toString());
         }
     }
 }
