@@ -28,7 +28,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     adtagInitializer = [AdtagInitializer shared];
     [[[adtagInitializer configPlatform:AdtagPlatform.preProd] configUserWithLogin:@"__LOGIN__" password:@"__PSWD__" company:@"__COMPANY__"] synchronize];
-    
+    //To configure the notification group filter. Need a configuration on AdTag as well.
+    //[adtagInitializer initGroupWithCategory:@"__CATEGORY__" fieldName:@"__FIELD__"]
     adtagBeaconManager = [AdtagBeaconManager shared];
     [adtagBeaconManager registerReceiveNotificatonContentDelegate:self];
     [adtagBeaconManager registerNotificationBuilder: [[MyBeaconNotificationBuilder alloc] init]];

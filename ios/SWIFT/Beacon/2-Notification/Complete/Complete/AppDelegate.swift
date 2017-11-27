@@ -26,10 +26,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, AdtagReceiveNotificationCont
         adtagInitializer?.configPlatform(Platform.preProd)
                                .configUser(login: "__LOGIN__", password: "__PASSORD__", company: "__COMPANY__")
                                .synchronize()
-
+        //To configure the notification group filter. Need a configuration on AdTag as well.
         //AdtagInitializer.shared.initGroup(category: "sdk-group-filter", fieldName: "group-filter")
         adtagBeaconManager = AdtagBeaconManager.shared
-
         adtagBeaconManager?.registerReceiveNotificatonContentDelegate(self)
         adtagBeaconManager?.registerNotificationBuilder(MyBeaconNotificationBuilder())
         adtagBeaconManager?.registerNotificationTask(AsyncNotificationTask())

@@ -15,18 +15,20 @@ public class ApplicationNotification extends Application {
         AdtagInitializer.getInstance()
                 .initContext(this)
                 .initUrlType(Url.UrlType.PRE_PROD)
-                .initUser("Lvi_cbeacon", "RGVZChwWe3LNqwBTY7qa")
-                .initCompany("ccbeacondemo")
+                .initUser("__LOGIN__", "__PSWD__")
+                .initCompany("__COMPANY__")
                 .synchronize();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            AdtagInitializer.getInstance().addPermissionToAsk(Manifest.permission.ACCESS_COARSE_LOCATION);
-        }
+        AdtagInitializer.getInstance().addPermissionToAsk(Manifest.permission.ACCESS_COARSE_LOCATION);
 
-        AdtagInitializer.getInstance().initGroup("sdk-group-filter", "group-filter");
-
+        //To configure the notification group filter. Need a configuration on AdTag as well.
+        //AdtagInitializer.getInstance().initGroup("sdk-group-filter", "group-filter");
         AdtagBeaconManager beaconManager = AdtagBeaconManager.getInstance();
-        beaconManager.registeNotificationTask(new AsyncNotificationTask());
-        beaconManager.registeNotificationBuilder(new MyNotificationBuilder(getApplicationContext()));
+        beaconManager.registerEnterNotificationTask(new AsyncNotificationTask());
+        beaconManager.registerEnterNotificationBuilder(new MyNotificationBuilder(getApplicationContext()));
+        //To configure builder and asyncTask for the welcome notification process
+        //beaconManager.registerEnterWelcomeNotificationTask(new AsyncNotificationTask());
+        //beaconManager.registerEnterWelcomeNotificationBuilder(new MyNotificationBuilder(getApplicationContext()));
+        beaconManager.registerNotificationFilter(new MyNotificationFilter(60 * 3 * 1000));
     }
 }
