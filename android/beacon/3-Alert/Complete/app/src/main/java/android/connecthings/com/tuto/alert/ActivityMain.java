@@ -22,7 +22,7 @@ import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
 import java.util.List;
 
 
-public class ActivityMain extends AppCompatActivity implements InAppActionListener, InProximityInForeground<AdtagPlaceInAppAction>, View.OnClickListener {
+public class ActivityMain extends AppCompatActivity implements InAppActionListener<AdtagPlaceInAppAction>, InProximityInForeground<AdtagPlaceInAppAction>, View.OnClickListener {
     private TextView textViewInAppAction;
     private Button btnMore;
     private PlaceInAppAction currentPlaceInAppAction;
@@ -40,15 +40,15 @@ public class ActivityMain extends AppCompatActivity implements InAppActionListen
     @Override
     protected void onResume() {
         super.onResume();
-        AdtagBeaconManager adtagBeaconManager = AdtagBeaconManager.getInstance();
-        adtagBeaconManager.registerInProximityInForeground(this);
+        AdtagBeaconManager.getInstance().registerInAppActionListener(this);
+        AdtagBeaconManager.getInstance().registerInProximityInForeground(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        AdtagBeaconManager adtagBeaconManager = AdtagBeaconManager.getInstance();
-        adtagBeaconManager.unregisterInProximityInForeground(this);
+        AdtagBeaconManager.getInstance().unregisterInAppActionListener();
+        AdtagBeaconManager.getInstance().unregisterInProximityInForeground(this);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class ActivityMain extends AppCompatActivity implements InAppActionListen
     }
 
     @Override
-    public boolean createInAppAction(PlaceInAppAction placeInAppAction, InAppActionStatusManagerListener inAppActionStatusManagerListener) {
+    public boolean createInAppAction(AdtagPlaceInAppAction placeInAppAction, InAppActionStatusManagerListener inAppActionStatusManagerListener) {
         currentPlaceInAppAction = placeInAppAction;
         if (currentPlaceInAppAction.getAction().equals("popup")) {
             textViewInAppAction.setText(currentPlaceInAppAction.getTitle());
@@ -73,7 +73,7 @@ public class ActivityMain extends AppCompatActivity implements InAppActionListen
     }
 
     @Override
-    public boolean removeInAppAction(PlaceInAppAction placeInAppAction, InAppActionRemoveStatus inAppActionRemoveStatus) {
+    public boolean removeInAppAction(AdtagPlaceInAppAction placeInAppAction, InAppActionRemoveStatus inAppActionRemoveStatus) {
         textViewInAppAction.setText(getString(R.string.remove_in_app_action));
         btnMore.setVisibility(View.GONE);
         return true;

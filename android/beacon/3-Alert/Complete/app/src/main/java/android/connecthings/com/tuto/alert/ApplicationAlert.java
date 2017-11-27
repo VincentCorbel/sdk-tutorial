@@ -14,12 +14,12 @@ public class ApplicationAlert extends Application{
         AdtagInitializer.getInstance().
                 initContext(this)
                 .initUrlType(Url.UrlType.PRE_PROD)
-                .initUser("", "")
-                .initCompany("")
+                .initUser("__LOGIN__", "__PSWD__")
+                .initCompany("__COMPANY__")
                 .synchronize();
 
         AdtagInitializer.getInstance().addPermissionToAsk(Manifest.permission.ACCESS_COARSE_LOCATION);
 
-        AdtagBeaconManager.getInstance().addInAppActionConditions(new TimeConditions(30000 , 60000));
+        AdtagBeaconManager.getInstance().addInAppActionConditions(new TimeConditions(30000 , 30000));
     }
 }
