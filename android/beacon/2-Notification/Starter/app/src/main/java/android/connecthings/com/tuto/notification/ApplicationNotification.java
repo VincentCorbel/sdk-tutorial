@@ -2,7 +2,6 @@ package android.connecthings.com.tuto.notification;
 
 import android.Manifest;
 import android.app.Application;
-import android.os.Build;
 
 import com.connecthings.adtag.AdtagInitializer;
 import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
