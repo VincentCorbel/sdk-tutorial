@@ -9,13 +9,16 @@ import android.widget.TextView;
 
 import com.connecthings.adtag.AdtagInitializer;
 import com.connecthings.connectplace.common.content.detection.InProximityInForeground;
-import com.connecthings.connectplace.common.utils.error.ProximityErrorListener;
+import com.connecthings.connectplace.common.utils.healthCheck.HealthStatus;
+import com.connecthings.connectplace.common.utils.healthCheck.ProximityHealthCheckListener;
+import com.connecthings.connectplace.common.utils.healthCheck.ServiceStatus;
+import com.connecthings.connectplace.common.utils.healthCheck.Status;
 import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
 import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements InProximityInForeground<AdtagPlaceInAppAction>, ProximityErrorListener {
+public class MainActivity extends AppCompatActivity implements InProximityInForeground<AdtagPlaceInAppAction>, ProximityHealthCheckListener {
 
     private TextView tvBeaconNumber;
     private List<AdtagPlaceInAppAction> previousList;
@@ -37,12 +40,12 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
     protected void onResume() {
         super.onResume();
         adtagBeaconManager.registerInProximityInForeground(this);
-        AdtagInitializer.getInstance().registerProximityErrorListener(this);
+        AdtagInitializer.getInstance().registerProximityHealthCheckListener(this);
     }
 
     protected void onPause() {
         adtagBeaconManager.unregisterInProximityInForeground(this);
-        AdtagInitializer.getInstance().unregisterProximityErrorListener(this);
+        AdtagInitializer.getInstance().unregisterProximityHealthCheckListener(this);
         super.onPause();
     }
 
@@ -59,7 +62,17 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
     }
 
     @Override
-    public void onProximityError(int i, @NonNull String s) {
-        tvBeaconNumber.setText(s);
+    public void onProximityHealthCheckUpdate(HealthStatus healthStatus) {
+        String errors = "";
+        if (healthStatus.isDown()) {
+            for (ServiceStatus serviceStatus : healthStatus.getServiceStatusMap().values()) {
+                if (serviceStatus.isDown()) {
+                    for (Status status : serviceStatus.getStatusList()) {
+                        errors += status.getMessage() + "\n";
+                    }
+                }
+            }
+            tvBeaconNumber.setText(errors);
+        }
     }
 }
