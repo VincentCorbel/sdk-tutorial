@@ -1,10 +1,10 @@
 package android.connecthings.app.qrNfcSdkDemo;
 
 import android.app.Activity;
-import com.connecthings.adtag.sdk.FragmentAdtagContentAsker;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.connecthings.adtag.sdk.FragmentAdtagContentAsker;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 
@@ -13,13 +13,8 @@ import java.util.List;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-/**
- */
 public class ActivityQrCodeScanner extends Activity implements ZXingScannerView.ResultHandler {
-
-
-    private static final String TAG="ActivityQrCodeScanner";
-
+    private static final String TAG = "ActivityQrCodeScanner";
     private ZXingScannerView mScannerView;
 
     @Override
@@ -52,6 +47,4 @@ public class ActivityQrCodeScanner extends Activity implements ZXingScannerView.
         setResult(RESULT_OK, result);
         finish();
     }
-
-
 }
