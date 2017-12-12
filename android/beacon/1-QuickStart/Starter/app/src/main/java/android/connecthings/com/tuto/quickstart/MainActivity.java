@@ -15,7 +15,7 @@ import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements InProximityInForeground<AdtagPlaceInAppAction>, ProximityErrorListener {
+public class MainActivity extends AppCompatActivity implements InProximityInForeground<AdtagPlaceInAppAction>,  ProximityHealthCheckListener {
     private TextView tvBeaconNumber;
     private List<AdtagPlaceInAppAction> previousList;
     private BeaconArrayAdapter beaconArrayAdapter;
@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
     protected void onResume() {
         super.onResume();
         adtagBeaconManager.registerInProximityInForeground(this);
-        AdtagInitializer.getInstance().registerProximityErrorListener(this);
+        AdtagInitializer.getInstance().registerProximityHealthCheckListener(this);
     }
 
     protected void onPause() {
         adtagBeaconManager.unregisterInProximityInForeground(this);
-        AdtagInitializer.getInstance().unregisterProximityErrorListener(this);
+        AdtagInitializer.getInstance().unregisterProximityHealthCheckListener(this);
         super.onPause();
     }
 
@@ -56,7 +56,19 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
     }
 
     @Override
-    public void onProximityError(int i, @NonNull String s) {
-        tvBeaconNumber.setText(s);
+    public void onProximityHealthCheckUpdate(HealthStatus healthStatus) {
+        String errors = "";
+        if (healthStatus.isDown()) {
+            for (ServiceStatus serviceStatus : healthStatus.getServiceStatusMap().values()) {
+                if (serviceStatus.isDown()) {
+                    for (Status status : serviceStatus.getStatusList()) {
+                        errors += status.getMessage() + "\n";
+                    }
+                }
+            }
+            tvBeaconNumber.setText(errors);
+        } else {
+            tvBeaconNumber.setText(errors);
+        }
     }
 }
