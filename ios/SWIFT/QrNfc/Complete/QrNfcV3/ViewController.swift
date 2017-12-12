@@ -12,7 +12,7 @@ import AdtagScanProximity
 import ConnectPlaceCommon
 import AVFoundation
 
-class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityErrorDelegate {
+class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityHealthCheckDelegate {
     @IBOutlet weak var tvContentError: UITextView!
     @IBOutlet weak var btnNfcReader: UIButton!
     @IBOutlet weak var btnQrCode: UIButton!
@@ -33,13 +33,13 @@ class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityErr
 
     override func viewWillAppear(_ animated: Bool) {
         adtagScanProximityManager.scanProximityDelegate = self
-        adtagInitializer.registerProximityErrorDelegate(self)
+        adtagInitializer.registerProximityHealthCheckDelegate(self)
         super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         adtagScanProximityManager.scanProximityDelegate = nil
-        adtagInitializer.unregisterProximityErrorDelegate(self)
+        adtagInitializer.unregisterProximityHealthCheckDelegate(self)
         super.viewWillDisappear(animated)
     }
 
@@ -68,8 +68,18 @@ class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityErr
         }
     }
 
-    func onProximityError(errorType: Int, message: NSString) {
-        tvContentError.text = message as String
+    func onProximityHealthCheckUpdate(_ healthStatus: HealthStatus) {
+        var errorMsg: String = ""
+        if healthStatus.isDown {
+            for serviceStatus in healthStatus.serviceStatusMap.values {
+                if serviceStatus.isDown() {
+                    for status in serviceStatus.statusList {
+                        errorMsg += status.message as String + "\n"
+                    }
+                }
+            }
+         }
+        tvContentError.text = errorMsg
     }
 
 }
