@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ViewController.h
 //  QuickStart
 //
 //  Created by sarra srairi on 22/03/2016.
@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-@import UserNotifications;
+@import AdtagLocationBeacon;
 @import AdtagConnection;
+@import ConnectPlaceCommon;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface ViewController : UIViewController <AdtagInProximityInForegroundDelegate, ProximityHealthCheckDelegate> {
 
-@property (strong, nonatomic) UIWindow *window;
+}
 
-
+@property (weak, nonatomic) IBOutlet UILabel *txt_nbrBeacon;
 @end
 

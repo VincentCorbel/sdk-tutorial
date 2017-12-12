@@ -40,7 +40,6 @@
     [super viewWillDisappear:animated];
     [beaconManager unregisterInProximityInForeground:self];
     [adtagInitializer unregisterProximityHealthCheckDelegate:self];
-    //[beaconManager registerAdtagRangeDelegate:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,15 +47,11 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) onProximityErrorWithErrorType:(NSInteger)errorType message:(NSString *)message {
-    _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"error", @""), errorType, message];
-}
-
 -(void) onProximityHealthCheckUpdate:(HealthStatus *)healthStatus {
     NSMutableString *error = [[NSMutableString alloc] initWithString:@""];
-    if (healthStatus.isDown) {
+    if ([healthStatus isDown]) {
         for (ServiceStatus *serviceStatus in healthStatus.serviceStatusMap) {
-            if (serviceStatus.isDown) {
+            if ([serviceStatus isDown]) {
                 for (Status *status in serviceStatus.statusList) {
                     [error appendString:status.message];
                     [error appendString:@"/n"];
@@ -67,7 +62,7 @@
     _txt_nbrBeacon.text = error;
 }
 
--(void) proximityContentsInForegroundWithContents:(NSArray<AdtagPlaceInAppAction *> *)contents {
+-(void) proximityContentsInForeground:(NSArray<AdtagPlaceInAppAction *> *)contents {
     _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"beaconAround", @""), contents.count];
 }
 

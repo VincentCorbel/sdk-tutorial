@@ -29,18 +29,17 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void) viewDidAppear:(BOOL)animated{
+- (void) viewWillAppear:(BOOL)animated{
     // Register Range Delegate protocol to your view
     [beaconManager registerInProximityInForeground:self];
-    [adtagInitializer registerProximityErrorDelegate:self];
-    [super viewDidAppear:animated];
+    [adtagInitializer registerProximityHealthCheckDelegate:self];
+    [super viewWillAppear:animated];
 }
 
-- (void) viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [beaconManager unregisterInProximityInForeground:self];
-    [adtagInitializer unregisterProximityErrorDelegate:self];
-    //[beaconManager registerAdtagRangeDelegate:nil];
+    [adtagInitializer unregisterProximityHealthCheckDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,14 +47,24 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) onProximityErrorWithErrorType:(NSInteger)errorType message:(NSString *)message {
-    _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"error", @""), errorType, message];
+-(void) onProximityHealthCheckUpdate:(HealthStatus *)healthStatus {
+    NSMutableString *error = [[NSMutableString alloc] initWithString:@""];
+    if ([healthStatus isDown]) {
+        for (ServiceStatus *serviceStatus in healthStatus.serviceStatusMap) {
+            if ([serviceStatus isDown]) {
+                for (Status *status in serviceStatus.statusList) {
+                    [error appendString:status.message];
+                    [error appendString:@"/n"];
+                }
+            }
+        }
+    }
+    _txt_nbrBeacon.text = error;
 }
 
--(void) proximityContentsInForegroundWithContents:(NSArray<id<PlaceInAppAction>> *)contents {
+-(void) proximityContentsInForeground:(NSArray<AdtagPlaceInAppAction *> *)contents {
     _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"beaconAround", @""), contents.count];
 }
 
-
-
 @end
+
