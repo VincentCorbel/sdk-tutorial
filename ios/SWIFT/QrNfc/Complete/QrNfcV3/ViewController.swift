@@ -68,22 +68,18 @@ class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityHea
         }
     }
 
-    public func onProximityHealthCheckUpdate(_ healthStatus: HealthStatus) {
+    func onProximityHealthCheckUpdate(_ healthStatus: HealthStatus) {
+        var errorMsg: String = ""
         if healthStatus.isDown {
-            for service in healthStatus.serviceStatusMap.values {
-                if service.isDown() {
-                    if service.type == 3 {
-                        if service.containsStatus(code: 32) {
-                            textViewErrors.text = "Your device does not support Bluetooth LE.";
-                        } else {
-                            textViewErrors.text = "The bluetooth is unactive, please activate it to let the scan begin.";
-                        }
+            for serviceStatus in healthStatus.serviceStatusMap.values {
+                if serviceStatus.isDown() {
+                    for status in serviceStatus.statusList {
+                        errorMsg += status.message as String + "\n"
                     }
                 }
             }
-        } else {
-            textViewErrors.text = ""
         }
+        tvContentError.text = errorMsg
     }
 
 }
