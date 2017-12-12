@@ -54,7 +54,7 @@
             if ([serviceStatus isDown]) {
                 for (Status *status in serviceStatus.statusList) {
                     [error appendString:status.message];
-                    [error appendString:@"/n"];
+                    [error appendString:@"\n"];
                 }
             }
         }

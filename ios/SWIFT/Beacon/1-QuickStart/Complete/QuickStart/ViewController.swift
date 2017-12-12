@@ -11,7 +11,7 @@ import ConnectPlaceActions;
 import AdtagLocationBeacon;
 import ConnectPlaceCommon;
 
-class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, ProximityErrorDelegate {
+class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, ProximityHealthCheckDelegate {
     @IBOutlet weak var txt_message: UILabel!
     var adtagInitializer: AdtagInitializer?
     var adtagBeaconManager: AdtagBeaconManager?
@@ -23,14 +23,14 @@ class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, Pr
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        adtagInitializer?.registerProximityErrorDelegate(self)
+        adtagInitializer?.registerProximityHealthCheckDelegate(self)
         adtagBeaconManager?.registerInProximityInForeground(self)
         super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        adtagInitializer?.unregisterProximityErrorDelegate(self)
+        adtagInitializer?.unregisterProximityHealthCheckDelegate(self)
         adtagBeaconManager?.unregisterInProximityInForeground(self)
     }
     
@@ -39,12 +39,23 @@ class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, Pr
         // Dispose of any resources that can be recreated.
     }
     
-    func proximityContentsInForeground(contents: [AdtagPlaceInAppAction]) {
+    func proximityContentsInForeground(_ contents: [AdtagPlaceInAppAction]) {
         self.txt_message.text = String( format: NSLocalizedString("beaconAround", comment:""), contents.count)
     }
 
-    func onProximityError(errorType: Int, message: NSString) {
-        self.txt_message.text = String( format: NSLocalizedString("error", comment:""), errorType, message)
+    func onProximityHealthCheckUpdate(_ healthStatus: HealthStatus) {
+        var error: String = ""
+        if healthStatus.isDown {
+            for serviceStatus in healthStatus.serviceStatusMap.values {
+                if serviceStatus.isDown() {
+                    for status in serviceStatus.statusList {
+                        error += status.message + "\n"
+                    }
+                }
+            }
+        }
+
+        self.txt_message.text = error
     }
  
 }
