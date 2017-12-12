@@ -66,9 +66,7 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
                     }
                 }
             }
-            tvBeaconNumber.setText(errors);
-        } else {
-            tvBeaconNumber.setText(errors);
         }
+        tvBeaconNumber.setText(errors);
     }
 }

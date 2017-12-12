@@ -32,14 +32,14 @@
 - (void) viewWillAppear:(BOOL)animated{
     // Register Range Delegate protocol to your view
     [beaconManager registerInProximityInForeground:self];
-    [adtagInitializer registerProximityErrorDelegate:self];
+    [adtagInitializer registerProximityHealthCheckDelegate:self];
     [super viewWillAppear:animated];
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [beaconManager unregisterInProximityInForeground:self];
-    [adtagInitializer unregisterProximityErrorDelegate:self];
+    [adtagInitializer unregisterProximityHealthCheckDelegate:self];
     //[beaconManager registerAdtagRangeDelegate:nil];
 }
 
@@ -52,7 +52,22 @@
     _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"error", @""), errorType, message];
 }
 
--(void) proximityContentsInForegroundWithContents:(NSArray<id<PlaceInAppAction>> *)contents {
+-(void) onProximityHealthCheckUpdate:(HealthStatus *)healthStatus {
+    NSMutableString *error = [[NSMutableString alloc] initWithString:@""];
+    if (healthStatus.isDown) {
+        for (ServiceStatus *serviceStatus in healthStatus.serviceStatusMap) {
+            if (serviceStatus.isDown) {
+                for (Status *status in serviceStatus.statusList) {
+                    [error appendString:status.message];
+                    [error appendString:@"/n"];
+                }
+            }
+        }
+    }
+    _txt_nbrBeacon.text = error;
+}
+
+-(void) proximityContentsInForegroundWithContents:(NSArray<AdtagPlaceInAppAction *> *)contents {
     _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"beaconAround", @""), contents.count];
 }
 
