@@ -10,7 +10,7 @@
 @import AdtagConnection;
 @import ConnectPlaceCommon;
 
-@interface ViewController : UIViewController <AdtagScanProximityDelegate, ProximityErrorDelegate>
+@interface ViewController : UIViewController <AdtagScanProximityDelegate, ProximityHealthCheckDelegate>
 
 
 @end

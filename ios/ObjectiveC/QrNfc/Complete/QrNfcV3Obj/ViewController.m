@@ -41,14 +41,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     adtagScanProximityManager.scanProximityDelegate = self;
-    [adtagInitializer registerProximityErrorDelegate:self];
+    [adtagInitializer registerProximityHealthCheckDelegate:self];
     [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
      adtagScanProximityManager.scanProximityDelegate = nil;
-    [adtagInitializer unregisterProximityErrorDelegate:self];
+    [adtagInitializer unregisterProximityHealthCheckDelegate:self];
 }
 
 - (IBAction)openQrCodeReader:(id)sender {
@@ -71,8 +71,20 @@
     }
 }
 
-- (void) onProximityErrorWithErrorType:(NSInteger)errorType message:(NSString *)message {
-     _textViewContent.text = message;
+- (void) onProximityHealthCheckUpdate:(HealthStatus *)healthStatus {
+    NSMutableString *errorMsg = [[NSMutableString alloc] initWithString:@""];
+    if ([healthStatus isDown]) {
+        for (ServiceStatus *serviceStatus in healthStatus.serviceStatusMap.allValues) {
+            if ([serviceStatus isDown]) {
+                for (Status *status in serviceStatus.statusList) {
+                    [errorMsg appendString:status.message];
+                    [errorMsg appendString:@"\n"];
+                }
+            }
+        }
+    }
+    _textViewContent.text = errorMsg;
 }
+
 
 @end
