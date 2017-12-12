@@ -49,7 +49,7 @@ class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, Pr
             for serviceStatus in healthStatus.serviceStatusMap.values {
                 if serviceStatus.isDown() {
                     for status in serviceStatus.statusList {
-                        error += status.message + "\n"
+                        error += status.message as String! + "\n"
                     }
                 }
             }

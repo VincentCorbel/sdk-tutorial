@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdtagReceiveNotificationC
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         adtagInitializer = AdtagInitializer.shared
-        adtagInitializer?.configPlatform(Platform.preProd).configUser(login: "__USER__", password: "__PASSWORD__", company: "__COMPANY__").synchronize()
+        adtagInitializer?.configPlatform(Platform.preProd).configUser(login: "plopi", password: "fSKbCEvCDCbYTDlk", company: "ccbeacondemo").synchronize()
         adtagBeaconManager = AdtagBeaconManager.shared
 
         if #available(iOS 10.0, *) {

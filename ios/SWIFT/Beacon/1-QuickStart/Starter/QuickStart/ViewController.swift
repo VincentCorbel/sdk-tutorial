@@ -7,12 +7,11 @@
 //
 import UIKit
 import AdtagConnection
-import ConnectPlaceActions
-import AdtagLocationBeacon
-import ConnectPlaceCommon
+import ConnectPlaceActions;
+import AdtagLocationBeacon;
+import ConnectPlaceCommon;
 
-class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, ProximityErrorDelegate {
-    
+class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, ProximityHealthCheckDelegate {
     @IBOutlet weak var txt_message: UILabel!
     var adtagInitializer: AdtagInitializer?
     var adtagBeaconManager: AdtagBeaconManager?
@@ -21,33 +20,43 @@ class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, Pr
         super.viewDidLoad()
         adtagInitializer = AdtagInitializer.shared
         adtagBeaconManager = AdtagBeaconManager.shared
-        // Do any additional setup after loading the view, typically from a nib
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        adtagInitializer?.registerProximityErrorDelegate(self)
+        adtagInitializer?.registerProximityHealthCheckDelegate(self)
         adtagBeaconManager?.registerInProximityInForeground(self)
         super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        adtagInitializer?.unregisterProximityErrorDelegate(self)
+        adtagInitializer?.unregisterProximityHealthCheckDelegate(self)
         adtagBeaconManager?.unregisterInProximityInForeground(self)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func proximityContentsInForeground(contents: [AdtagPlaceInAppAction]) {
+
+    func proximityContentsInForeground(_ contents: [AdtagPlaceInAppAction]) {
         self.txt_message.text = String( format: NSLocalizedString("beaconAround", comment:""), contents.count)
     }
 
-    func onProximityError(errorType: Int, message: NSString) {
-        self.txt_message.text = String( format: NSLocalizedString("error", comment:""), errorType, message)
+    func onProximityHealthCheckUpdate(_ healthStatus: HealthStatus) {
+        var error: String = ""
+        if healthStatus.isDown {
+            for serviceStatus in healthStatus.serviceStatusMap.values {
+                if serviceStatus.isDown() {
+                    for status in serviceStatus.statusList {
+                        error += status.message as String! + "\n"
+                    }
+                }
+            }
+        }
+
+        self.txt_message.text = error
     }
- 
+
 }
+
