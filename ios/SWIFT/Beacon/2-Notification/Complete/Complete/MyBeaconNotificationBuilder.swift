@@ -7,47 +7,49 @@
 //
 
 import Foundation
-import ATLocationBeacon
+import UserNotifications
+import ConnectPlaceActions
+import AdtagConnection
+import AdtagLocationBeacon
 
-class MyBeaconNotificationBuilder : NSObject, ATBeaconNotificationImageBuilderDelegate {
-    
+class MyBeaconNotificationBuilder: NSObject, NotificationBuilder {
+    func generateNotificationForIOS10AndPlus(placeNotificationImage: PlaceNotificationImage) -> UNMutableNotificationContent {
+        let placeNotification = placeNotificationImage.getPlaceNotification()
+        let notificationContent: UNMutableNotificationContent = UNMutableNotificationContent()
 
-    func createBeaconNotification(_ content: ATBeaconContent!, andImageUrl imageUrl: URL!) -> NSObject! {
-        let infoDict = [ KEY_NOTIFICATION_CONTENT : content.toJSONString() ]
-        if #available(iOS 10.0, *) {
-            let notificationContent:UNMutableNotificationContent! = UNMutableNotificationContent()
-            notificationContent.title = content.getNotificationTitle()
-            if content.isNotificationDescriptionEmpty() {
-                notificationContent.body = content.getNotificationTitle()
-            }else{
-                notificationContent.body = content.getNotificationDescription()
-            }
-            
-            if imageUrl != nil {
-                do{
-                    let attachement:UNNotificationAttachment! = try UNNotificationAttachment.init(identifier: "com.connecthings.beacon.image", url: imageUrl, options: nil)
-                     notificationContent.attachments = [attachement]
-                }catch _{}
-            }
-            notificationContent.userInfo = infoDict
-            return notificationContent;
-        }else{
-            let kLocalNotificationMessage:String! = content.getNotificationDescription()
-            let kLocalNotificationTitle:String! = content.getNotificationTitle()
-            let localNotification:UILocalNotification = UILocalNotification()
-            
-            localNotification.alertTitle = kLocalNotificationTitle
-            if kLocalNotificationMessage?.isEmpty == false {
-                localNotification.alertBody = kLocalNotificationTitle
-            } else {
-                localNotification.alertBody = kLocalNotificationMessage
-            }
-            
-            
-            localNotification.userInfo = infoDict
-            return localNotification;
+        notificationContent.title = placeNotification.getTitle()
+        if placeNotification.getDescription().isEmpty {
+            notificationContent.body = placeNotification.getTitle()
+        } else {
+            notificationContent.body = placeNotification.getDescription()
         }
-    }
-    
-}
 
+        if placeNotificationImage.hasImage() {
+            do {
+                let notificationId = "com.connecthings.beacon.image"
+                if let imageURL = placeNotificationImage.getImageURL() {
+                    let attachement: UNNotificationAttachment! = try UNNotificationAttachment.init(identifier: notificationId, url: imageURL, options: nil)
+                    notificationContent.attachments = [attachement]
+                }
+            } catch _{}
+        }
+        return notificationContent
+    }
+
+    func generateNotificationForIOS9AndMinus(placeNotificationImage: PlaceNotificationImage) -> UILocalNotification {
+        let placeNotification = placeNotificationImage.getPlaceNotification()
+        let localNotification: UILocalNotification = UILocalNotification()
+        
+        let kLocalNotificationTitle:String! = placeNotification.getTitle()
+        let kLocalNotificationMessage:String! = placeNotification.getDescription()
+        
+        localNotification.alertTitle = kLocalNotificationTitle
+        if kLocalNotificationMessage?.isEmpty == false {
+            localNotification.alertBody = kLocalNotificationTitle
+        } else {
+            localNotification.alertBody = kLocalNotificationMessage
+        }
+
+        return localNotification
+    }
+}

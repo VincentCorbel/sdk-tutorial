@@ -5,14 +5,14 @@
 //  Created by sarra srairi on 29/03/2016.
 //  Copyright © 2016 sarra srairi. All rights reserved.
 //
-#import <ATLocationBeacon/ATLocationBeacon.h>
 #import <UIKit/UIKit.h>
+@import ConnectPlaceActions;
+@import AdtagConnection;
+@import AdtagLocationBeacon;
 
-@interface ViewController : UIViewController <ATBeaconAlertDelegate>
+@interface ViewController : UIViewController <AdtagInAppActionDelegate, AdtagInProximityInForegroundDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonAlert;
 @property (weak, nonatomic) IBOutlet UILabel *txtAlertMessage;
- 
 
 @end
-

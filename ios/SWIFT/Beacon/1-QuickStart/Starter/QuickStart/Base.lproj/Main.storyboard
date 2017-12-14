@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Waiting for beacons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJz-au-MWM">
-                                <rect key="frame" x="9" y="150" width="302" height="127"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Waiting for beacons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emk-0j-RQg">
+                                <rect key="frame" x="8" y="174" width="305" height="137"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,12 +30,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sJz-au-MWM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="GEk-wN-a0D"/>
-                            <constraint firstItem="sJz-au-MWM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="130" id="WZF-0R-EZk"/>
+                            <constraint firstItem="Emk-0j-RQg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Gv-HS-xHO"/>
+                            <constraint firstItem="Emk-0j-RQg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JLV-SL-ldl"/>
+                            <constraint firstItem="Emk-0j-RQg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zlL-ok-kgE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="txt_message" destination="sJz-au-MWM" id="48g-L7-NuP"/>
+                        <outlet property="txt_message" destination="Emk-0j-RQg" id="38S-20-7ad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

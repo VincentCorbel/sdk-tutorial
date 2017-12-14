@@ -20,6 +20,7 @@
 		14E45A3A1CA1A46700639B81 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14E45A3C1CA1A46700639B81 /* Localizable.strings */; };
 		2FE215E0FCC06ED8EB52479E /* Pods_QuickCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BB196E83C0A0D533A376F /* Pods_QuickCompleteUITests.framework */; };
 		5D50DB38CFA7353CFF05AADE /* Pods_QuickCompleteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB317B27E81C75E60AB04184 /* Pods_QuickCompleteTests.framework */; };
+		A80E32A71FB4B9AF000E0632 /* MyNotificationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A80E32A61FB4B9AF000E0632 /* MyNotificationDelegate.m */; };
 		ACE474DF3FFB8965B5E96179 /* Pods_QuickComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84AEECC0897A76063B9C3C2 /* Pods_QuickComplete.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		23618739214FCDBA763D5689 /* Pods-QuickCompleteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickCompleteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickCompleteUITests/Pods-QuickCompleteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		55237F594E3FEF8C04691FE0 /* Pods-QuickCompleteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickCompleteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickCompleteTests/Pods-QuickCompleteTests.release.xcconfig"; sourceTree = "<group>"; };
 		7EF659A72FC20DA76FB0610E /* Pods-QuickCompleteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickCompleteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickCompleteUITests/Pods-QuickCompleteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A80E32A51FB4B9AF000E0632 /* MyNotificationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyNotificationDelegate.h; sourceTree = "<group>"; };
+		A80E32A61FB4B9AF000E0632 /* MyNotificationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyNotificationDelegate.m; sourceTree = "<group>"; };
 		B84AEECC0897A76063B9C3C2 /* Pods_QuickComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40BB196E83C0A0D533A376F /* Pods_QuickCompleteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickCompleteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB317B27E81C75E60AB04184 /* Pods_QuickCompleteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickCompleteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +133,8 @@
 				14D224311CA18A4C004C579C /* AppDelegate.m */,
 				14D224331CA18A4C004C579C /* ViewController.h */,
 				14D224341CA18A4C004C579C /* ViewController.m */,
+				A80E32A51FB4B9AF000E0632 /* MyNotificationDelegate.h */,
+				A80E32A61FB4B9AF000E0632 /* MyNotificationDelegate.m */,
 				14D224361CA18A4C004C579C /* Main.storyboard */,
 				14D224391CA18A4C004C579C /* Assets.xcassets */,
 				14D2243B1CA18A4C004C579C /* LaunchScreen.storyboard */,
@@ -334,9 +339,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickCompleteTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -349,9 +357,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickComplete-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -424,9 +435,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuickComplete/Pods-QuickComplete-frameworks.sh",
+				"${PODS_ROOT}/AdtagAnalytics/AdtagAnalytics.framework",
+				"${PODS_ROOT}/AdtagConnection/AdtagConnection.framework",
+				"${PODS_ROOT}/AdtagLocationBeacon/AdtagLocationBeacon.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${PODS_ROOT}/ConnectPlaceActions/ConnectPlaceActions.framework",
+				"${PODS_ROOT}/ConnectPlaceBeaconDetection/ConnectPlaceBeaconDetection.framework",
+				"${PODS_ROOT}/ConnectPlaceCommon/ConnectPlaceCommon.framework",
+				"${PODS_ROOT}/ConnectPlaceProvider/ConnectPlaceProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdtagAnalytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdtagConnection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdtagLocationBeacon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceActions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceBeaconDetection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -454,9 +486,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickCompleteUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -473,6 +508,7 @@
 				14D224351CA18A4C004C579C /* ViewController.m in Sources */,
 				14D224321CA18A4C004C579C /* AppDelegate.m in Sources */,
 				14D2242F1CA18A4C004C579C /* main.m in Sources */,
+				A80E32A71FB4B9AF000E0632 /* MyNotificationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -609,7 +645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,31 +1,25 @@
 package android.connecthings.com.tuto.alert;
 
-import com.connecthings.adtag.model.sdk.BeaconContent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-/**
- */
+import com.connecthings.connectplace.actions.model.PlaceInAppAction;
+import com.connecthings.util.adtag.beacon.analytics.InAppActionRedirectHelper;
+
 public class ActivityDetail extends AppCompatActivity {
-
-    public static final String BEACON_CONTENT = "com.connecthings.beaconContent";
-
-    private BeaconContent currentBeaconContent;
+    private PlaceInAppAction placeInAppAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        currentBeaconContent = getIntent().getParcelableExtra(BEACON_CONTENT);
+        placeInAppAction = getIntent().getParcelableExtra(InAppActionRedirectHelper.IN_APP_ACTION_CONTENT);
         initView();
     }
 
-    private void initView(){
-        ((TextView) findViewById(R.id.tv_beacon_title)).setText(currentBeaconContent.getAlertTitle()+"");
-        ((TextView) findViewById(R.id.tv_beacon_description)).setText(currentBeaconContent.getAlertDescription()+"");
-        //You could find all the others field from the beacon using
-        //currentBeaconContent.getValue("Category","Field");
+    private void initView() {
+        ((TextView) findViewById(R.id.tv_beacon_title)).setText(placeInAppAction.getTitle());
+        ((TextView) findViewById(R.id.tv_beacon_description)).setText(placeInAppAction.getDescription());
     }
-
 }

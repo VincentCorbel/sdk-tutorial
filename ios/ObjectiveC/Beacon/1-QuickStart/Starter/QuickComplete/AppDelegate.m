@@ -7,29 +7,27 @@
 //
 
 #import "AppDelegate.h"
+@import AdtagLocationBeacon;
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
-
-/*** MUST KNOW !!
-  IF YOU WILL IMPLEMENT THE applicationDidBecomeActive METHOD YOU SHOULD ADD [super applicationDidBecomeActive:application];
-    -   the super method will activate the range in your project
-*/
+@implementation AppDelegate {
+    AdtagInitializer *adtagInitializer;
+    AdtagBeaconManager *adtagBeaconManager;
+    MyNotificationDelegate *myNotificationDelegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    // HELP:
-    // init the adtag platforme with the
-    // ** user Login : Login delivred by the Connecthings staff
-    // ** user Password : Password delivred by the Connecthings staff
-    // ** user Compagny : ....
-    // ** beaconUuid : - UUID beacon number devivred by the Connecthings staff
-    //
-    
     return YES;
 }
+
 
 @end

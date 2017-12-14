@@ -2,14 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your description goes here</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your description goes here</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>For Beacons</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>For beacons</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>For beacons</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Bluetooth is life</string>
+	<string>Your description goes here</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

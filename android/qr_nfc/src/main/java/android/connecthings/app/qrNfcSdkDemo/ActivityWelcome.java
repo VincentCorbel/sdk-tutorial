@@ -8,8 +8,6 @@ import android.view.View;
 import com.connecthings.util.ViewUtils;
 
 public class ActivityWelcome extends Activity implements View.OnClickListener{
-
-
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
@@ -31,7 +29,4 @@ public class ActivityWelcome extends Activity implements View.OnClickListener{
                 break;
         }
     }
-
-
-
 }

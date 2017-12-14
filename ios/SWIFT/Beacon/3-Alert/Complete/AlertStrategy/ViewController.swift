@@ -7,63 +7,67 @@
 //
 
 import UIKit
-import ATAnalytics
-import ATLocationBeacon
+import ConnectPlaceActions
+import AdtagAnalytics
+import AdtagConnection
+import AdtagLocationBeacon
+import ConnectPlaceCommon
 
-class ViewController: UIViewController, ATBeaconAlertDelegate {
-    
+class ViewController: UIViewController, AdtagInAppActionDelegate, AdtagInProximityInForegroundDelegate {
     @IBOutlet weak var txtAlertMessage: UILabel!
- 
-    @IBOutlet weak var actionTxt: UILabel!
-    var currentAlertBeaconContent: ATBeaconContent!
+    @IBOutlet weak var buttonInAppAction: UIButton!
+    
+    var currentPlaceInAppAction: PlaceInAppAction!
   
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        ATBeaconManager.sharedInstance().registerBeaconAlertDelgate(self)
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        AdtagBeaconManager.shared.registerInAppActionDelegate(self)
+        AdtagBeaconManager.shared.registerInProximityInForeground(self)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        ATBeaconManager.sharedInstance().registerBeaconAlertDelgate(nil)
+        AdtagBeaconManager.shared.unregisterInAppActionDelegate()
+        AdtagBeaconManager.shared.unregisterInProximityInForeground(self)
     }
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func createBeaconAlert(_ _beaconContent: ATBeaconContent!) -> Bool {
-        if ("popup" == _beaconContent.getAction()) {
-            // create a popup view
-            actionTxt.text = "Well done! now you have created your alert action"
-            self.txtAlertMessage.text = _beaconContent.getAlertTitle()
+    func createInAppAction(_ placeInAppAction: AdtagPlaceInAppAction, statusManager: InAppActionStatusManagerDelegate) -> Bool {
+        if ("popup" == placeInAppAction.getAction()) {
+            GlobalLogger.shared.debug("Well done! now you have created your alert action")
+            self.txtAlertMessage.text = placeInAppAction.getTitle()
             txtAlertMessage.setNeedsDisplay()
- 
-            currentAlertBeaconContent = _beaconContent
+            buttonInAppAction.isHidden = false
+            currentPlaceInAppAction = placeInAppAction
             return true
         }
         self.txtAlertMessage.text = "No Beacons ready for action"
         txtAlertMessage.setNeedsDisplay()
         return false
-
     }
     
-    func removeBeaconAlert(_ _beaconContent: ATBeaconContent!, actionStatus _actionStatus: ATBeaconRemoveStatus) -> Bool {
-        actionTxt.text = "Well done! now you have removed your alert action"
-        self.txtAlertMessage.text = "Remove beacon alert action"
+    func removeInAppAction(_ placeInAppAction: AdtagPlaceInAppAction, inAppActionRemoveStatus: InAppActionRemoveStatus) -> Bool {
+        GlobalLogger.shared.debug("Well done! now you have removed your alert action")
+        buttonInAppAction.isHidden = true
+        txtAlertMessage.text = "The In-App Action has been removed"
         txtAlertMessage.setNeedsDisplay()
         return true
+    }
 
+    func proximityContentsInForeground(_ contents: [AdtagPlaceInAppAction]) {
+        for place in contents {
+            print("place: \(place)")
+        }
     }
     
-    func onNetworkError(_ _feedStatus: ATRangeFeedStatus) {
-        actionTxt.text = "We can't connect to the Adtag Platform"
-        self.txtAlertMessage.text = "Network Error"
-        actionTxt.setNeedsDisplay()
-        txtAlertMessage.setNeedsDisplay()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let alertViewController = segue.destination as? AlertViewControllerAction {
+            if let currentAdtagPlaceInAppAction = currentPlaceInAppAction as? AdtagPlaceInAppAction {
+                alertViewController.currentPlaceInAppAction = currentAdtagPlaceInAppAction
+            }
+        }
     }
-
 }
-

@@ -1,10 +1,12 @@
-import org.gradle.api.internal.artifacts.publish.DefaultPublishArtifact
-
 buildscript {
     repositories {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/groups/public"}
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
@@ -34,6 +36,10 @@ repositories {
         url "https://forge.adtag.eu/nexus/content/repositories/snapshots"
     }
     maven { url "http://repo.maven.apache.org/maven2" }
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
 }
 
 configurations {
@@ -41,12 +47,10 @@ configurations {
 }
 
 dependencies {
-    /* If you just want to access to FragmentAdtagContentAsker
-    that permits to get content associate to a tag without build-in integration with QR or NFC
-    */
+    // If you just want to access to FragmentAdtagContentAsker that permits to get content associate to a tag without build-in integration with QR or NFC
     // compile "android.connecthings.adtag:android-adtag-sdk:${project.versionCt}"
 
-    //Comment or remove these dependencies if you just want to use FragmentAdtagContentAsker without build-in integration with QR or NFC
+    // Comment or remove these dependencies if you just want to use FragmentAdtagContentAsker without build-in integration with QR or NFC
     compile "com.connecthings.adtag:android-qr:${project.versionCt}"
     compile "com.connecthings.adtag:android-nfc-sdk:${project.versionCt}"
 }
@@ -73,7 +77,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             zipAlignEnabled false
         }
-
     }
     sourceSets {
         main {

@@ -9,71 +9,80 @@
 #import "AppDelegate.h"
 #import "ViewControllerBeacon.h"
 #import "MyBeaconNotificationBuilder.h"
-@interface AppDelegate ()
+#import "AsyncNotificationTask.h"
+#import "MyNotificationDelegate.h"
+#import "MyNotificationFilter.h"
+
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
+@interface AppDelegate () {
+    AdtagInitializer *adtagInitializer;
+    AdtagBeaconManager *adtagBeaconManager;
+    MyNotificationDelegate *myNotificationDelegate;
+}
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    /* ** Required -- used to initialize and setup the SDK
-     *
-     *
-     *
-     * If you have followed our SDK quickstart guide, you won't need to re-use this method, but you should add the parameters values.
-     * -- 1- Platform : ATUrlTypePreprod  = > Pre-production Platform
-     *                  ATUrlTypeProd     = > Production Platform
-     *                  ATUrlTypeDemo     = > Demo Platform
-     *
-     * Key/Value are related to the selected Platform
-     * -- 2- user Login : Login delivred by the Connecthings staff
-     * -- 3- user Password : Password delivred by the Connecthings staff
-     * -- 4- user Compagny : Define the compagny name
-     * -- 5- beaconUuid : - UUID beacon number delivred by the Connecthings staff
-     * --
-     *
-     * All other SDK methods must be called after this one, because they won't exist until you do.
-     */
-    [[[ATAdtagInitializer sharedInstance] configureUrlType:__UrlType__ andLogin:@"__USER__" andPassword:@"__PSWD__" andCompany:@"__COMPANY__"] synchronize];
-    
-    [self registerAsyncBeaconNotificationDelegate:[[ATAsyncBeaconNotificationImageCreator alloc] initWithBeaconNotificationBuilder:[[MyBeaconNotificationBuilder alloc] init]]];
-    //To add the application to the notification center untill ios9
-    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    adtagInitializer = [AdtagInitializer shared];
+    [[[adtagInitializer configPlatform:AdtagPlatform.preProd] configUserWithLogin:@"__LOGIN__" password:@"__PSWD__" company:@"__COMPANY__"] synchronize];
+    //To configure the notification group filter. Need a configuration on AdTag as well.
+    //[adtagInitializer initGroupWithCategory:@"__CATEGORY__" fieldName:@"__FIELD__"]
+    adtagBeaconManager = [AdtagBeaconManager shared];
+    [adtagBeaconManager registerReceiveNotificatonContentDelegate:self];
+    [adtagBeaconManager registerNotificationBuilder: [[MyBeaconNotificationBuilder alloc] init]];
+    [adtagBeaconManager registerNotificationTask: [AsyncNotificationTask alloc]];
+    //To register a builder and a task for a welcomeNotification
+    //[adtagBeaconManager registerEnterWelcomeNotificationBuilder:[[MyBeaconNotificationBuilder alloc] init]];
+    //[adtagBeaconManager registerEnterWelcomeNotificationTask: [AsyncNotificationTask alloc]];
+    [adtagBeaconManager registerNotificationFilter:[[MyNotificationFilter alloc] initWithMinTimeBetweenNotification:2 * 60]];
+    if (SYSTEM_VERSION_LESS_THAN(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
+    } else {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        //The request can be done as well in a viewController which allows to display a message if the user refuse to receive notifications
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                              completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                  if (!error) {
+                                      NSLog(@"request authorization succeeded!");
+                                  }
+                              }];
+        myNotificationDelegate = [[MyNotificationDelegate alloc] initWithAdtagManager:adtagBeaconManager];
+        center.delegate = myNotificationDelegate;
     }
+
     return YES;
 }
 
-// if you implement didBeacomeActive you should add a super call
-// if you don't just remove all the method
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    [super applicationDidBecomeActive:application];
+- (void) applicationWillResignActive:(UIApplication *)application {
+    [adtagInitializer onAppInBackground];
 }
 
-
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    [super application:application didReceiveLocalNotification:notification];
+- (void) applicationDidBecomeActive:(UIApplication *)application {
+    [adtagInitializer onAppInForeground];
 }
 
--(void) didReceiveBeaconNotification:(ATBeaconContent *)_beaconContent{
-    //Open the view controller associate to the notification
-    //You can use [_beaconContent getUri] to match with a deeplink
-    //Here a fast an simple exemple
-    NSDictionary* dict = [NSDictionary dictionaryWithObject: _beaconContent forKey:@"beaconContent"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"BeaconNotification" object:nil userInfo:dict];
-    
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    [[AdtagBeaconManager shared] didReceivePlaceNotification: [notification userInfo]];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
+- (void) didReceivePlaceNotification:(AdtagPlaceNotification *)placeNotification {
+    //Do action with this object when the notification is clicked, a beacon notification
+    NSLog(@"Do an action when the beacon notification is clicked - for example open a controller");
+    //Fast way to code it
+    NSDictionary* dict = [NSDictionary dictionaryWithObject: placeNotification forKey:@"placeNotification"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"placeNotification" object:nil userInfo:dict];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
+- (void) didReceiveWelcomeNotification:(AdtagPlaceWelcomeNotification *)welcomeNotification {
+    //Do action with this object when the notification is clicked, from welcome notification
+    NSLog(@"Do an action when the beacon notification is clicked - for example open a controller");
+    //Fast way to code it
+    NSDictionary* dict = [NSDictionary dictionaryWithObject: welcomeNotification forKey:@"placeNotification"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"placeNotification" object:nil userInfo:dict];
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-}
 
 @end
-
-

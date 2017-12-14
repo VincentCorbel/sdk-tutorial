@@ -6,22 +6,32 @@
 //  Copyright © 2016 R&D connecthings. All rights reserved.
 //
 import UIKit
-import ATConnectionHttp
-import ATAnalytics
-import ATLocationBeacon
-class ViewController: UIViewController, ATRangeDelegate{
-    
-    var beaconManager: ATBeaconManager!
-    
+import AdtagConnection
+import ConnectPlaceActions;
+import AdtagLocationBeacon;
+import ConnectPlaceCommon;
+
+class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, ProximityHealthCheckDelegate {
     @IBOutlet weak var txt_message: UILabel!
-    
+    var adtagInitializer: AdtagInitializer?
+    var adtagBeaconManager: AdtagBeaconManager?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        beaconManager = ATBeaconManager.sharedInstance()
-        beaconManager.registerAdtagRangeDelegate(self)
-        beaconManager.registerNotificationContentDelegate(self);
-        // Do any additional setup after loading the view, typically from a nib
-        
+        adtagInitializer = AdtagInitializer.shared
+        adtagBeaconManager = AdtagBeaconManager.shared
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        adtagInitializer?.registerProximityHealthCheckDelegate(self)
+        adtagBeaconManager?.registerInProximityInForeground(self)
+        super.viewWillAppear(animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        adtagInitializer?.unregisterProximityHealthCheckDelegate(self)
+        adtagBeaconManager?.unregisterInProximityInForeground(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,35 +39,23 @@ class ViewController: UIViewController, ATRangeDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func didReceiveNotificationContentReceived(_ _beaconContent: ATBeaconContent!) {
-        
-        // Display the notification content :  _beaconContent.getNotificationTitle()
- 
+    func proximityContentsInForeground(_ contents: [AdtagPlaceInAppAction]) {
+        self.txt_message.text = String( format: NSLocalizedString("beaconAround", comment:""), contents.count)
     }
-    
-    func didReceiveWelcomeNotificationContentReceived(_ _welcomeNotificationContent: ATBeaconWelcomeNotification!) {
-        
-    }
-    
-    func didRangeBeacons(_ _beacons: [Any]!, beaconContents: [Any]!, informationStatus: ATRangeInformationStatus, feedStatus: ATRangeFeedStatus) {
-        var feedStatusString: String
-        
-        switch feedStatus {
-        case ATRangeFeedStatusInProgress:
-            feedStatusString = "IN_PROGRESS"
-        case ATRangeFeedStatusBackendError:
-            feedStatusString = "BACKEND_ERROR"
-        case ATRangeFeedStatusNetworkError:
-            feedStatusString = "NETWORK_ERROR"
-        case ATRangeFeedStatusBackendSuccess:
-            feedStatusString = "BACKEND_SUCCESS"
-        default:
-            feedStatusString = ""
-        }
-        
-        self.txt_message.text = String( format: NSLocalizedString("beaconAround", comment:""), feedStatusString, _beacons.count, beaconContents.count)
 
+    func onProximityHealthCheckUpdate(_ healthStatus: HealthStatus) {
+        var error: String = ""
+        if healthStatus.isDown {
+            for serviceStatus in healthStatus.serviceStatusMap.values {
+                if serviceStatus.isDown() {
+                    for status in serviceStatus.statusList {
+                        error += status.message as String + "\n"
+                    }
+                }
+            }
+        }
+
+        self.txt_message.text = error
     }
  
 }

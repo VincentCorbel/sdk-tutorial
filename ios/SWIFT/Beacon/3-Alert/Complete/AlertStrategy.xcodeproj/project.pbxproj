@@ -16,6 +16,10 @@
 		142B36E51D5CA1090026B352 /* AlertStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142B36E41D5CA1090026B352 /* AlertStrategyTests.swift */; };
 		142B36F01D5CA1090026B352 /* AlertStrategyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142B36EF1D5CA1090026B352 /* AlertStrategyUITests.swift */; };
 		2A6A32073614E62067B1D537 /* Pods_AlertStrategyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB6BD34278AF6A6A81910C9 /* Pods_AlertStrategyUITests.framework */; };
+		43853BFA1FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43853BF91FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift */; };
+		43853BFE1FB9F120002B21C9 /* TimeConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43853BFD1FB9F120002B21C9 /* TimeConditions.swift */; };
+		43853C001FB9F9D2002B21C9 /* TimeConditionsParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43853BFF1FB9F9D2002B21C9 /* TimeConditionsParameter.swift */; };
+		4395F4C21FC30BF500CDBD32 /* AlertViewControllerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395F4C11FC30BF500CDBD32 /* AlertViewControllerAction.swift */; };
 		946BDBBB1FC20C275D7E90FE /* Pods_AlertStrategyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F3EA34D43644C38C53140E /* Pods_AlertStrategyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,10 @@
 		16FA91B542E37D74D70F2900 /* Pods-AlertStrategyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertStrategyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlertStrategyUITests/Pods-AlertStrategyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		19900535B1468F1E4B645E90 /* Pods-AlertStrategyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertStrategyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlertStrategyUITests/Pods-AlertStrategyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2D7B1D8EB9E090669C67319B /* Pods-AlertStrategy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertStrategy.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlertStrategy/Pods-AlertStrategy.release.xcconfig"; sourceTree = "<group>"; };
+		43853BF91FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConditionsFirstWay.swift; sourceTree = "<group>"; };
+		43853BFD1FB9F120002B21C9 /* TimeConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConditions.swift; sourceTree = "<group>"; };
+		43853BFF1FB9F9D2002B21C9 /* TimeConditionsParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConditionsParameter.swift; sourceTree = "<group>"; };
+		4395F4C11FC30BF500CDBD32 /* AlertViewControllerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewControllerAction.swift; sourceTree = "<group>"; };
 		48E5990880B517636D05D5D4 /* Pods-AlertStrategyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertStrategyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlertStrategyTests/Pods-AlertStrategyTests.release.xcconfig"; sourceTree = "<group>"; };
 		59F3ED67ED789E10A69F9D98 /* Pods_AlertStrategy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlertStrategy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F3EA34D43644C38C53140E /* Pods_AlertStrategyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlertStrategyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +123,11 @@
 			isa = PBXGroup;
 			children = (
 				142B36CF1D5CA1090026B352 /* AppDelegate.swift */,
+				4395F4C11FC30BF500CDBD32 /* AlertViewControllerAction.swift */,
 				142B36D11D5CA1090026B352 /* ViewController.swift */,
+				43853BF91FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift */,
+				43853BFD1FB9F120002B21C9 /* TimeConditions.swift */,
+				43853BFF1FB9F9D2002B21C9 /* TimeConditionsParameter.swift */,
 				142B36D31D5CA1090026B352 /* Main.storyboard */,
 				142B36D61D5CA1090026B352 /* Assets.xcassets */,
 				142B36D81D5CA1090026B352 /* LaunchScreen.storyboard */,
@@ -371,13 +383,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlertStrategy-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A33BF0279475B3ACF07CA90D /* [CP] Check Pods Manifest.lock */ = {
@@ -386,13 +401,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlertStrategyUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B61E978CE670BA23532D8AA2 /* [CP] Embed Pods Frameworks */ = {
@@ -401,9 +419,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AlertStrategy/Pods-AlertStrategy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AdtagAnalytics/AdtagAnalytics.framework",
+				"${BUILT_PRODUCTS_DIR}/AdtagConnection/AdtagConnection.framework",
+				"${BUILT_PRODUCTS_DIR}/AdtagLocationBeacon/AdtagLocationBeacon.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceActions/ConnectPlaceActions.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceBeaconDetection/ConnectPlaceBeaconDetection.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceCommon/ConnectPlaceCommon.framework",
+				"${BUILT_PRODUCTS_DIR}/ConnectPlaceProvider/ConnectPlaceProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdtagAnalytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdtagConnection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdtagLocationBeacon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceActions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceBeaconDetection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -416,13 +455,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlertStrategyTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FF01C71F3FBC81540B923287 /* [CP] Copy Pods Resources */ = {
@@ -448,7 +490,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				142B36D21D5CA1090026B352 /* ViewController.swift in Sources */,
+				43853BFA1FB9DC7A002B21C9 /* TimeConditionsFirstWay.swift in Sources */,
+				43853C001FB9F9D2002B21C9 /* TimeConditionsParameter.swift in Sources */,
+				4395F4C21FC30BF500CDBD32 /* AlertViewControllerAction.swift in Sources */,
 				142B36D01D5CA1090026B352 /* AppDelegate.swift in Sources */,
+				43853BFE1FB9F120002B21C9 /* TimeConditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">QuickStart</string>
     <string name="tv_waiting_beacon_detection">Waiting for the beacon detection process</string>
-    <string name="tv_beacon_number">%1$s,\n%2$d detected beacon,\n%3$d content(s) attached to the beacon(s) in the Adtag Platform</string>
-    <string name="tv_beacon_next_step">List of nearby beacons:</string>
+    <string name="tv_beacon_number">%1$d content(s) attached to the beacon(s) in the Adtag Platform.</string>
+    <string name="tv_beacon_error">The scan can\'t start - reason : %s</string>
+    <string name="tv_beacon_next_step">List of nearby contents:</string>
 </resources>

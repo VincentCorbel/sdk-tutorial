@@ -8,55 +8,64 @@
 
 #import "ViewController.h"
 
-@interface ViewController () {
-    NSString *feedStatusString;
-}
+
+@interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    NSString *feedStatusString;
+    AdtagBeaconManager *beaconManager;
+    AdtagInitializer *adtagInitializer;
+}
+
+@synthesize hashValue;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    beaconManager = [ATBeaconManager sharedInstance];
-    
+    beaconManager = [AdtagBeaconManager shared];
+    adtagInitializer = [AdtagInitializer shared];
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void) viewDidAppear:(BOOL)animated{
+- (void) viewWillAppear:(BOOL)animated{
     // Register Range Delegate protocol to your view
-    [beaconManager registerAdtagRangeDelegate:self];
-    [super viewDidAppear:animated];
+    [beaconManager registerInProximityInForeground:self];
+    [adtagInitializer registerProximityHealthCheckDelegate:self];
+    [super viewWillAppear:animated];
 }
 
-- (void) viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    [beaconManager registerAdtagRangeDelegate:nil];
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [beaconManager unregisterInProximityInForeground:self];
+    [adtagInitializer unregisterProximityHealthCheckDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)didRangeBeacons:(NSArray *)_beacons beaconContents:(NSArray *)_beaconContents informationStatus:(ATRangeInformationStatus)informationStatus feedStatus:(ATRangeFeedStatus)feedstatus {
-  
-    feedStatusString=@"";
-    switch(feedstatus){
-        case ATRangeFeedStatusInProgress:
-            feedStatusString = @"IN_PROGRESS";
-            break;
-        case ATRangeFeedStatusBackendError:
-            feedStatusString= @"BACKEND_ERROR";
-            break;
-        case ATRangeFeedStatusNetworkError:
-            feedStatusString = @"NETWORK_ERROR";
-            break;
-        case ATRangeFeedStatusBackendSuccess:
-            feedStatusString = @"BACKEND_SUCCESS";
-            break;
+
+-(void) onProximityHealthCheckUpdate:(HealthStatus *)healthStatus {
+    NSMutableString *error = [[NSMutableString alloc] initWithString:@""];
+    if ([healthStatus isDown]) {
+        for (ServiceStatus *serviceStatus in healthStatus.serviceStatusMap) {
+            if ([serviceStatus isDown]) {
+                for (Status *status in serviceStatus.statusList) {
+                    [error appendString:status.message];
+                    [error appendString:@"\n"];
+                }
+            }
+        }
     }
-    
-    _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"beaconAround", @""),feedStatusString,_beacons.count,_beaconContents.count];
+    _txt_nbrBeacon.text = error;
 }
+
+-(void) proximityContentsInForeground:(NSArray<AdtagPlaceInAppAction *> *)contents {
+    _txt_nbrBeacon.text =[NSString stringWithFormat:NSLocalizedString(@"beaconAround", @""), contents.count];
+}
+
+
 
 @end

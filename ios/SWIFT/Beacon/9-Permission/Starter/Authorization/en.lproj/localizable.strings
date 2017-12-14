@@ -1,4 +1,0 @@
-"adtag.warning.ble.status.text.swift" ="Please activate bluetooth";
-"adtag.notsupported.ble.status.text.swift" ="The bluetooth is not supported on your phone";
-"adtag.warning.Location.status.text.swift" ="Please authorize the application to access to your location";
-"adtag.ready.swift" ="It's ready for beacon detection";
