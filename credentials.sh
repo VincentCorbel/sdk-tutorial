@@ -114,4 +114,3 @@ function updateCompany() {
 updateURLType $urltype $os
 updateUser $user $pass $os
 updateCompany $company $os
-
