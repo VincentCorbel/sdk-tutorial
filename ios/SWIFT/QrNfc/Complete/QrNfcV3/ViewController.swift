@@ -25,7 +25,6 @@ class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityHea
     override func viewDidLoad() {
         super.viewDidLoad()
         adtagQrCodeReader = AdtagQrCodeReader(controller: self, cancelLabel: "Cancel")
-        adtagQrCodeReader?.readerVC
         adtagNfcReader = AdtagNfcReader(message: "Read NFC TAG")
         btnNfcReader.isHidden = !NfcUtils.isReadingNfcTagSupported()
         btnQrCode.isHidden = adtagQrCodeReader!.isCameraAccessDenied()
