@@ -19,15 +19,18 @@ case "$os" in
 	exit 1;;
 
 	"objectivec" | "o" )
-	updateIOSBuild "pod \"ATLocationBeacon\"" "ios/ObjectiveC"
+	updateIOSBuild "pod \"AdtagLocationBeacon\"" "ios/ObjectiveC"
+	updateIOSBuild "pod \'AdtagLocationBeacon\'" "ios/ObjectiveC"
 	exit 1;;
 
 	"swift" | "s" )
-	updateIOSBuild "pod \"ATLocationBeacon\"" "ios/swift" 
+	updateIOSBuild "pod \"AdtagLocationBeacon\"" "ios/swift" 
+	updateIOSBuild "pod \'AdtagLocationBeacon\'" "ios/swift" 
 	exit 1;;
 esac
 
 updateAndroidBuild "com.connecthings.adtag:android-adtag-beacon"
-updateIOSBuild "pod \"ATLocationBeacon\"" "ios/ObjectiveC" 
-updateIOSBuild "pod \"ATLocationBeacon\"" "ios/swift" 
-
+updateIOSBuild "pod \"AdtagLocationBeacon\"" "ios/ObjectiveC" 
+updateIOSBuild "pod \'AdtagLocationBeacon\'" "ios/ObjectiveC" 
+updateIOSBuild "pod \"AdtagLocationBeacon\"" "ios/swift" 
+updateIOSBuild "pod \'AdtagLocationBeacon\'" "ios/swift" 

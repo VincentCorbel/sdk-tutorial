@@ -24,5 +24,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     compile 'com.android.support:appcompat-v7:26.1.0'
-    compile "com.connecthings.adtag:android-adtag-beacon:3.0-RC109"
+    compile "com.connecthings.adtag:android-adtag-beacon:3.0"
 }
