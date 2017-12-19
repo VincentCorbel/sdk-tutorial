@@ -23,7 +23,8 @@
     <string name="dialog_loading_title">In progress</string>
     <string name="dialog_loading_content">Downloading content from adtag.</string>
 
-    <string name="toast_error">The application can\'t connect to backend. Check your connectivity.</string>
+    <string name="toast_error">The application can\'t connect to the backend. Check your connectivity.</string>
+    <string name="toast_error_no_content">There is no content associated to the tag.</string>
     <string name="toast_success">Your content is: %s</string>
     <string name="toast_no_content">There is no content associate to this point</string>
     <string name="toast_error_nfc">The tag can\'t be read. Please try again.</string>

@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     AdtagInitializer *adtagInitializer = [AdtagInitializer shared];
     [[[adtagInitializer configPlatform: AdtagPlatform.preProd]
-      configUserWithLogin:@"plopi" password:@"fSKbCEvCDCbYTDlk" company:@"ccbeacondemo"] synchronize];
+      configUserWithLogin:@"__LOGIN__" password:@"__PSWD__" company:@"__COMPANY__"] synchronize];
     // Override point for customization after application launch.
     return YES;
 }
