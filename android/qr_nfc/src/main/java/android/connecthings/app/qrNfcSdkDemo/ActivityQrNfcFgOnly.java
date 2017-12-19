@@ -100,7 +100,8 @@ public class ActivityQrNfcFgOnly extends Activity implements OnClickListener, Ad
                 intent.putExtra(ActivityContent.ADTAG_CONTENT, adtagContent);
                 startActivity(intent);
             } else {
-                Toast toast = Toast.makeText(this.getApplicationContext(), R.string.toast_error, Toast.LENGTH_LONG);
+                int msgId = FEED_STATUS.NO_CONTENT == feedStatus?R.string.toast_error_no_content:R.string.toast_error;
+                Toast toast = Toast.makeText(this.getApplicationContext(), msgId, Toast.LENGTH_LONG);
                 toast.show();
             }
         }
