@@ -7,7 +7,7 @@ target 'QrNfcV3Obj' do
     # Uncomment this line if you're using Swift or would like to use dynamic frameworks
     use_frameworks!
     swift_version = "4.0"
-    pod "AdtagScanProximity", '3.0-RC14'
+    pod "AdtagScanProximity", '3.0-RC23'
 
     post_install do |installer|
         installer.pods_project.targets.each do |target|
