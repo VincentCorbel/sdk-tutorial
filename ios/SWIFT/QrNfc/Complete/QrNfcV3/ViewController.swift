@@ -17,13 +17,15 @@ class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityHea
     @IBOutlet weak var btnNfcReader: UIButton!
     @IBOutlet weak var btnQrCode: UIButton!
     
-    let adtagInitializer: AdtagInitializer = AdtagInitializer.shared
-    let adtagScanProximityManager: AdtagScanProximityManager = AdtagScanProximityManager.shared
+    var adtagInitializer: AdtagInitializer?
+    var adtagScanProximityManager: AdtagScanProximityManager?
     var adtagQrCodeReader: AdtagQrCodeReader?
     var adtagNfcReader: AdtagNfcReader?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        adtagInitializer = AdtagInitializer.shared
+        adtagScanProximityManager = AdtagScanProximityManager.shared
         adtagQrCodeReader = AdtagQrCodeReader(controller: self, cancelLabel: "Cancel")
         adtagNfcReader = AdtagNfcReader(message: "Read NFC TAG")
         btnNfcReader.isHidden = !NfcUtils.isReadingNfcTagSupported()
@@ -31,14 +33,14 @@ class ViewController: UIViewController, AdtagScanProximityDelegate, ProximityHea
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        adtagScanProximityManager.scanProximityDelegate = self
-        adtagInitializer.registerProximityHealthCheckDelegate(self)
+        adtagScanProximityManager?.scanProximityDelegate = self
+        adtagInitializer?.registerProximityHealthCheckDelegate(self)
         super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        adtagScanProximityManager.scanProximityDelegate = nil
-        adtagInitializer.unregisterProximityHealthCheckDelegate(self)
+        adtagScanProximityManager?.scanProximityDelegate = nil
+        adtagInitializer?.unregisterProximityHealthCheckDelegate(self)
         super.viewWillDisappear(animated)
     }
 
