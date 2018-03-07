@@ -16,6 +16,7 @@ function updateIOSBuild() {
 case "$os" in
 	"android" | "a" )
 	updateAndroidBuild "com.connecthings.adtag:android-adtag-beacon"
+	# updateAndroidBuild 'com.android.support:appcompat-v7'
 	exit 1;;
 
 	"objectivec" | "o" )
