@@ -9,15 +9,20 @@ import android.widget.TextView;
 
 import com.connecthings.adtag.AdtagInitializer;
 import com.connecthings.connectplace.common.content.detection.InProximityInForeground;
-import com.connecthings.connectplace.common.utils.error.ProximityErrorListener;
+import com.connecthings.connectplace.common.utils.healthCheck.HealthStatus;
+import com.connecthings.connectplace.common.utils.healthCheck.ProximityHealthCheckListener;
+import com.connecthings.connectplace.common.utils.healthCheck.ServiceStatus;
+import com.connecthings.connectplace.common.utils.healthCheck.Status;
 import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
 import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements InProximityInForeground<AdtagPlaceInAppAction>,  ProximityHealthCheckListener {
+public class MainActivity extends AppCompatActivity implements InProximityInForeground<AdtagPlaceInAppAction>, ProximityHealthCheckListener {
+
     private TextView tvBeaconNumber;
     private List<AdtagPlaceInAppAction> previousList;
+
     private BeaconArrayAdapter beaconArrayAdapter;
     private AdtagBeaconManager adtagBeaconManager;
 
@@ -26,7 +31,8 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         adtagBeaconManager = AdtagBeaconManager.getInstance();
-        tvBeaconNumber = (TextView) findViewById(R.id.tv_beacon_number);
+        tvBeaconNumber = findViewById(R.id.tv_beacon_number);
+
         beaconArrayAdapter = new BeaconArrayAdapter(this);
         ((ListView) findViewById(R.id.list_beacons)).setAdapter(beaconArrayAdapter);
     }
@@ -68,5 +74,6 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
             }
         }
         tvBeaconNumber.setText(errors);
+
     }
 }
