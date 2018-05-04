@@ -15,7 +15,7 @@
 
 @implementation ViewController {
     NSString *feedStatusString;
-    AdtagBeaconManager *beaconManager;
+    AdtagPlaceDetectionManager *placeDetectionManager;
     AdtagInitializer *adtagInitializer;
 }
 
@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    beaconManager = [AdtagBeaconManager shared];
+    placeDetectionManager = [AdtagPlaceDetectionManager shared];
     adtagInitializer = [AdtagInitializer shared];
 
     // Do any additional setup after loading the view, typically from a nib.
@@ -31,14 +31,14 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     // Register Range Delegate protocol to your view
-    [beaconManager registerInProximityInForeground:self];
+    [placeDetectionManager registerInProximityInForeground:self];
     [adtagInitializer registerProximityHealthCheckDelegate:self];
     [super viewWillAppear:animated];
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [beaconManager unregisterInProximityInForeground:self];
+    [placeDetectionManager unregisterInProximityInForeground:self];
     [adtagInitializer unregisterProximityHealthCheckDelegate:self];
 }
 

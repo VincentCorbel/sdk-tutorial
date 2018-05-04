@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MyNotificationDelegate.h"
-@import AdtagLocationBeacon;
+@import AdtagLocationDetection;
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
@@ -22,7 +22,7 @@
 
 @implementation AppDelegate {
     AdtagInitializer *adtagInitializer;
-    AdtagBeaconManager *adtagBeaconManager;
+    AdtagPlaceDetectionManager *adtagPlaceDetectionManager;
     MyNotificationDelegate *myNotificationDelegate;
 }
 
@@ -31,7 +31,7 @@
     adtagInitializer = [AdtagInitializer shared];
     [[[adtagInitializer configPlatform: AdtagPlatform.preProd]
         configUserWithLogin:@"__USER__" password:@"__PASSWORD__" company:@"__COMPANY__"] synchronize];
-    adtagBeaconManager = [AdtagBeaconManager shared];
+    adtagPlaceDetectionManager = [AdtagPlaceDetectionManager shared];
     if (SYSTEM_VERSION_LESS_THAN(@"10.0") && [application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
     } else {
@@ -43,10 +43,10 @@
                                       NSLog(@"request authorization succeeded!");
                                   }
                               }];
-        myNotificationDelegate = [[MyNotificationDelegate alloc] initWithAdtagManager:adtagBeaconManager];
+        myNotificationDelegate = [[MyNotificationDelegate alloc] initWithDetectionManager:adtagPlaceDetectionManager];
         center.delegate = myNotificationDelegate;
     }
-    [adtagBeaconManager registerReceiveNotificatonContentDelegate:self];
+    [adtagPlaceDetectionManager registerReceiveNotificatonContentDelegate:self];
     return YES;
 }
 
@@ -60,7 +60,7 @@
 
 - (void) application:(UIApplication *)application
 didReceiveLocalNotification:(UILocalNotification *)notification {
-    [adtagBeaconManager didReceivePlaceNotification:[notification userInfo]];
+    [adtagPlaceDetectionManager didReceivePlaceNotification:[notification userInfo]];
 }
 
 - (void) didReceivePlaceNotification:(AdtagPlaceNotification *)placeNotification {

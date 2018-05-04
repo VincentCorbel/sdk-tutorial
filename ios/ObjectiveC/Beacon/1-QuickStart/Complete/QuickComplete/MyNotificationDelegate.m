@@ -9,19 +9,19 @@
 #import "MyNotificationDelegate.h"
 
 @implementation MyNotificationDelegate {
-    AdtagBeaconManager *adtagBeaconManager;
+    AdtagPlaceDetectionManager *adtagPlaceDetectionManager;
 }
 
--(id) initWithAdtagManager: (AdtagBeaconManager *) adtagBeaconManager {
+-(id) initWithDetectionManager: (AdtagPlaceDetectionManager *) _adtagPlaceDetectionManager {
     self = [super init];
     if (self) {
-        adtagBeaconManager = adtagBeaconManager;
+        adtagPlaceDetectionManager = _adtagPlaceDetectionManager;
     }
     return self;
 }
 
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-    [adtagBeaconManager didReceivePlaceNotification:response.notification.request.content.userInfo];
+    [adtagPlaceDetectionManager didReceivePlaceNotification:response.notification.request.content.userInfo];
 }
 
 @end

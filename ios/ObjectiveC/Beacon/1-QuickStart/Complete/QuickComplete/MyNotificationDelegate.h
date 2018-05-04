@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 @import UserNotifications;
-@import AdtagLocationBeacon;
+@import AdtagLocationDetection;
 
 @interface MyNotificationDelegate : NSObject <UNUserNotificationCenterDelegate>
 
--(id) initWithAdtagManager: (AdtagBeaconManager *) _adtagBeaconManager;
+-(id) initWithDetectionManager: (AdtagPlaceDetectionManager *) _adtagPlaceDetectionManager;
 
 @end

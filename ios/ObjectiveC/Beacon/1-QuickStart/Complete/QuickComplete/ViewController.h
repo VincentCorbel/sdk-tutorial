@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@import AdtagLocationBeacon;
+@import AdtagLocationDetection;
 @import AdtagConnection;
 @import ConnectPlaceCommon;
 

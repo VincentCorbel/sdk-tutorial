@@ -1,5 +1,6 @@
 ## Migrate from 3.0
 
+* In the build.gradle, replace your current dependencie by compile "com.connecthings.adtag:android-adtag-detection:3.1.xx"
 * The package com.connecthings.util.adtag.beacon has been renamed com.connecthings.util.adtag.detection
 * The AdtagBeaconManager from the package com.connecthings.util.adtag.beacon is now the AdtagPlaceDetectionManager from the package com.connecthings.util.adtag.detection
 
