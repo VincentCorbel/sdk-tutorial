@@ -1,0 +1,28 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://forge.adtag.eu/pub/Specs'
+platform :ios, '9.0'
+
+target 'QuickStart' do
+	# Uncomment this line if you're using Swift or would like to use dynamic frameworks
+	use_frameworks!
+
+	pod "AdtagLocationDetection", '3.1.4'
+
+	target 'QuickStartTests' do
+		inherit! :search_paths
+		# Pods for testing
+	end
+
+	target 'QuickStartUITests' do
+		inherit! :search_paths
+		# Pods for testing
+	end
+
+	post_install do |installer|
+        installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |configuration|
+                configuration.build_settings['SWIFT_VERSION'] = "4.1"
+            end
+        end
+    end
+end

@@ -1,0 +1,30 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+        google()
+        maven {
+            url "https://forge.adtag.eu/nexus/content/groups/public"
+        }
+        maven {
+            url "https://forge.adtag.eu/nexus/content/repositories/releases"
+        }
+        maven {
+            url "https://forge.adtag.eu/nexus/content/repositories/snapshots"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
