@@ -276,6 +276,11 @@
 					14D224291CA18A4C004C579C = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 3T67HE76NG;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					14D224421CA18A4D004C579C = {
 						CreatedOnToolsVersion = 7.2;
