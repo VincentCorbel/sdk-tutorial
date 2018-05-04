@@ -13,8 +13,8 @@ import com.connecthings.connectplace.common.utils.healthCheck.HealthStatus;
 import com.connecthings.connectplace.common.utils.healthCheck.ProximityHealthCheckListener;
 import com.connecthings.connectplace.common.utils.healthCheck.ServiceStatus;
 import com.connecthings.connectplace.common.utils.healthCheck.Status;
-import com.connecthings.util.adtag.beacon.AdtagBeaconManager;
-import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
+import com.connecthings.util.adtag.detection.AdtagPlaceDetectionManager;
+import com.connecthings.util.adtag.detection.bridge.AdtagPlaceInAppAction;
 
 import java.util.List;
 
@@ -24,13 +24,13 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
     private List<AdtagPlaceInAppAction> previousList;
 
     private BeaconArrayAdapter beaconArrayAdapter;
-    private AdtagBeaconManager adtagBeaconManager;
+    private AdtagPlaceDetectionManager adtagPlaceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        adtagBeaconManager = AdtagBeaconManager.getInstance();
+        adtagPlaceManager = AdtagPlaceDetectionManager.getInstance();
         tvBeaconNumber = findViewById(R.id.tv_beacon_number);
 
         beaconArrayAdapter = new BeaconArrayAdapter(this);
@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity implements InProximityInFore
 
     protected void onResume() {
         super.onResume();
-        adtagBeaconManager.registerInProximityInForeground(this);
+        adtagPlaceManager.registerInProximityInForeground(this);
         AdtagInitializer.getInstance().registerProximityHealthCheckListener(this);
     }
 
     protected void onPause() {
-        adtagBeaconManager.unregisterInProximityInForeground(this);
+        adtagPlaceManager.unregisterInProximityInForeground(this);
         AdtagInitializer.getInstance().unregisterProximityHealthCheckListener(this);
         super.onPause();
     }

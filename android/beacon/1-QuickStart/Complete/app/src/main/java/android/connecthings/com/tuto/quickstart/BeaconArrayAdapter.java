@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.connecthings.util.adapter.ArrayAdapter;
-import com.connecthings.util.adtag.beacon.bridge.AdtagPlaceInAppAction;
+import com.connecthings.util.adtag.detection.bridge.AdtagPlaceInAppAction;
 
 import java.util.ArrayList;
 
