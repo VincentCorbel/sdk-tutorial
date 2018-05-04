@@ -50,7 +50,7 @@
 -(void) onProximityHealthCheckUpdate:(HealthStatus *)healthStatus {
     NSMutableString *error = [[NSMutableString alloc] initWithString:@""];
     if ([healthStatus isDown]) {
-        for (ServiceStatus *serviceStatus in healthStatus.serviceStatusMap) {
+        for (ServiceStatus *serviceStatus in [healthStatus.serviceStatusMap allValues]) {
             if ([serviceStatus isDown]) {
                 for (Status *status in serviceStatus.statusList) {
                     [error appendString:status.message];
