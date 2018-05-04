@@ -17,6 +17,6 @@ public class ApplicationQuickStart extends Application {
                 .initCompany("__COMPANY__");
 
         adtagInitializer.synchronize();
-        adtagInitializer.addPermissionToAsk(Manifest.permission.ACCESS_COARSE_LOCATION);
+        adtagInitializer.addPermissionToAsk(Manifest.permission.ACCESS_FINE_LOCATION);
     }
 }
