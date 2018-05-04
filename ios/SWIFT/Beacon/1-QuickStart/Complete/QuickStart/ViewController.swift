@@ -7,31 +7,31 @@
 //
 import UIKit
 import AdtagConnection
-import ConnectPlaceActions;
-import AdtagLocationBeacon;
-import ConnectPlaceCommon;
+import ConnectPlaceActions
+import AdtagLocationDetection
+import ConnectPlaceCommon
 
 class ViewController: UIViewController, AdtagInProximityInForegroundDelegate, ProximityHealthCheckDelegate {
     @IBOutlet weak var txt_message: UILabel!
     var adtagInitializer: AdtagInitializer?
-    var adtagBeaconManager: AdtagBeaconManager?
+    var adtagPlaceManager: AdtagPlaceDetectionManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         adtagInitializer = AdtagInitializer.shared
-        adtagBeaconManager = AdtagBeaconManager.shared
+        adtagPlaceManager = AdtagPlaceDetectionManager.shared
     }
 
     override func viewWillAppear(_ animated: Bool) {
         adtagInitializer?.registerProximityHealthCheckDelegate(self)
-        adtagBeaconManager?.registerInProximityInForeground(self)
+        adtagPlaceManager?.registerInProximityInForeground(self)
         super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         adtagInitializer?.unregisterProximityHealthCheckDelegate(self)
-        adtagBeaconManager?.unregisterInProximityInForeground(self)
+        adtagPlaceManager?.unregisterInProximityInForeground(self)
     }
     
     override func didReceiveMemoryWarning() {

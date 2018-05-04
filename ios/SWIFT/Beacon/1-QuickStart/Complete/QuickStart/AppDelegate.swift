@@ -11,20 +11,20 @@ import UIKit
 import AVFoundation
 import UserNotifications
 import AdtagConnection
-import AdtagLocationBeacon
+import AdtagLocationDetection
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AdtagReceiveNotificationContentDelegate {
     var window: UIWindow?
     var adtagInitializer: AdtagInitializer?
-    var adtagBeaconManager: AdtagBeaconManager?
+    var adtagPlaceManager: AdtagPlaceDetectionManager?
     var myNotificationDelegate: MyNotificationDelegate?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         adtagInitializer = AdtagInitializer.shared
         adtagInitializer?.configPlatform(Platform.preProd).configUser(login: "__LOGIN__", password: "__PSWD__", company: "__COMPANY__").synchronize()
-        adtagBeaconManager = AdtagBeaconManager.shared
+        adtagPlaceManager = AdtagPlaceDetectionManager.shared
 
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
@@ -34,12 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdtagReceiveNotificationC
                     NSLog("request authorization succeeded!");
                 }
             }
-            myNotificationDelegate = MyNotificationDelegate(adtagBeaconManager: adtagBeaconManager!)
+            myNotificationDelegate = MyNotificationDelegate(adtagPlaceManager!)
             center.delegate = myNotificationDelegate
         } else if(UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))){
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings (types: [.alert, .sound], categories: nil))
         }
-        adtagBeaconManager?.registerReceiveNotificatonContentDelegate(self)
+        adtagPlaceManager?.registerReceiveNotificatonContentDelegate(self)
         return true
     }
 
@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdtagReceiveNotificationC
     }
 
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        adtagBeaconManager?.didReceivePlaceNotification(notification.userInfo)
+        adtagPlaceManager?.didReceivePlaceNotification(notification.userInfo)
     }
 
     func didReceivePlaceNotification(_ placeNotification: AdtagPlaceNotification) {

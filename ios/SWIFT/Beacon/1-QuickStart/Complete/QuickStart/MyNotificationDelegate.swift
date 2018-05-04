@@ -8,18 +8,18 @@
 
 import Foundation
 import UserNotifications
-import AdtagLocationBeacon
+import AdtagLocationDetection
 
 public class MyNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
-    let adtagBeaconManager: AdtagBeaconManager
+    let adtagPlaceManager: AdtagPlaceDetectionManager
 
-    public init(adtagBeaconManager: AdtagBeaconManager) {
-        self.adtagBeaconManager = adtagBeaconManager
+    public init(_ adtagPlaceManager: AdtagPlaceDetectionManager) {
+        self.adtagPlaceManager = adtagPlaceManager
         super.init()
     }
 
     @available(iOS 10.0, *)
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        adtagBeaconManager.didReceivePlaceNotification(response.notification.request.content.userInfo)
+        adtagPlaceManager.didReceivePlaceNotification(response.notification.request.content.userInfo)
     }
 }

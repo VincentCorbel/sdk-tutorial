@@ -6,7 +6,7 @@ target 'QuickStart' do
 	# Uncomment this line if you're using Swift or would like to use dynamic frameworks
 	use_frameworks!
 
-	pod "AdtagLocationBeacon", '3.0-RC18'
+	pod "AdtagLocationDetection", '3.1.2'
 
 	target 'QuickStartTests' do
 		inherit! :search_paths
@@ -17,4 +17,12 @@ target 'QuickStart' do
 		inherit! :search_paths
 		# Pods for testing
 	end
+
+	post_install do |installer|
+        installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |configuration|
+                configuration.build_settings['SWIFT_VERSION'] = "4.1"
+            end
+        end
+    end
 end
