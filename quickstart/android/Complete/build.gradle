@@ -11,7 +11,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        mavenLocal()
+        //mavenLocal()
         google()
         maven {
             url "https://forge.adtag.eu/nexus/content/groups/public"
