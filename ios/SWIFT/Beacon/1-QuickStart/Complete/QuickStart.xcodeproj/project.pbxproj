@@ -16,6 +16,7 @@
 		7C6493D11E7701FA0049E17F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C6493CF1E7701FA0049E17F /* Localizable.strings */; };
 		9BB6C339F42D4D250179D84C /* Pods_QuickStartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4280D86B3E68FFBDFE4B276 /* Pods_QuickStartTests.framework */; };
 		A80E32A41FB4B83B000E0632 /* MyNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E32A31FB4B83B000E0632 /* MyNotificationDelegate.swift */; };
+		A861CF06209C85B1007574FA /* connectplace-settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = A861CF05209C85B0007574FA /* connectplace-settings.plist */; };
 		A9399CBFAD3E31A2AA345809 /* Pods_QuickStart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916B9824424979D86EF4DCFE /* Pods_QuickStart.framework */; };
 		CC63EB318B0DE8CD6FD32457 /* Pods_QuickStartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4DD75CD57E2F66B9B28216 /* Pods_QuickStartUITests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		7C6493D01E7701FA0049E17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		916B9824424979D86EF4DCFE /* Pods_QuickStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80E32A31FB4B83B000E0632 /* MyNotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationDelegate.swift; sourceTree = "<group>"; };
+		A861CF05209C85B0007574FA /* connectplace-settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connectplace-settings.plist"; sourceTree = "<group>"; };
 		B4280D86B3E68FFBDFE4B276 /* Pods_QuickStartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11FD98A43CCDBCAD973ED59 /* Pods-QuickStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickStart.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickStart/Pods-QuickStart.release.xcconfig"; sourceTree = "<group>"; };
 		DE4DD75CD57E2F66B9B28216 /* Pods_QuickStartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickStartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 		1484CDFD1D5B1DAA00BFAD6E /* QuickStart */ = {
 			isa = PBXGroup;
 			children = (
+				A861CF05209C85B0007574FA /* connectplace-settings.plist */,
 				7C6493CF1E7701FA0049E17F /* Localizable.strings */,
 				1484CDFE1D5B1DAA00BFAD6E /* AppDelegate.swift */,
 				1484CE001D5B1DAA00BFAD6E /* ViewController.swift */,
@@ -278,6 +281,7 @@
 				7C6493D11E7701FA0049E17F /* Localizable.strings in Resources */,
 				1484CE061D5B1DAA00BFAD6E /* Assets.xcassets in Resources */,
 				1484CE041D5B1DAA00BFAD6E /* Main.storyboard in Resources */,
+				A861CF06209C85B1007574FA /* connectplace-settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

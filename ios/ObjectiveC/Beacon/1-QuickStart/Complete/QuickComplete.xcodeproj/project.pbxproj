@@ -21,6 +21,7 @@
 		2FE215E0FCC06ED8EB52479E /* Pods_QuickCompleteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BB196E83C0A0D533A376F /* Pods_QuickCompleteUITests.framework */; };
 		5D50DB38CFA7353CFF05AADE /* Pods_QuickCompleteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB317B27E81C75E60AB04184 /* Pods_QuickCompleteTests.framework */; };
 		A80E32A71FB4B9AF000E0632 /* MyNotificationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A80E32A61FB4B9AF000E0632 /* MyNotificationDelegate.m */; };
+		A861CF08209C8616007574FA /* connectplace-settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = A861CF07209C8616007574FA /* connectplace-settings.plist */; };
 		ACE474DF3FFB8965B5E96179 /* Pods_QuickComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84AEECC0897A76063B9C3C2 /* Pods_QuickComplete.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		7EF659A72FC20DA76FB0610E /* Pods-QuickCompleteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickCompleteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickCompleteUITests/Pods-QuickCompleteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A80E32A51FB4B9AF000E0632 /* MyNotificationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyNotificationDelegate.h; sourceTree = "<group>"; };
 		A80E32A61FB4B9AF000E0632 /* MyNotificationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyNotificationDelegate.m; sourceTree = "<group>"; };
+		A861CF07209C8616007574FA /* connectplace-settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connectplace-settings.plist"; sourceTree = "<group>"; };
 		B84AEECC0897A76063B9C3C2 /* Pods_QuickComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40BB196E83C0A0D533A376F /* Pods_QuickCompleteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickCompleteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB317B27E81C75E60AB04184 /* Pods_QuickCompleteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickCompleteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 		14D2242C1CA18A4C004C579C /* QuickComplete */ = {
 			isa = PBXGroup;
 			children = (
+				A861CF07209C8616007574FA /* connectplace-settings.plist */,
 				14D224301CA18A4C004C579C /* AppDelegate.h */,
 				14D224311CA18A4C004C579C /* AppDelegate.m */,
 				14D224331CA18A4C004C579C /* ViewController.h */,
@@ -308,6 +311,7 @@
 				14E45A3A1CA1A46700639B81 /* Localizable.strings in Resources */,
 				14D2243A1CA18A4C004C579C /* Assets.xcassets in Resources */,
 				14D224381CA18A4C004C579C /* Main.storyboard in Resources */,
+				A861CF08209C8616007574FA /* connectplace-settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
