@@ -14,14 +14,16 @@ class Optin {
     static func manage() {
         let adtagInitializer = AdtagInitializer.shared
         //To know if an optin has been updated
-        if adtagInitializer.areOptinsUpdateOnce() {
+        if adtagInitializer.optinsNeverAsked() {
             // No update, ask the optin ?
         }
-        //Update the optin status even if it's false
-        adtagInitializer.updateOptin(optin: .LOCATION, permission: true)
-        adtagInitializer.updateOptin(optin: .STATUS, permission: false)
+
         //get the optin status
-        adtagInitializer.isOptinAuthorized(optin: .LOCATION)
+        adtagInitializer.isOptinAuthorized(optin: .USER_DATA)
+        //Update the optin status even if it's false
+        adtagInitializer.updateOptin(.USER_DATA, permission: true)
+        // Notify the SDK that you have finished with the opti-ns update - call it each time the opt-ins are udpated
+        adtagInitializer.allOptinsAreUpdated()
     }
 
 }

@@ -15,16 +15,19 @@ public class Optin {
     public static void manage() {
         AdtagInitializer adtagInitializer = AdtagInitializer.getInstance();
         //To know if an optin has been updated
-        if (!adtagInitializer.areOptinsUpdateOnce()) {
+        if (adtagInitializer.optinsNeverAsked()) {
             // No update, ask the optin ?
         }
-        //Update the optin status even if it's false
-        adtagInitializer.updateOptin(OPTIN.LOCATION, true);
-        adtagInitializer.updateOptin(OPTIN.USER_ID, false);
+
         //get the optin status
-        if (adtagInitializer.isOptinAuthorized(OPTIN.LOCATION)) {
+        if (adtagInitializer.isOptinAuthorized(OPTIN.USER_DATA)) {
 
         }
+
+        //Update the optin status even if it's false
+        adtagInitializer.updateOptin(OPTIN.USER_DATA, true);
+        //Notify the SDK that it get all the optins -> launch the synchro process and we start to log analytics
+        adtagInitializer.allOptinsAreUpdated();
     }
 
 }

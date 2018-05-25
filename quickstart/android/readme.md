@@ -17,6 +17,8 @@
 ```xml
 <string name="foreground_notification_title">QuickStart</string>
 <string name="foreground_notification_description">Looking for nearby points of interests</string>
+<!-- set to false if you don't want the SDK to display a foreground notification on Android 8+ -->
+<string name="is_foreground_notification_active">true</string>
 ```
 
 ## Customizing the Place Notification

@@ -391,7 +391,6 @@
 				"${PODS_ROOT}/ConnectPlaceGeoDetection/ConnectPlaceGeoDetection.framework",
 				"${PODS_ROOT}/ConnectPlaceProvider/ConnectPlaceProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -406,7 +405,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceGeoDetection.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConnectPlaceProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

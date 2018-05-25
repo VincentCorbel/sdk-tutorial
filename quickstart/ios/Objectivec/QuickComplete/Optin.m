@@ -13,15 +13,16 @@
 
     - (void) manage {
         AdtagInitializer *adtagInitializer = [AdtagInitializer shared];
-         //To know if an optin has been updated
-        if ([adtagInitializer areOptinsUpdateOnce]) {
+         //To know if the opt-in has been asked
+        if ([adtagInitializer optinsNeverAsked]) {
             // No update, ask the optin ?
         }
-        //Update the optin status even if it's false
-        [adtagInitializer updateOptinWithOptin:OptinLOCATION permission:true];
-        [adtagInitializer updateOptinWithOptin:OptinUSER_ID permission:false];
         //get the optin status
-        [adtagInitializer isOptinAuthorizedWithOptin:OptinLOCATION];
+        [adtagInitializer isOptinAuthorizedWithOptin:OptinUSER_DATA];
+        //Update the optin status even if it's false
+        [adtagInitializer updateOptin:OptinUSER_DATA permission:true];
+        // Notify the SDK that you have finished with the opti-ns update - call it each time the opt-ins are udpated
+        [adtagInitializer allOptinsAreUpdated];
     }
 
 @end
