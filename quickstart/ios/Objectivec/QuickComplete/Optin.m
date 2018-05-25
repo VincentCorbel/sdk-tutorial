@@ -18,7 +18,7 @@
             // No update, ask the optin ?
         }
         //get the optin status
-        [adtagInitializer isOptinAuthorizedWithOptin:OptinUSER_DATA];
+        [adtagInitializer isOptinAuthorized:OptinUSER_DATA];
         //Update the optin status even if it's false
         [adtagInitializer updateOptin:OptinUSER_DATA permission:true];
         // Notify the SDK that you have finished with the opti-ns update - call it each time the opt-ins are udpated

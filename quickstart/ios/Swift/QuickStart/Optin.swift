@@ -19,7 +19,7 @@ class Optin {
         }
 
         //get the optin status
-        adtagInitializer.isOptinAuthorized(optin: .USER_DATA)
+        adtagInitializer.isOptinAuthorized(.USER_DATA)
         //Update the optin status even if it's false
         adtagInitializer.updateOptin(.USER_DATA, permission: true)
         // Notify the SDK that you have finished with the opti-ns update - call it each time the opt-ins are udpated
